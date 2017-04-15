@@ -1,4 +1,5 @@
 var AWS = require('aws-sdk');
+var sqs_api = require('./sqs_api.js'); 
 
 AWS.config.loadFromPath('./utils/config.json'); // required
 

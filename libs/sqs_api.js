@@ -6,21 +6,32 @@ AWS.config.loadFromPath('./utils/config.json');
 var sqs = new AWS.SQS({ apiVersion: '2012-11-05' });
 
 
-exports.createReadQueue = function createReadQueue() {
-    /** Creation of queue of notification by mobile devices */
+exports.createQueue = function createReadQueue(queue_name) {
+    /** Creation of queue with queue_name if not exists */
 
     var params = {
-        QueueName: 'ReadQueue',
-        Attributes: {
-            'MessageRetentionPeriod': '14400'
-        }
+        QueueNamePrefix: queue_name
     };
+    sqs.listQueues(params, function (err, data) {
+        if (err) console.log(err, err.stack); // an error occurred
+        else if (typeof data.QueueUrls === "undefined") {
+            var params_queue = {
+                QueueName: queue_name,
+                Attributes: {
+                    'MessageRetentionPeriod': '14400'
+                }
+            };
 
-    sqs.createQueue(params, function (err, data) {
-        if (err) {
-            console.log("Error", err);
-        } else {
-            console.log("Success", data.QueueUrl);
+            sqs.createQueue(params_queue, function (err, data) {
+                if (err) {
+                    console.log("Error", err);
+                } else {
+                    console.log("Success", data.QueueUrl);
+                }
+            });
+        }
+        else {
+            console.log("Queue already exists: ", data);
         }
     });
 }
@@ -114,5 +125,4 @@ exports.readQueue = function readQueue(queue_name) {
         });
 
     });
-
 }

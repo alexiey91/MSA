@@ -1,5 +1,27 @@
 const dynamo_api = require('./libs/dynamo_api.js');
 const sqs_api = require('./libs/sqs_api.js');
+const cp = require('child_process');
 
-//sqs_api.writeQueue("ReadQueue","ebrei","Paolo è un grande ebreo.");
-sqs_api.readQueue("ReadQueue");
+/** Creation of queue for publish message, if not exists */
+sqs_api.createQueue("notificationQueue"); 
+/** Creation of queue for creation/deletion topic message, if not exists*/
+sqs_api.createQueue("creationQueue");
+/** Creation of queue for subscription/unsubscription message, if not exists*/
+sqs_api.createQueue("subscriptionQueue");
+
+
+const nr = cp.fork('./readers/notificationReader.js');
+const cr = cp.fork('./readers/creationReader.js');
+const sr = cp.fork('./readers/subscriptionReader.js');
+
+
+/**
+ * MESSAGE FORMAT:
+ * 
+ *      NOTIFICATIONQUEUE:
+ *      
+ *      CREATIONQUEUE:
+ * 
+ *      SUBSCRIPTIONQUEUE:
+ * 
+ */
