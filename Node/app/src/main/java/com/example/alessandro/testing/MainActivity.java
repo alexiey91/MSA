@@ -2,12 +2,14 @@ package com.example.alessandro.testing;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -26,6 +28,7 @@ import java.util.List;
 
 
 public class MainActivity extends Activity {
+    private long initial_X_coord=0;
 
     private Button button;
    // private ListView listView;
@@ -121,6 +124,30 @@ public class MainActivity extends Activity {
         });
 
 
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event)
+    {
+        float eventX = event.getX();
+
+        switch (event.getAction())
+        {
+            case MotionEvent.ACTION_DOWN:
+                initial_X_coord = Math.round(eventX);
+                break;
+            case MotionEvent.ACTION_UP:
+                long positionDelta = Math.round(eventX) - initial_X_coord;
+
+                if (positionDelta < -400){
+                    Intent i=new Intent(this,WriteActivity.class);
+                    startActivity(i);
+                }else{
+                    Toast.makeText(this, "<<<<  Slide left for change view !", Toast.LENGTH_SHORT).show();
+                }
+
+                return true;
+        }
+        return false;
     }
 
 
