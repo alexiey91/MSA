@@ -1,7 +1,6 @@
 package com.example.alessandro.testing;
 
 import android.app.Activity;
-import android.app.ListActivity;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -10,18 +9,16 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.amazonaws.AmazonClientException;
-import com.amazonaws.ClientConfiguration;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.BasicAWSCredentials;
-import com.amazonaws.services.sqs.AmazonSQSClient;
+import com.amazonaws.services.sqs.model.Message;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -53,18 +50,44 @@ public class MainActivity extends Activity {
             skey= util.getProperty("secretKey",this.getApplicationContext());
             Log.e("accessKey", akey);
             AWSSimpleQueueServiceUtil test = new AWSSimpleQueueServiceUtil(akey,skey);
-            String queueUrl  = test.getQueueUrl("prova");
-             test.sendMessageToQueue(queueUrl,"Stefano Riccone Abbruzzese");
+            String queueUrl  = test.getQueueUrl("Server");
+            // test.sendMessageToQueue(queueUrl,"Stefano Riccone Abbruzzese");
 
-            test.createQueue("CiaoPaolo");
+            List<Message>messageList = new ArrayList();
+            messageList=test.getMessagesFromQueue(queueUrl);
+
+            List<String> temp = new ArrayList<>();
+            do {
+                messageList = test.getMessagesFromQueue(queueUrl);
+
+
+                for (int i = 0; i < messageList.size(); i++) {
+                    temp.add(messageList.get(i).getBody());
+                    test.deleteMessageFromQueue(queueUrl,messageList.get(i));
+                    Log.e("Message from Server", messageList.get(i).getMessageId() + "dimensione:" + i);
+
+                }
+
+            }     while(messageList.size()!=0);
+
+            if(temp.isEmpty()) Log.e("TEMP ","VUoto");
+            for(int i =0 ; i< temp.size();i++){
+
+             Log.v("TEMP:",temp.get(i));}
+
+           // test.createQueue("CiaoPaolo");
             List<String> lista = new ArrayList<String>();
 
-            for(int i=0; i<test.listQueues().getQueueUrls().size();i++){
-                lista.add(test.listQueues().getQueueUrls().get(i));
-                Log.e("LISTA CODE",lista.get(i));}
-
-
-
+            //JSONArray json = new JSONArray(temp);
+           /*for(int i=0; i<temp.size();i++)
+               try {
+                   JSONObject json = new JSONObject(temp.get(i));
+                 lista.add(json.getString("topic"));
+               } catch (JSONException e) {
+                   e.printStackTrace();
+               }
+*/
+          lista=Util.parsingJsonObject(temp,"topic");
             // recupero la lista dal layout
             final ListView mylist = (ListView) findViewById(R.id.listView);
 
@@ -90,7 +113,7 @@ public class MainActivity extends Activity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // AsyncTaskRunner runner = new AsyncTaskRunner();
+                AsyncTaskRunner runner = new AsyncTaskRunner();
                 Context context= getApplicationContext();
             Toast t = Toast.makeText(context,"cliaccato",Toast.LENGTH_SHORT );
                 t.show();
@@ -108,11 +131,12 @@ public class MainActivity extends Activity {
 
         @Override
         protected String doInBackground(String... params) {
-
-            AWSSimpleQueueServiceUtil test = new AWSSimpleQueueServiceUtil(akey,skey);
-            String queueUrl  = test.getQueueUrl("prova");
-            test.sendMessageToQueue(queueUrl, "Paolo Ebreo");
-
+            Log.e("Stampa","ciao");
+          //  AWSSimpleQueueServiceUtil test = new AWSSimpleQueueServiceUtil(akey,skey);
+          //  String queueUrl  = test.getQueueUrl("Server");
+         //   test.sendMessageToQueue(queueUrl, "Paolo Ebreo");
+         //   for(int i=0; i<test.getMessagesFromQueue(queueUrl).size();i++)
+            //    Log.e("Message from Server", test.getMessagesFromQueue(queueUrl).get(i).getMessageId()+"dimensione:"+test.getMessagesFromQueue(queueUrl).size());
           /* String testo= test.listQueues().toString();
             Context context= getApplicationContext();
             Toast t= Toast.makeText(context,testo,Toast.LENGTH_LONG);

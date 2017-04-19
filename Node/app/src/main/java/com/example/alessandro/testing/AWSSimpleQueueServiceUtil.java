@@ -132,7 +132,12 @@ public class AWSSimpleQueueServiceUtil {
      * @return
      */
     public List<Message> getMessagesFromQueue(String queueUrl){
-        ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
+        ReceiveMessageRequest receiveMessageRequest;
+
+        receiveMessageRequest = new ReceiveMessageRequest(queueUrl);
+     //   receiveMessageRequest.setMaxNumberOfMessages(10);
+       receiveMessageRequest.setWaitTimeSeconds(10);
+
         List<Message> messages = sqs.receiveMessage(receiveMessageRequest).getMessages();
         return messages;
     }
@@ -144,7 +149,7 @@ public class AWSSimpleQueueServiceUtil {
      */
     public void deleteMessageFromQueue(String queueUrl, Message message){
         String messageRecieptHandle = message.getReceiptHandle();
-        System.out.println("message deleted : " + message.getBody() + "." + message.getReceiptHandle());
+        Log.e("DELETED","message deleted : " + message.getBody() + "." + message.getReceiptHandle());
         sqs.deleteMessage(new DeleteMessageRequest(queueUrl, messageRecieptHandle));
     }
 

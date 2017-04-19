@@ -3,8 +3,13 @@ package com.example.alessandro.testing;
 import android.content.Context;
 import android.content.res.AssetManager;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -19,5 +24,19 @@ public class Util {
         properties.load(inputStream);
         return properties.getProperty(key);
 
+    }
+
+    public static List<String> parsingJsonObject(List<String>message,String filter){
+        List<String> result = new ArrayList<>();
+
+        for(int i=0; i<message.size();i++)
+            try {
+                JSONObject json = new JSONObject(message.get(i));
+                result.add(json.getString(filter));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+    return result;
     }
 }
