@@ -1,9 +1,10 @@
 Three types of message:
 
-1) Creation of topic:
+1) Creation/Deletion of topic:
         TEMPLATE:
 
         {
+	    "type": string, // "CREATE" or "DELETE"
             "userID": string, // macaddress
             "topicName": string
         }
