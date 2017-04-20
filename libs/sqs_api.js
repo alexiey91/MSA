@@ -39,7 +39,7 @@ exports.createQueue = function createReadQueue(queue_name) {
     });
 }
 
-exports.writeQueue = function writeQueue(queue_name) {
+exports.writeQueue = function writeQueue(queue_name, msg) {
     /** Write message on queue */
 
     var params = {
@@ -56,21 +56,7 @@ exports.writeQueue = function writeQueue(queue_name) {
 
         var params = {
             DelaySeconds: 10,
-            MessageAttributes: {
-                "MsgType": {
-                    DataType: "String",
-                    StringValue: "C" // Creation
-                },
-                "TopicName": {
-                    DataType: "String",
-                    StringValue: "..." // Required
-                },
-                "UserId": {
-                    DataType: "String",
-                    StringValue: "..." // Required
-                }
-            },
-            MessageBody: "CreateTopic", // Required
+            MessageBody: msg,
             QueueUrl: data.QueueUrl
         };
 
@@ -122,7 +108,7 @@ exports.readQueue = function readQueue(queue_name) {
 
                 const rec = cp.fork('./workers/consumer.js');
 
-                rec.send({ data: data_read.Messages });
+                rec.send({ data: data_read.Messages , queue: queue_name});
 
                 var entries = [];
                 var index = 0;

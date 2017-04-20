@@ -2,25 +2,10 @@
 
 process.once('message', m => {
 
+    console.log("QUEUE NAME:", m.queue , "\n\n");
+
     m.data.forEach(function (element) {
-        console.log(element);
-
-        switch (element.MessageAttributes.MsgType.StringValue) {
-            case "C":
-                console.log("CREATION\n");
-                break;
-
-            case "N":
-                console.log("NOTIFICATION\n");
-                break;
-
-            case "S":
-                console.log("SUBSCRIPTION\n");
-                break;
-
-            default:
-                break;
-        }
+        console.log("MESSAGE BODY:", element.Body, "\n\n");
     }, this);
 
 });

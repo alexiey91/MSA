@@ -1,0 +1,28 @@
+Three types of message:
+
+1) Creation of topic:
+        TEMPLATE:
+
+        {
+            "userID": string, // macaddress
+            "topicName": string
+        }
+
+2) Subscription/Unsubscription:
+        TEMPLATE:
+
+        {
+            "type": string, // "SUB" or "UNSUB" "UNSUBALL" (delete user queue)
+            "userID": string, // macaddress
+            "topicName": string,
+            "filter": string 
+        }
+
+3) Publish message:
+        TEMPLATE:
+
+        {
+            "userID": string, // macaddress
+            "topicName": string,
+            "messageBody": string
+        }
