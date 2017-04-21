@@ -13,7 +13,8 @@ sqs_api.createQueue("subscriptionQueue");
 const nr = cp.fork('./readers/notificationReader.js');
 const cr = cp.fork('./readers/creationReader.js');
 const sr = cp.fork('./readers/subscriptionReader.js');
+const sh = cp.fork('./httpServer.js');
 
-const lc = [nr, cr, sr];
+const lc = [nr, cr, sr, sh];
 
 sign.handleSignal(lc, 'SIGINT', 'SIGTERM');

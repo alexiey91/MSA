@@ -1,5 +1,5 @@
 var AWS = require('aws-sdk');
-var sqs_api = require('./sqs_api.js'); 
+var sqs_api = require('./sqs_api.js');
 
 AWS.config.loadFromPath('./utils/config.json'); // required
 
@@ -10,7 +10,7 @@ var dynamodbCl = new AWS.DynamoDB.DocumentClient();
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 function isEmpty(obj) {
-/** Return true if a dynamoDb read object is empty */
+    /** Return true if a dynamoDb read object is empty */
     // null and undefined are "empty"
     if (obj == null) return true;
 
@@ -34,14 +34,14 @@ function isEmpty(obj) {
     return true;
 }
 
-exports.create_topic = function create_topic(topic_name, username) {
-    /** Create a new topic named "topic_name" (if not exists) by a user with username "username"
+exports.create_topic = function create_topic(topic_name, user_id) {
+    /** Create a new topic named topic_name (if not exists) by a user with userID user_id
      */
 
     var tempParam = {
         TableName: "Topic",
         Key: {
-            "topic_name": topic_name
+            "topicName": topic_name
         }
     };
 
@@ -59,8 +59,8 @@ exports.create_topic = function create_topic(topic_name, username) {
             var params = {
                 TableName: "Topic",
                 Item: {
-                    "topic_name": topic_name,
-                    "username": username
+                    "topicName": topic_name,
+                    "userID": user_id
                 }
             };
 
@@ -71,8 +71,60 @@ exports.create_topic = function create_topic(topic_name, username) {
                     console.log("PutItem succeeded:", topic_name);
                 }
             });
+        }
+    });
+}
 
+exports.scanAllTopics = function scanAllTopics(res) {
+    /** Scans all topicName in "Topic" table and send the response by res */
 
+    var params = {
+        TableName: "Topic",
+        ProjectionExpression: "#tn",
+        ExpressionAttributeNames: {
+            "#tn": "topicName",
+        }
+    };
+
+    /** Scan a maximum of 1 MB  */
+
+    dynamodbCl.scan(params, function (err, data) {
+
+        if (err) {
+            console.error("Unable to scan the table. Error JSON:", JSON.stringify(err, null, 2));
+        } else {
+
+            console.log("Scan succeeded.");
+
+            res.send(data.Items);
+        }
+    });
+
+}
+
+exports.deleteTopic = function deleteTopic(topic_name, user_id) {
+    /** Deletes the topic from Topic table if and only if user_id is the userID of creator */
+
+    var tempParam = {
+        TableName: "Topic",
+        Key: {
+            "topicName": topic_name
+        }
+    };
+
+    dynamodbCl.get(tempParam, function (err, data) {
+        if (err) {
+            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+        }
+
+        else if (!isEmpty(data) && data.Item.userID == user_id) {
+            dynamodbCl.delete(tempParam, function (err, data) {
+                if (err) {
+                    console.error("Unable to delete item. Error JSON:", JSON.stringify(err, null, 2));
+                } else {
+                    console.log("DeleteItem succeeded:", JSON.stringify(data, null, 2));
+                }
+            })
         }
     });
 }
