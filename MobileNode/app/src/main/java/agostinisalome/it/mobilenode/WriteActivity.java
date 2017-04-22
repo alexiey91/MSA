@@ -1,4 +1,5 @@
-package com.example.alessandro.testing;
+package agostinisalome.it.mobilenode;
+
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -20,6 +21,9 @@ import android.widget.Toast;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import agostinisalome.it.mobilenode.MainActivity;
+import agostinisalome.it.mobilenode.R;
 
 
 public class WriteActivity extends Activity {
@@ -154,12 +158,7 @@ public class WriteActivity extends Activity {
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

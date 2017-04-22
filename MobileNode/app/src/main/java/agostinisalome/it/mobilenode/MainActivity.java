@@ -1,57 +1,79 @@
-package com.example.alessandro.testing;
+package agostinisalome.it.mobilenode;
 
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.View;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
-import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.amazonaws.services.sqs.model.Message;
-
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
-import static android.R.id.message;
+public class MainActivity extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener {
 
-
-public class MainActivity extends Activity {
     private long initial_X_coord=0;
     Util util = new Util();
     AWSSimpleQueueServiceUtil test;
     private Button button;
     private ListView spinn;
     private ListView mylist;
-   // private ListView listView;
+    // private ListView listView;
     public String akey;
     public String skey;
-    public  TelephonyManager tManager = (TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+    public TelephonyManager tManager;
     public String UserId;
    /* ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
     HashMap<String, List<String>> listDataChild;*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                     .permitAll().build();
@@ -65,7 +87,7 @@ public class MainActivity extends Activity {
             test = new AWSSimpleQueueServiceUtil(akey, skey);
 
 
-
+            tManager=(TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
 
             UserId = tManager.getDeviceId();
             Log.e("UserID",UserId);
@@ -145,36 +167,9 @@ public class MainActivity extends Activity {
             }
 
         });*/
+
+
     }
-
-    @Override
-    public boolean onTouchEvent(MotionEvent event)
-    {
-        float eventX = event.getX();
-
-        switch (event.getAction())
-        {
-            case MotionEvent.ACTION_DOWN:
-                initial_X_coord = Math.round(eventX);
-                break;
-            case MotionEvent.ACTION_UP:
-                long positionDelta = Math.round(eventX) - initial_X_coord;
-
-                if (positionDelta < -400){
-                    Intent i=new Intent(this,WriteActivity.class);
-                    startActivity(i);
-                }else{
-                    Toast.makeText(this, "<<<<  Slide left for change view !", Toast.LENGTH_SHORT).show();
-                }
-
-                return true;
-        }
-        return false;
-    }
-
-
-
-
     private class AsyncTaskRunner extends AsyncTask<String, String, String> {
 
         private String resp;
@@ -247,9 +242,19 @@ public class MainActivity extends Activity {
     }
 
     @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -268,5 +273,28 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-}
+    @SuppressWarnings("StatementWithEmptyBody")
+    @Override
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
+        int id = item.getItemId();
 
+        if (id == R.id.nav_camera) {
+            // Handle the camera action
+        } else if (id == R.id.nav_gallery) {
+
+        } else if (id == R.id.nav_slideshow) {
+
+        } else if (id == R.id.nav_manage) {
+
+        } else if (id == R.id.nav_share) {
+
+        } else if (id == R.id.nav_send) {
+
+        }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+}
