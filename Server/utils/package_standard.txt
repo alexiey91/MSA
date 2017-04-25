@@ -13,7 +13,7 @@ Three types of message:
         TEMPLATE:
 
         {
-            "type": string, // "SUB" or "UNSUB" "UNSUBALL" (delete user queue)
+            "type": string, // "SUB" or "UNSUB" or "UNSUBALL"
             "userID": string, // macaddress
             "topicName": string,
             "filter": string 

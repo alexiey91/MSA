@@ -15,7 +15,7 @@ router.use(function timeLog(req, res, next) {
 router.get('/allTopics', urlencodedParser, function (req, res) {
   /** Returns all available topics */
 
-  dynamoapi.scanAllTopics(res);
+  dynamoapi.scan_all_topics(res);
 });
 
 

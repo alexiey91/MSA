@@ -9,7 +9,7 @@ var sqs = new AWS.SQS({ apiVersion: '2012-11-05' });
 
 /** SQS API */
 
-exports.createQueue = function createReadQueue(queue_name) {
+exports.create_queue = function create_queue(queue_name) {
     /** Creation of queue with queue_name if not exists */
 
     var params = {
@@ -39,7 +39,7 @@ exports.createQueue = function createReadQueue(queue_name) {
     });
 }
 
-exports.writeQueue = function writeQueue(queue_name, msg) {
+exports.write_queue = function write_queue(queue_name, msg) {
     /** Write message on queue */
 
     var params = {
@@ -52,26 +52,25 @@ exports.writeQueue = function writeQueue(queue_name, msg) {
             console.log("Error", err);
         } else {
             console.log("Success", data.QueueUrl);
+            var params = {
+                DelaySeconds: 10,
+                MessageBody: msg,
+                QueueUrl: data.QueueUrl
+            };
+
+            sqs.sendMessage(params, function (err, data) {
+                if (err) {
+                    console.log("Error", err);
+                } else {
+                    console.log("Success", data.MessageId);
+                }
+            });
         }
-
-        var params = {
-            DelaySeconds: 10,
-            MessageBody: msg,
-            QueueUrl: data.QueueUrl
-        };
-
-        sqs.sendMessage(params, function (err, data) {
-            if (err) {
-                console.log("Error", err);
-            } else {
-                console.log("Success", data.MessageId);
-            }
-        });
     });
 }
 
 
-exports.readQueue = function readQueue(queue_name) {
+exports.read_queue = function read_queue(queue_name) {
     /** Read incoming messages from queue_name  */
 
     var params = {
@@ -108,7 +107,7 @@ exports.readQueue = function readQueue(queue_name) {
 
                 const rec = cp.fork('./workers/consumer.js');
 
-                rec.send({ data: data_read.Messages , queue: queue_name});
+                rec.send({ data: data_read.Messages, queue: queue_name });
 
                 var entries = [];
                 var index = 0;
@@ -119,13 +118,13 @@ exports.readQueue = function readQueue(queue_name) {
                 }, this);
 
                 /** to delete messages */
-                deleteMessages(data.QueueUrl, entries);
+                delete_messages(data.QueueUrl, entries);
             }
         });
     });
 }
 
-function deleteMessages(queueurl, entries) {
+function delete_messages(queueurl, entries) {
     /** Delete entries from queue by queueurl */
 
     var params = {

@@ -4,11 +4,11 @@ const sign = require('./utils/signals.js');
 const cp = require('child_process');
 
 /** Creation of queue for publish message, if not exists */
-sqs_api.createQueue("notificationQueue");
+sqs_api.create_queue("notificationQueue");
 /** Creation of queue for creation/deletion topic message, if not exists*/
-sqs_api.createQueue("creationQueue");
+sqs_api.create_queue("creationQueue");
 /** Creation of queue for subscription/unsubscription message, if not exists*/
-sqs_api.createQueue("subscriptionQueue");
+sqs_api.create_queue("subscriptionQueue");
 
 const nr = cp.fork('./readers/notificationReader.js');
 const cr = cp.fork('./readers/creationReader.js');
@@ -17,4 +17,4 @@ const sh = cp.fork('./httpServer.js');
 
 const lc = [nr, cr, sr, sh];
 
-sign.handleSignal(lc, 'SIGINT', 'SIGTERM');
+sign.handle_signal(lc, 'SIGINT', 'SIGTERM');

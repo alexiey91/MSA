@@ -17,7 +17,7 @@ exports.topic_handler = function topic_handler(list_msg) {
 
         else { // DELETE
             console.log("DELETION: ", msgJSON);
-            dynamo_api.deleteTopic(msgJSON.topicName, msgJSON.userID)
+            dynamo_api.delete_topic(msgJSON.topicName, msgJSON.userID)
         }
 
     }, this);

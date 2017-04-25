@@ -1,7 +1,7 @@
 /** A signals handler */
 
 
-exports.handleSignal = function handleSignal(lc, on_sig, then_sig) {
+exports.handle_signal = function handle_signal(lc, on_sig, then_sig) {
     /** Handle termination signals */
     /** @param lc is a list of child process
         @param on_sig is input signal
