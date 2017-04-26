@@ -1,11 +1,16 @@
 package agostinisalome.it.mobilenode;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
@@ -87,17 +92,18 @@ public class MainActivity extends AppCompatActivity
             test = new AWSSimpleQueueServiceUtil(akey, skey);
 
 
-            tManager=(TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
+            /*tManager=(TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
 
-            UserId = tManager.getDeviceId();
-            Log.e("UserID",UserId);
+            UserId = tManager.getDeviceId();*/
+            String unique_id= Settings.Secure.getString(getApplicationContext().getContentResolver(),Settings.Secure.ANDROID_ID);
+            Log.e("UserID",unique_id);
         }catch (IOException e) {
             e.printStackTrace();
         }
         //new PostTask().execute();
 
 
-        new AsyncTaskRunner().execute();
+        //new AsyncTaskRunner().execute();
 
         /*expListView = (ExpandableListView) findViewById(R.id.topicListView);
 
@@ -111,7 +117,7 @@ public class MainActivity extends AppCompatActivity
 
 
 
-        spinn=(ListView) findViewById(R.id.topicListView);
+        //spinn=(ListView) findViewById(R.id.topicListView);
        /* try {
             String queueUrl = test.getQueueUrl("Server");
 
@@ -278,10 +284,14 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment fragment = null;
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
+            fragment= new WriteFragment();
+
         } else if (id == R.id.nav_gallery) {
+            fragment = new ReadFragment();
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -291,6 +301,11 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        }
+
+        if(fragment!=null){
+            FragmentManager fm=getSupportFragmentManager();
+            fm.beginTransaction().replace(R.id.content_frame,fragment).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

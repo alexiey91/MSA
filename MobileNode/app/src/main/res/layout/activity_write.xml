@@ -6,10 +6,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
+
         android:id="@+id/topics"
         android:spinnerMode="dialog" />
-
+    <!-- android:layout_alignParentStart="true"-->
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,8 +18,8 @@
         android:id="@+id/corpse_text"
         android:layout_marginTop="39dp"
         android:layout_below="@+id/topics"
-        android:layout_alignParentStart="true" />
-
+        />
+    <!-- android:layout_alignParentStart="true"-->
    <!-- <Button
         android:text="Publish"
         android:layout_width="wrap_content"
@@ -47,23 +47,31 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:text="Publish"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/send_text"
-        android:layout_above="@+id/create_topic"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="15dp" />
+    <!-- android:layout_alignParentStart="true"
+        -->
 
     <Button
         android:text="Clear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/clear_text"
-        android:layout_alignBaseline="@+id/send_text"
-        android:layout_alignBottom="@+id/send_text"
-        android:layout_toEndOf="@+id/create_topic" />
+        android:layout_marginBottom="31dp"
+        android:layout_above="@+id/create_topic"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp" />
 
+    <Button
+        android:text="Publish"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/send_text"
+        android:layout_alignTop="@+id/clear_text"
+        android:layout_toRightOf="@+id/clear_text"
+        android:layout_toEndOf="@+id/clear_text"
+        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
+         />
+    <!-- android:layout_toEndOf="@+id/create_topic"-->
 </RelativeLayout>

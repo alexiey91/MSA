@@ -13,20 +13,19 @@
     tools:context="agostinisalome.it.mobilenode.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        android:id="@+id/textView2" />
-
-    <ListView
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView2"
+        android:id="@+id/content_frame"/>
+
+
+   <!-- <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginLeft="60dp"
         android:layout_marginStart="60dp"
-        android:layout_marginTop="118dp"
-        android:id="@+id/topicListView" />
+        android:layout_marginTop="300dp"
+        android:id="@+id/topicListView" />-->
 </RelativeLayout>
