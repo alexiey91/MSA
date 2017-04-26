@@ -29,6 +29,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -46,12 +47,13 @@ public class ReadFragment extends Fragment  {
     public String akey;
     public String skey;
     private AWSSimpleQueueServiceUtil test;
+    DBHelper db;
     public ReadFragment(){}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 
         View view = inflater.inflate(R.layout.activity_read,container,false);
-
+        db = new DBHelper(getContext());
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                     .permitAll().build();
@@ -77,15 +79,32 @@ public class ReadFragment extends Fragment  {
         topics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Log.e("porco dio",adapterView.getItemAtPosition(i).toString());
+
                 Toast.makeText(getContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT ).show();
                     new AsyncTaskReaderMessage().execute(adapterView.getItemAtPosition(i).toString());
             }
         });
+
+        try {
+            List<String> prov= new ArrayList<>();
+            prov= db.getAllTopic();
+            for(int k=0;k<prov.size();k++)
+                Log.e("LISTA","Lista["+k+"]:"+prov.get(k));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        try {
+            List<String> prov= new ArrayList<>();
+            prov= db.getAllFilteredMessage();
+            for(int k=0;k<prov.size();k++)
+                Log.e("MSG","MSG["+k+"]:"+prov.get(k));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         return view;
     }
 
-
+//async della lista dei topic
     private class AsyncTaskReader extends AsyncTask<String, String, String> {
 
         private String resp;
@@ -98,7 +117,7 @@ public class ReadFragment extends Fragment  {
             JSONObject json = new JSONObject();
 
             try {
-                String queueUrl = test.getQueueUrl("Server");
+
 
                 List<String> lista = test.listQueues().getQueueUrls();
 
@@ -125,8 +144,11 @@ public class ReadFragment extends Fragment  {
             try {
                 JSONObject json = new JSONObject(result);
                 List<String> t = new ArrayList<>();
-                for(int j=0;j<json.length();j++)
-                    temp.add(json.getString(""+j+""));
+
+                for(int j=0;j<json.length();j++) {
+                    temp.add(json.getString("" + j + ""));
+                    db.insertNotExistTableTopic(temp.get(j), new Date());
+                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -169,13 +191,8 @@ public class ReadFragment extends Fragment  {
 
         }
     }
-
+//in teoria è la parte della pull
     private class AsyncTaskReaderMessage extends AsyncTask<String, String, String> {
-
-
-
-
-
 
         @Override
         protected String doInBackground(String... params) {
@@ -193,6 +210,7 @@ public class ReadFragment extends Fragment  {
                     messageList = test.getMessagesFromQueue(queueUrl);
                     for (int i = 0; i < messageList.size(); i++) {
                         temp.add(messageList.get(i).getBody());
+                        db.insertTableFiltered(new Date(),params[0],messageList.get(i).getBody());
                         test.deleteMessageFromQueue(queueUrl,messageList.get(i));
                      //   Log.e("Message from Server", messageList.get(i).getMessageId() + "dimensione:" + i);
                     }
@@ -215,7 +233,8 @@ public class ReadFragment extends Fragment  {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            return json.toString();
+            //return json.toString();
+            return params[0];
         }
 
 
@@ -225,10 +244,16 @@ public class ReadFragment extends Fragment  {
             Context context= getContext();
             List<String> temp= new ArrayList<>();
             try {
-                JSONObject json = new JSONObject(result);
+               /* JSONObject json = new JSONObject(result);
                 List<String> t = new ArrayList<>();
-                for(int j=0;j<json.length();j++)
-                    temp.add(json.getString(""+j+""));
+                for(int j=0;j<json.length();j++) {
+                    temp.add(json.getString("" + j + ""));
+
+                }*/
+                //if(temp.isEmpty()){
+                    Log.e("tempEmpty","asdga");
+                    temp=db.getFilteredMessageByTopicName(result);
+                //}
 
             } catch (JSONException e) {
                 e.printStackTrace();

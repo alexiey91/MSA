@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity
     public String skey;
     public TelephonyManager tManager;
     public String UserId;
+    DBHelper db;
    /* ExpandableListAdapter listAdapter;
     ExpandableListView expListView;
     List<String> listDataHeader;
@@ -57,6 +58,8 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
