@@ -5,6 +5,7 @@ AWS.config.loadFromPath('./utils/config.json'); // required
 
 
 var dynamodbCl = new AWS.DynamoDB.DocumentClient();
+var dynamo_db = new AWS.DynamoDB();
 
 // Speed up calls to hasOwnProperty
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -32,6 +33,65 @@ function isEmpty(obj) {
     }
 
     return true;
+}
+
+exports.creation_table = function creation_table(name) {
+    /** Create a Dynamo Table named name */
+
+    var params;
+
+    if (name == "Topic") {
+        params = {
+            TableName: name,
+            KeySchema: [
+                { AttributeName: "topicName", KeyType: "HASH" }  //Partition key
+            ],
+            AttributeDefinitions: [
+                { AttributeName: "topicName", AttributeType: "S" }
+            ],
+            ProvisionedThroughput: {
+                ReadCapacityUnits: 1,
+                WriteCapacityUnits: 1
+            }
+        };
+
+        dynamo_db.createTable(params, function (err, data) {
+            if (err) {
+                console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
+            } else {
+                console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
+            }
+        });
+    }
+
+    else if (name == "Subscription") {
+        params = {
+            TableName: name,
+            KeySchema: [
+                { AttributeName: "topicName", KeyType: "HASH" },  //Partition key
+                { AttributeName: "userID", KeyType: "RANGE" }  //Sort key
+            ],
+            AttributeDefinitions: [
+                { AttributeName: "topicName", AttributeType: "S" },
+                { AttributeName: "userID", AttributeType: "S" }
+            ],
+            ProvisionedThroughput: {
+                ReadCapacityUnits: 1,
+                WriteCapacityUnits: 1
+            }
+        };
+
+        dynamo_db.createTable(params, function (err, data) {
+            if (err) {
+                console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
+            } else {
+                console.log("Created table. Table description JSON:", JSON.stringify(data, null, 2));
+            }
+        });
+    }
+
+    else
+        console.log("Error in create_table: specify other table name\n");
 }
 
 exports.create_topic = function create_topic(topic_name, user_id) {
@@ -208,8 +268,14 @@ exports.send_notification = function send_notification(topic_name, message_body)
         if (err) {
             console.error("Unable to query item. Error JSON:", JSON.stringify(err, null, 2));
         } else {
-            console.log(data.Items);
-            /** ... WORKING ... */
+            data.Items.forEach(function (element) {
+
+                if (message_body.includes(element.filter)) {
+                    var msg = { "topicName": topic_name, "messageBody": message_body };
+                    sqs_api.write_queue(element.userID, JSON.stringify(msg));
+                }
+
+            }, this);
         }
     });
 }

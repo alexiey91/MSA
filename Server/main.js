@@ -9,6 +9,10 @@ sqs_api.create_queue("notificationQueue");
 sqs_api.create_queue("creationQueue");
 /** Creation of queue for subscription/unsubscription message, if not exists*/
 sqs_api.create_queue("subscriptionQueue");
+/** Creation of Subscription table */
+dynamo_api.creation_table("Subscription");
+/** Creation of Topic table */
+dynamo_api.creation_table("Topic");
 
 const nr = cp.fork('./readers/notificationReader.js');
 const cr = cp.fork('./readers/creationReader.js');

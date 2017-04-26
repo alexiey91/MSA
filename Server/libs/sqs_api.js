@@ -15,6 +15,7 @@ exports.create_queue = function create_queue(queue_name) {
     var params = {
         QueueNamePrefix: queue_name
     }
+
     sqs.listQueues(params, function (err, data) {
         if (err) console.log(err, err.stack); // an error occurred
         else if (typeof data.QueueUrls === "undefined") {

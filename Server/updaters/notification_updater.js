@@ -1,4 +1,4 @@
-const sqs_api = require("../libs/dynamo_api.js");
+const dynamo_api = require("../libs/dynamo_api.js");
 
 /** Handles the incoming notifications */
 
