@@ -1,4 +1,4 @@
-package agostinisalome.it.mobilenode;
+package agostinisalome.it.mobilenode.Utils;
 
 import android.content.ContentValues;
 import android.content.Context;

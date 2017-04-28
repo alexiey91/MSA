@@ -1,8 +1,6 @@
 package agostinisalome.it.mobilenode;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -33,6 +31,13 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import agostinisalome.it.mobilenode.Fragment.ReadFragment;
+import agostinisalome.it.mobilenode.Fragment.SetFilterFragment;
+import agostinisalome.it.mobilenode.Fragment.WriteFragment;
+import agostinisalome.it.mobilenode.Utils.AWSSimpleQueueServiceUtil;
+import agostinisalome.it.mobilenode.Utils.DBHelper;
+import agostinisalome.it.mobilenode.Utils.Util;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -297,8 +302,10 @@ public class MainActivity extends AppCompatActivity
             fragment = new ReadFragment();
 
         } else if (id == R.id.nav_slideshow) {
+            fragment = new SetFilterFragment();
 
         } else if (id == R.id.nav_manage) {
+         //   fragment=new GetFilteredMessage;
 
         } else if (id == R.id.nav_share) {
 

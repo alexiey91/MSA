@@ -1,19 +1,23 @@
-package agostinisalome.it.mobilenode;
+package agostinisalome.it.mobilenode.Fragment;
 
-import android.app.AlertDialog;
+
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -24,15 +28,19 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import agostinisalome.it.mobilenode.R;
+import agostinisalome.it.mobilenode.Utils.AWSSimpleQueueServiceUtil;
+import agostinisalome.it.mobilenode.Utils.Util;
+
 /**
  * Created by Paolo on 26/04/2017.
  */
 
-public class WriteFragment extends Fragment implements View.OnClickListener {
+public class WriteFragment extends Fragment  {
     private Button publish;
     private Button clear;
     private Button create;
-    private Spinner topics;
+    private ListView topics;
     private EditText textMulti;
 
 
@@ -62,20 +70,20 @@ public class WriteFragment extends Fragment implements View.OnClickListener {
         }
         /* setting listener */
 
-        topics=(Spinner) view.findViewById(R.id.topics);
+        topics=(ListView) view.findViewById(R.id.topics);
 
-        textMulti=(EditText) view.findViewById(R.id.corpse_text);
-        publish=(Button) view.findViewById(R.id.send_text);
-        publish.setOnClickListener(this);
+       // textMulti=(EditText) view.findViewById(R.id.corpse_text);
+        /*publish=(Button) view.findViewById(R.id.send_text);
+        publish.setOnClickListener(getContext());*/
 
 
-        clear=(Button)view.findViewById(R.id.clear_text);
+      /*  clear=(Button)view.findViewById(R.id.clear_text);
         clear.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
                 textMulti.setText("");
             }
-        });
+        });*/
         create=(Button)view.findViewById(R.id.create_topic);
         create.setOnClickListener(new View.OnClickListener() {
 
@@ -87,7 +95,11 @@ public class WriteFragment extends Fragment implements View.OnClickListener {
                 final EditText input = new EditText(getContext());
                 // Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
                 input.setInputType(InputType.TYPE_CLASS_TEXT );
-                builder.setView(input);
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                input.setLayoutParams(lp);
+                builder.setView(input,50,50,50,50);
 
                 // Set up the buttons
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -107,9 +119,43 @@ public class WriteFragment extends Fragment implements View.OnClickListener {
 
             }
         });
+
+
+        topics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(final AdapterView<?> adapterView, View view, final int i, long l) {
+
+               // Toast.makeText(getContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT ).show();
+                android.support.v7.app.AlertDialog.Builder alert = new android.support.v7.app.AlertDialog.Builder(getContext());
+                final EditText input = new EditText(getContext());
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                        LinearLayout.LayoutParams.WRAP_CONTENT,
+                        LinearLayout.LayoutParams.WRAP_CONTENT);
+
+                input.setLayoutParams(lp);
+                alert.setView(input,50,50,50,50);
+
+                final String temp = adapterView.getItemAtPosition(i).toString();
+                alert.setTitle("Scrivi il filtro per il topic "+adapterView.getItemAtPosition(i).toString());
+                alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        //Toast.makeText(getContext(),"OK",Toast.LENGTH_SHORT ).show();
+                        String queueUrl  = test.getQueueUrl(temp);
+                        test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
+                    }
+                });
+
+                alert.setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int whichButton) {
+                                //   Toast.makeText(getContext(),"Cancel",Toast.LENGTH_SHORT ).show();
+                            }
+                        });
+                alert.show();            }
+        });
         return view;
     }
-    @Override
+   /* @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.send_text:
@@ -130,7 +176,7 @@ public class WriteFragment extends Fragment implements View.OnClickListener {
                 break;
         }
 
-    }
+    }*/
 
 
     private class AsyncTaskReader extends AsyncTask<String, String, String> {
@@ -184,7 +230,7 @@ public class WriteFragment extends Fragment implements View.OnClickListener {
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         getContext(),
-                        android.R.layout.simple_spinner_item,
+                        android.R.layout.simple_list_item_1,
                         temp
                 );
                 topics.setAdapter(adapter);

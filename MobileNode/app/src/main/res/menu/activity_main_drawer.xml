@@ -4,16 +4,17 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="Import" />
+            android:icon="@android:drawable/ic_menu_edit"
+            android:title="Scrivi Topic" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Gallery" />
+            android:icon="@android:drawable/ic_input_get"
+            android:title="Read Topic" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Slideshow" />
+            android:icon="@android:drawable/sym_action_email"
+            android:title="Write Filtered Message"
+            />
         <item
             android:id="@+id/nav_manage"
             android:icon="@drawable/ic_menu_manage"

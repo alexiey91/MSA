@@ -1,10 +1,9 @@
-package agostinisalome.it.mobilenode;
+package agostinisalome.it.mobilenode.Utils;
 
 /**
  * Created by alessandro on 12/04/2017.
  */
 
-import android.content.Context;
 import android.util.Log;
 
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
@@ -14,10 +13,7 @@ import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
         import com.amazonaws.services.sqs.AmazonSQSClient;
         import com.amazonaws.services.sqs.model.*;
 
-        import java.io.FileInputStream;
-import java.io.InputStream;
 import java.util.List;
-        import java.util.Properties;
 
 /**
  * Created by IntelliJ IDEA.
