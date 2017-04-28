@@ -199,7 +199,7 @@ public class ReadFragment extends Fragment  {
         protected String doInBackground(String... params) {
 
            // List<String> filtered = new ArrayList<String>();
-            JSONObject json = new JSONObject();
+           /* JSONObject json = new JSONObject();
 
             try {
                 String queueUrl = test.getQueueUrl(params[0]);
@@ -234,7 +234,7 @@ public class ReadFragment extends Fragment  {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //return json.toString();
+            //return json.toString();*/
             return params[0];
         }
 

@@ -72,6 +72,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("date", String.valueOf(date));
         contentValues.put("topic", topic);
         contentValues.put("content", content);
+        Log.e("CIAO",topic+" "+content);
 
         db.insert("Filtered", null, contentValues);
         return true;

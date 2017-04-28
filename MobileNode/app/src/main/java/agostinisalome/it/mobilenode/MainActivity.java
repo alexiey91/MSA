@@ -1,7 +1,9 @@
 package agostinisalome.it.mobilenode;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.provider.Settings;
@@ -25,11 +27,14 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.amazonaws.services.sqs.model.Message;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import agostinisalome.it.mobilenode.Fragment.ReadFragment;
@@ -48,16 +53,11 @@ public class MainActivity extends AppCompatActivity
     private Button button;
     private ListView spinn;
     private ListView mylist;
-    // private ListView listView;
-    public String akey;
+        public String akey;
     public String skey;
-    public TelephonyManager tManager;
-    public String UserId;
+      public String UserId;
     DBHelper db;
-   /* ExpandableListAdapter listAdapter;
-    ExpandableListView expListView;
-    List<String> listDataHeader;
-    HashMap<String, List<String>> listDataChild;*/
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,14 +68,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -98,13 +91,14 @@ public class MainActivity extends AppCompatActivity
             akey = util.getProperty("accessKey", this.getApplicationContext());
             skey = util.getProperty("secretKey", this.getApplicationContext());
             test = new AWSSimpleQueueServiceUtil(akey, skey);
+            db = new DBHelper(getApplicationContext());
+            
 
-
-            /*tManager=(TelephonyManager) MainActivity.this.getSystemService(Context.TELEPHONY_SERVICE);
-
-            UserId = tManager.getDeviceId();*/
             String unique_id= Settings.Secure.getString(getApplicationContext().getContentResolver(),Settings.Secure.ANDROID_ID);
             Log.e("UserID",unique_id);
+
+           new AsyncPullTask().execute("0");
+
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -184,34 +178,70 @@ public class MainActivity extends AppCompatActivity
 
 
     }
-    private class AsyncTaskRunner extends AsyncTask<String, String, String> {
+
+    private class AsyncPullTask extends AsyncTask<String, String, String> {
 
         private String resp;
 
 
+
+
         @Override
         protected String doInBackground(String... params) {
-            Log.e("Stampa","ciao");
-            List<String> filtered = new ArrayList<String>();
-            JSONObject json = new JSONObject();
 
             try {
                 String queueUrl = test.getQueueUrl("Server");
 
-                List<String> lista = test.listQueues().getQueueUrls();
+                List<Message>messageList = new ArrayList();
 
-                for(int i=0;i<lista.size();i++) {
-                    filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
-                    json.put(""+i+"", filtered.get(i));
-                }
+                List<String> temp = new ArrayList<>();
+                do {
+                    messageList = test.getMessagesFromQueue(queueUrl);
+
+                    for (int i = 0; i < messageList.size(); i++) {
+                        //    temp.add(messageList.get(i).getBody());
+
+                        Date data = new Date();
+                        db.insertTableFiltered(data,"Server",messageList.get(i).getBody());
+
+                        test.deleteMessageFromQueue(queueUrl,messageList.get(i));
+                    }
+                }     while(messageList.size()!=0);
+
+
+
+
+
+                // List<String> lista = test.listQueues().getQueueUrls();
+
+
 
             }catch(NullPointerException e){
                 e.printStackTrace();
 
-            } catch (JSONException e) {
+            }
+            try {
+                Thread.sleep(Integer.valueOf(params[0])*100);
+                //wait(Integer.valueOf(params[0])*100);
+
+
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            return json.toString();
+
+            if (util.getBatteryLevel(MainActivity.this)>=75.0) {
+             //Minuti di attesa 
+              return "5";
+          }
+          else if(util.getBatteryLevel(MainActivity.this)>= 50.0){
+              return  "10";
+          }
+          else {
+              return "30";
+          }
+
+
+
         }
 
 
@@ -219,24 +249,15 @@ public class MainActivity extends AppCompatActivity
         protected void onPostExecute(String result) {
             // execution of result of Long time consuming operation
             Context context= getApplicationContext();
-            List<String> temp= new ArrayList<>();
-            try {
-                JSONObject json = new JSONObject(result);
-                List<String> t = new ArrayList<>();
-                for(int j=0;j<json.length();j++)
-                    temp.add(json.getString(""+j+""));
+           new AsyncPullTask().execute(result);
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
-            t.show();
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                    MainActivity.this,
-                    android.R.layout.simple_list_item_1,
-                    temp
-            );
-            spinn.setAdapter(adapter);
+            return;
+
+
+
+
+
+
         }
 
 

@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.InputType;
@@ -39,7 +40,8 @@ import agostinisalome.it.mobilenode.Utils.Util;
 public class WriteFragment extends Fragment  {
     private Button publish;
     private Button clear;
-    private Button create;
+    //private Button create;
+    private FloatingActionButton create;
     private ListView topics;
     private EditText textMulti;
 
@@ -65,6 +67,7 @@ public class WriteFragment extends Fragment  {
             skey = util.getProperty("secretKey", this.getContext());
             test = new AWSSimpleQueueServiceUtil(akey, skey);
             new AsyncTaskReader().execute();
+
         }catch (IOException e) {
             e.printStackTrace();
         }
@@ -72,19 +75,8 @@ public class WriteFragment extends Fragment  {
 
         topics=(ListView) view.findViewById(R.id.topics);
 
-       // textMulti=(EditText) view.findViewById(R.id.corpse_text);
-        /*publish=(Button) view.findViewById(R.id.send_text);
-        publish.setOnClickListener(getContext());*/
 
-
-      /*  clear=(Button)view.findViewById(R.id.clear_text);
-        clear.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View arg0) {
-                textMulti.setText("");
-            }
-        });*/
-        create=(Button)view.findViewById(R.id.create_topic);
+        create=(FloatingActionButton) view.findViewById(R.id.create_topic);
         create.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
@@ -136,7 +128,7 @@ public class WriteFragment extends Fragment  {
                 alert.setView(input,50,50,50,50);
 
                 final String temp = adapterView.getItemAtPosition(i).toString();
-                alert.setTitle("Scrivi il filtro per il topic "+adapterView.getItemAtPosition(i).toString());
+                alert.setTitle("Write topic "+adapterView.getItemAtPosition(i).toString());
                 alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         //Toast.makeText(getContext(),"OK",Toast.LENGTH_SHORT ).show();
@@ -224,7 +216,7 @@ public class WriteFragment extends Fragment  {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
+//            Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
             try {
 
 
@@ -245,8 +237,8 @@ public class WriteFragment extends Fragment  {
         @Override
         protected void onPreExecute() {
             Context context= getContext();
-            Toast t= Toast.makeText(context,"Inizio esecuzione",Toast.LENGTH_LONG);
-            t.show();
+          //  Toast t= Toast.makeText(context,"Inizio esecuzione",Toast.LENGTH_LONG);
+          //  t.show();
         }
 
 
