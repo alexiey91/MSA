@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -47,7 +48,7 @@ public class WriteFragment extends Fragment  {
     private ListView topics;
     private EditText textMulti;
     private  ProgressDialog p;
-
+    private TextView text;
     public String akey;
     public String skey;
     private AWSSimpleQueueServiceUtil test;
@@ -77,7 +78,7 @@ public class WriteFragment extends Fragment  {
 
         topics=(ListView) view.findViewById(R.id.topics);
 
-
+            text=(TextView)view.findViewById(R.id.textViewWrite) ;
         create=(FloatingActionButton) view.findViewById(R.id.create_topic);
         create.setOnClickListener(new View.OnClickListener() {
 
@@ -203,6 +204,7 @@ public class WriteFragment extends Fragment  {
                         android.R.layout.simple_list_item_1,
                         temp
                 );
+                text.setText("List Of Topics");
                 topics.setAdapter(adapter);
                 p.dismiss();
             }catch(NullPointerException e){

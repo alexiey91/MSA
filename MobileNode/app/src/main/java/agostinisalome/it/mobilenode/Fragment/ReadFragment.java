@@ -153,7 +153,7 @@ public class ReadFragment extends Fragment  {
                 e.printStackTrace();
             }
             try {
-                text.setText("Lista Topic Registrati");
+                text.setText("List of Subscribes Topics");
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         getContext(),
@@ -173,7 +173,7 @@ public class ReadFragment extends Fragment  {
         protected void onPreExecute() {
             Context context= getContext();
             p = new ProgressDialog(context);
-            p.setMessage("Waiting Loading");
+            p.setMessage(Html.fromHtml("<b>Waiting Loading....</b>"));
             p.setIndeterminate(false);
             p.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             p.setCancelable(false);
@@ -257,7 +257,7 @@ public class ReadFragment extends Fragment  {
             }
             // Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
             try {
-                text.setText("Lista Topic Registrati");
+                text.setText("List of Topic messages");
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         getContext(),
@@ -265,7 +265,7 @@ public class ReadFragment extends Fragment  {
                         temp
                 );
                 topics.setAdapter(adapter);
-                text.setText("Lista messaggi del Topic");
+                text.setText("List of Topic messages");
                 p.dismiss();
                 topics.setOnItemClickListener(null);
             }catch(NullPointerException e){

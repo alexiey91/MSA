@@ -3,7 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <TextView
 
+        android:id="@+id/textViewWrite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.04"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
     <ListView
         android:layout_width="match_parent"
@@ -11,37 +19,10 @@
         android:id="@+id/topics"
         android:spinnerMode="dialog"
 
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-    <!-- android:layout_alignParentStart="true"-->
-    <!-- android:layout_alignParentStart="true"-->
-    <!-- <Button
-         android:text="Publish"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignParentBottom="true"
-         android:layout_alignParentStart="true"
-         android:layout_marginStart="103dp"
-         android:layout_marginBottom="50dp"
-         android:id="@+id/send_text" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textViewWrite" />
 
-     <Button
-         android:text="Clear"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignTop="@+id/send_text"
-         android:layout_toEndOf="@+id/send_text"
-         android:layout_marginStart="16dp"
-         android:id="@+id/clear_text" />-->
-    <!--<Button
-        android:id="@+id/create_topic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Topic"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="116dp" />-->
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/create_topic"
@@ -58,9 +39,4 @@
         android:layout_alignParentEnd="true"
         />
 
-    <!-- android:layout_alignParentStart="true"
-        -->
-
-
-    <!-- android:layout_toEndOf="@+id/create_topic"-->
 </RelativeLayout>

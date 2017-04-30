@@ -120,7 +120,7 @@ public List<String> lista = new ArrayList<String>();
                     alert.setView(input, 50, 50, 50, 50);
 
                     final String temp = adapterView.getItemAtPosition(i).toString();
-                    alert.setTitle("Scrivi il filtro per il topic " + adapterView.getItemAtPosition(i).toString());
+                    alert.setTitle("Type the Topic Filter " + adapterView.getItemAtPosition(i).toString());
                     alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int whichButton) {
                             //Toast.makeText(getContext(),"OK",Toast.LENGTH_SHORT ).show();
@@ -225,7 +225,7 @@ public List<String> lista = new ArrayList<String>();
             }
             // Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
             try {
-                text.setText("Lista Topic Registrati");
+                text.setText("List of Subscribes Topics");
 
                 lista =  db.getFilterTableView(temp);
 

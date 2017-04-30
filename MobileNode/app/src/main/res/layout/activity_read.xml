@@ -6,10 +6,13 @@
 
     <TextView
 
+        android:id="@+id/textViewRead"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textViewRead"
-        android:layout_weight="0.04" />
+        android:layout_weight="0.04"
+        android:textAlignment="center"
+        android:textSize="21sp"
+        android:textStyle="bold" />
 
     <ListView
         android:id="@+id/listRead"
