@@ -1,6 +1,7 @@
 package agostinisalome.it.mobilenode.Fragment;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.AsyncTask;
@@ -9,6 +10,7 @@ import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.Html;
 import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,7 +46,7 @@ public class WriteFragment extends Fragment  {
     private FloatingActionButton create;
     private ListView topics;
     private EditText textMulti;
-
+    private  ProgressDialog p;
 
     public String akey;
     public String skey;
@@ -147,28 +149,7 @@ public class WriteFragment extends Fragment  {
         });
         return view;
     }
-   /* @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.send_text:
-                String queueUrl  = topics.getSelectedItem().toString();
-                String text = textMulti.getText().toString();
-                if(!text.isEmpty())
-                    test.sendMessageToQueue(queueUrl, text);
-                else{
-                    Toast t = Toast.makeText(getContext(),"Inserire Messaggio",Toast.LENGTH_SHORT);
-                    t.show();
-                }
-                break;
-            case R.id.clear_text:
-                textMulti.setText("");
-                break;
-            default:
 
-                break;
-        }
-
-    }*/
 
 
     private class AsyncTaskReader extends AsyncTask<String, String, String> {
@@ -216,17 +197,14 @@ public class WriteFragment extends Fragment  {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-//            Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
             try {
-
-
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         getContext(),
                         android.R.layout.simple_list_item_1,
                         temp
                 );
                 topics.setAdapter(adapter);
-
+                p.dismiss();
             }catch(NullPointerException e){
                 e.printStackTrace();
 
@@ -237,8 +215,12 @@ public class WriteFragment extends Fragment  {
         @Override
         protected void onPreExecute() {
             Context context= getContext();
-          //  Toast t= Toast.makeText(context,"Inizio esecuzione",Toast.LENGTH_LONG);
-          //  t.show();
+            p = new ProgressDialog(context);
+            p.setMessage(Html.fromHtml("<b>Waiting Loading....</b>"));
+            p.setIndeterminate(false);
+            p.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+            p.setCancelable(false);
+            p.show();
         }
 
 

@@ -3,11 +3,20 @@ package agostinisalome.it.mobilenode.Fragment;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+
 import android.support.v7.app.AlertDialog;
+import android.text.Html;
+import android.text.InputType;
+import android.text.SpannableString;
+import android.text.style.StyleSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +62,8 @@ public class SetFilterFragment extends Fragment {
     public String skey;
     private AWSSimpleQueueServiceUtil test;
     DBHelper db;
-
+public List<String> lista = new ArrayList<String>();
+  public   ArrayAdapter<String> adapter;
    public SetFilterFragment(){}
 /*
 * Fragment per impostare il filtro sui messaggi ricercati dal topic
@@ -93,11 +103,12 @@ public class SetFilterFragment extends Fragment {
 
         //topics= (ListView) view.findViewById(R.id.listSetFilter);
         topics = (GridView) view.findViewById(R.id.listSetFilter);
+
         topics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> adapterView, View view, final int i, long l) {
 
-                Toast.makeText(getContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT ).show();
+               // Toast.makeText(getContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT ).show();
                 if(i%2==0) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
                     final EditText input = new EditText(getContext());
@@ -118,7 +129,12 @@ public class SetFilterFragment extends Fragment {
                             if(input.getText()!=null){
                                 test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
                                 db.insertNotExistTableFiltered(temp, String.valueOf(input.getText()));
-                            }
+
+                                lista.set(i+1,String.valueOf(input.getText()));
+
+                                adapter.notifyDataSetChanged();
+                                topics.invalidateViews();
+                                }
 
                         }
                     });
@@ -150,6 +166,10 @@ public class SetFilterFragment extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+
+
+
         return view;
     }
 
@@ -207,12 +227,19 @@ public class SetFilterFragment extends Fragment {
             try {
                 text.setText("Lista Topic Registrati");
 
-                ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                lista =  db.getFilterTableView(temp);
+
+
+                lista.add(0,"Topic");
+                lista.add(1,"Filter");
+               adapter = new ArrayAdapter<String>(
                         getContext(),
                         android.R.layout.simple_list_item_1,
-                        db.getFilterTableView(temp)
+                        lista
                 );
+
                 topics.setAdapter(adapter);
+
                 p.dismiss();
             }catch(NullPointerException e){
                 e.printStackTrace();
@@ -227,7 +254,7 @@ public class SetFilterFragment extends Fragment {
         protected void onPreExecute() {
             Context context= getContext();
             p = new ProgressDialog(context);
-            p.setMessage("Waiting Loading");
+            p.setMessage(Html.fromHtml("<b>Waiting Loading....</b>"));
             p.setIndeterminate(false);
             p.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             p.setCancelable(false);
@@ -242,6 +269,7 @@ public class SetFilterFragment extends Fragment {
 
         }
     }
+
 
 
 }

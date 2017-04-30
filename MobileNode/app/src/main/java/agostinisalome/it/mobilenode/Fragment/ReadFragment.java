@@ -6,6 +6,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -38,11 +39,8 @@ import agostinisalome.it.mobilenode.Utils.Util;
  */
 
 public class ReadFragment extends Fragment  {
-    private Button publish;
-    private Button clear;
-    private Button create;
+
     private ListView topics;
-    private EditText textMulti;
     private TextView text;
     private ProgressDialog p;
     public String akey;
@@ -154,7 +152,6 @@ public class ReadFragment extends Fragment  {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-           // Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
             try {
                 text.setText("Lista Topic Registrati");
 
@@ -181,8 +178,7 @@ public class ReadFragment extends Fragment  {
             p.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             p.setCancelable(false);
             p.show();
-           // Toast t= Toast.makeText(context,"Inizio esecuzione",Toast.LENGTH_LONG);
-          //  t.show();
+
         }
 
 
@@ -282,13 +278,12 @@ public class ReadFragment extends Fragment  {
         protected void onPreExecute() {
             Context context= getContext();
             p = new ProgressDialog(context);
-            p.setMessage("Waiting Loading");
+            p.setMessage(Html.fromHtml("<b>Waiting Loading....</b>"));
             p.setIndeterminate(false);
             p.setProgressStyle(ProgressDialog.STYLE_SPINNER);
             p.setCancelable(false);
             p.show();
-            // Toast t= Toast.makeText(context,"Inizio esecuzione",Toast.LENGTH_LONG);
-            //  t.show();
+
         }
 
 

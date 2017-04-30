@@ -39,6 +39,7 @@ import java.util.List;
 
 import agostinisalome.it.mobilenode.Fragment.ReadFragment;
 import agostinisalome.it.mobilenode.Fragment.SetFilterFragment;
+import agostinisalome.it.mobilenode.Fragment.SettingsFragment;
 import agostinisalome.it.mobilenode.Fragment.WriteFragment;
 import agostinisalome.it.mobilenode.Utils.AWSSimpleQueueServiceUtil;
 import agostinisalome.it.mobilenode.Utils.DBHelper;
@@ -47,7 +48,6 @@ import agostinisalome.it.mobilenode.Utils.Util;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private long initial_X_coord=0;
     Util util = new Util();
     AWSSimpleQueueServiceUtil test;
     private Button button;
@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-
+//Permette la connessione ad Internet con il Main Thread
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
                     .permitAll().build();
@@ -93,97 +93,26 @@ public class MainActivity extends AppCompatActivity
             test = new AWSSimpleQueueServiceUtil(akey, skey);
             db = new DBHelper(getApplicationContext());
             
-
+//Esempi di funzioni di Get e Post Http verso il server
             String unique_id= Settings.Secure.getString(getApplicationContext().getContentResolver(),Settings.Secure.ANDROID_ID);
             Log.e("UserID",unique_id);
+            String get= util.GET("http://hmkcode.com/examples/index.php");
+            Log.e("GET Response",get);
 
+            String post = util.POST("http://hmkcode.appspot.com/jsonservlet",Util.publish(unique_id,"Server","ciao"));
+            Log.e("POST",post);
+
+//AsyncTask per la gestione di tutti i thread
            new AsyncPullTask().execute("0");
 
         }catch (IOException e) {
             e.printStackTrace();
         }
-        //new PostTask().execute();
-
-
-        //new AsyncTaskRunner().execute();
-
-        /*expListView = (ExpandableListView) findViewById(R.id.topicListView);
-
-        // preparing list data
-        prepareListData();
-
-        listAdapter = new ExpandableListAdapter(this, listDataHeader, listDataChild);
-
-        // setting list adapter
-        expListView.setAdapter(listAdapter);*/
-
-
-
-        //spinn=(ListView) findViewById(R.id.topicListView);
-       /* try {
-            String queueUrl = test.getQueueUrl("Server");
-
-            List<String> lista = test.listQueues().getQueueUrls();
-            List<String> filtered = new ArrayList<String>();
-            for(int i=0;i<lista.size();i++)
-                filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/")+1,lista.get(i).length()));
-
-            ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                    this,
-                    android.R.layout.simple_list_item_1,
-                    filtered
-            );
-            spinn.setAdapter(adapter);
-
-        }catch(NullPointerException e){
-            e.printStackTrace();
-
-        }*/
-
-        /*button =(Button) findViewById(R.id.btnconnect);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //test.createQueue("Server");
-             /*   String queueUrl  = test.getQueueUrl("Server");
-                // test.sendMessageToQueue(queueUrl,"Stefano Riccone Abbruzzese");
-                List<Message>messageList = new ArrayList();
-                //messageList=test.getMessagesFromQueue(queueUrl);
-                List<String> temp = new ArrayList<>();
-                do {
-                    messageList = test.getMessagesFromQueue(queueUrl);
-                    for (int i = 0; i < messageList.size(); i++) {
-                        temp.add(messageList.get(i).getBody());
-                        test.deleteMessageFromQueue(queueUrl,messageList.get(i));
-                        Log.e("Message from Server", messageList.get(i).getMessageId() + "dimensione:" + i);
-                    }
-                }     while(messageList.size()!=0);
-
-                if(temp.isEmpty()) Log.e("TEMP ","VUoto");
-                for(int i =0 ; i< temp.size();i++){
-                    Log.v("TEMP:",temp.get(i));}
-                List<String> lista = new ArrayList<String>();
-                lista=Util.parsingJsonObject(temp,"topic");
-                // recupero la lista dal layout
-                mylist = (ListView) findViewById(R.id.listView);
-                // creo e istruisco l'adattatore
-                final ArrayAdapter <String> adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, lista);
-                // inietto i dati
-                mylist.setAdapter(adapter);
-
-
-            }
-
-        });*/
 
 
     }
 
     private class AsyncPullTask extends AsyncTask<String, String, String> {
-
-        private String resp;
-
-
 
 
         @Override
@@ -194,26 +123,20 @@ public class MainActivity extends AppCompatActivity
 
                 List<Message>messageList = new ArrayList();
 
-                List<String> temp = new ArrayList<>();
                 do {
                     messageList = test.getMessagesFromQueue(queueUrl);
 
                     for (int i = 0; i < messageList.size(); i++) {
-                        //    temp.add(messageList.get(i).getBody());
+
 
                         Date data = new Date();
                         db.insertTableFiltered(data,"Server",messageList.get(i).getBody());
 
                         test.deleteMessageFromQueue(queueUrl,messageList.get(i));
+
+
                     }
                 }     while(messageList.size()!=0);
-
-
-
-
-
-                // List<String> lista = test.listQueues().getQueueUrls();
-
 
 
             }catch(NullPointerException e){
@@ -252,11 +175,6 @@ public class MainActivity extends AppCompatActivity
            new AsyncPullTask().execute(result);
 
             return;
-
-
-
-
-
 
         }
 
@@ -314,7 +232,7 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Fragment fragment = null;
-
+//elenco dei Fragment allegati al Menù laterale
         if (id == R.id.nav_camera) {
             // Handle the camera action
             fragment= new WriteFragment();
@@ -326,7 +244,7 @@ public class MainActivity extends AppCompatActivity
             fragment = new SetFilterFragment();
 
         } else if (id == R.id.nav_manage) {
-         //   fragment=new GetFilteredMessage;
+            fragment= new SettingsFragment();
 
         } else if (id == R.id.nav_share) {
 
