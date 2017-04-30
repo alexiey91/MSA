@@ -14,11 +14,24 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <ListView
+   <!-- <ListView
         android:id="@+id/listSetFilter"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textSetFilter"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp" />-->
+    <GridView
+        android:id="@+id/listSetFilter"
+        android:numColumns="2"
+        android:gravity="center"
+        android:columnWidth="50dp"
+        android:stretchMode="columnWidth"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textSetFilter"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="19dp" />
+
+
 </RelativeLayout>

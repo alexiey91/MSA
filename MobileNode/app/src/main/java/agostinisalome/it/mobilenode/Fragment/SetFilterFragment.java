@@ -16,6 +16,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -43,7 +44,8 @@ public class SetFilterFragment extends Fragment {
     private Button publish;
     private Button clear;
     private Button create;
-    private ListView topics;
+    //private ListView topics;
+    private GridView topics;
     private EditText textMulti;
     private TextView text;
     private ProgressDialog p;
@@ -73,58 +75,73 @@ public class SetFilterFragment extends Fragment {
             akey = util.getProperty("accessKey", this.getContext());
             skey = util.getProperty("secretKey", this.getContext());
             test = new AWSSimpleQueueServiceUtil(akey, skey);
-          text=(TextView) view.findViewById(R.id.textSetFilter);
+            text=(TextView) view.findViewById(R.id.textSetFilter);
 
             new AsyncTaskReader().execute();
 
         }catch (IOException e) {
             e.printStackTrace();
         }
+        try {
+            List<String> prov=db.getAllTopicFilter();
+            for(int k=0;k<prov.size();k++)
+                Log.e("LISTAFilter","Lista["+k+"]:"+prov.get(k));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
         /* setting listener */
 
-        topics= (ListView) view.findViewById(R.id.listSetFilter);
-
+        //topics= (ListView) view.findViewById(R.id.listSetFilter);
+        topics = (GridView) view.findViewById(R.id.listSetFilter);
         topics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(final AdapterView<?> adapterView, View view, final int i, long l) {
 
                 Toast.makeText(getContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT ).show();
-                AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
-                final EditText input = new EditText(getContext());
-                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
-                        LinearLayout.LayoutParams.WRAP_CONTENT,
-                        LinearLayout.LayoutParams.WRAP_CONTENT);
+                if(i%2==0) {
+                    AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
+                    final EditText input = new EditText(getContext());
+                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+                            LinearLayout.LayoutParams.WRAP_CONTENT,
+                            LinearLayout.LayoutParams.WRAP_CONTENT);
 
-                input.setLayoutParams(lp);
-                alert.setView(input,50,50,50,50);
+                    input.setLayoutParams(lp);
+                    alert.setView(input, 50, 50, 50, 50);
 
-                final String temp = adapterView.getItemAtPosition(i).toString();
-                alert.setTitle("Scrivi il filtro per il topic "+adapterView.getItemAtPosition(i).toString());
-                alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        //Toast.makeText(getContext(),"OK",Toast.LENGTH_SHORT ).show();
-                        String queueUrl  = test.getQueueUrl(temp);
-                         test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
-                    }
-                });
+                    final String temp = adapterView.getItemAtPosition(i).toString();
+                    alert.setTitle("Scrivi il filtro per il topic " + adapterView.getItemAtPosition(i).toString());
+                    alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int whichButton) {
+                            //Toast.makeText(getContext(),"OK",Toast.LENGTH_SHORT ).show();
 
-                alert.setNegativeButton("Cancel",
-                        new DialogInterface.OnClickListener() {
-                            public void onClick(DialogInterface dialog, int whichButton) {
-                             //   Toast.makeText(getContext(),"Cancel",Toast.LENGTH_SHORT ).show();
+                            String queueUrl = test.getQueueUrl(temp);
+                            if(input.getText()!=null){
+                                test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
+                                db.insertNotExistTableFiltered(temp, String.valueOf(input.getText()));
                             }
-                        });
-                alert.show();            }
+
+                        }
+                    });
+
+                    alert.setNegativeButton("Cancel",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int whichButton) {
+                                    //   Toast.makeText(getContext(),"Cancel",Toast.LENGTH_SHORT ).show();
+                                }
+                            });
+                    alert.show();
+                }
+            }
         });
 
-        try {
+      /*  try {
             List<String> prov= new ArrayList<>();
             prov= db.getAllTopic();
             for(int k=0;k<prov.size();k++)
                 Log.e("LISTA","Lista["+k+"]:"+prov.get(k));
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
         try {
             List<String> prov= new ArrayList<>();
             prov= db.getAllFilteredMessage();
@@ -182,6 +199,7 @@ public class SetFilterFragment extends Fragment {
                     db.insertNotExistTableTopic(temp.get(j), new Date());
                 }
 
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -192,13 +210,15 @@ public class SetFilterFragment extends Fragment {
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         getContext(),
                         android.R.layout.simple_list_item_1,
-                        temp
+                        db.getFilterTableView(temp)
                 );
                 topics.setAdapter(adapter);
                 p.dismiss();
             }catch(NullPointerException e){
                 e.printStackTrace();
 
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
         }
 

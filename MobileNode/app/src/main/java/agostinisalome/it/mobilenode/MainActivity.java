@@ -53,9 +53,9 @@ public class MainActivity extends AppCompatActivity
     private Button button;
     private ListView spinn;
     private ListView mylist;
-        public String akey;
+    public String akey;
     public String skey;
-      public String UserId;
+    public String UserId;
     DBHelper db;
 
 

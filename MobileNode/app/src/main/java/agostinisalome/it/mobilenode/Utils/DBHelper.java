@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by alessandro on 19/04/2017.
@@ -35,6 +37,10 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String TOPIC_COLUMN_NAME = "name";
     public static final String TOPIC_COLUMN_CHECKPOINT = "checkpoint";
 
+    public static final String FILTER_TABLE_NAME = "TopicFiltered";
+    public static final String FILTER_COLUMN_ID = "id";
+    public static final String FILTER_COLUMN_NAME = "topic";
+    public static final String FILTER_COLUMN_FILTER = "filter";
 
 
     private HashMap hp;
@@ -55,6 +61,10 @@ public class DBHelper extends SQLiteOpenHelper {
                 "create table " + TOPIC_TABLE_NAME + " " +
                         "(" + TOPIC_COLUMN_ID + " integer primary key," + TOPIC_COLUMN_NAME + " text," + TOPIC_COLUMN_CHECKPOINT + " date)"
         );
+        db.execSQL(
+                "create table " + FILTER_TABLE_NAME + " " +
+                        "(" + FILTER_COLUMN_ID + " integer primary key," + FILTER_COLUMN_NAME + " text," + FILTER_COLUMN_FILTER + " text)"
+        );
 
     }
 
@@ -63,6 +73,7 @@ public class DBHelper extends SQLiteOpenHelper {
         // TODO Auto-generated method stub
         db.execSQL("DROP TABLE IF EXISTS Filtered");
         db.execSQL("DROP TABLE IF EXISTS Topic");
+        db.execSQL("DROP TABLE IF EXISTS TopicFiltered");
         onCreate(db);
     }
 
@@ -89,6 +100,19 @@ public class DBHelper extends SQLiteOpenHelper {
         db.insert("Topic", null, contentValues);
         return true;
     }
+
+    public boolean insertFilterTopic ( String name, String filter) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("topic", name);
+        contentValues.put("filter", filter);
+
+
+        db.insert(FILTER_TABLE_NAME, null, contentValues);
+        return true;
+    }
+
     public boolean insertNotExistTableTopic ( String name, Date checkpoint) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -107,6 +131,24 @@ public class DBHelper extends SQLiteOpenHelper {
         return true;
     }
 
+    public boolean insertNotExistTableFiltered ( String name, String filter) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+
+        contentValues.put("topic", name);
+        contentValues.put("filter", filter);
+        Cursor c= getDataTopicFiltered(name);
+        if( (!c.moveToFirst()) || c.getCount() == 0 ) {
+            Log.e("null",name);
+            db.insert(FILTER_TABLE_NAME, null, contentValues);
+        }
+        else {
+            Log.e("idFilterTopic",getIDTopicFiltered(name).toString());
+            updateTableTopicFilter(getIDTopicFiltered(name), name, filter);
+        }
+        return true;
+    }
+
     public Cursor getData(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor res =  db.rawQuery( "select * from Filtered where id = '"+id+"'", null );
@@ -118,6 +160,11 @@ public class DBHelper extends SQLiteOpenHelper {
         Cursor res =  db.rawQuery( "select id from Topic where name = '"+name+"'", null );
         return res;
     }
+    public Cursor getDataTopicFiltered(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select id from "+FILTER_TABLE_NAME+" where topic = '"+name+"'", null );
+        return res;
+    }
 
     public Integer getIDTopic(String name) {
         SQLiteDatabase db = this.getReadableDatabase();
@@ -127,6 +174,13 @@ public class DBHelper extends SQLiteOpenHelper {
         return res.getInt(res.getColumnIndex(TOPIC_COLUMN_ID));
    }
 
+   public Integer getIDTopicFiltered(String name) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select id from "+FILTER_TABLE_NAME+" where "+ FILTER_COLUMN_NAME+" = '"+name+"'", null );
+        res.moveToFirst();
+        Log.e("getIDTopicFilter",""+res.getInt(res.getColumnIndex(FILTER_COLUMN_ID)));
+        return res.getInt(res.getColumnIndex(FILTER_COLUMN_ID));
+    }
     public int numberOfRows(){
         SQLiteDatabase db = this.getReadableDatabase();
         int numRows = (int) DatabaseUtils.queryNumEntries(db, MESSAGE_TABLE_NAME);
@@ -152,6 +206,17 @@ public class DBHelper extends SQLiteOpenHelper {
 
 
         db.update("Topic", contentValues, "id = ? ", new String[] { Integer.toString(id) } );
+        return true;
+    }
+
+    public boolean updateTableTopicFilter (Integer id,String name, String filter) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("filter", filter);
+        contentValues.put("topic", name);
+
+
+        db.update(FILTER_TABLE_NAME, contentValues, "id = ? ", new String[] { Integer.toString(id) } );
         return true;
     }
 
@@ -222,13 +287,50 @@ public class DBHelper extends SQLiteOpenHelper {
             res.moveToNext();
         }
 
+        return array_list;
+    }
 
+    public ArrayList<String> getAllTopicFilter() throws JSONException {
+        ArrayList<String> array_list = new ArrayList<String>();
 
+        //hp = new HashMap();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res =  db.rawQuery( "select * from "+FILTER_TABLE_NAME+"", null );
+        res.moveToFirst();
 
+        while(res.isAfterLast() == false){
+
+            JSONObject json = new JSONObject();
+
+            json.put(FILTER_COLUMN_NAME,res.getString(res.getColumnIndex(FILTER_COLUMN_NAME)));
+            json.put(FILTER_COLUMN_FILTER,res.getString(res.getColumnIndex(FILTER_COLUMN_FILTER)));
+            array_list.add(json.toString());
+            res.moveToNext();
+        }
 
         return array_list;
     }
 
+    public ArrayList<String> getFilterTableView(List<String> topics) throws JSONException {
+        ArrayList<String> temp= new ArrayList<>();
+        ArrayList<String> filtered= null;
+        JSONArray jsonArray;
+
+        try {
+            filtered = getAllTopicFilter();
+            jsonArray= new JSONArray(filtered);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        for(int i =0; i< topics.size(); i++){
+            temp.add(topics.get(i));
+            temp.add(Util.getTopicOccurrency(topics.get(i),filtered));
+        }
+
+
+        return temp;
+    }
 
 
 }
