@@ -7,6 +7,7 @@ import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -61,7 +62,11 @@ public class SetFilterFragment extends Fragment {
     public String akey;
     public String skey;
     private AWSSimpleQueueServiceUtil test;
+    private String unique_id ;
+
+
     DBHelper db;
+
 public List<String> lista = new ArrayList<String>();
   public   ArrayAdapter<String> adapter;
    public SetFilterFragment(){}
@@ -86,6 +91,7 @@ public List<String> lista = new ArrayList<String>();
             skey = util.getProperty("secretKey", this.getContext());
             test = new AWSSimpleQueueServiceUtil(akey, skey);
             text=(TextView) view.findViewById(R.id.textSetFilter);
+            unique_id= Settings.Secure.getString(getContext().getContentResolver(),Settings.Secure.ANDROID_ID);
 
             new AsyncTaskReader().execute();
 
@@ -109,7 +115,7 @@ public List<String> lista = new ArrayList<String>();
             public void onItemClick(final AdapterView<?> adapterView, View view, final int i, long l) {
 
                // Toast.makeText(getContext(),adapterView.getItemAtPosition(i).toString(),Toast.LENGTH_SHORT ).show();
-                if(i%2==0) {
+                if(i%2==0 && i>=2) {
                     AlertDialog.Builder alert = new AlertDialog.Builder(getContext());
                     final EditText input = new EditText(getContext());
                     LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
@@ -125,9 +131,11 @@ public List<String> lista = new ArrayList<String>();
                         public void onClick(DialogInterface dialog, int whichButton) {
                             //Toast.makeText(getContext(),"OK",Toast.LENGTH_SHORT ).show();
 
-                            String queueUrl = test.getQueueUrl(temp);
+                         //   String queueUrl = test.getQueueUrl(temp);
                             if(input.getText()!=null){
-                                test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
+                                //test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
+
+                                test.sendMessageToQueue("subscriptionQueue",Util.subUnsub("SUB",unique_id,temp,String.valueOf(input.getText())).toString());
                                 db.insertNotExistTableFiltered(temp, String.valueOf(input.getText()));
 
                                 lista.set(i+1,String.valueOf(input.getText()));
@@ -188,10 +196,12 @@ public List<String> lista = new ArrayList<String>();
             try {
 
 
-                List<String> lista = test.listQueues().getQueueUrls();
+                //List<String> lista = test.listQueues().getQueueUrls();
+                filtered= Util.getTopicList();
 
-                for(int i=0;i<lista.size();i++) {
-                    filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
+
+                for(int i=0;i<filtered.size();i++) {
+                    //filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
                     json.put(""+i+"", filtered.get(i));
                 }
 

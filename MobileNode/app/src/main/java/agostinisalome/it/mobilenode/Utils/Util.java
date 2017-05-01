@@ -19,6 +19,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -224,6 +225,19 @@ public class Util {
             return true;
         else
             return false;
+    }
+    public static ArrayList<String> getTopicList() throws JSONException {
+
+        ArrayList<String> temp = new ArrayList<>();
+        JSONArray jsonArr = new JSONArray(Util.GET("http://ec2-52-58-118-102.eu-central-1.compute.amazonaws.com:8080/pubSub/allTopics"));
+        JSONObject tempJson;
+        for (int k = 0; k < jsonArr.length(); k++) {
+
+            tempJson = new JSONObject(jsonArr.getString(k));
+            temp.add(tempJson.getString("topicName"));
+            Log.e("Topic", tempJson.getString("topicName"));
+        }
+        return temp;
     }
 
 

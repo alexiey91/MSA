@@ -29,6 +29,7 @@ import android.widget.Toast;
 
 import com.amazonaws.services.sqs.model.Message;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity
     private ListView mylist;
     public String akey;
     public String skey;
-    public String UserId;
+
+    private String unique_id;
     DBHelper db;
 
 
@@ -92,15 +94,11 @@ public class MainActivity extends AppCompatActivity
             skey = util.getProperty("secretKey", this.getApplicationContext());
             test = new AWSSimpleQueueServiceUtil(akey, skey);
             db = new DBHelper(getApplicationContext());
-            
-//Esempi di funzioni di Get e Post Http verso il server
-            String unique_id= Settings.Secure.getString(getApplicationContext().getContentResolver(),Settings.Secure.ANDROID_ID);
-            Log.e("UserID",unique_id);
-            String get= util.GET("http://hmkcode.com/examples/index.php");
-            Log.e("GET Response",get);
 
-            String post = util.POST("http://hmkcode.appspot.com/jsonservlet",Util.publish(unique_id,"Server","ciao"));
-            Log.e("POST",post);
+//Esempi di funzioni di Get e Post Http verso il server
+            unique_id= Settings.Secure.getString(getApplicationContext().getContentResolver(),Settings.Secure.ANDROID_ID);
+            test.createQueue(unique_id);
+            Log.e("UserID",unique_id);
 
 //AsyncTask per la gestione di tutti i thread
            new AsyncPullTask().execute("0");
@@ -119,32 +117,37 @@ public class MainActivity extends AppCompatActivity
         protected String doInBackground(String... params) {
 
             try {
-                String queueUrl = test.getQueueUrl("Server");
 
-                List<Message>messageList = new ArrayList();
+
+                //String queueUrl = test.getQueueUrl("Server");
+                String queueUrl = test.getQueueUrl(unique_id);
+                List<Message> messageList = new ArrayList();
 
                 do {
                     messageList = test.getMessagesFromQueue(queueUrl);
-
+                    JSONObject jsonObject;
                     for (int i = 0; i < messageList.size(); i++) {
 
-
+                        jsonObject = new JSONObject(messageList.get(i).getBody());
                         Date data = new Date();
-                        db.insertTableFiltered(data,"Server",messageList.get(i).getBody());
-
-                        test.deleteMessageFromQueue(queueUrl,messageList.get(i));
+                        Log.e("JSON PULL",jsonObject.toString());
+                       // db.insertTableFiltered(data, "Server", messageList.get(i).getBody());
+                        db.insertTableFiltered(data, jsonObject.getString("topicName"),jsonObject.getString("messageBody") );
+                        test.deleteMessageFromQueue(queueUrl, messageList.get(i));
 
 
                     }
-                }     while(messageList.size()!=0);
+                } while (messageList.size() != 0);
 
 
             }catch(NullPointerException e){
                 e.printStackTrace();
 
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
             try {
-                Thread.sleep(Integer.valueOf(params[0])*100);
+                Thread.sleep(Integer.valueOf(params[0])*1000);
                 //wait(Integer.valueOf(params[0])*100);
 
 

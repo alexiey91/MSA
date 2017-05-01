@@ -84,7 +84,7 @@ public class ReadFragment extends Fragment  {
             }
         });
 
-        try {
+        /*try {
             List<String> prov= new ArrayList<>();
             prov= db.getAllTopic();
             for(int k=0;k<prov.size();k++)
@@ -99,7 +99,7 @@ public class ReadFragment extends Fragment  {
                 Log.e("MSG","MSG["+k+"]:"+prov.get(k));
         } catch (JSONException e) {
             e.printStackTrace();
-        }
+        }*/
         return view;
     }
 
@@ -112,17 +112,19 @@ public class ReadFragment extends Fragment  {
         @Override
         protected String doInBackground(String... params) {
 
-            List<String> filtered = new ArrayList<String>();
+//            List<String> filtered = new ArrayList<String>();
             JSONObject json = new JSONObject();
-
+            JSONObject temp;
             try {
 
 
-                List<String> lista = test.listQueues().getQueueUrls();
+                //List<String> lista = test.listQueues().getQueueUrls();
+                List<String> lista = db.getAllTopicFilter();
 
                 for(int i=0;i<lista.size();i++) {
-                    filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
-                    json.put(""+i+"", filtered.get(i));
+                    temp = new JSONObject(lista.get(i));
+                  //  filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
+                    json.put(""+i+"", temp.getString("topic"));
                 }
 
             }catch(NullPointerException e){
@@ -194,34 +196,18 @@ public class ReadFragment extends Fragment  {
         @Override
         protected String doInBackground(String... params) {
 
-           // List<String> filtered = new ArrayList<String>();
-           /* JSONObject json = new JSONObject();
-
+            JSONObject json = new JSONObject();
             try {
-                String queueUrl = test.getQueueUrl(params[0]);
-
-                List<Message>messageList = new ArrayList();
-
-                List<String> temp = new ArrayList<>();
-                do {
-                    messageList = test.getMessagesFromQueue(queueUrl);
-                    for (int i = 0; i < messageList.size(); i++) {
-                        temp.add(messageList.get(i).getBody());
-                        db.insertTableFiltered(new Date(),params[0],messageList.get(i).getBody());
-                        test.deleteMessageFromQueue(queueUrl,messageList.get(i));
-                     //   Log.e("Message from Server", messageList.get(i).getMessageId() + "dimensione:" + i);
-                    }
-                }     while(messageList.size()!=0);
 
 
-
-               
-
-               // List<String> lista = test.listQueues().getQueueUrls();
-
-                for(int i=0;i<temp.size();i++) {
-                  //  filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
-                    json.put(""+i+"", temp.get(i));
+                //List<String> lista = test.listQueues().getQueueUrls();
+                List<String> lista = db.getFilteredMessageByTopicName(params[0]);
+                Log.e("LISTA back",lista.toString());
+                for(int i=0;i<lista.size();i++) {
+                    JSONObject temp = new JSONObject(lista.get(i));
+                    Log.e("temp","temp"+temp.getString("CONTENT"));
+                    //  filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
+                    json.put(""+i+"", temp.getString("CONTENT"));
                 }
 
             }catch(NullPointerException e){
@@ -230,8 +216,8 @@ public class ReadFragment extends Fragment  {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            //return json.toString();*/
-            return params[0];
+            return json.toString();
+
         }
 
 
@@ -241,23 +227,16 @@ public class ReadFragment extends Fragment  {
             Context context= getContext();
             List<String> temp= new ArrayList<>();
             try {
-               /* JSONObject json = new JSONObject(result);
-                List<String> t = new ArrayList<>();
+                JSONObject json = new JSONObject(result);
+                Log.e("RESULT",result);
                 for(int j=0;j<json.length();j++) {
-                    temp.add(json.getString("" + j + ""));
-
-                }*/
-                //if(temp.isEmpty()){
-                    Log.e("tempEmpty","asdga");
-                    temp=db.getFilteredMessageByTopicName(result);
-                //}
+                    temp.add(json.getString(""+j+""));
+                }
 
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            // Toast t= Toast.makeText(context,"Finita esecuzione",Toast.LENGTH_LONG);
             try {
-                text.setText("List of Topic messages");
 
                 ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                         getContext(),
@@ -265,12 +244,15 @@ public class ReadFragment extends Fragment  {
                         temp
                 );
                 topics.setAdapter(adapter);
-                text.setText("List of Topic messages");
-                p.dismiss();
+                text.setText("List of selected Topic messages");
+
                 topics.setOnItemClickListener(null);
+                p.dismiss();
             }catch(NullPointerException e){
                 e.printStackTrace();
+
             }
+
         }
 
 

@@ -7,11 +7,13 @@ import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
 import android.text.Html;
 import android.text.InputType;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,6 +27,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,6 +55,8 @@ public class WriteFragment extends Fragment  {
     public String akey;
     public String skey;
     private AWSSimpleQueueServiceUtil test;
+    private String unique_id ;
+
     public WriteFragment(){}
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -69,6 +74,7 @@ public class WriteFragment extends Fragment  {
             akey = util.getProperty("accessKey", this.getContext());
             skey = util.getProperty("secretKey", this.getContext());
             test = new AWSSimpleQueueServiceUtil(akey, skey);
+            unique_id= Settings.Secure.getString(getContext().getContentResolver(),Settings.Secure.ANDROID_ID);
             new AsyncTaskReader().execute();
 
         }catch (IOException e) {
@@ -76,11 +82,11 @@ public class WriteFragment extends Fragment  {
         }
         /* setting listener */
 
-        topics=(ListView) view.findViewById(R.id.topics);
+            topics=(ListView) view.findViewById(R.id.topics);
 
             text=(TextView)view.findViewById(R.id.textViewWrite) ;
-        create=(FloatingActionButton) view.findViewById(R.id.create_topic);
-        create.setOnClickListener(new View.OnClickListener() {
+            create=(FloatingActionButton) view.findViewById(R.id.create_topic);
+            create.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View arg0) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
@@ -100,7 +106,8 @@ public class WriteFragment extends Fragment  {
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        test.createQueue(input.getText().toString());
+                        //test.createQueue(input.getText().toString());
+                        test.sendMessageToQueue("creationQueue",Util.createDelete("CREATE",unique_id,input.getText().toString()).toString());
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -135,8 +142,9 @@ public class WriteFragment extends Fragment  {
                 alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int whichButton) {
                         //Toast.makeText(getContext(),"OK",Toast.LENGTH_SHORT ).show();
-                        String queueUrl  = test.getQueueUrl(temp);
-                        test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
+                        //String queueUrl  = test.getQueueUrl(temp);
+                        test.sendMessageToQueue("notificationQueue", Util.publish(unique_id,temp,String.valueOf(input.getText())).toString());
+                        //test.sendMessageToQueue(queueUrl, String.valueOf(input.getText()));
                     }
                 });
 
@@ -165,12 +173,12 @@ public class WriteFragment extends Fragment  {
             JSONObject json = new JSONObject();
 
             try {
-                String queueUrl = test.getQueueUrl("Server");
 
-                List<String> lista = test.listQueues().getQueueUrls();
+               // List<String> lista = test.listQueues().getQueueUrls();
+                filtered= Util.getTopicList();
+                for(int i=0;i<filtered.size();i++) {
+                    //filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
 
-                for(int i=0;i<lista.size();i++) {
-                    filtered.add(lista.get(i).substring(lista.get(i).lastIndexOf("/") + 1, lista.get(i).length()));
                     json.put(""+i+"", filtered.get(i));
                 }
 
