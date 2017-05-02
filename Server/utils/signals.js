@@ -14,6 +14,6 @@ exports.handle_signal = function handle_signal(lc, on_sig, then_sig) {
             element.kill(then_sig);
         }, this);
 
-        process.exit();
+        process.kill(process.pid, then_sig);
     });
 }
