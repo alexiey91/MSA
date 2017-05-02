@@ -229,7 +229,7 @@ public class Util {
     public static ArrayList<String> getTopicList() throws JSONException {
 
         ArrayList<String> temp = new ArrayList<>();
-        JSONArray jsonArr = new JSONArray(Util.GET("http://ec2-52-58-118-102.eu-central-1.compute.amazonaws.com:8080/pubSub/allTopics"));
+        JSONArray jsonArr = new JSONArray(Util.GET("http://ec2-52-215-33-107.eu-west-1.compute.amazonaws.com:8080/pubSub/allTopics"));
         JSONObject tempJson;
         for (int k = 0; k < jsonArr.length(); k++) {
 

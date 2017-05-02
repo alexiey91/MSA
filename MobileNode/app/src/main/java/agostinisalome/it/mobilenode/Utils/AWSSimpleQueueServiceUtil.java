@@ -59,7 +59,7 @@ public class AWSSimpleQueueServiceUtil {
              *
              * Overrides the default endpoint for this client ("sqs.us-east-1.amazonaws.com")
              */
-            this.sqs.setEndpoint("https://sqs.eu-central-1.amazonaws.com");
+            this.sqs.setEndpoint("https://sqs.eu-west-1.amazonaws.com");
             /**
              You can use this in your web app where    AwsCredentials.properties is stored in web-inf/classes
              */

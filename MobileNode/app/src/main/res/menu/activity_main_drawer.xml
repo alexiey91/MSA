@@ -8,12 +8,13 @@
             android:title="Publish Topic" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@android:drawable/ic_input_get"
-            android:title="Read Topic" />
+            android:icon="@android:drawable/sym_action_email"
+
+            android:title="Topic Notification" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@android:drawable/sym_action_email"
-            android:title="Write Filtered Message"
+            android:icon="@android:drawable/ic_input_get"
+            android:title="Filtered Subscription"
             />
         <item
             android:id="@+id/nav_manage"
@@ -21,7 +22,7 @@
             android:title="Settings" />
     </group>
 
-    <item android:title="Communicate">
+    <!--<item android:title="Communicate">
         <menu>
             <item
                 android:id="@+id/nav_share"
@@ -32,6 +33,6 @@
                 android:icon="@drawable/ic_menu_send"
                 android:title="Send" />
         </menu>
-    </item>
+    </item>-->
 
 </menu>

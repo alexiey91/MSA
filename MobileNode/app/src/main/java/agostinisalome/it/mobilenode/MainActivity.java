@@ -249,12 +249,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_manage) {
             fragment= new SettingsFragment();
 
-        } else if (id == R.id.nav_share) {
+        } /*else if (id == R.id.nav_share) {
 
         } else if (id == R.id.nav_send) {
 
         }
-
+*/
         if(fragment!=null){
             FragmentManager fm=getSupportFragmentManager();
             fm.beginTransaction().replace(R.id.content_frame,fragment).commit();
