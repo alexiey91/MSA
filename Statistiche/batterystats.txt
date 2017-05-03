@@ -1,0 +1,685 @@
+Battery History (0% used, 240 used of 256KB, 4 strings using 176):
+                    0 (9) RESET:TIME: 2017-05-03-11-40-17
+                    0 (2) 099 status=discharging health=good plug=none temp=333 volt=4275 +running +wifi_multicast phone_signal_strength=moderate +wifi_running +wifi wifi_signal_strength=3 wifi_suppl=completed top=u0a17:"com.cyanogenmod.trebuchet"
+                    0 (2) 099 user=0:"0"
+                    0 (4) 099 +wake_lock=-1:"screen" +screen brightness=bright userfg=0:"0"
+             +3s908ms (1) 099 wifi_signal_strength=4
+             +5s058ms (2) 099 phone_signal_strength=good
+             +6s757ms (2) 099 -top=u0a17:"com.cyanogenmod.trebuchet"
+             +6s757ms (2) 099 wifi_signal_strength=3 +top=u0a114:"agostinisalome.it.mobilenode"
+            +24s985ms (1) 099 wifi_signal_strength=4
+            +28s002ms (1) 099 wifi_signal_strength=3
+          +1m38s766ms (2) 099 brightness=dark
+          +1m41s979ms (2) 099 brightness=bright
+          +1m43s030ms (2) 099 brightness=dark
+          +1m45s846ms (2) 099 brightness=bright
+          +2m13s586ms (1) 099 wifi_signal_strength=4
+          +2m22s659ms (1) 099 wifi_signal_strength=3
+          +2m24s017ms (2) 097 temp=347 volt=3959
+          +2m37s737ms (1) 097 wifi_signal_strength=4
+          +2m40s760ms (1) 097 wifi_signal_strength=3
+          +2m43s242ms (2) 097 phone_signal_strength=great
+          +2m43s775ms (3) 097 status=charging plug=usb temp=353 volt=3988 +plugged wifi_signal_strength=4
+          +2m46s850ms (1) 097 wifi_signal_strength=3
+          +2m50s302ms (2) 097 phone_signal_strength=good
+          +3m02s798ms (2) 097 volt=4225
+
+Per-PID Stats:
+  PID 0 wake time: +5s676ms
+  PID 2302 wake time: +5s557ms
+  PID 2961 wake time: +359ms
+  PID 0 wake time: +50s928ms
+  PID 2943 wake time: +134ms
+  PID 2302 wake time: +68ms
+  PID 3095 wake time: +9ms
+  PID 7196 wake time: +62ms
+  PID 7980 wake time: +75ms
+
+Statistics since last charge:
+  System starts: 0, currently on battery: false
+  Time on battery: 2m 43s 775ms (73,1%) realtime, 2m 43s 775ms (73,1%) uptime
+  Time on battery screen off: 188ms (0,1%) realtime, 188ms (0,1%) uptime
+  Total run time: 3m 43s 913ms realtime, 3m 43s 913ms uptime
+  Start clock time: 2017-05-03-11-40-17
+  Screen on: 2m 43s 587ms (99,9%) 1x, Interactive: 2m 43s 588ms (99,9%)
+  Screen brightnesses:
+    dark 6s 101ms (3,7%)
+    bright 2m 37s 486ms (96,3%)
+  Total full wakelock time: 56s 98ms
+  Mobile total received: 0B, sent: 0B (packets received 0, sent 0)
+  Phone signal levels:
+    moderate 5s 58ms (3,1%) 0x
+    good 2m 38s 184ms (96,6%) 2x
+    great 533ms (0,3%) 1x
+  Signal scanning time: 0ms
+  Radio types:
+    none 2m 43s 775ms (100,0%) 0x
+  Mobile radio active time: 0ms (0,0%) 0x
+  Wi-Fi total received: 0B, sent: 0B (packets received 0, sent 0)
+  Wifi on: 2m 43s 775ms (100,0%), Wifi running: 2m 43s 775ms (100,0%)
+  Wifi states: (no activity)
+  Wifi supplicant states:
+    completed 2m 43s 775ms (100,0%) 0x
+  Wifi signal levels:
+    level(3) 2m 25s 647ms (88,9%) 5x
+    level(4) 18s 128ms (11,1%) 4x
+  Bluetooth on: 0ms (0,0%)
+  Bluetooth states: (no activity)
+
+  Device battery use since last full charge
+    Amount discharged (lower bound): 1
+    Amount discharged (upper bound): 2
+    Amount discharged while screen on: 2
+    Amount discharged while screen off: 0
+
+  Estimated power use (mAh):
+    Capacity: 2100, Computed drain: 17,1, actual drain: 21,0-42,0
+    Screen: 12,5
+    Uid 1000: 1,78
+    Uid u0a114: 1,44
+    Uid u0a84: 0,355
+    Uid 0: 0,312
+    Uid u0a14: 0,218
+    Wifi: 0,182
+    Cell standby: 0,155
+    Uid 1013: 0,0654
+    Uid u0a17: 0,0343
+    Uid u0a20: 0,0334
+    Uid u0a85: 0,00939
+    Uid 1001: 0,00551
+    Uid u0a26: 0,00377
+    Uid u0a45: 0,00221
+    Uid u0a8: 0,00178
+    Uid 1027: 0,00106
+    Uid u0a70: 0,000854
+    Idle: 0,0000731
+
+  All kernel wake locks:
+  Kernel Wake lock usb cb wake lock: 143ms (0 times) realtime
+  Kernel Wake lock usb device wake lock: 143ms (0 times) realtime
+  Kernel Wake lock battery-update: 143ms (0 times) realtime
+  Kernel Wake lock muic wake lock: 143ms (0 times) realtime
+  Kernel Wake lock PowerManagerService.Broadcasts: 26ms (1 times) realtime
+  Kernel Wake lock PowerManagerService.Display: 25ms (1 times) realtime
+  Kernel Wake lock PowerManagerService.WakeLocks: 17ms (1 times) realtime
+
+  0:
+    Proc irq/387-melfas-:
+      CPU: 0ms usr + 150ms krn ; 0ms fg
+    Proc flush-179:0:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc s3c-fb-vsync:
+      CPU: 0ms usr + 340ms krn ; 0ms fg
+    Proc sync_supers:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc dhcpcd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc wl_event_handle:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+    Proc s3c-fb:
+      CPU: 0ms usr + 720ms krn ; 0ms fg
+    Proc zygote:
+      CPU: 110ms usr + 40ms krn ; 0ms fg
+    Proc ueventd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc kswapd0:
+      CPU: 0ms usr + 240ms krn ; 0ms fg
+    Proc jbd2/mmcblk0p12:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+    Proc lmkd:
+      CPU: 0ms usr + 40ms krn ; 0ms fg
+    Proc netd:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Proc /init:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kworker/0:1:
+      CPU: 0ms usr + 350ms krn ; 0ms fg
+    Proc kworker/0:2:
+      CPU: 0ms usr + 360ms krn ; 0ms fg
+    Proc kworker/1:1:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kworker/3:1:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Proc kworker/u:0:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc kworker/u:1:
+      CPU: 0ms usr + 630ms krn ; 0ms fg
+    Proc kworker/u:3:
+      CPU: 0ms usr + 470ms krn ; 0ms fg
+    Proc kworker/u:4:
+      CPU: 0ms usr + 580ms krn ; 0ms fg
+    Proc healthd:
+      CPU: 0ms usr + 20ms krn ; 0ms fg
+    Proc dhd_watchdog_th:
+      CPU: 0ms usr + 180ms krn ; 0ms fg
+    Proc mmcqd/0:
+      CPU: 0ms usr + 490ms krn ; 0ms fg
+    Proc ksoftirqd/0:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc wpa_supplicant:
+      CPU: 60ms usr + 200ms krn ; 0ms fg
+    Proc dhd_dpc:
+      CPU: 0ms usr + 840ms krn ; 0ms fg
+    Proc irq/365-max7769:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+  1000:
+    User activity: 24 other, 62 touch
+    Wake lock SyncLoopWakeLock realtime
+    Wake lock ActivityManager-Launch realtime
+    Wake lock DreamManagerService: 582ms full (0 times) realtime
+    Wake lock DHCP realtime
+    Wake lock SyncManagerHandleSyncAlarm realtime
+    Wake lock AudioMix realtime
+    Wake lock *alarm* realtime
+    TOTAL wake: 582ms full realtime
+    Sensor 0: 1m 38s 534ms realtime (1 times)
+    Sensor 3: 1m 38s 513ms realtime (1 times)
+    Foreground for: 2m 43s 775ms 
+    Proc system:
+      CPU: 4s 630ms usr + 4s 80ms krn ; 0ms fg
+    Proc surfaceflinger:
+      CPU: 9s 670ms usr + 15s 830ms krn ; 0ms fg
+    Proc servicemanager:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Apk android:
+      2 wakeup alarms
+  1001:
+    Wake lock RILJ realtime
+    Foreground for: 2m 43s 775ms 
+    Proc rild:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc com.android.phone:
+      CPU: 40ms usr + 60ms krn ; 0ms fg
+  1013:
+    Wake lock AudioMix realtime
+    Proc mediaserver:
+      CPU: 810ms usr + 460ms krn ; 0ms fg
+  1027:
+    Wake lock NfcService:mRoutingWakeLock realtime
+    Foreground for: 2m 43s 775ms 
+    Proc com.android.nfc:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+  u0a0:
+    Foreground for: 2m 43s 775ms 
+  u0a2:
+    Foreground for: 2m 43s 775ms 
+  u0a3:
+    Foreground for: 2m 43s 775ms 
+  u0a4:
+    Foreground for: 2m 43s 775ms 
+  u0a5:
+    Running for: 2m 43s 775ms 
+  u0a6:
+    Running for: 2m 43s 775ms 
+  u0a7:
+    Foreground for: 2m 43s 775ms 
+  u0a8:
+    Active for: 764ms 
+    Running for: 2m 43s 775ms 
+    Proc android.process.media:
+      CPU: 30ms usr + 10ms krn ; 0ms fg
+    Apk com.android.providers.media:
+      Service com.android.providers.media.MtpService:
+        Created for: 257ms uptime
+        Starts: 1, launches: 1
+  u0a10:
+    Running for: 2m 43s 775ms 
+  u0a11:
+    Foreground for: 2m 43s 775ms 
+  u0a14:
+    User activity: 3 other
+    Foreground for: 2m 43s 775ms 
+    Proc com.android.systemui:
+      CPU: 2s 900ms usr + 1s 330ms krn ; 0ms fg
+  u0a16:
+    Running for: 2m 43s 775ms 
+  u0a17:
+    Wake lock *vibrator* realtime
+    Vibrator: 40ms realtime (2 times)
+    Foreground activities: 2s 661ms realtime (1 times)
+    Foreground for: 10s 386ms 
+    Active for: 10s 566ms 
+    Running for: 2m 43s 775ms 
+    Proc com.cyanogenmod.trebuchet:
+      CPU: 500ms usr + 230ms krn ; 520ms fg
+  u0a20:
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService realtime
+    Wake lock Wakeful StateMachine: GeofencerStateMachine realtime
+    Foreground for: 2m 43s 775ms 
+    Proc com.google.android.gms.persistent:
+      CPU: 260ms usr + 130ms krn ; 0ms fg
+    Proc com.google.android.gms.feedback:
+      CPU: 110ms usr + 60ms krn ; 0ms fg
+    Proc com.google.android.gms:
+      CPU: 60ms usr + 50ms krn ; 0ms fg
+    Apk com.google.android.gms:
+      Service com.google.android.gms.clearcut.service.ClearcutLoggerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 3
+      Service com.google.android.gms.chimera.PersistentIntentOperationService:
+        Created for: 7s 44ms uptime
+        Starts: 1, launches: 1
+      Service com.google.android.gms.chimera.GmsIntentOperationService:
+        Created for: 7s 61ms uptime
+        Starts: 1, launches: 1
+  u0a22:
+    Foreground for: 2m 43s 775ms 
+  u0a23:
+    Running for: 2m 43s 775ms 
+  u0a24:
+    Foreground for: 2m 43s 775ms 
+  u0a25:
+    Foreground for: 2m 43s 775ms 
+  u0a26:
+    Foreground for: 2m 43s 775ms 
+    Proc com.google.android.googlequicksearchbox:search:
+      CPU: 50ms usr + 30ms krn ; 0ms fg
+  u0a32:
+    Foreground for: 2m 43s 775ms 
+  u0a36:
+    Foreground for: 2m 43s 775ms 
+  u0a38:
+    Foreground for: 2m 43s 775ms 
+  u0a39:
+    Foreground for: 2m 43s 775ms 
+  u0a40:
+    Foreground for: 2m 43s 775ms 
+  u0a42:
+    Running for: 2m 43s 775ms 
+  u0a45:
+    Foreground for: 52s 659ms 
+    Active for: 52s 664ms 
+    Running for: 2m 43s 775ms 
+    Proc com.android.inputmethod.latin:
+      CPU: 20ms usr + 20ms krn ; 0ms fg
+      1 proc starts
+    Apk com.android.inputmethod.latin:
+      Service com.android.inputmethod.latin.spellcheck.AndroidSpellCheckerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 1
+  u0a48:
+    Running for: 2m 43s 775ms 
+  u0a55:
+    Running for: 2m 43s 775ms 
+  u0a56:
+    Foreground for: 2m 43s 775ms 
+  u0a61:
+    Foreground for: 2m 43s 775ms 
+  u0a62:
+    Foreground for: 2m 43s 775ms 
+  u0a64:
+    Foreground for: 2m 43s 775ms 
+  u0a65:
+    Foreground for: 2m 43s 775ms 
+  u0a67:
+    Foreground for: 2m 43s 775ms 
+  u0a68:
+    Foreground for: 2m 43s 775ms 
+  u0a69:
+    Foreground for: 2m 43s 775ms 
+  u0a70:
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.apps.plus/.service.PhotosAppTransitionService realtime
+    Wake lock fingerprint_scanner_static realtime
+    Active for: 45ms 
+    Running for: 2m 43s 775ms 
+    Proc com.google.android.apps.plus:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Apk com.google.android.apps.plus:
+      (nothing executed)
+  u0a72:
+    Foreground for: 2m 43s 775ms 
+  u0a73:
+    Foreground for: 2m 43s 775ms 
+  u0a75:
+    Foreground for: 2m 43s 775ms 
+  u0a76:
+    Foreground for: 2m 43s 775ms 
+  u0a78:
+    Foreground for: 2m 43s 775ms 
+  u0a82:
+    Foreground for: 2m 43s 775ms 
+  u0a84:
+    Vibrator: 368ms realtime (46 times)
+    Foreground for: 25s 695ms 
+    Active for: 2m 43s 775ms 
+    Proc com.google.android.inputmethod.latin:
+      CPU: 5s 500ms usr + 1s 80ms krn ; 0ms fg
+  u0a85:
+    User activity: 1 other
+    Wake lock LockScreen ==KeepScreenOn==: 9s 645ms full (1 times) realtime
+    Foreground for: 2m 43s 775ms 
+    Proc com.estrongs.android.pop:
+      CPU: 110ms usr + 80ms krn ; 0ms fg
+  u0a114:
+    Wake lock WindowManager: 45s 871ms full (11 times) realtime
+    Foreground activities: 2m 43s 775ms realtime (0 times)
+    Foreground for: 2m 43s 775ms 
+    Proc agostinisalome.it.mobilenode:
+      CPU: 19s 270ms usr + 8s 360ms krn ; 0ms fg
+      1 proc starts
+
+Statistics since last unplugged:
+  Time on battery: 2m 43s 775ms (73,1%) realtime, 2m 43s 775ms (73,1%) uptime
+  Time on battery screen off: 188ms (0,1%) realtime, 188ms (0,1%) uptime
+  Total run time: 3m 43s 939ms realtime, 3m 43s 939ms uptime
+  Start clock time: 2017-05-03-11-40-17
+  Screen on: 2m 43s 587ms (99,9%) 1x, Interactive: 2m 43s 588ms (99,9%)
+  Screen brightnesses:
+    dark 6s 101ms (3,7%)
+    bright 2m 37s 486ms (96,3%)
+  Total full wakelock time: 56s 98ms
+  Mobile total received: 0B, sent: 0B (packets received 0, sent 0)
+  Phone signal levels:
+    moderate 5s 58ms (3,1%) 0x
+    good 2m 38s 184ms (96,6%) 2x
+    great 533ms (0,3%) 1x
+  Signal scanning time: 0ms
+  Radio types:
+    none 2m 43s 775ms (100,0%) 0x
+  Mobile radio active time: 0ms (0,0%) 0x
+  Wi-Fi total received: 0B, sent: 0B (packets received 0, sent 0)
+  Wifi on: 2m 43s 775ms (100,0%), Wifi running: 2m 43s 775ms (100,0%)
+  Wifi states: (no activity)
+  Wifi supplicant states:
+    completed 2m 43s 775ms (100,0%) 0x
+  Wifi signal levels:
+    level(3) 2m 25s 647ms (88,9%) 5x
+    level(4) 18s 128ms (11,1%) 4x
+  Bluetooth on: 0ms (0,0%)
+  Bluetooth states: (no activity)
+
+  Device is currently plugged into power
+    Last discharge cycle start level: 99
+    Last discharge cycle end level: 97
+    Amount discharged while screen on: 2
+    Amount discharged while screen off: 0
+ 
+  Estimated power use (mAh):
+    Capacity: 2100, Computed drain: 17,1, actual drain: 21,0-42,0
+    Screen: 12,5
+    Uid 1000: 1,78
+    Uid u0a114: 1,44
+    Uid u0a84: 0,355
+    Uid 0: 0,312
+    Uid u0a14: 0,218
+    Wifi: 0,182
+    Cell standby: 0,155
+    Uid 1013: 0,0654
+    Uid u0a17: 0,0343
+    Uid u0a20: 0,0334
+    Uid u0a85: 0,00939
+    Uid 1001: 0,00551
+    Uid u0a26: 0,00377
+    Uid u0a45: 0,00221
+    Uid u0a8: 0,00178
+    Uid 1027: 0,00106
+    Uid u0a70: 0,000854
+    Idle: 0,0000731
+
+  All kernel wake locks:
+  Kernel Wake lock usb cb wake lock: 143ms (0 times) realtime
+  Kernel Wake lock usb device wake lock: 143ms (0 times) realtime
+  Kernel Wake lock battery-update: 143ms (0 times) realtime
+  Kernel Wake lock muic wake lock: 143ms (0 times) realtime
+  Kernel Wake lock PowerManagerService.Broadcasts: 26ms (1 times) realtime
+  Kernel Wake lock PowerManagerService.Display: 25ms (1 times) realtime
+  Kernel Wake lock PowerManagerService.WakeLocks: 17ms (1 times) realtime
+
+  0:
+    Proc irq/387-melfas-:
+      CPU: 0ms usr + 150ms krn ; 0ms fg
+    Proc flush-179:0:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc s3c-fb-vsync:
+      CPU: 0ms usr + 340ms krn ; 0ms fg
+    Proc sync_supers:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc dhcpcd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc wl_event_handle:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+    Proc s3c-fb:
+      CPU: 0ms usr + 720ms krn ; 0ms fg
+    Proc zygote:
+      CPU: 110ms usr + 40ms krn ; 0ms fg
+    Proc ueventd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc kswapd0:
+      CPU: 0ms usr + 240ms krn ; 0ms fg
+    Proc jbd2/mmcblk0p12:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+    Proc lmkd:
+      CPU: 0ms usr + 40ms krn ; 0ms fg
+    Proc netd:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Proc /init:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kworker/0:1:
+      CPU: 0ms usr + 350ms krn ; 0ms fg
+    Proc kworker/0:2:
+      CPU: 0ms usr + 360ms krn ; 0ms fg
+    Proc kworker/1:1:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kworker/3:1:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Proc kworker/u:0:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc kworker/u:1:
+      CPU: 0ms usr + 630ms krn ; 0ms fg
+    Proc kworker/u:3:
+      CPU: 0ms usr + 470ms krn ; 0ms fg
+    Proc kworker/u:4:
+      CPU: 0ms usr + 580ms krn ; 0ms fg
+    Proc healthd:
+      CPU: 0ms usr + 20ms krn ; 0ms fg
+    Proc dhd_watchdog_th:
+      CPU: 0ms usr + 180ms krn ; 0ms fg
+    Proc mmcqd/0:
+      CPU: 0ms usr + 490ms krn ; 0ms fg
+    Proc ksoftirqd/0:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc wpa_supplicant:
+      CPU: 60ms usr + 200ms krn ; 0ms fg
+    Proc dhd_dpc:
+      CPU: 0ms usr + 840ms krn ; 0ms fg
+    Proc irq/365-max7769:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+  1000:
+    User activity: 24 other, 62 touch
+    Wake lock SyncLoopWakeLock realtime
+    Wake lock ActivityManager-Launch realtime
+    Wake lock DreamManagerService: 582ms full (0 times) realtime
+    Wake lock DHCP realtime
+    Wake lock SyncManagerHandleSyncAlarm realtime
+    Wake lock AudioMix realtime
+    Wake lock *alarm* realtime
+    TOTAL wake: 582ms full realtime
+    Sensor 0: 1m 38s 534ms realtime (1 times)
+    Sensor 3: 1m 38s 513ms realtime (1 times)
+    Foreground for: 2m 43s 775ms 
+    Proc system:
+      CPU: 4s 630ms usr + 4s 80ms krn ; 0ms fg
+    Proc surfaceflinger:
+      CPU: 9s 670ms usr + 15s 830ms krn ; 0ms fg
+    Proc servicemanager:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Apk android:
+      2 wakeup alarms
+  1001:
+    Wake lock RILJ realtime
+    Foreground for: 2m 43s 775ms 
+    Proc rild:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc com.android.phone:
+      CPU: 40ms usr + 60ms krn ; 0ms fg
+  1013:
+    Wake lock AudioMix realtime
+    Proc mediaserver:
+      CPU: 810ms usr + 460ms krn ; 0ms fg
+  1027:
+    Wake lock NfcService:mRoutingWakeLock realtime
+    Foreground for: 2m 43s 775ms 
+    Proc com.android.nfc:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+  u0a0:
+    Foreground for: 2m 43s 775ms 
+  u0a2:
+    Foreground for: 2m 43s 775ms 
+  u0a3:
+    Foreground for: 2m 43s 775ms 
+  u0a4:
+    Foreground for: 2m 43s 775ms 
+  u0a5:
+    Running for: 2m 43s 775ms 
+  u0a6:
+    Running for: 2m 43s 775ms 
+  u0a7:
+    Foreground for: 2m 43s 775ms 
+  u0a8:
+    Active for: 764ms 
+    Running for: 2m 43s 775ms 
+    Proc android.process.media:
+      CPU: 30ms usr + 10ms krn ; 0ms fg
+    Apk com.android.providers.media:
+      Service com.android.providers.media.MtpService:
+        Created for: 257ms uptime
+        Starts: 1, launches: 1
+  u0a10:
+    Running for: 2m 43s 775ms 
+  u0a11:
+    Foreground for: 2m 43s 775ms 
+  u0a14:
+    User activity: 3 other
+    Foreground for: 2m 43s 775ms 
+    Proc com.android.systemui:
+      CPU: 2s 900ms usr + 1s 330ms krn ; 0ms fg
+  u0a16:
+    Running for: 2m 43s 775ms 
+  u0a17:
+    Wake lock *vibrator* realtime
+    Vibrator: 40ms realtime (2 times)
+    Foreground activities: 2s 661ms realtime (1 times)
+    Foreground for: 10s 386ms 
+    Active for: 10s 566ms 
+    Running for: 2m 43s 775ms 
+    Proc com.cyanogenmod.trebuchet:
+      CPU: 500ms usr + 230ms krn ; 520ms fg
+  u0a20:
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService realtime
+    Wake lock Wakeful StateMachine: GeofencerStateMachine realtime
+    Foreground for: 2m 43s 775ms 
+    Proc com.google.android.gms.persistent:
+      CPU: 260ms usr + 130ms krn ; 0ms fg
+    Proc com.google.android.gms.feedback:
+      CPU: 110ms usr + 60ms krn ; 0ms fg
+    Proc com.google.android.gms:
+      CPU: 60ms usr + 50ms krn ; 0ms fg
+    Apk com.google.android.gms:
+      Service com.google.android.gms.clearcut.service.ClearcutLoggerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 3
+      Service com.google.android.gms.chimera.PersistentIntentOperationService:
+        Created for: 7s 44ms uptime
+        Starts: 1, launches: 1
+      Service com.google.android.gms.chimera.GmsIntentOperationService:
+        Created for: 7s 61ms uptime
+        Starts: 1, launches: 1
+  u0a22:
+    Foreground for: 2m 43s 775ms 
+  u0a23:
+    Running for: 2m 43s 775ms 
+  u0a24:
+    Foreground for: 2m 43s 775ms 
+  u0a25:
+    Foreground for: 2m 43s 775ms 
+  u0a26:
+    Foreground for: 2m 43s 775ms 
+    Proc com.google.android.googlequicksearchbox:search:
+      CPU: 50ms usr + 30ms krn ; 0ms fg
+  u0a32:
+    Foreground for: 2m 43s 775ms 
+  u0a36:
+    Foreground for: 2m 43s 775ms 
+  u0a38:
+    Foreground for: 2m 43s 775ms 
+  u0a39:
+    Foreground for: 2m 43s 775ms 
+  u0a40:
+    Foreground for: 2m 43s 775ms 
+  u0a42:
+    Running for: 2m 43s 775ms 
+  u0a45:
+    Foreground for: 52s 659ms 
+    Active for: 52s 664ms 
+    Running for: 2m 43s 775ms 
+    Proc com.android.inputmethod.latin:
+      CPU: 20ms usr + 20ms krn ; 0ms fg
+      1 proc starts
+    Apk com.android.inputmethod.latin:
+      Service com.android.inputmethod.latin.spellcheck.AndroidSpellCheckerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 1
+  u0a48:
+    Running for: 2m 43s 775ms 
+  u0a55:
+    Running for: 2m 43s 775ms 
+  u0a56:
+    Foreground for: 2m 43s 775ms 
+  u0a61:
+    Foreground for: 2m 43s 775ms 
+  u0a62:
+    Foreground for: 2m 43s 775ms 
+  u0a64:
+    Foreground for: 2m 43s 775ms 
+  u0a65:
+    Foreground for: 2m 43s 775ms 
+  u0a67:
+    Foreground for: 2m 43s 775ms 
+  u0a68:
+    Foreground for: 2m 43s 775ms 
+  u0a69:
+    Foreground for: 2m 43s 775ms 
+  u0a70:
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.apps.plus/.service.PhotosAppTransitionService realtime
+    Wake lock fingerprint_scanner_static realtime
+    Active for: 45ms 
+    Running for: 2m 43s 775ms 
+    Proc com.google.android.apps.plus:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Apk com.google.android.apps.plus:
+      (nothing executed)
+  u0a72:
+    Foreground for: 2m 43s 775ms 
+  u0a73:
+    Foreground for: 2m 43s 775ms 
+  u0a75:
+    Foreground for: 2m 43s 775ms 
+  u0a76:
+    Foreground for: 2m 43s 775ms 
+  u0a78:
+    Foreground for: 2m 43s 775ms 
+  u0a82:
+    Foreground for: 2m 43s 775ms 
+  u0a84:
+    Vibrator: 368ms realtime (46 times)
+    Foreground for: 25s 695ms 
+    Active for: 2m 43s 775ms 
+    Proc com.google.android.inputmethod.latin:
+      CPU: 5s 500ms usr + 1s 80ms krn ; 0ms fg
+  u0a85:
+    User activity: 1 other
+    Wake lock LockScreen ==KeepScreenOn==: 9s 645ms full (1 times) realtime
+    Foreground for: 2m 43s 775ms 
+    Proc com.estrongs.android.pop:
+      CPU: 110ms usr + 80ms krn ; 0ms fg
+  u0a114:
+    Wake lock WindowManager: 45s 871ms full (11 times) realtime
+    Foreground activities: 2m 43s 775ms realtime (0 times)
+    Foreground for: 2m 43s 775ms 
+    Proc agostinisalome.it.mobilenode:
+      CPU: 19s 270ms usr + 8s 360ms krn ; 0ms fg
+      1 proc starts

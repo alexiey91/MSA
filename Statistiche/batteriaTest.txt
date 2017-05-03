@@ -1,0 +1,1592 @@
+Battery History (2% used, 6840 used of 256KB, 62 strings using 4370):
+                    0 (9) RESET:TIME: 2017-05-03-14-58-38
+                    0 (2) 078 status=charging health=good plug=usb temp=385 volt=4147 +running +wake_lock +wifi_multicast +screen +plugged phone_signal_strength=good brightness=bright +wifi_running +wifi wifi_signal_strength=3 wifi_suppl=completed top=u0a114:"agostinisalome.it.mobilenode"
+                    0 (2) 078 user=0:"0"
+                    0 (2) 078 userfg=0:"0"
+             +1s599ms (2) 078 +phone_scanning phone_state=out phone_signal_strength=none
+            +27s040ms (2) 078 +proc=u0a114:"agostinisalome.it.mobilenode"
+            +27s040ms (2) 078 +proc=u0a78:"com.android.chrome:sandboxed_process2"
+            +27s040ms (2) 078 +proc=u0a20:"com.google.android.gms.feedback"
+            +27s040ms (2) 078 +proc=u0a5:"android.process.acore"
+            +27s040ms (2) 078 +proc=u0a4:"com.android.cellbroadcastreceiver"
+            +27s040ms (2) 078 +proc=u0a26:"com.google.android.googlequicksearchbox:interactor"
+            +27s040ms (2) 078 +proc=u0a20:"com.google.android.gms"
+            +27s040ms (2) 078 +proc=1000:"WebViewLoader-armeabi-v7a"
+            +27s040ms (2) 078 +proc=u0a61:"com.android.smspush"
+            +27s040ms (2) 078 +proc=u0a20:"com.google.android.gms.persistent"
+            +27s040ms (2) 078 +proc=u0a45:"com.android.inputmethod.latin"
+            +27s040ms (2) 078 +proc=u0a85:"com.estrongs.android.pop:local"
+            +27s040ms (2) 078 +proc=u0a78:"com.android.chrome:privileged_process0"
+            +27s040ms (2) 078 +proc=u0a78:"com.android.chrome:sandboxed_process0"
+            +27s040ms (2) 078 +proc=1001:"com.android.server.telecom"
+            +27s040ms (2) 078 +proc=u0a48:"com.cyanogenmod.lockclock"
+            +27s040ms (2) 078 +proc=u0a36:"com.android.deskclock"
+            +27s040ms (2) 078 +proc=u0a20:"com.google.process.gapps"
+            +27s040ms (2) 078 +proc=1000:"com.android.settings"
+            +27s040ms (2) 078 +proc=u0a85:"com.estrongs.android.pop"
+            +27s040ms (2) 078 +proc=u0a78:"com.android.chrome"
+            +27s040ms (2) 078 +proc=u0a8:"android.process.media"
+            +27s040ms (2) 078 +proc=u0a14:"com.android.systemui"
+            +27s040ms (2) 078 +proc=1027:"com.android.nfc"
+            +27s040ms (2) 078 +proc=1001:"com.android.phone"
+            +27s040ms (2) 078 +proc=u0a3:"com.android.providers.calendar"
+            +27s040ms (2) 078 +proc=u0a7:"com.android.incallui"
+            +27s040ms (2) 078 +proc=u0a20:"com.google.android.gms.unstable"
+            +27s040ms (2) 078 +proc=u0a70:"com.google.android.apps.plus"
+            +27s040ms (2) 078 +proc=u0a84:"com.google.android.inputmethod.latin"
+            +27s040ms (2) 078 +proc=u0a0:"org.cyanogenmod.audiofx"
+            +27s040ms (2) 078 +proc=u0a78:"com.android.chrome:sandboxed_process1"
+            +27s040ms (2) 078 +proc=u0a85:".esfm"
+            +27s040ms (2) 078 +proc=u0a17:"com.cyanogenmod.trebuchet"
+            +29s337ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+            +29s338ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+            +32s618ms (4) 078 status=discharging plug=none temp=388 volt=4013 -plugged +wake_lock_in=u0a20:"Wakeful StateMachine: GeofencerStateMachine"
+            +32s693ms (2) 078 -wake_lock_in=u0a20:"Wakeful StateMachine: GeofencerStateMachine"
+            +33s202ms (2) 078 -proc=u0a3:"com.android.providers.calendar"
+            +37s072ms (2) 078 +wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+            +37s076ms (2) 078 +wake_lock_in=1000:"DHCP"
+            +37s083ms (2) 078 -wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+            +37s591ms (2) 078 -wake_lock_in=1000:"DHCP"
+            +37s841ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+            +37s841ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+            +40s054ms (2) 078 +wake_lock_in=1001:"RILJ"
+            +40s075ms (3) 078 -phone_scanning phone_state=in phone_signal_strength=moderate -wake_lock_in=1001:"RILJ"
+            +41s557ms (2) 078 brightness=light wifi_signal_strength=4
+            +43s138ms (2) 078 phone_signal_strength=good
+            +44s750ms (2) 078 wifi_signal_strength=3 +wake_lock_in=1001:"RILJ"
+            +45s068ms (3) 078 phone_signal_strength=great -wake_lock_in=1001:"RILJ"
+            +50s557ms (2) 078 brightness=bright wifi_signal_strength=4
+            +51s616ms (2) 078 phone_signal_strength=good
+            +53s805ms (1) 078 wifi_signal_strength=3
+            +55s864ms (2) 078 phone_signal_strength=moderate
+            +57s841ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+            +57s848ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+            +59s796ms (2) 078 +wake_lock_in=1001:"RILJ"
+            +59s815ms (2) 078 wifi_signal_strength=4 -wake_lock_in=1001:"RILJ"
+          +1m02s867ms (3) 078 phone_signal_strength=good wifi_signal_strength=3 +wake_lock_in=1013:"AudioMix"
+          +1m03s762ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m03s762ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m03s986ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m03s986ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m04s573ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m04s573ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m04s790ms (2) 078 +wake_lock_in=1001:"RILJ"
+          +1m04s813ms (2) 078 -wake_lock_in=1001:"RILJ"
+          +1m04s824ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m04s824ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m05s885ms (1) 078 wifi_signal_strength=4
+          +1m07s638ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m08s896ms (1) 078 wifi_signal_strength=3
+          +1m11s915ms (1) 078 wifi_signal_strength=4
+          +1m17s847ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +1m17s848ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +1m17s984ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m17s998ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m18s000ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m18s220ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m18s220ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m20s961ms (2) 078 wifi_signal_strength=3 -wake_lock_in=1013:"AudioMix"
+          +1m21s672ms (2) 078 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +1m21s751ms (2) 078 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +1m22s343ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m22s353ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m22s354ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m22s582ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m22s582ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m22s677ms (2) 078 +wake_lock_in=u0a36:"*alarm*:com.android.deskclock.ON_QUARTER_HOUR"
+          +1m22s699ms (2) 078 -wake_lock_in=u0a36:"*alarm*:com.android.deskclock.ON_QUARTER_HOUR"
+          +1m24s318ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m24s318ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m24s569ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m24s569ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m26s820ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m26s820ms (2) 078 wifi_signal_strength=4 +wake_lock_in=1000:"AudioMix"
+          +1m27s083ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m27s083ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m27s898ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m27s898ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m28s160ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m28s160ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m30s974ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m32s427ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m32s438ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m32s438ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m32s667ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m32s667ms (2) 078 wifi_signal_strength=3 +wake_lock_in=1013:"AudioMix"
+          +1m34s342ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m34s343ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m34s606ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m34s606ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m36s054ms (1) 078 wifi_signal_strength=4
+          +1m37s288ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m37s288ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m37s552ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m37s553ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m37s840ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +1m37s841ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +1m40s365ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m40s397ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m40s409ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m40s409ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m40s572ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m40s572ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m42s099ms (1) 078 wifi_signal_strength=3
+          +1m43s424ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m51s170ms (2) 078 wifi_signal_strength=4 +wake_lock_in=1013:"AudioMix"
+          +1m51s998ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m52s002ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +1m52s221ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +1m52s221ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +1m55s011ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +1m57s841ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +1m57s843ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +2m05s951ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m05s963ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m05s964ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +2m06s192ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +2m06s192ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m08s970ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m17s842ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +2m17s842ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +2m21s672ms (2) 078 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +2m21s681ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m21s693ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m21s693ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +2m21s750ms (2) 078 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +2m21s921ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +2m21s921ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m24s701ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m24s816ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m24s828ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m24s828ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +2m24s990ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +2m24s990ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m27s840ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m31s557ms (2) 078 brightness=light
+          +2m33s416ms (1) 078 wifi_signal_strength=3
+          +2m34s823ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m34s838ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m34s838ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +2m35s063ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +2m35s063ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m36s434ms (1) 078 wifi_signal_strength=4
+          +2m37s839ms (2) 078 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +2m37s840ms (2) 078 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +2m37s841ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m45s480ms (1) 078 wifi_signal_strength=3
+          +2m51s513ms (2) 078 wifi_signal_strength=4 +wake_lock_in=1013:"AudioMix"
+          +2m51s892ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m51s893ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +2m52s116ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +2m52s116ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m52s655ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m52s655ms (2) 078 +wake_lock_in=1000:"AudioMix"
+          +2m52s907ms (2) 078 -wake_lock_in=1000:"AudioMix"
+          +2m52s907ms (2) 078 +wake_lock_in=1013:"AudioMix"
+          +2m55s721ms (2) 078 -wake_lock_in=1013:"AudioMix"
+          +2m56s636ms (2) 077 temp=374 volt=3904
+          +2m57s840ms (2) 077 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +2m57s840ms (2) 077 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +3m03s555ms (2) 077 brightness=bright wifi_signal_strength=3
+          +3m08s265ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m08s278ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m08s278ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +3m08s506ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m08s506ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m09s464ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m09s464ms (2) 077 wifi_signal_strength=4 +wake_lock_in=1000:"AudioMix"
+          +3m09s727ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m09s727ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m12s542ms (2) 077 wifi_signal_strength=3 -wake_lock_in=1013:"AudioMix"
+          +3m17s839ms (2) 077 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +3m17s840ms (2) 077 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +3m21s047ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m21s059ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m21s059ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +3m21s286ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m21s286ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m21s685ms (2) 077 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +3m21s748ms (2) 077 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +3m22s449ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m22s449ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +3m22s699ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m22s699ms (3) 077 brightness=dark +wake_lock_in=1013:"AudioMix"
+          +3m24s161ms (2) 077 brightness=bright
+          +3m24s878ms (3) 077 brightness=dark -wake_lock_in=1013:"AudioMix"
+          +3m26s211ms (2) 077 brightness=bright
+          +3m26s995ms (2) 077 brightness=dark
+          +3m27s944ms (2) 077 brightness=bright
+          +3m29s530ms (2) 077 brightness=dark
+          +3m31s394ms (2) 077 brightness=bright
+          +3m32s730ms (2) 077 brightness=dark
+          +3m34s312ms (2) 077 brightness=bright
+          +3m36s327ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m36s338ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m36s338ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +3m36s566ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m36s566ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m37s787ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m37s787ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +3m37s839ms (2) 077 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +3m37s839ms (2) 077 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +3m38s050ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m38s051ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m40s865ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m53s966ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m53s978ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m53s978ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +3m54s201ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m54s201ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m56s993ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m57s223ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m57s235ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +3m57s235ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +3m57s401ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +3m57s401ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +3m57s847ms (2) 077 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +3m57s848ms (2) 077 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +4m00s252ms (3) 077 phone_signal_strength=great wifi_signal_strength=4 -wake_lock_in=1013:"AudioMix"
+          +4m04s519ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +4m04s530ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +4m04s531ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +4m04s756ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +4m04s756ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +4m05s368ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +4m05s368ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +4m05s618ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +4m05s618ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +4m08s432ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +4m08s557ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +4m08s573ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +4m08s573ms (2) 077 +wake_lock_in=1000:"AudioMix"
+          +4m08s731ms (2) 077 -wake_lock_in=1000:"AudioMix"
+          +4m08s731ms (2) 077 +wake_lock_in=1013:"AudioMix"
+          +4m11s581ms (2) 077 -wake_lock_in=1013:"AudioMix"
+          +4m13s018ms (1) 077 wifi_signal_strength=3
+          +4m15s647ms (2) 076 volt=3821
+          +4m16s669ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m16s680ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m16s680ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +4m16s906ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +4m16s906ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m17s853ms (2) 076 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +4m17s855ms (2) 076 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +4m18s356ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m18s356ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +4m18s606ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +4m18s606ms (2) 076 wifi_signal_strength=4 +wake_lock_in=1013:"AudioMix"
+          +4m21s420ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m21s671ms (2) 076 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +4m21s767ms (2) 076 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +4m22s656ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m22s668ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m22s668ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +4m22s897ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +4m22s897ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m24s418ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m24s418ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +4m24s668ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +4m24s668ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m27s484ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m29s106ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m29s118ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m29s118ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +4m29s340ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +4m29s340ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m31s155ms (2) 076 wifi_signal_strength=3 -wake_lock_in=1013:"AudioMix"
+          +4m32s182ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m32s194ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m32s194ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +4m32s357ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +4m32s357ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m35s208ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m37s849ms (2) 076 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +4m37s854ms (2) 076 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +4m46s260ms (1) 076 wifi_signal_strength=4
+          +4m49s286ms (2) 076 wifi_signal_strength=3 +wake_lock_in=1013:"AudioMix"
+          +4m50s043ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m50s043ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +4m50s266ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +4m50s267ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +4m53s056ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +4m57s842ms (2) 076 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +4m57s848ms (2) 076 wifi_signal_strength=4 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +5m00s117ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +5m00s129ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +5m00s129ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +5m00s357ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +5m00s357ms (2) 076 wifi_signal_strength=3 +wake_lock_in=1013:"AudioMix"
+          +5m03s135ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +5m04s370ms (1) 076 wifi_signal_strength=4
+          +5m13s425ms (1) 076 wifi_signal_strength=3
+          +5m15s048ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +5m15s060ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +5m15s060ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +5m15s286ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +5m15s286ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +5m16s137ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +5m16s137ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +5m16s387ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +5m16s388ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +5m17s840ms (2) 076 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +5m17s842ms (2) 076 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +5m19s202ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +5m21s674ms (2) 076 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +5m21s779ms (2) 076 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +5m25s591ms (2) 076 +wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+          +5m25s591ms (2) 076 +wake_lock_in=1000:"DHCP"
+          +5m25s593ms (2) 076 -wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+          +5m28s789ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +5m28s800ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +5m28s801ms (2) 076 +wake_lock_in=1000:"AudioMix"
+          +5m29s026ms (2) 076 -wake_lock_in=1000:"AudioMix"
+          +5m29s027ms (2) 076 +wake_lock_in=1013:"AudioMix"
+          +5m30s501ms (3) 076 phone_signal_strength=good -wake_lock_in=1000:"DHCP"
+          +5m31s819ms (2) 076 -wake_lock_in=1013:"AudioMix"
+          +5m33s908ms (2) 076 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +5m33s921ms (2) 076 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +5m34s681ms (2) 075 temp=386 volt=3902
+          +5m42s693ms (2) 075 -proc=u0a45:"com.android.inputmethod.latin"
+          +5m43s751ms (2) 075 +proc=u0a45:"com.android.inputmethod.latin"
+          +5m50s754ms (2) 075 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +5m50s755ms (2) 075 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +5m54s177ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +5m54s189ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +5m54s189ms (2) 075 +wake_lock_in=1000:"AudioMix"
+          +5m54s415ms (2) 075 -wake_lock_in=1000:"AudioMix"
+          +5m54s416ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +5m57s196ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +5m58s678ms (1) 075 wifi_signal_strength=4
+          +6m04s724ms (1) 075 wifi_signal_strength=3
+          +6m07s744ms (1) 075 wifi_signal_strength=4
+          +6m10s758ms (2) 075 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +6m10s760ms (2) 075 wifi_signal_strength=3 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +6m11s830ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m11s842ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +6m11s842ms (2) 075 +wake_lock_in=1000:"AudioMix"
+          +6m12s066ms (2) 075 -wake_lock_in=1000:"AudioMix"
+          +6m12s066ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m12s544ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +6m12s545ms (2) 075 +wake_lock_in=1000:"AudioMix"
+          +6m12s808ms (2) 075 -wake_lock_in=1000:"AudioMix"
+          +6m12s808ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m15s622ms (3) 075 phone_signal_strength=great -wake_lock_in=1013:"AudioMix"
+          +6m16s796ms (1) 075 wifi_signal_strength=4
+          +6m19s811ms (1) 075 wifi_signal_strength=3
+          +6m21s679ms (2) 075 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +6m21s768ms (2) 075 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +6m23s699ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m23s711ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +6m23s711ms (2) 075 +wake_lock_in=1000:"AudioMix"
+          +6m23s936ms (2) 075 -wake_lock_in=1000:"AudioMix"
+          +6m23s936ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m26s727ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +6m30s754ms (2) 075 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +6m30s755ms (2) 075 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +6m34s896ms (1) 075 wifi_signal_strength=4
+          +6m37s919ms (1) 075 wifi_signal_strength=3
+          +6m41s395ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m41s408ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +6m41s408ms (2) 075 +wake_lock_in=1000:"AudioMix"
+          +6m41s631ms (2) 075 -wake_lock_in=1000:"AudioMix"
+          +6m41s631ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m42s385ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +6m42s385ms (2) 075 +wake_lock_in=1000:"AudioMix"
+          +6m42s637ms (2) 075 -wake_lock_in=1000:"AudioMix"
+          +6m42s637ms (2) 075 +wake_lock_in=1013:"AudioMix"
+          +6m45s451ms (2) 075 -wake_lock_in=1013:"AudioMix"
+          +6m50s754ms (2) 075 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +6m50s755ms (2) 075 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +6m57s408ms (2) 075 +wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.HEARTBEAT_ALARM"
+          +6m57s414ms (2) 075 +wake_lock_in=u0a20:"GCM_HB_ALARM"
+          +6m57s436ms (2) 075 -wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.HEARTBEAT_ALARM"
+          +6m57s466ms (2) 075 -wake_lock_in=u0a20:"GCM_HB_ALARM"
+          +6m57s910ms (2) 075 +wake_lock_in=u0a20:"GCM_READ"
+          +6m57s945ms (2) 075 -wake_lock_in=u0a20:"GCM_READ"
+          +6m58s700ms (2) 074 volt=3848
+          +7m02s062ms (1) 074 wifi_signal_strength=4
+          +7m08s110ms (1) 074 wifi_signal_strength=3
+          +7m10s759ms (2) 074 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +7m10s760ms (2) 074 wifi_signal_strength=4 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +7m14s158ms (1) 074 wifi_signal_strength=3
+          +7m21s417ms (3) 074 phone_signal_strength=good +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +7m21s770ms (2) 074 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +7m30s758ms (2) 074 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +7m30s759ms (2) 074 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +7m45s427ms (2) 074 phone_signal_strength=moderate
+          +7m46s730ms (2) 074 +wake_lock_in=1001:"RILJ"
+          +7m46s765ms (2) 074 -wake_lock_in=1001:"RILJ"
+          +7m50s756ms (2) 074 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +7m50s758ms (2) 074 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +7m51s724ms (2) 074 +wake_lock_in=1001:"RILJ"
+          +7m51s760ms (2) 074 -wake_lock_in=1001:"RILJ"
+          +7m56s474ms (1) 074 wifi_signal_strength=2
+          +8m10s757ms (2) 074 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +8m10s758ms (2) 074 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +8m16s720ms (2) 074 temp=375
+          +8m21s675ms (2) 074 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +8m21s769ms (2) 074 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +8m23s654ms (1) 074 wifi_signal_strength=3
+          +8m26s682ms (1) 074 wifi_signal_strength=2
+          +8m30s760ms (2) 074 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +8m30s761ms (2) 074 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +8m41s796ms (1) 074 wifi_signal_strength=3
+          +8m46s310ms (2) 074 +wake_lock_in=1001:"RILJ"
+          +8m46s357ms (2) 074 -wake_lock_in=1001:"RILJ"
+          +8m50s755ms (2) 074 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +8m50s756ms (2) 074 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +8m50s823ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +8m50s834ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +8m50s834ms (2) 074 +wake_lock_in=1000:"AudioMix"
+          +8m51s061ms (2) 074 -wake_lock_in=1000:"AudioMix"
+          +8m51s061ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +8m51s307ms (2) 074 +wake_lock_in=1001:"RILJ"
+          +8m51s327ms (2) 074 -wake_lock_in=1001:"RILJ"
+          +8m53s851ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +8m57s172ms (2) 074 +wake_lock_in=1001:"RILJ"
+          +8m57s186ms (2) 074 -wake_lock_in=1001:"RILJ"
+          +9m02s172ms (2) 074 +wake_lock_in=1001:"RILJ"
+          +9m02s185ms (2) 074 -wake_lock_in=1001:"RILJ"
+          +9m09s383ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +9m09s393ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +9m09s393ms (2) 074 +wake_lock_in=1000:"AudioMix"
+          +9m09s616ms (2) 074 -wake_lock_in=1000:"AudioMix"
+          +9m09s616ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +9m10s760ms (2) 074 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +9m10s763ms (2) 074 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +9m11s353ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +9m11s353ms (2) 074 +wake_lock_in=1000:"AudioMix"
+          +9m11s604ms (2) 074 -wake_lock_in=1000:"AudioMix"
+          +9m11s604ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +9m14s419ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +9m16s945ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +9m16s956ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +9m16s956ms (2) 074 +wake_lock_in=1000:"AudioMix"
+          +9m17s181ms (2) 074 -wake_lock_in=1000:"AudioMix"
+          +9m17s181ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +9m19s973ms (3) 074 phone_signal_strength=good -wake_lock_in=1013:"AudioMix"
+          +9m20s772ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +9m20s772ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +9m20s772ms (2) 074 +wake_lock_in=1000:"AudioMix"
+          +9m20s790ms (2) 074 -wake_lock_in=1000:"AudioMix"
+          +9m20s790ms (2) 074 wifi_signal_strength=4 +wake_lock_in=1013:"AudioMix"
+          +9m21s680ms (2) 074 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +9m21s756ms (2) 074 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+          +9m22s049ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +9m22s049ms (2) 074 +wake_lock_in=1000:"AudioMix"
+          +9m22s298ms (2) 074 -wake_lock_in=1000:"AudioMix"
+          +9m22s299ms (2) 074 +wake_lock_in=1013:"AudioMix"
+          +9m25s114ms (2) 074 -wake_lock_in=1013:"AudioMix"
+          +9m25s739ms (2) 073 temp=362 volt=3799
+          +9m30s096ms (2) 073 wifi_signal_strength=3 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +9m30s756ms (2) 073 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +9m42s172ms (1) 073 wifi_signal_strength=4
+          +9m45s199ms (1) 073 wifi_signal_strength=3
+          +9m46s232ms (2) 073 +wake_lock_in=1013:"AudioMix"
+          +9m46s243ms (2) 073 -wake_lock_in=1013:"AudioMix"
+          +9m46s243ms (2) 073 +wake_lock_in=1000:"AudioMix"
+          +9m46s471ms (2) 073 -wake_lock_in=1000:"AudioMix"
+          +9m46s471ms (2) 073 +wake_lock_in=1013:"AudioMix"
+          +9m47s538ms (2) 073 -wake_lock_in=1013:"AudioMix"
+          +9m47s538ms (2) 073 +wake_lock_in=1000:"AudioMix"
+          +9m47s788ms (2) 073 -wake_lock_in=1000:"AudioMix"
+          +9m47s788ms (2) 073 +wake_lock_in=1013:"AudioMix"
+          +9m50s604ms (2) 073 -wake_lock_in=1013:"AudioMix"
+          +9m50s760ms (2) 073 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+          +9m50s761ms (2) 073 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +10m01s241ms (2) 073 +wake_lock_in=1013:"AudioMix"
+         +10m01s253ms (2) 073 -wake_lock_in=1013:"AudioMix"
+         +10m01s253ms (2) 073 +wake_lock_in=1000:"AudioMix"
+         +10m01s481ms (2) 073 -wake_lock_in=1000:"AudioMix"
+         +10m01s481ms (2) 073 +wake_lock_in=1013:"AudioMix"
+         +10m04s261ms (2) 073 -wake_lock_in=1013:"AudioMix"
+         +10m04s329ms (2) 073 +wake_lock_in=1013:"AudioMix"
+         +10m04s341ms (2) 073 -wake_lock_in=1013:"AudioMix"
+         +10m04s342ms (2) 073 +wake_lock_in=1000:"AudioMix"
+         +10m04s503ms (2) 073 -wake_lock_in=1000:"AudioMix"
+         +10m04s503ms (2) 073 +wake_lock_in=1013:"AudioMix"
+         +10m05s101ms (2) 073 -wake_lock_in=1013:"AudioMix"
+         +10m05s102ms (2) 073 +wake_lock_in=1000:"AudioMix"
+         +10m05s365ms (2) 073 -wake_lock_in=1000:"AudioMix"
+         +10m05s366ms (2) 073 +wake_lock_in=1013:"AudioMix"
+         +10m08s179ms (2) 073 -wake_lock_in=1013:"AudioMix"
+         +10m10s754ms (2) 073 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +10m10s754ms (2) 073 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +10m18s501ms (2) 073 +wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+         +10m18s501ms (2) 073 +wake_lock_in=1000:"DHCP"
+         +10m18s502ms (2) 073 -wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+         +10m21s672ms (2) 073 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +10m21s767ms (2) 073 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +10m30s212ms (2) 073 -wake_lock_in=1000:"DHCP"
+         +10m30s455ms (2) 073 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +10m30s485ms (2) 073 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +10m36s515ms (1) 073 wifi_signal_strength=4
+         +10m41s756ms (2) 072 temp=375
+         +10m45s579ms (1) 072 wifi_signal_strength=3
+         +10m48s604ms (2) 072 phone_signal_strength=moderate wifi_signal_strength=4
+         +10m50s454ms (2) 072 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +10m50s457ms (2) 072 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +10m51s629ms (1) 072 wifi_signal_strength=3
+         +10m54s650ms (2) 072 wifi_signal_strength=4 +wake_lock_in=1013:"AudioMix"
+         +10m55s489ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +10m55s489ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +10m55s716ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +10m55s716ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +10m58s495ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m00s643ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m00s658ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m00s658ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m00s882ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m00s882ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m03s660ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m05s970ms (2) 072 phone_signal_strength=good
+         +11m10s454ms (2) 072 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +11m10s457ms (2) 072 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +11m12s885ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m12s897ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m12s898ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m13s123ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m13s123ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m15s913ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m18s694ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m18s704ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m18s705ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m18s931ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m18s931ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m21s661ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m21s661ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m21s671ms (2) 072 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +11m21s766ms (2) 072 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +11m21s925ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m21s925ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m23s340ms (2) 072 -wifi_multicast -proc=u0a85:"com.estrongs.android.pop"
+         +11m23s464ms (2) 072 -proc=u0a85:".esfm"
+         +11m23s484ms (2) 072 -proc=u0a20:"com.google.android.gms.unstable"
+         +11m24s739ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m26s448ms (2) 072 -proc=u0a45:"com.android.inputmethod.latin"
+         +11m29s474ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m29s485ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m29s485ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m29s712ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m29s712ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m30s453ms (2) 072 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +11m30s455ms (2) 072 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +11m32s453ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m32s453ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m32s705ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m32s705ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m34s250ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m34s250ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m34s450ms (2) 072 +proc=u0a85:"com.estrongs.android.pop"
+         +11m34s501ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m34s501ms (3) 072 brightness=dark +wake_lock_in=1013:"AudioMix"
+         +11m35s761ms (2) 072 brightness=bright
+         +11m36s277ms (2) 072 +wifi_multicast brightness=dark
+         +11m37s315ms (3) 072 brightness=bright -wake_lock_in=1013:"AudioMix"
+         +11m38s411ms (2) 072 brightness=dark
+         +11m39s795ms (3) 072 brightness=bright +proc=u0a85:".esfm"
+         +11m41s129ms (2) 072 brightness=dark
+         +11m44s028ms (3) 072 brightness=bright +proc=u0a45:"com.android.inputmethod.latin"
+         +11m44s830ms (2) 072 brightness=dark
+         +11m45s311ms (2) 072 brightness=bright
+         +11m45s794ms (2) 072 brightness=dark
+         +11m46s261ms (2) 072 brightness=bright
+         +11m46s771ms (2) 072 brightness=dark
+         +11m47s711ms (2) 072 brightness=bright
+         +11m48s150ms (2) 072 brightness=dark
+         +11m48s611ms (2) 072 brightness=bright
+         +11m49s161ms (2) 072 brightness=dark
+         +11m49s744ms (2) 072 brightness=bright
+         +11m50s261ms (3) 072 brightness=dark +wake_lock_in=u0a85:"*alarm*:DXCoreAlarmReceiver"
+         +11m50s466ms (2) 072 +wake_lock_in=1000:"*alarm*"
+         +11m50s466ms (2) 072 -wake_lock_in=u0a85:"*alarm*:DXCoreAlarmReceiver"
+         +11m50s469ms (2) 072 -wake_lock_in=1000:"*alarm*"
+         +11m51s231ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m51s243ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m51s243ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m51s473ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m51s473ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m52s794ms (3) 072 brightness=bright -wake_lock_in=1013:"AudioMix"
+         +11m53s376ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m53s628ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m53s628ms (3) 072 phone_signal_strength=moderate +wake_lock_in=1013:"AudioMix"
+         +11m54s561ms (2) 072 -wake_lock_in=1013:"AudioMix"
+         +11m54s561ms (2) 072 +wake_lock_in=1000:"AudioMix"
+         +11m54s825ms (2) 072 -wake_lock_in=1000:"AudioMix"
+         +11m54s825ms (2) 072 +wake_lock_in=1013:"AudioMix"
+         +11m55s771ms (2) 071 temp=390 volt=3760
+         +11m57s639ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m06s576ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m06s588ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m06s588ms (2) 071 +wake_lock_in=1000:"AudioMix"
+         +12m06s812ms (2) 071 -wake_lock_in=1000:"AudioMix"
+         +12m06s812ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m09s602ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m10s453ms (2) 071 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +12m10s455ms (2) 071 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +12m10s577ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m10s589ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m10s589ms (2) 071 +wake_lock_in=1000:"AudioMix"
+         +12m10s971ms (2) 071 -wake_lock_in=1000:"AudioMix"
+         +12m10s971ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m13s607ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m14s340ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m14s352ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m14s352ms (2) 071 +wake_lock_in=1000:"AudioMix"
+         +12m14s514ms (2) 071 -wake_lock_in=1000:"AudioMix"
+         +12m14s514ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m15s076ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m15s076ms (2) 071 +wake_lock_in=1000:"AudioMix"
+         +12m15s328ms (2) 071 -wake_lock_in=1000:"AudioMix"
+         +12m15s328ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m18s142ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m21s673ms (2) 071 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +12m21s775ms (2) 071 wifi_signal_strength=3 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +12m28s110ms (1) 071 wifi_signal_strength=4
+         +12m30s457ms (2) 071 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +12m30s458ms (2) 071 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +12m50s456ms (2) 071 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +12m50s457ms (2) 071 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +12m54s093ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m54s108ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +12m54s108ms (2) 071 +wake_lock_in=1000:"AudioMix"
+         +12m54s331ms (2) 071 -wake_lock_in=1000:"AudioMix"
+         +12m54s331ms (2) 071 +wake_lock_in=1013:"AudioMix"
+         +12m57s110ms (2) 071 -wake_lock_in=1013:"AudioMix"
+         +13m03s788ms (2) 070 volt=3796
+         +13m10s453ms (2) 070 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +13m10s454ms (2) 070 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +13m13s402ms (1) 070 wifi_signal_strength=3
+         +13m17s747ms (2) 070 +wake_lock_in=1013:"AudioMix"
+         +13m17s758ms (2) 070 -wake_lock_in=1013:"AudioMix"
+         +13m17s758ms (2) 070 +wake_lock_in=1000:"AudioMix"
+         +13m17s986ms (2) 070 -wake_lock_in=1000:"AudioMix"
+         +13m17s986ms (2) 070 +wake_lock_in=1013:"AudioMix"
+         +13m19s449ms (1) 070 wifi_signal_strength=4
+         +13m20s766ms (2) 070 -wake_lock_in=1013:"AudioMix"
+         +13m20s997ms (2) 070 +wake_lock_in=1013:"AudioMix"
+         +13m21s009ms (2) 070 -wake_lock_in=1013:"AudioMix"
+         +13m21s012ms (2) 070 +wake_lock_in=1000:"AudioMix"
+         +13m21s169ms (2) 070 -wake_lock_in=1000:"AudioMix"
+         +13m21s169ms (2) 070 +wake_lock_in=1013:"AudioMix"
+         +13m21s673ms (2) 070 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +13m21s769ms (2) 070 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +13m22s962ms (2) 070 phone_signal_strength=good
+         +13m24s019ms (2) 070 -wake_lock_in=1013:"AudioMix"
+         +13m30s456ms (2) 070 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +13m30s460ms (2) 070 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +13m39s911ms (2) 070 phone_signal_strength=moderate
+         +13m43s600ms (1) 070 wifi_signal_strength=3
+         +13m45s564ms (2) 070 phone_signal_strength=good
+         +13m46s629ms (1) 070 wifi_signal_strength=4
+         +13m49s651ms (2) 070 wifi_signal_strength=3 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +13m50s457ms (2) 070 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +14m10s459ms (2) 070 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +14m10s460ms (2) 070 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +14m21s684ms (2) 070 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +14m21s751ms (2) 070 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +14m21s795ms (2) 069 temp=375
+         +14m24s170ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +14m24s182ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +14m24s182ms (2) 069 +wake_lock_in=1000:"AudioMix"
+         +14m24s406ms (2) 069 -wake_lock_in=1000:"AudioMix"
+         +14m24s406ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +14m25s900ms (1) 069 wifi_signal_strength=4
+         +14m27s196ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +14m28s917ms (2) 069 wifi_signal_strength=3 +wake_lock_in=1013:"AudioMix"
+         +14m28s944ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +14m28s944ms (2) 069 +wake_lock_in=1000:"AudioMix"
+         +14m29s172ms (2) 069 -wake_lock_in=1000:"AudioMix"
+         +14m29s172ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +14m30s455ms (2) 069 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +14m30s456ms (2) 069 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +14m30s619ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +14m30s619ms (2) 069 +wake_lock_in=1000:"AudioMix"
+         +14m30s871ms (2) 069 -wake_lock_in=1000:"AudioMix"
+         +14m30s871ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +14m31s266ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +14m31s267ms (2) 069 +wake_lock_in=1000:"AudioMix"
+         +14m31s518ms (2) 069 -wake_lock_in=1000:"AudioMix"
+         +14m31s518ms (2) 069 wifi_signal_strength=4 +wake_lock_in=1013:"AudioMix"
+         +14m34s331ms (2) 069 wifi_signal_strength=3 -wake_lock_in=1013:"AudioMix"
+         +14m44s000ms (1) 069 wifi_signal_strength=4
+         +14m47s020ms (2) 069 phone_signal_strength=moderate wifi_signal_strength=3
+         +14m50s456ms (2) 069 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +14m50s457ms (2) 069 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +14m59s107ms (1) 069 wifi_signal_strength=4
+         +15m04s918ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +15m04s929ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +15m04s930ms (2) 069 wifi_signal_strength=3 +wake_lock_in=1000:"AudioMix"
+         +15m05s158ms (2) 069 -wake_lock_in=1000:"AudioMix"
+         +15m05s161ms (3) 069 phone_signal_strength=good +wake_lock_in=1013:"AudioMix"
+         +15m07s935ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +15m10s453ms (2) 069 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +15m10s454ms (2) 069 wifi_signal_strength=4 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +15m17s220ms (2) 069 wifi_signal_strength=3 +wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+         +15m18s215ms (2) 069 +wake_lock_in=1000:"DHCP"
+         +15m18s218ms (2) 069 -wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"
+         +15m18s927ms (2) 069 -wake_lock_in=1000:"DHCP"
+         +15m19s195ms (2) 069 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +15m19s196ms (2) 069 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +15m21s674ms (2) 069 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +15m21s754ms (2) 069 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +15m22s215ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +15m22s227ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +15m22s227ms (2) 069 +wake_lock_in=1000:"AudioMix"
+         +15m22s451ms (2) 069 -wake_lock_in=1000:"AudioMix"
+         +15m22s451ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +15m23s003ms (2) 069 -wake_lock_in=1013:"AudioMix"
+         +15m23s003ms (2) 069 wifi_signal_strength=4 +wake_lock_in=1000:"AudioMix"
+         +15m23s266ms (2) 069 -wake_lock_in=1000:"AudioMix"
+         +15m23s266ms (2) 069 +wake_lock_in=1013:"AudioMix"
+         +15m26s080ms (2) 069 wifi_signal_strength=3 -wake_lock_in=1013:"AudioMix"
+         +15m32s305ms (1) 069 wifi_signal_strength=4
+         +15m37s840ms (3) 068 temp=391 volt=3745 phone_signal_strength=great
+         +15m39s190ms (2) 068 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +15m39s191ms (2) 068 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +15m39s369ms (2) 068 +wake_lock_in=1013:"AudioMix"
+         +15m39s381ms (2) 068 -wake_lock_in=1013:"AudioMix"
+         +15m39s381ms (2) 068 +wake_lock_in=1000:"AudioMix"
+         +15m39s607ms (2) 068 -wake_lock_in=1000:"AudioMix"
+         +15m39s607ms (2) 068 +wake_lock_in=1013:"AudioMix"
+         +15m42s387ms (2) 068 -wake_lock_in=1013:"AudioMix"
+         +15m51s257ms (2) 068 phone_signal_strength=good
+         +15m53s455ms (1) 068 wifi_signal_strength=3
+         +15m56s481ms (1) 068 wifi_signal_strength=4
+         +15m59s188ms (2) 068 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +15m59s189ms (2) 068 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +16m03s963ms (2) 068 phone_signal_strength=moderate
+         +16m05s552ms (1) 068 wifi_signal_strength=3
+         +16m07s647ms (2) 068 -proc=u0a45:"com.android.inputmethod.latin"
+         +16m07s942ms (2) 068 +wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.HEARTBEAT_ALARM"
+         +16m07s944ms (2) 068 +wake_lock_in=u0a20:"GCM_HB_ALARM"
+         +16m07s953ms (2) 068 -wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.HEARTBEAT_ALARM"
+         +16m07s977ms (2) 068 -wake_lock_in=u0a20:"GCM_HB_ALARM"
+         +16m08s408ms (2) 068 +wake_lock_in=u0a20:"GCM_READ"
+         +16m08s420ms (2) 068 -wake_lock_in=u0a20:"GCM_READ"
+         +16m14s617ms (1) 068 wifi_signal_strength=2
+         +16m21s674ms (2) 068 +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +16m21s766ms (2) 068 -wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK"
+         +16m22s675ms (2) 068 +wake_lock_in=u0a36:"*alarm*:com.android.deskclock.ON_QUARTER_HOUR"
+         +16m22s706ms (2) 068 -wake_lock_in=u0a36:"*alarm*:com.android.deskclock.ON_QUARTER_HOUR"
+         +16m29s745ms (1) 068 wifi_signal_strength=3
+         +16m30s824ms (2) 068 +wake_lock_in=1013:"AudioMix"
+         +16m30s835ms (2) 068 -wake_lock_in=1013:"AudioMix"
+         +16m30s836ms (2) 068 +wake_lock_in=1000:"AudioMix"
+         +16m31s061ms (2) 068 -wake_lock_in=1000:"AudioMix"
+         +16m31s061ms (2) 068 +wake_lock_in=1013:"AudioMix"
+         +16m32s070ms (2) 068 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +16m32s088ms (2) 068 +wake_lock_in=1000:"NetworkStats"
+         +16m32s172ms (2) 068 -wake_lock_in=1000:"NetworkStats"
+         +16m32s176ms (2) 068 wifi_signal_strength=4 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +16m33s632ms (3) 068 phone_signal_strength=good -wake_lock_in=1013:"AudioMix"
+         +16m39s189ms (2) 068 +wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +16m39s191ms (2) 068 -wake_lock_in=1000:"*alarm*:com.android.server.WifiManager.action.START_SCAN"
+         +16m41s835ms (1) 068 wifi_signal_strength=3
+         +16m44s926ms (2) 068 phone_signal_strength=great
+         +16m44s988ms (4) 068 status=charging plug=usb temp=381 volt=3763 +plugged +wake_lock_in=u0a20:"Wakeful StateMachine: GeofencerStateMachine"
+         +16m45s064ms (2) 068 -wake_lock_in=u0a20:"Wakeful StateMachine: GeofencerStateMachine"
+         +16m45s095ms (2) 068 +wake_lock_in=u0a20:"wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService"
+         +16m45s111ms (2) 068 +wake_lock_in=u0a70:"wake:com.google.android.apps.plus/.service.PhotosAppTransitionService"
+         +16m45s115ms (2) 068 +wake_lock_in=u0a20:"fingerprint_scanner_local"
+         +16m45s116ms (2) 068 -wake_lock_in=u0a20:"wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService"
+         +16m45s133ms (2) 068 +wake_lock_in=u0a70:"fingerprint_scanner_static"
+         +16m45s134ms (2) 068 -wake_lock_in=u0a70:"wake:com.google.android.apps.plus/.service.PhotosAppTransitionService"
+         +16m45s140ms (2) 068 +wake_lock_in=u0a70:"fingerprint_scanner_local"
+         +16m45s140ms (2) 068 -wake_lock_in=u0a70:"fingerprint_scanner_static"
+         +16m45s183ms (2) 068 -wake_lock_in=u0a20:"fingerprint_scanner_local"
+         +16m45s238ms (2) 068 -wake_lock_in=u0a70:"fingerprint_scanner_local"
+         +16m51s983ms (2) 068 phone_signal_strength=good
+         +17m00s175ms (2) 068 +wake_lock_in=1001:"RILJ"
+         +17m00s215ms (3) 068 phone_signal_strength=moderate -wake_lock_in=1001:"RILJ"
+         +17m03s511ms (2) 068 +wake_lock_in=u0a20:"*walarm*:com.google.android.gms/.checkin.EventLogServiceReceiver"
+         +17m03s523ms (3) 067 temp=397 volt=3959 +wake_lock_in=u0a20:"wake:com.google.android.gms/.checkin.EventLogService"
+         +17m03s556ms (2) 067 +wake_lock_in=1000:"*alarm*"
+         +17m03s556ms (2) 067 -wake_lock_in=u0a20:"*walarm*:com.google.android.gms/.checkin.EventLogServiceReceiver"
+         +17m03s559ms (2) 067 -wake_lock_in=1000:"*alarm*"
+         +17m03s560ms (2) 067 +wake_lock_in=u0a20:"Event Log Service"
+         +17m03s560ms (2) 067 -wake_lock_in=u0a20:"wake:com.google.android.gms/.checkin.EventLogService"
+         +17m03s774ms (2) 067 -wake_lock_in=u0a20:"Event Log Service"
+         +17m05s163ms (2) 067 +wake_lock_in=1001:"RILJ"
+         +17m05s183ms (2) 067 -wake_lock_in=1001:"RILJ"
+         +17m05s218ms (2) 067 +wake_lock_in=1001:"RILJ"
+         +17m05s224ms (2) 067 -wake_lock_in=1001:"RILJ"
+         +17m19s186ms (2) 067 +wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE"
+         +17m19s191ms (2) 067 +wake_lock_in=1000:"*alarm*"
+         +17m19s191ms (2) 067 -wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE"
+         +17m19s193ms (2) 067 -wake_lock_in=1000:"*alarm*"
+         +17m19s197ms (2) 067 +wake_lock_in=u0a20:"*net_scheduler*"
+         +17m19s250ms (2) 067 +wake_lock_in=u0a67:"*net_scheduler*"
+         +17m19s331ms (2) 067 +proc=u0a67:"com.google.android.talk"
+         +17m19s369ms (2) 067 -wake_lock_in=u0a20:"*net_scheduler*"
+
+Per-PID Stats:
+  PID 0 wake time: +19s255ms
+  PID 2301 wake time: +19s462ms
+  PID 2949 wake time: +376ms
+  PID 0 wake time: +3m11s496ms
+  PID 2301 wake time: +89ms
+  PID 3118 wake time: +309ms
+  PID 4146 wake time: +1h0m27s82ms
+  PID 2301 wake time: +53ms
+  PID 3118 wake time: +2s328ms
+  PID 4631 wake time: +127ms
+  PID 2301 wake time: +12ms
+
+Discharge step durations:
+  #0: +1m16s45ms to 68 (screen-on, power-save-off)
+  #1: +1m18s7ms to 69 (screen-on, power-save-off)
+  #2: +1m8s17ms to 70 (screen-on, power-save-off)
+  #3: +1m14s15ms to 71 (screen-on, power-save-off)
+  #4: +1m16s17ms to 72 (screen-on, power-save-off)
+  #5: +2m27s39ms to 73 (screen-on, power-save-off)
+  #6: +1m24s19ms to 74 (screen-on, power-save-off)
+  #7: +1m19s34ms to 75 (screen-on, power-save-off)
+  #8: +1m19s11ms to 76 (screen-on, power-save-off)
+
+Statistics since last charge:
+  System starts: 0, currently on battery: false
+  Time on battery: 16m 12s 370ms (93,4%) realtime, 16m 12s 371ms (93,4%) uptime
+  Time on battery screen off: 0ms (0,0%) realtime, 0ms (0,0%) uptime
+  Total run time: 17m 21s 604ms realtime, 17m 21s 604ms uptime
+  Start clock time: 2017-05-03-14-58-38
+  Screen on: 16m 12s 370ms (100,0%) 0x, Interactive: 16m 12s 370ms (100,0%)
+  Screen brightnesses:
+    dark 18s 355ms (1,9%)
+    light 40s 998ms (4,2%)
+    bright 15m 13s 17ms (93,9%)
+  Total full wakelock time: 3m 47s 956ms
+  Mobile total received: 0B, sent: 0B (packets received 0, sent 0)
+  Phone signal levels:
+    none 7s 627ms (0,8%) 1x
+    moderate 4m 24s 163ms (27,2%) 9x
+    good 8m 46s 788ms (54,2%) 11x
+    great 2m 53s 792ms (17,9%) 5x
+  Signal scanning time: 7s 627ms
+  Radio types:
+    none 16m 12s 370ms (100,0%) 0x
+  Mobile radio active time: 0ms (0,0%) 0x
+  Wi-Fi total received: 118,47KB, sent: 162,16KB (packets received 426, sent 557)
+  Wifi on: 16m 12s 370ms (100,0%), Wifi running: 16m 12s 370ms (100,0%)
+  Wifi states: (no activity)
+  Wifi supplicant states:
+    completed 16m 12s 370ms (100,0%) 0x
+  Wifi signal levels:
+    level(2) 57s 422ms (5,9%) 3x
+    level(3) 8m 24s 434ms (51,9%) 42x
+    level(4) 6m 50s 514ms (42,2%) 39x
+  Bluetooth on: 0ms (0,0%)
+  Bluetooth states: (no activity)
+
+  Device battery use since last full charge
+    Amount discharged (lower bound): 9
+    Amount discharged (upper bound): 10
+    Amount discharged while screen on: 10
+    Amount discharged while screen off: 0
+
+  Estimated power use (mAh):
+    Capacity: 2100, Computed drain: 97,4, actual drain: 189-210
+    Unaccounted: 91,6
+    Screen: 74,8
+    Uid 1000: 8,46
+    Uid u0a114: 7,10
+    Uid 0: 1,76
+    Uid u0a84: 1,47
+    Cell standby: 1,10
+    Wifi: 1,08
+    Uid u0a14: 0,630
+    Uid u0a85: 0,299
+    Uid u0a78: 0,278
+    Uid 1013: 0,258
+    Uid u0a20: 0,115
+    Uid 1001: 0,0497
+    Uid u0a17: 0,0156
+    Uid u0a5: 0,0112
+    Uid u0a70: 0,00746
+    Uid u0a45: 0,00549
+    Uid u0a36: 0,00221
+    Uid 1027: 0,00207
+    Uid u0a8: 0,000753
+    Uid 1014: 0,00000167
+
+  0:
+    Wi-Fi network: 3,01KB received, 2,09KB sent (packets 38 received, 42 sent)
+    Proc irq/387-melfas-:
+      CPU: 0ms usr + 610ms krn ; 0ms fg
+    Proc flush-179:0:
+      CPU: 0ms usr + 80ms krn ; 0ms fg
+    Proc s3c-fb-vsync:
+      CPU: 0ms usr + 2s 400ms krn ; 0ms fg
+    Proc sync_supers:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc dhcpcd:
+      CPU: 0ms usr + 20ms krn ; 0ms fg
+    Proc wl_event_handle:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc s3c-fb:
+      CPU: 0ms usr + 3s 510ms krn ; 0ms fg
+    Proc sdcard:
+      CPU: 530ms usr + 4s 400ms krn ; 0ms fg
+    Proc zygote:
+      CPU: 130ms usr + 110ms krn ; 0ms fg
+    Proc ueventd:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Proc kswapd0:
+      CPU: 0ms usr + 1s 840ms krn ; 0ms fg
+    Proc jbd2/mmcblk0p12:
+      CPU: 0ms usr + 210ms krn ; 0ms fg
+    Proc lmkd:
+      CPU: 10ms usr + 70ms krn ; 0ms fg
+    Proc logd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc netd:
+      CPU: 30ms usr + 50ms krn ; 0ms fg
+    Proc /init:
+      CPU: 20ms usr + 40ms krn ; 0ms fg
+    Proc khubd:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kthreadd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc kworker/0:1:
+      CPU: 0ms usr + 1s 640ms krn ; 0ms fg
+    Proc kworker/0:3:
+      CPU: 0ms usr + 1s 980ms krn ; 0ms fg
+    Proc kworker/1:1:
+      CPU: 10ms usr + 60ms krn ; 0ms fg
+    Proc kworker/2:1:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kworker/3:2:
+      CPU: 0ms usr + 230ms krn ; 0ms fg
+    Proc kworker/u:0:
+      CPU: 0ms usr + 1s 870ms krn ; 0ms fg
+    Proc kworker/u:1:
+      CPU: 0ms usr + 2s 700ms krn ; 0ms fg
+    Proc kworker/u:2:
+      CPU: 0ms usr + 1s 900ms krn ; 0ms fg
+    Proc kworker/u:3:
+      CPU: 0ms usr + 1s 270ms krn ; 0ms fg
+    Proc healthd:
+      CPU: 10ms usr + 160ms krn ; 0ms fg
+    Proc dhd_watchdog_th:
+      CPU: 0ms usr + 270ms krn ; 0ms fg
+    Proc mmcqd/0:
+      CPU: 0ms usr + 5s 590ms krn ; 0ms fg
+    Proc ksoftirqd/0:
+      CPU: 0ms usr + 110ms krn ; 0ms fg
+    Proc ksoftirqd/1:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc ksoftirqd/3:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc wpa_supplicant:
+      CPU: 220ms usr + 1s 430ms krn ; 0ms fg
+    Proc dhd_dpc:
+      CPU: 0ms usr + 1s 740ms krn ; 0ms fg
+  1000:
+    User activity: 111 other, 250 touch
+    Wake lock DHCP realtime
+    Wake lock NetworkStats realtime
+    Wake lock AudioMix realtime
+    Wake lock *alarm* realtime
+    Sensor 3: 2m 50s 728ms realtime (0 times)
+    Foreground for: 16m 12s 370ms 
+    Proc system:
+      CPU: 21s 670ms usr + 21s 750ms krn ; 0ms fg
+    Proc surfaceflinger:
+      CPU: 1m 0s 700ms usr + 55s 880ms krn ; 0ms fg
+    Proc com.android.settings:
+      CPU: 90ms usr + 100ms krn ; 0ms fg
+    Proc servicemanager:
+      CPU: 50ms usr + 60ms krn ; 0ms fg
+    Apk android:
+      5 wakeup alarms
+  1001:
+    Wake lock RILJ realtime
+    Foreground for: 16m 12s 370ms 
+    Proc rild:
+      CPU: 80ms usr + 150ms krn ; 0ms fg
+    Proc com.android.phone:
+      CPU: 390ms usr + 370ms krn ; 0ms fg
+  1013:
+    Wake lock AudioMix realtime
+    Proc mediaserver:
+      CPU: 3s 50ms usr + 1s 880ms krn ; 0ms fg
+  1014:
+    Wi-Fi network: 1,32KB received, 2,24KB sent (packets 4 received, 7 sent)
+    (nothing executed)
+  1027:
+    Foreground for: 16m 12s 370ms 
+    Proc com.android.nfc:
+      CPU: 20ms usr + 20ms krn ; 0ms fg
+  u0a0:
+    Foreground for: 16m 12s 370ms 
+  u0a2:
+    Foreground for: 16m 12s 370ms 
+  u0a3:
+    Foreground for: 16m 11s 786ms 
+    Running for: 16m 12s 370ms 
+  u0a4:
+    Active for: 9ms 
+    Running for: 16m 12s 370ms 
+  u0a5:
+    Foreground for: 118ms 
+    Running for: 16m 12s 370ms 
+    Proc android.process.acore:
+      CPU: 80ms usr + 110ms krn ; 0ms fg
+  u0a7:
+    Foreground for: 16m 12s 370ms 
+  u0a8:
+    Active for: 998ms 
+    Running for: 16m 12s 370ms 
+    Proc android.process.media:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+    Apk com.android.providers.media:
+      Service com.android.providers.media.MtpService:
+        Created for: 455ms uptime
+        Starts: 1, launches: 1
+  u0a10:
+    Foreground for: 16m 12s 370ms 
+  u0a11:
+    Foreground for: 16m 12s 370ms 
+  u0a14:
+    Foreground for: 16m 12s 370ms 
+    Proc com.android.systemui:
+      CPU: 7s 780ms usr + 4s 160ms krn ; 0ms fg
+  u0a17:
+    Active for: 912ms 
+    Running for: 16m 12s 370ms 
+    Proc com.cyanogenmod.trebuchet:
+      CPU: 210ms usr + 80ms krn ; 0ms fg
+  u0a20:
+    Wi-Fi network: 77B received, 189B sent (packets 1 received, 3 sent)
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService realtime
+    Wake lock Event Log Service realtime
+    Wake lock GCM_HB_ALARM realtime
+    Wake lock GCM_READ realtime
+    Wake lock wake:com.google.android.gms/.checkin.EventLogService realtime
+    Wake lock Wakeful StateMachine: GeofencerStateMachine realtime
+    Wake lock CmaSystemUpdateService realtime
+    Wake lock *alarm* realtime
+    Wake lock *net_scheduler* realtime
+    Foreground for: 16m 12s 370ms 
+    Proc com.google.android.gms.persistent:
+      CPU: 660ms usr + 380ms krn ; 0ms fg
+    Proc com.google.android.gms.feedback:
+      CPU: 610ms usr + 400ms krn ; 0ms fg
+    Proc com.google.android.gms:
+      CPU: 220ms usr + 190ms krn ; 0ms fg
+    Apk com.google.android.gms:
+      2 wakeup alarms
+      Service com.google.android.gms.ads.identifier.service.AdvertisingIdService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 3
+      Service com.google.android.gms.usagereporting.service.UsageReportingService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 2
+      Service com.google.android.gms.lockbox.service.LockboxBrokerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 2
+      Service com.google.android.gms.stats.service.DropBoxEntryAddedService:
+        Created for: 10s 136ms uptime
+        Starts: 2, launches: 2
+  u0a22:
+    Foreground for: 16m 12s 370ms 
+  u0a23:
+    Foreground for: 16m 12s 370ms 
+  u0a24:
+    Foreground for: 16m 12s 370ms 
+  u0a25:
+    Foreground for: 16m 12s 370ms 
+  u0a26:
+    Foreground for: 16m 12s 370ms 
+  u0a32:
+    Foreground for: 16m 12s 370ms 
+  u0a34:
+    Foreground for: 16m 12s 370ms 
+  u0a36:
+    Wake lock *alarm* realtime
+    Active for: 58ms 
+    Running for: 16m 12s 370ms 
+    Proc com.android.deskclock:
+      CPU: 10ms usr + 30ms krn ; 0ms fg
+  u0a38:
+    Foreground for: 16m 12s 370ms 
+  u0a39:
+    Foreground for: 16m 12s 370ms 
+  u0a40:
+    Foreground for: 16m 12s 370ms 
+  u0a42:
+    Foreground for: 16m 12s 370ms 
+  u0a45:
+    Foreground for: 11m 4s 847ms 
+    Active for: 11m 4s 857ms 
+    Running for: 16m 12s 370ms 
+    Proc com.android.inputmethod.latin:
+      CPU: 30ms usr + 80ms krn ; 0ms fg
+      2 proc starts
+    Apk com.android.inputmethod.latin:
+      Service com.android.inputmethod.latin.spellcheck.AndroidSpellCheckerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 4
+  u0a48:
+    Running for: 16m 12s 370ms 
+  u0a56:
+    Foreground for: 16m 12s 370ms 
+  u0a61:
+    Foreground for: 16m 12s 370ms 
+  u0a62:
+    Foreground for: 16m 12s 370ms 
+  u0a64:
+    Foreground for: 16m 12s 370ms 
+  u0a65:
+    Foreground for: 16m 12s 370ms 
+  u0a67:
+    Wake lock *net_scheduler* realtime
+    Foreground for: 16m 12s 370ms 
+    Apk com.google.android.talk:
+      Service com.google.android.apps.hangouts.concurrent.impl.GcmTriggeredNotifier:
+        Created for: 0ms uptime
+        Starts: 1, launches: 1
+  u0a70:
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.apps.plus/.service.PhotosAppTransitionService realtime
+    Wake lock fingerprint_scanner_static realtime
+    Active for: 11ms 
+    Running for: 16m 12s 370ms 
+    Proc com.google.android.apps.plus:
+      CPU: 70ms usr + 60ms krn ; 0ms fg
+    Apk com.google.android.apps.plus:
+      (nothing executed)
+  u0a72:
+    Foreground for: 16m 12s 370ms 
+  u0a73:
+    Foreground for: 16m 12s 370ms 
+  u0a76:
+    Foreground for: 16m 12s 370ms 
+  u0a78:
+    Wi-Fi network: 600B received, 376B sent (packets 9 received, 7 sent)
+    Running for: 16m 12s 370ms 
+    Proc com.android.chrome:privileged_process0:
+      CPU: 120ms usr + 70ms krn ; 0ms fg
+    Proc com.android.chrome:
+      CPU: 2s 640ms usr + 2s 300ms krn ; 0ms fg
+    Proc com.android.chrome:sandboxed_process0:
+      CPU: 10ms usr + 20ms krn ; 0ms fg
+    Proc com.android.chrome:sandboxed_process1:
+      CPU: 20ms usr + 30ms krn ; 0ms fg
+    Proc com.android.chrome:sandboxed_process2:
+      CPU: 10ms usr + 20ms krn ; 0ms fg
+  u0a82:
+    Foreground for: 16m 12s 370ms 
+  u0a84:
+    Vibrator: 1s 480ms realtime (185 times)
+    Foreground for: 2m 33s 178ms 
+    Active for: 16m 12s 370ms 
+    Proc com.google.android.inputmethod.latin:
+      CPU: 23s 860ms usr + 4s 160ms krn ; 0ms fg
+  u0a85:
+    Wi-Fi network: 23,97KB received, 19,96KB sent (packets 57 received, 79 sent)
+    User activity: 1 other
+    Wake lock LockScreen ==KeepScreenOn==: 9s 821ms full (1 times) realtime
+    Wake lock *alarm* realtime
+    TOTAL wake: 9s 821ms full realtime
+    Foreground for: 17s 576ms 
+    Active for: 16m 12s 370ms 
+    Proc com.estrongs.android.pop:
+      CPU: 3s 30ms usr + 2s 30ms krn ; 0ms fg
+      1 proc starts
+    Proc .esfm:
+      CPU: 530ms usr + 1s 20ms krn ; 0ms fg
+      1 proc starts
+    Proc com.estrongs.android.pop:local:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Apk com.estrongs.android.pop:
+      Service com.estrongs.android.scanner.service.FileScannerService:
+        Created for: 5m 8s 679ms uptime
+        Starts: 1, launches: 1
+      Service com.estrongs.android.ui.notification.ESTaskService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 1
+      Service com.dianxinos.dxservice.core.DXCoreService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 1
+  u0a114:
+    Wi-Fi network: 89,51KB received, 137,31KB sent (packets 317 received, 419 sent)
+    Wake lock WindowManager: 3m 38s 135ms full (56 times) realtime
+    Foreground activities: 16m 12s 370ms realtime (0 times)
+    Foreground for: 16m 12s 370ms 
+    Proc agostinisalome.it.mobilenode:
+      CPU: 1m 37s 840ms usr + 36s 730ms krn ; 0ms fg
+
+Statistics since last unplugged:
+  Time on battery: 16m 12s 370ms (96,4%) realtime, 16m 12s 371ms (96,4%) uptime
+  Time on battery screen off: 0ms (0,0%) realtime, 0ms (0,0%) uptime
+  Total run time: 16m 48s 984ms realtime, 16m 48s 985ms uptime
+  Start clock time: 2017-05-03-14-58-38
+  Screen on: 16m 12s 370ms (100,0%) 0x, Interactive: 16m 12s 370ms (100,0%)
+  Screen brightnesses:
+    dark 18s 355ms (1,9%)
+    light 40s 998ms (4,2%)
+    bright 15m 13s 17ms (93,9%)
+  Total full wakelock time: 3m 47s 956ms
+  Mobile total received: 0B, sent: 0B (packets received 0, sent 0)
+  Phone signal levels:
+    none 7s 627ms (0,8%) 0x
+    moderate 4m 24s 163ms (27,2%) 9x
+    good 8m 46s 788ms (54,2%) 12x
+    great 2m 53s 792ms (17,9%) 5x
+  Signal scanning time: 7s 627ms
+  Radio types:
+    none 16m 12s 370ms (100,0%) 0x
+  Mobile radio active time: 0ms (0,0%) 0x
+  Wi-Fi total received: 118,47KB, sent: 162,16KB (packets received 426, sent 557)
+  Wifi on: 16m 12s 370ms (100,0%), Wifi running: 16m 12s 370ms (100,0%)
+  Wifi states: (no activity)
+  Wifi supplicant states:
+    completed 16m 12s 370ms (100,0%) 0x
+  Wifi signal levels:
+    level(2) 57s 422ms (5,9%) 3x
+    level(3) 8m 24s 434ms (51,9%) 42x
+    level(4) 6m 50s 514ms (42,2%) 39x
+  Bluetooth on: 0ms (0,0%)
+  Bluetooth states: (no activity)
+
+  Device is currently plugged into power
+    Last discharge cycle start level: 78
+    Last discharge cycle end level: 68
+    Amount discharged while screen on: 10
+    Amount discharged while screen off: 0
+ 
+  Estimated power use (mAh):
+    Capacity: 2100, Computed drain: 97,4, actual drain: 189-210
+    Unaccounted: 91,6
+    Screen: 74,8
+    Uid 1000: 8,46
+    Uid u0a114: 7,10
+    Uid 0: 1,76
+    Uid u0a84: 1,47
+    Cell standby: 1,10
+    Wifi: 1,08
+    Uid u0a14: 0,630
+    Uid u0a85: 0,299
+    Uid u0a78: 0,278
+    Uid 1013: 0,258
+    Uid u0a20: 0,115
+    Uid 1001: 0,0497
+    Uid u0a17: 0,0156
+    Uid u0a5: 0,0112
+    Uid u0a70: 0,00746
+    Uid u0a45: 0,00549
+    Uid u0a36: 0,00221
+    Uid 1027: 0,00207
+    Uid u0a8: 0,000753
+    Uid 1014: 0,00000167
+
+  0:
+    Wi-Fi network: 3,01KB received, 2,09KB sent (packets 38 received, 42 sent)
+    Proc irq/387-melfas-:
+      CPU: 0ms usr + 610ms krn ; 0ms fg
+    Proc flush-179:0:
+      CPU: 0ms usr + 80ms krn ; 0ms fg
+    Proc s3c-fb-vsync:
+      CPU: 0ms usr + 2s 400ms krn ; 0ms fg
+    Proc sync_supers:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc dhcpcd:
+      CPU: 0ms usr + 20ms krn ; 0ms fg
+    Proc wl_event_handle:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc s3c-fb:
+      CPU: 0ms usr + 3s 510ms krn ; 0ms fg
+    Proc sdcard:
+      CPU: 530ms usr + 4s 400ms krn ; 0ms fg
+    Proc zygote:
+      CPU: 130ms usr + 110ms krn ; 0ms fg
+    Proc ueventd:
+      CPU: 10ms usr + 10ms krn ; 0ms fg
+    Proc kswapd0:
+      CPU: 0ms usr + 1s 840ms krn ; 0ms fg
+    Proc jbd2/mmcblk0p12:
+      CPU: 0ms usr + 210ms krn ; 0ms fg
+    Proc lmkd:
+      CPU: 10ms usr + 70ms krn ; 0ms fg
+    Proc logd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc netd:
+      CPU: 30ms usr + 50ms krn ; 0ms fg
+    Proc /init:
+      CPU: 20ms usr + 40ms krn ; 0ms fg
+    Proc khubd:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kthreadd:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Proc kworker/0:1:
+      CPU: 0ms usr + 1s 640ms krn ; 0ms fg
+    Proc kworker/0:3:
+      CPU: 0ms usr + 1s 980ms krn ; 0ms fg
+    Proc kworker/1:1:
+      CPU: 10ms usr + 60ms krn ; 0ms fg
+    Proc kworker/2:1:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc kworker/3:2:
+      CPU: 0ms usr + 230ms krn ; 0ms fg
+    Proc kworker/u:0:
+      CPU: 0ms usr + 1s 870ms krn ; 0ms fg
+    Proc kworker/u:1:
+      CPU: 0ms usr + 2s 700ms krn ; 0ms fg
+    Proc kworker/u:2:
+      CPU: 0ms usr + 1s 900ms krn ; 0ms fg
+    Proc kworker/u:3:
+      CPU: 0ms usr + 1s 270ms krn ; 0ms fg
+    Proc healthd:
+      CPU: 10ms usr + 160ms krn ; 0ms fg
+    Proc dhd_watchdog_th:
+      CPU: 0ms usr + 270ms krn ; 0ms fg
+    Proc mmcqd/0:
+      CPU: 0ms usr + 5s 590ms krn ; 0ms fg
+    Proc ksoftirqd/0:
+      CPU: 0ms usr + 110ms krn ; 0ms fg
+    Proc ksoftirqd/1:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc ksoftirqd/3:
+      CPU: 10ms usr + 0ms krn ; 0ms fg
+    Proc wpa_supplicant:
+      CPU: 220ms usr + 1s 430ms krn ; 0ms fg
+    Proc dhd_dpc:
+      CPU: 0ms usr + 1s 740ms krn ; 0ms fg
+  1000:
+    User activity: 111 other, 250 touch
+    Wake lock DHCP realtime
+    Wake lock NetworkStats realtime
+    Wake lock AudioMix realtime
+    Wake lock *alarm* realtime
+    Sensor 3: 2m 50s 728ms realtime (0 times)
+    Foreground for: 16m 12s 370ms 
+    Proc system:
+      CPU: 21s 670ms usr + 21s 750ms krn ; 0ms fg
+    Proc surfaceflinger:
+      CPU: 1m 0s 700ms usr + 55s 880ms krn ; 0ms fg
+    Proc com.android.settings:
+      CPU: 90ms usr + 100ms krn ; 0ms fg
+    Proc servicemanager:
+      CPU: 50ms usr + 60ms krn ; 0ms fg
+    Apk android:
+      5 wakeup alarms
+  1001:
+    Wake lock RILJ realtime
+    Foreground for: 16m 12s 370ms 
+    Proc rild:
+      CPU: 80ms usr + 150ms krn ; 0ms fg
+    Proc com.android.phone:
+      CPU: 390ms usr + 370ms krn ; 0ms fg
+  1013:
+    Wake lock AudioMix realtime
+    Proc mediaserver:
+      CPU: 3s 50ms usr + 1s 880ms krn ; 0ms fg
+  1014:
+    Wi-Fi network: 1,32KB received, 2,24KB sent (packets 4 received, 7 sent)
+    (nothing executed)
+  1027:
+    Foreground for: 16m 12s 370ms 
+    Proc com.android.nfc:
+      CPU: 20ms usr + 20ms krn ; 0ms fg
+  u0a0:
+    Foreground for: 16m 12s 370ms 
+  u0a2:
+    Foreground for: 16m 12s 370ms 
+  u0a3:
+    Foreground for: 16m 11s 786ms 
+    Running for: 16m 12s 370ms 
+  u0a4:
+    Active for: 9ms 
+    Running for: 16m 12s 370ms 
+  u0a5:
+    Foreground for: 118ms 
+    Running for: 16m 12s 370ms 
+    Proc android.process.acore:
+      CPU: 80ms usr + 110ms krn ; 0ms fg
+  u0a7:
+    Foreground for: 16m 12s 370ms 
+  u0a8:
+    Active for: 998ms 
+    Running for: 16m 12s 370ms 
+    Proc android.process.media:
+      CPU: 0ms usr + 30ms krn ; 0ms fg
+    Apk com.android.providers.media:
+      Service com.android.providers.media.MtpService:
+        Created for: 455ms uptime
+        Starts: 1, launches: 1
+  u0a10:
+    Foreground for: 16m 12s 370ms 
+  u0a11:
+    Foreground for: 16m 12s 370ms 
+  u0a14:
+    Foreground for: 16m 12s 370ms 
+    Proc com.android.systemui:
+      CPU: 7s 780ms usr + 4s 160ms krn ; 0ms fg
+  u0a17:
+    Active for: 912ms 
+    Running for: 16m 12s 370ms 
+    Proc com.cyanogenmod.trebuchet:
+      CPU: 210ms usr + 80ms krn ; 0ms fg
+  u0a20:
+    Wi-Fi network: 77B received, 189B sent (packets 1 received, 3 sent)
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService realtime
+    Wake lock Event Log Service realtime
+    Wake lock GCM_HB_ALARM realtime
+    Wake lock GCM_READ realtime
+    Wake lock wake:com.google.android.gms/.checkin.EventLogService realtime
+    Wake lock Wakeful StateMachine: GeofencerStateMachine realtime
+    Wake lock CmaSystemUpdateService realtime
+    Wake lock *alarm* realtime
+    Wake lock *net_scheduler* realtime
+    Foreground for: 16m 12s 370ms 
+    Proc com.google.android.gms.persistent:
+      CPU: 660ms usr + 380ms krn ; 0ms fg
+    Proc com.google.android.gms.feedback:
+      CPU: 610ms usr + 400ms krn ; 0ms fg
+    Proc com.google.android.gms:
+      CPU: 220ms usr + 190ms krn ; 0ms fg
+    Apk com.google.android.gms:
+      2 wakeup alarms
+      Service com.google.android.gms.ads.identifier.service.AdvertisingIdService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 3
+      Service com.google.android.gms.usagereporting.service.UsageReportingService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 2
+      Service com.google.android.gms.lockbox.service.LockboxBrokerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 2
+      Service com.google.android.gms.stats.service.DropBoxEntryAddedService:
+        Created for: 10s 136ms uptime
+        Starts: 2, launches: 2
+  u0a22:
+    Foreground for: 16m 12s 370ms 
+  u0a23:
+    Foreground for: 16m 12s 370ms 
+  u0a24:
+    Foreground for: 16m 12s 370ms 
+  u0a25:
+    Foreground for: 16m 12s 370ms 
+  u0a26:
+    Foreground for: 16m 12s 370ms 
+  u0a32:
+    Foreground for: 16m 12s 370ms 
+  u0a34:
+    Foreground for: 16m 12s 370ms 
+  u0a36:
+    Wake lock *alarm* realtime
+    Active for: 58ms 
+    Running for: 16m 12s 370ms 
+    Proc com.android.deskclock:
+      CPU: 10ms usr + 30ms krn ; 0ms fg
+  u0a38:
+    Foreground for: 16m 12s 370ms 
+  u0a39:
+    Foreground for: 16m 12s 370ms 
+  u0a40:
+    Foreground for: 16m 12s 370ms 
+  u0a42:
+    Foreground for: 16m 12s 370ms 
+  u0a45:
+    Foreground for: 11m 4s 847ms 
+    Active for: 11m 4s 857ms 
+    Running for: 16m 12s 370ms 
+    Proc com.android.inputmethod.latin:
+      CPU: 30ms usr + 80ms krn ; 0ms fg
+      2 proc starts
+    Apk com.android.inputmethod.latin:
+      Service com.android.inputmethod.latin.spellcheck.AndroidSpellCheckerService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 4
+  u0a48:
+    Running for: 16m 12s 370ms 
+  u0a56:
+    Foreground for: 16m 12s 370ms 
+  u0a61:
+    Foreground for: 16m 12s 370ms 
+  u0a62:
+    Foreground for: 16m 12s 370ms 
+  u0a64:
+    Foreground for: 16m 12s 370ms 
+  u0a65:
+    Foreground for: 16m 12s 370ms 
+  u0a67:
+    Wake lock *net_scheduler* realtime
+    Foreground for: 16m 12s 370ms 
+    Apk com.google.android.talk:
+      Service com.google.android.apps.hangouts.concurrent.impl.GcmTriggeredNotifier:
+        Created for: 0ms uptime
+        Starts: 1, launches: 1
+  u0a70:
+    Wake lock fingerprint_scanner_local realtime
+    Wake lock wake:com.google.android.apps.plus/.service.PhotosAppTransitionService realtime
+    Wake lock fingerprint_scanner_static realtime
+    Active for: 11ms 
+    Running for: 16m 12s 370ms 
+    Proc com.google.android.apps.plus:
+      CPU: 70ms usr + 60ms krn ; 0ms fg
+    Apk com.google.android.apps.plus:
+      (nothing executed)
+  u0a72:
+    Foreground for: 16m 12s 370ms 
+  u0a73:
+    Foreground for: 16m 12s 370ms 
+  u0a76:
+    Foreground for: 16m 12s 370ms 
+  u0a78:
+    Wi-Fi network: 600B received, 376B sent (packets 9 received, 7 sent)
+    Running for: 16m 12s 370ms 
+    Proc com.android.chrome:privileged_process0:
+      CPU: 120ms usr + 70ms krn ; 0ms fg
+    Proc com.android.chrome:
+      CPU: 2s 640ms usr + 2s 300ms krn ; 0ms fg
+    Proc com.android.chrome:sandboxed_process0:
+      CPU: 10ms usr + 20ms krn ; 0ms fg
+    Proc com.android.chrome:sandboxed_process1:
+      CPU: 20ms usr + 30ms krn ; 0ms fg
+    Proc com.android.chrome:sandboxed_process2:
+      CPU: 10ms usr + 20ms krn ; 0ms fg
+  u0a82:
+    Foreground for: 16m 12s 370ms 
+  u0a84:
+    Vibrator: 1s 480ms realtime (185 times)
+    Foreground for: 2m 33s 178ms 
+    Active for: 16m 12s 370ms 
+    Proc com.google.android.inputmethod.latin:
+      CPU: 23s 860ms usr + 4s 160ms krn ; 0ms fg
+  u0a85:
+    Wi-Fi network: 23,97KB received, 19,96KB sent (packets 57 received, 79 sent)
+    User activity: 1 other
+    Wake lock LockScreen ==KeepScreenOn==: 9s 821ms full (1 times) realtime
+    Wake lock *alarm* realtime
+    TOTAL wake: 9s 821ms full realtime
+    Foreground for: 17s 576ms 
+    Active for: 16m 12s 370ms 
+    Proc com.estrongs.android.pop:
+      CPU: 3s 30ms usr + 2s 30ms krn ; 0ms fg
+      1 proc starts
+    Proc .esfm:
+      CPU: 530ms usr + 1s 20ms krn ; 0ms fg
+      1 proc starts
+    Proc com.estrongs.android.pop:local:
+      CPU: 0ms usr + 10ms krn ; 0ms fg
+    Apk com.estrongs.android.pop:
+      Service com.estrongs.android.scanner.service.FileScannerService:
+        Created for: 5m 8s 679ms uptime
+        Starts: 1, launches: 1
+      Service com.estrongs.android.ui.notification.ESTaskService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 1
+      Service com.dianxinos.dxservice.core.DXCoreService:
+        Created for: 0ms uptime
+        Starts: 0, launches: 1
+  u0a114:
+    Wi-Fi network: 89,51KB received, 137,31KB sent (packets 317 received, 419 sent)
+    Wake lock WindowManager: 3m 38s 135ms full (56 times) realtime
+    Foreground activities: 16m 12s 370ms realtime (0 times)
+    Foreground for: 16m 12s 370ms 
+    Proc agostinisalome.it.mobilenode:
+      CPU: 1m 37s 840ms usr + 36s 730ms krn ; 0ms fg

@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html><head>
+
+<title>Battery Historian analysis for batteria92.txt</title>
+<p>Battery Historian analysis for batteria92.txt</p>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://www.google.com/jsapi?autoload={'modules':[{'name':'visualization','version':'1','packages':['timeline']}]}"></script>
+    
+<script type="text/javascript">
+google.setOnLoadCallback(drawChart);
+
+
+    var dataTable;
+    var chart;
+    var options;
+    var default_width = 3000
+function drawChart() {
+
+    container = document.getElementById('chart');
+    chart = new google.visualization.Timeline(container);
+
+    dataTable = new google.visualization.DataTable();
+    dataTable.addColumn({ type: 'string', id: 'Position' });
+    dataTable.addColumn({ type: 'string', id: 'Name' });
+    dataTable.addColumn({ type: 'date', id: 'Start' });
+    dataTable.addColumn({ type: 'date', id: 'End' });
+    dataTable.addRows([
+
+['battery_level', 'battery_level=088(+5m10s-+5m10s)', new Date(1493820128 * 1000), new Date(1493820129 * 1000)],
+['battery_level', 'battery_level=090(+3m03s-+3m03s)', new Date(1493820001 * 1000), new Date(1493820002 * 1000)],
+['battery_level', 'battery_level=077(+17m29s-+17m29s)', new Date(1493820867 * 1000), new Date(1493820868 * 1000)],
+['battery_level', 'battery_level=089(+4m10s-+4m10s)', new Date(1493820068 * 1000), new Date(1493820069 * 1000)],
+['battery_level', 'battery_level=084(+9m48s-+9m48s)', new Date(1493820406 * 1000), new Date(1493820407 * 1000)],
+['battery_level', 'battery_level=076(+18m38s-+18m38s)', new Date(1493820936 * 1000), new Date(1493820937 * 1000)],
+['battery_level', 'battery_level=092(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['battery_level', 'battery_level=087(+6m25s-+6m25s)', new Date(1493820203 * 1000), new Date(1493820204 * 1000)],
+['battery_level', 'battery_level=075(+19m39s-+19m39s)', new Date(1493820997 * 1000), new Date(1493820998 * 1000)],
+['battery_level', 'battery_level=086(+7m33s-+7m33s)', new Date(1493820271 * 1000), new Date(1493820272 * 1000)],
+['battery_level', 'battery_level=081(+12m54s-+12m54s)', new Date(1493820592 * 1000), new Date(1493820593 * 1000)],
+['battery_level', 'battery_level=078(+16m22s-+16m22s)', new Date(1493820800 * 1000), new Date(1493820801 * 1000)],
+['battery_level', 'battery_level=080(+14m01s-+14m01s)', new Date(1493820659 * 1000), new Date(1493820660 * 1000)],
+['battery_level', 'battery_level=085(+8m42s-+8m42s)', new Date(1493820340 * 1000), new Date(1493820341 * 1000)],
+['battery_level', 'battery_level=091(+1m48s-+1m48s)', new Date(1493819926 * 1000), new Date(1493819927 * 1000)],
+['battery_level', 'battery_level=083(+10m54s-+10m54s)', new Date(1493820472 * 1000), new Date(1493820473 * 1000)],
+['battery_level', 'battery_level=074(+20m31s-+20m31s)', new Date(1493821049 * 1000), new Date(1493821050 * 1000)],
+['battery_level', 'battery_level=079(+15m14s-+15m14s)', new Date(1493820732 * 1000), new Date(1493820733 * 1000)],
+['battery_level', 'battery_level=082(+11m39s-+11m39s)', new Date(1493820517 * 1000), new Date(1493820518 * 1000)],
+['plugged', '+plugged(+20m31s-+21m01s)', new Date(1493821049 * 1000), new Date(1493821079 * 1000)],
+['screen', '+screen(0s-+21m01s)', new Date(1493819818 * 1000), new Date(1493821079 * 1000)],
+['top', '+top=u0a114:"agostinisalome.it.mobilenode"(+10m30s-+20m38s)', new Date(1493820448 * 1000), new Date(1493821056 * 1000)],
+['top', '+top=u0a17:"com.cyanogenmod.trebuchet"(+20m38s-+21m01s)', new Date(1493821056 * 1000), new Date(1493821079 * 1000)],
+['top', '+top=u0a17:"com.cyanogenmod.trebuchet"(+10m04s-+10m09s)', new Date(1493820422 * 1000), new Date(1493820427 * 1000)],
+['top', '+top=u0a17:"com.cyanogenmod.trebuchet"(+10m15s-+10m16s)', new Date(1493820433 * 1000), new Date(1493820434 * 1000)],
+['top', '+top=u0a114:"agostinisalome.it.mobilenode"(0s-+7s)', new Date(1493819818 * 1000), new Date(1493819825 * 1000)],
+['top', '+top=u0a28:"com.android.browser"(+10m09s-+10m13s)', new Date(1493820427 * 1000), new Date(1493820431 * 1000)],
+['top', '+top=u0a20:"com.google.android.gms"(+10m13s-+10m15s)', new Date(1493820431 * 1000), new Date(1493820433 * 1000)],
+['top', '+top=u0a17:"com.cyanogenmod.trebuchet"(+7s-+14s)', new Date(1493819825 * 1000), new Date(1493819832 * 1000)],
+['top', '+top=u0a14:"com.android.systemui"(+10m16s-+10m21s)', new Date(1493820434 * 1000), new Date(1493820439 * 1000)],
+['top', '+top=u0a114:"agostinisalome.it.mobilenode"(+10m21s-+10m24s)', new Date(1493820439 * 1000), new Date(1493820442 * 1000)],
+['top', '+top=u0a114:"agostinisalome.it.mobilenode"(+14s-+10m04s)', new Date(1493819832 * 1000), new Date(1493820422 * 1000)],
+['top', '+top=u0a17:"com.cyanogenmod.trebuchet"(+10m24s-+10m25s)', new Date(1493820442 * 1000), new Date(1493820443 * 1000)],
+['top', '+top=u0a14:"com.android.systemui"(+10m25s-+10m27s)', new Date(1493820443 * 1000), new Date(1493820445 * 1000)],
+['top', '+top=u0a17:"com.cyanogenmod.trebuchet"(+10m27s-+10m30s)', new Date(1493820445 * 1000), new Date(1493820448 * 1000)],
+['wake_lock *', '+wake_lock(0s-+21m01s)', new Date(1493819818 * 1000), new Date(1493821079 * 1000)],
+['running', '+running(0s-+21m01s)', new Date(1493819818 * 1000), new Date(1493821079 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m30s-+18m30s)', new Date(1493820928 * 1000), new Date(1493820929 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m30s-+18m33s)', new Date(1493820928 * 1000), new Date(1493820931 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+9m59s-+9m59s)', new Date(1493820417 * 1000), new Date(1493820418 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+10m01s-+10m01s)', new Date(1493820419 * 1000), new Date(1493820420 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+19m10s-+19m10s)', new Date(1493820968 * 1000), new Date(1493820969 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m04s-+10m04s)', new Date(1493820422 * 1000), new Date(1493820423 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+10m05s-+10m05s)', new Date(1493820423 * 1000), new Date(1493820424 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+18m37s-+18m37s)', new Date(1493820935 * 1000), new Date(1493820936 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m39s-+18m39s)', new Date(1493820937 * 1000), new Date(1493820938 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m39s-+18m42s)', new Date(1493820937 * 1000), new Date(1493820940 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m08s-+10m09s)', new Date(1493820426 * 1000), new Date(1493820428 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m08s-+10m08s)', new Date(1493820426 * 1000), new Date(1493820427 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a17:"*vibrator*"(+10m08s-+10m08s)', new Date(1493820426 * 1000), new Date(1493820427 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m08s-+10m08s)', new Date(1493820426 * 1000), new Date(1493820427 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m09s-+10m10s)', new Date(1493820427 * 1000), new Date(1493820429 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m09s-+10m15s)', new Date(1493820427 * 1000), new Date(1493820433 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+1m38s-+1m38s)', new Date(1493819916 * 1000), new Date(1493819917 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m38s-+1m39s)', new Date(1493819916 * 1000), new Date(1493819917 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m38s-+1m38s)', new Date(1493819916 * 1000), new Date(1493819917 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+1m39s-+1m39s)', new Date(1493819917 * 1000), new Date(1493819918 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m39s-+1m42s)', new Date(1493819917 * 1000), new Date(1493819920 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+10m12s-+10m12s)', new Date(1493820430 * 1000), new Date(1493820431 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m55s-+16m57s)', new Date(1493820833 * 1000), new Date(1493820835 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+10m16s-+10m16s)', new Date(1493820434 * 1000), new Date(1493820435 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m16s-+10m18s)', new Date(1493820434 * 1000), new Date(1493820436 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m21s-+10m24s)', new Date(1493820439 * 1000), new Date(1493820442 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m21s-+10m21s)', new Date(1493820439 * 1000), new Date(1493820440 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m21s-+10m21s)', new Date(1493820439 * 1000), new Date(1493820440 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m21s-+10m21s)', new Date(1493820439 * 1000), new Date(1493820440 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m54s-+18m54s)', new Date(1493820952 * 1000), new Date(1493820953 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m54s-+18m56s)', new Date(1493820952 * 1000), new Date(1493820954 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m54s-+18m54s)', new Date(1493820952 * 1000), new Date(1493820953 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+15m13s-+15m13s)', new Date(1493820731 * 1000), new Date(1493820732 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m24s-+10m24s)', new Date(1493820442 * 1000), new Date(1493820443 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m25s-+10m25s)', new Date(1493820443 * 1000), new Date(1493820444 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+10m25s-+10m25s)', new Date(1493820443 * 1000), new Date(1493820444 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m26s-+10m26s)', new Date(1493820444 * 1000), new Date(1493820445 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m26s-+10m28s)', new Date(1493820444 * 1000), new Date(1493820446 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m26s-+10m26s)', new Date(1493820444 * 1000), new Date(1493820445 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m27s-+10m28s)', new Date(1493820445 * 1000), new Date(1493820447 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a17:"*vibrator*"(+10m28s-+10m28s)', new Date(1493820446 * 1000), new Date(1493820447 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m28s-+10m29s)', new Date(1493820446 * 1000), new Date(1493820448 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m29s-+10m30s)', new Date(1493820447 * 1000), new Date(1493820448 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+10m30s-+10m33s)', new Date(1493820448 * 1000), new Date(1493820451 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m30s-+10m30s)', new Date(1493820448 * 1000), new Date(1493820449 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m30s-+10m33s)', new Date(1493820448 * 1000), new Date(1493820451 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"DHCP"(+17m10s-+17m11s)', new Date(1493820848 * 1000), new Date(1493820850 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"(+17m10s-+17m10s)', new Date(1493820848 * 1000), new Date(1493820849 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+2m01s-+2m01s)', new Date(1493819939 * 1000), new Date(1493819940 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m06s-+19m09s)', new Date(1493820964 * 1000), new Date(1493820967 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m06s-+19m06s)', new Date(1493820964 * 1000), new Date(1493820965 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m06s-+19m06s)', new Date(1493820964 * 1000), new Date(1493820965 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m38s-+18m39s)', new Date(1493820936 * 1000), new Date(1493820938 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m38s-+10m41s)', new Date(1493820456 * 1000), new Date(1493820459 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m38s-+10m38s)', new Date(1493820456 * 1000), new Date(1493820457 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m38s-+10m38s)', new Date(1493820456 * 1000), new Date(1493820457 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m08s-+2m09s)', new Date(1493819946 * 1000), new Date(1493819948 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m08s-+2m08s)', new Date(1493819946 * 1000), new Date(1493819947 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m09s-+2m11s)', new Date(1493819947 * 1000), new Date(1493819949 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m42s-+10m42s)', new Date(1493820460 * 1000), new Date(1493820461 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m42s-+10m44s)', new Date(1493820460 * 1000), new Date(1493820462 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m42s-+10m42s)', new Date(1493820460 * 1000), new Date(1493820461 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10m44s-+10m45s)', new Date(1493820462 * 1000), new Date(1493820464 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m13s-+2m15s)', new Date(1493819951 * 1000), new Date(1493819953 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m13s-+2m13s)', new Date(1493819951 * 1000), new Date(1493819952 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m13s-+2m13s)', new Date(1493819951 * 1000), new Date(1493819952 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m15s-+2m16s)', new Date(1493819953 * 1000), new Date(1493819955 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m16s-+2m17s)', new Date(1493819954 * 1000), new Date(1493819955 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m17s-+2m19s)', new Date(1493819955 * 1000), new Date(1493819957 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m17s-+2m17s)', new Date(1493819955 * 1000), new Date(1493819956 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m19s-+2m19s)', new Date(1493819957 * 1000), new Date(1493819958 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m19s-+2m22s)', new Date(1493819957 * 1000), new Date(1493819960 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a85:"*alarm*":".esfm"(+8m42s-+8m42s)', new Date(1493820340 * 1000), new Date(1493820341 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a48:"*walarm*:com.cyanogenmod.lockclock/.weather.WeatherUpdateService"(+8m42s-+8m42s)', new Date(1493820340 * 1000), new Date(1493820341 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*":"com.android.settings"(+8m42s-+8m42s)', new Date(1493820340 * 1000), new Date(1493820341 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a48:"WeatherUpdateService"(+8m42s-+8m43s)', new Date(1493820340 * 1000), new Date(1493820342 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m33s-+11m34s)', new Date(1493820511 * 1000), new Date(1493820512 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m33s-+11m33s)', new Date(1493820511 * 1000), new Date(1493820512 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m30s-+19m30s)', new Date(1493820988 * 1000), new Date(1493820989 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m30s-+19m31s)', new Date(1493820988 * 1000), new Date(1493820990 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+18m40s-+18m40s)', new Date(1493820938 * 1000), new Date(1493820939 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m28s-+2m29s)', new Date(1493819966 * 1000), new Date(1493819968 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m28s-+2m28s)', new Date(1493819966 * 1000), new Date(1493819967 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m29s-+2m31s)', new Date(1493819967 * 1000), new Date(1493819969 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m03s-+11m04s)', new Date(1493820481 * 1000), new Date(1493820483 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m04s-+11m06s)', new Date(1493820482 * 1000), new Date(1493820484 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m39s-+19m40s)', new Date(1493820997 * 1000), new Date(1493820999 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m40s-+19m41s)', new Date(1493820998 * 1000), new Date(1493821000 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m05s-+18m05s)', new Date(1493820903 * 1000), new Date(1493820904 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m05s-+18m06s)', new Date(1493820903 * 1000), new Date(1493820905 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m05s-+18m05s)', new Date(1493820903 * 1000), new Date(1493820904 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+10m10s-+10m10s)', new Date(1493820428 * 1000), new Date(1493820429 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m10s-+10m12s)', new Date(1493820428 * 1000), new Date(1493820430 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m40s-+2m42s)', new Date(1493819978 * 1000), new Date(1493819980 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m40s-+2m40s)', new Date(1493819978 * 1000), new Date(1493819979 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m40s-+2m40s)', new Date(1493819978 * 1000), new Date(1493819979 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m45s-+8m48s)', new Date(1493820343 * 1000), new Date(1493820346 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m45s-+8m45s)', new Date(1493820343 * 1000), new Date(1493820344 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m42s-+2m43s)', new Date(1493819980 * 1000), new Date(1493819982 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m43s-+2m43s)', new Date(1493819981 * 1000), new Date(1493819982 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m43s-+2m44s)', new Date(1493819981 * 1000), new Date(1493819983 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"(+2m43s-+2m43s)', new Date(1493819981 * 1000), new Date(1493819982 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"DHCP"(+2m43s-+2m45s)', new Date(1493819981 * 1000), new Date(1493819983 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m44s-+2m47s)', new Date(1493819982 * 1000), new Date(1493819985 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m17s-+11m17s)', new Date(1493820495 * 1000), new Date(1493820496 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m17s-+11m20s)', new Date(1493820495 * 1000), new Date(1493820498 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m17s-+11m17s)', new Date(1493820495 * 1000), new Date(1493820496 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m22s-+11m22s)', new Date(1493820500 * 1000), new Date(1493820501 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m22s-+11m25s)', new Date(1493820500 * 1000), new Date(1493820503 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m22s-+11m22s)', new Date(1493820500 * 1000), new Date(1493820501 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m55s-+19m56s)', new Date(1493821013 * 1000), new Date(1493821014 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m55s-+19m55s)', new Date(1493821013 * 1000), new Date(1493821014 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m55s-+19m55s)', new Date(1493821013 * 1000), new Date(1493821014 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m56s-+19m57s)', new Date(1493821014 * 1000), new Date(1493821016 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+19m57s-+19m57s)', new Date(1493821015 * 1000), new Date(1493821016 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m57s-+19m59s)', new Date(1493821015 * 1000), new Date(1493821017 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2m55s-+2m55s)', new Date(1493819993 * 1000), new Date(1493819994 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m55s-+2m55s)', new Date(1493819993 * 1000), new Date(1493819994 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2m55s-+2m58s)', new Date(1493819993 * 1000), new Date(1493819996 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+20m01s-+20m01s)', new Date(1493821019 * 1000), new Date(1493821020 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m31s-+11m33s)', new Date(1493820509 * 1000), new Date(1493820511 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m31s-+11m31s)', new Date(1493820509 * 1000), new Date(1493820510 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m31s-+11m31s)', new Date(1493820509 * 1000), new Date(1493820510 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+3m01s-+3m01s)', new Date(1493819999 * 1000), new Date(1493820000 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a36:"*alarm*:com.android.deskclock.ON_QUARTER_HOUR":"com.android.deskclock"(+3m02s-+3m03s)', new Date(1493820000 * 1000), new Date(1493820002 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m35s-+11m37s)', new Date(1493820513 * 1000), new Date(1493820515 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a32:"*alarm*:com.android.calendar.APPWIDGET_SCHEDULED_UPDATE":"com.android.calendar"(+3m05s-+3m05s)', new Date(1493820003 * 1000), new Date(1493820004 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*":"com.android.settings"(+3m05s-+3m05s)', new Date(1493820003 * 1000), new Date(1493820004 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a32:"StartingAlertService"(+3m07s-+3m12s)', new Date(1493820005 * 1000), new Date(1493820010 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a76:"wake:com.google.android.calendar/.alerts.AlertService"(+3m08s-+3m14s)', new Date(1493820006 * 1000), new Date(1493820012 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m09s-+3m09s)', new Date(1493820007 * 1000), new Date(1493820008 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m09s-+3m10s)', new Date(1493820007 * 1000), new Date(1493820009 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m10s-+3m13s)', new Date(1493820008 * 1000), new Date(1493820011 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m10s-+3m10s)', new Date(1493820008 * 1000), new Date(1493820009 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m10s-+3m10s)', new Date(1493820008 * 1000), new Date(1493820009 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m34s-+11m35s)', new Date(1493820512 * 1000), new Date(1493820514 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+20m13s-+20m14s)', new Date(1493821031 * 1000), new Date(1493821033 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m46s-+11m46s)', new Date(1493820524 * 1000), new Date(1493820525 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m46s-+11m47s)', new Date(1493820524 * 1000), new Date(1493820526 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m47s-+11m49s)', new Date(1493820525 * 1000), new Date(1493820527 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m18s-+3m21s)', new Date(1493820016 * 1000), new Date(1493820019 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m18s-+3m18s)', new Date(1493820016 * 1000), new Date(1493820017 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m18s-+3m18s)', new Date(1493820016 * 1000), new Date(1493820017 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+20m14s-+20m16s)', new Date(1493821032 * 1000), new Date(1493821034 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+11m53s-+11m53s)', new Date(1493820531 * 1000), new Date(1493820532 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a67:"Babel_ConcService"(+20m27s-+20m27s)', new Date(1493821045 * 1000), new Date(1493821046 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+20m27s-+20m27s)', new Date(1493821045 * 1000), new Date(1493821046 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m26s-+3m27s)', new Date(1493820024 * 1000), new Date(1493820026 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m27s-+3m29s)', new Date(1493820025 * 1000), new Date(1493820027 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m27s-+3m27s)', new Date(1493820025 * 1000), new Date(1493820026 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m00s-+12m00s)', new Date(1493820538 * 1000), new Date(1493820539 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m00s-+12m03s)', new Date(1493820538 * 1000), new Date(1493820541 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m29s-+3m29s)', new Date(1493820027 * 1000), new Date(1493820028 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m29s-+3m30s)', new Date(1493820027 * 1000), new Date(1493820028 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m30s-+3m31s)', new Date(1493820028 * 1000), new Date(1493820030 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m30s-+3m30s)', new Date(1493820028 * 1000), new Date(1493820029 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+3m31s-+3m32s)', new Date(1493820029 * 1000), new Date(1493820031 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*":"com.android.settings"(+3m31s-+3m31s)', new Date(1493820029 * 1000), new Date(1493820030 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m31s-+3m34s)', new Date(1493820029 * 1000), new Date(1493820032 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m31s-+3m31s)', new Date(1493820029 * 1000), new Date(1493820030 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE"(+3m31s-+3m31s)', new Date(1493820029 * 1000), new Date(1493820030 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a75:"*net_scheduler*"(+3m32s-+3m32s)', new Date(1493820030 * 1000), new Date(1493820031 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+3m32s-+3m32s)', new Date(1493820030 * 1000), new Date(1493820031 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+20m37s-+20m37s)', new Date(1493821055 * 1000), new Date(1493821056 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+20m38s-+20m38s)', new Date(1493821056 * 1000), new Date(1493821057 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+16m01s-+16m01s)', new Date(1493820779 * 1000), new Date(1493820780 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m10s-+12m10s)', new Date(1493820548 * 1000), new Date(1493820549 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m10s-+12m13s)', new Date(1493820548 * 1000), new Date(1493820551 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m10s-+12m10s)', new Date(1493820548 * 1000), new Date(1493820549 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+17m28s-+17m28s)', new Date(1493820866 * 1000), new Date(1493820867 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m28s-+17m29s)', new Date(1493820866 * 1000), new Date(1493820867 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m48s-+3m49s)', new Date(1493820046 * 1000), new Date(1493820048 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m48s-+3m48s)', new Date(1493820046 * 1000), new Date(1493820047 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m48s-+3m48s)', new Date(1493820046 * 1000), new Date(1493820047 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m49s-+3m50s)', new Date(1493820047 * 1000), new Date(1493820048 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m50s-+3m53s)', new Date(1493820048 * 1000), new Date(1493820051 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m50s-+3m50s)', new Date(1493820048 * 1000), new Date(1493820049 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+12m23s-+12m23s)', new Date(1493820561 * 1000), new Date(1493820562 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m25s-+12m28s)', new Date(1493820563 * 1000), new Date(1493820566 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m25s-+12m25s)', new Date(1493820563 * 1000), new Date(1493820564 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m25s-+12m25s)', new Date(1493820563 * 1000), new Date(1493820564 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m31s-+19m34s)', new Date(1493820989 * 1000), new Date(1493820992 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m31s-+19m31s)', new Date(1493820989 * 1000), new Date(1493820990 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+12m28s-+12m28s)', new Date(1493820566 * 1000), new Date(1493820567 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+14m49s-+14m49s)', new Date(1493820707 * 1000), new Date(1493820708 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+3m58s-+3m58s)', new Date(1493820056 * 1000), new Date(1493820057 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m58s-+4m00s)', new Date(1493820056 * 1000), new Date(1493820058 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+3m58s-+3m58s)', new Date(1493820056 * 1000), new Date(1493820057 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m00s-+4m00s)', new Date(1493820058 * 1000), new Date(1493820059 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m00s-+4m03s)', new Date(1493820058 * 1000), new Date(1493820061 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+4m01s-+4m01s)', new Date(1493820059 * 1000), new Date(1493820060 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m35s-+12m38s)', new Date(1493820573 * 1000), new Date(1493820576 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m35s-+12m35s)', new Date(1493820573 * 1000), new Date(1493820574 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m09s-+4m12s)', new Date(1493820067 * 1000), new Date(1493820070 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m09s-+4m09s)', new Date(1493820067 * 1000), new Date(1493820068 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m09s-+4m09s)', new Date(1493820067 * 1000), new Date(1493820068 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+17m32s-+17m32s)', new Date(1493820870 * 1000), new Date(1493820871 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m46s-+12m46s)', new Date(1493820584 * 1000), new Date(1493820585 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m46s-+12m49s)', new Date(1493820584 * 1000), new Date(1493820587 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m46s-+12m46s)', new Date(1493820584 * 1000), new Date(1493820585 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m15s-+4m15s)', new Date(1493820073 * 1000), new Date(1493820074 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m15s-+4m15s)', new Date(1493820073 * 1000), new Date(1493820074 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m15s-+4m18s)', new Date(1493820073 * 1000), new Date(1493820076 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m05s-+17m08s)', new Date(1493820843 * 1000), new Date(1493820846 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m05s-+17m05s)', new Date(1493820843 * 1000), new Date(1493820844 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m05s-+17m05s)', new Date(1493820843 * 1000), new Date(1493820844 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m50s-+12m50s)', new Date(1493820588 * 1000), new Date(1493820589 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m50s-+12m53s)', new Date(1493820588 * 1000), new Date(1493820591 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m50s-+12m50s)', new Date(1493820588 * 1000), new Date(1493820589 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m54s-+12m54s)', new Date(1493820592 * 1000), new Date(1493820593 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m54s-+12m57s)', new Date(1493820592 * 1000), new Date(1493820595 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m54s-+12m54s)', new Date(1493820592 * 1000), new Date(1493820593 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+15m01s-+15m01s)', new Date(1493820719 * 1000), new Date(1493820720 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m24s-+4m27s)', new Date(1493820082 * 1000), new Date(1493820085 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m24s-+4m24s)', new Date(1493820082 * 1000), new Date(1493820083 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m24s-+4m24s)', new Date(1493820082 * 1000), new Date(1493820083 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m57s-+12m57s)', new Date(1493820595 * 1000), new Date(1493820596 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m57s-+13m00s)', new Date(1493820595 * 1000), new Date(1493820598 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+12m58s-+12m59s)', new Date(1493820596 * 1000), new Date(1493820598 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m27s-+4m27s)', new Date(1493820085 * 1000), new Date(1493820086 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m27s-+4m30s)', new Date(1493820085 * 1000), new Date(1493820088 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+13m01s-+13m01s)', new Date(1493820599 * 1000), new Date(1493820600 * 1000)],
+['wake_lock_in', 'GCM(+15m16s-+15m16s)', new Date(1493820734 * 1000), new Date(1493820735 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+19m01s-+19m01s)', new Date(1493820959 * 1000), new Date(1493820960 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m35s-+4m35s)', new Date(1493820093 * 1000), new Date(1493820094 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m35s-+4m35s)', new Date(1493820093 * 1000), new Date(1493820094 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m35s-+4m38s)', new Date(1493820093 * 1000), new Date(1493820096 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m08s-+13m11s)', new Date(1493820606 * 1000), new Date(1493820609 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m08s-+13m08s)', new Date(1493820606 * 1000), new Date(1493820607 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m08s-+13m08s)', new Date(1493820606 * 1000), new Date(1493820607 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m02s-+19m03s)', new Date(1493820960 * 1000), new Date(1493820962 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m35s-+17m35s)', new Date(1493820873 * 1000), new Date(1493820874 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m35s-+17m36s)', new Date(1493820873 * 1000), new Date(1493820875 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m35s-+17m35s)', new Date(1493820873 * 1000), new Date(1493820874 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m38s-+15m40s)', new Date(1493820756 * 1000), new Date(1493820758 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m19s-+13m19s)', new Date(1493820617 * 1000), new Date(1493820618 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m19s-+13m22s)', new Date(1493820617 * 1000), new Date(1493820620 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m19s-+13m19s)', new Date(1493820617 * 1000), new Date(1493820618 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m26s-+13m27s)', new Date(1493820624 * 1000), new Date(1493820626 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m26s-+13m26s)', new Date(1493820624 * 1000), new Date(1493820625 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m26s-+13m26s)', new Date(1493820624 * 1000), new Date(1493820625 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m58s-+11m58s)', new Date(1493820536 * 1000), new Date(1493820537 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+11m58s-+11m58s)', new Date(1493820536 * 1000), new Date(1493820537 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m58s-+12m00s)', new Date(1493820536 * 1000), new Date(1493820538 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m58s-+11m58s)', new Date(1493820536 * 1000), new Date(1493820537 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m56s-+4m56s)', new Date(1493820114 * 1000), new Date(1493820115 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m56s-+4m57s)', new Date(1493820114 * 1000), new Date(1493820116 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m57s-+4m58s)', new Date(1493820115 * 1000), new Date(1493820116 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+4m58s-+4m59s)', new Date(1493820116 * 1000), new Date(1493820117 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m58s-+4m58s)', new Date(1493820116 * 1000), new Date(1493820117 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+4m59s-+5m00s)', new Date(1493820117 * 1000), new Date(1493820119 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m00s-+5m02s)', new Date(1493820118 * 1000), new Date(1493820120 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+5m01s-+5m01s)', new Date(1493820119 * 1000), new Date(1493820120 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+20m12s-+20m13s)', new Date(1493821030 * 1000), new Date(1493821031 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+20m32s-+20m32s)', new Date(1493821050 * 1000), new Date(1493821051 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a48:"*walarm*:com.cyanogenmod.lockclock.action.CANCEL_LOCATION_UPDATE"(+13m43s-+13m43s)', new Date(1493820641 * 1000), new Date(1493820642 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*":"com.android.settings"(+13m43s-+13m43s)', new Date(1493820641 * 1000), new Date(1493820642 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+12m01s-+12m01s)', new Date(1493820539 * 1000), new Date(1493820540 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m14s-+5m14s)', new Date(1493820132 * 1000), new Date(1493820133 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m14s-+5m17s)', new Date(1493820132 * 1000), new Date(1493820135 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+5m14s-+5m14s)', new Date(1493820132 * 1000), new Date(1493820133 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m48s-+13m51s)', new Date(1493820646 * 1000), new Date(1493820649 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m48s-+13m48s)', new Date(1493820646 * 1000), new Date(1493820647 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m48s-+13m48s)', new Date(1493820646 * 1000), new Date(1493820647 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m27s-+13m27s)', new Date(1493820625 * 1000), new Date(1493820626 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m27s-+13m30s)', new Date(1493820625 * 1000), new Date(1493820628 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m56s-+18m59s)', new Date(1493820954 * 1000), new Date(1493820957 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m56s-+18m56s)', new Date(1493820954 * 1000), new Date(1493820955 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m51s-+13m54s)', new Date(1493820649 * 1000), new Date(1493820652 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m51s-+13m51s)', new Date(1493820649 * 1000), new Date(1493820650 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+21m01s-+21m01s)', new Date(1493821079 * 1000), new Date(1493821080 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+20m11s-+20m11s)', new Date(1493821029 * 1000), new Date(1493821030 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+20m11s-+20m12s)', new Date(1493821029 * 1000), new Date(1493821031 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m58s-+13m58s)', new Date(1493820656 * 1000), new Date(1493820657 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+13m58s-+13m58s)', new Date(1493820656 * 1000), new Date(1493820657 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m58s-+14m00s)', new Date(1493820656 * 1000), new Date(1493820658 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m58s-+13m58s)', new Date(1493820656 * 1000), new Date(1493820657 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m27s-+5m28s)', new Date(1493820145 * 1000), new Date(1493820147 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+5m27s-+5m27s)', new Date(1493820145 * 1000), new Date(1493820146 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m27s-+5m27s)', new Date(1493820145 * 1000), new Date(1493820146 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+5m28s-+5m28s)', new Date(1493820146 * 1000), new Date(1493820147 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m28s-+5m31s)', new Date(1493820146 * 1000), new Date(1493820149 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+14m01s-+14m01s)', new Date(1493820659 * 1000), new Date(1493820660 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+20m36s-+20m36s)', new Date(1493821054 * 1000), new Date(1493821055 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m35s-+5m38s)', new Date(1493820153 * 1000), new Date(1493820156 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m35s-+5m35s)', new Date(1493820153 * 1000), new Date(1493820154 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+5m35s-+5m35s)', new Date(1493820153 * 1000), new Date(1493820154 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+14m11s-+14m11s)', new Date(1493820669 * 1000), new Date(1493820670 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m31s-+13m34s)', new Date(1493820629 * 1000), new Date(1493820632 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13m31s-+13m31s)', new Date(1493820629 * 1000), new Date(1493820630 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13m31s-+13m31s)', new Date(1493820629 * 1000), new Date(1493820630 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m41s-+16m43s)', new Date(1493820819 * 1000), new Date(1493820821 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m11s-+11m11s)', new Date(1493820489 * 1000), new Date(1493820490 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m11s-+11m12s)', new Date(1493820489 * 1000), new Date(1493820491 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+5m51s-+5m52s)', new Date(1493820169 * 1000), new Date(1493820171 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m51s-+5m51s)', new Date(1493820169 * 1000), new Date(1493820170 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m52s-+5m53s)', new Date(1493820170 * 1000), new Date(1493820171 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+5m53s-+5m54s)', new Date(1493820171 * 1000), new Date(1493820173 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+5m53s-+5m53s)', new Date(1493820171 * 1000), new Date(1493820172 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m53s-+5m53s)', new Date(1493820171 * 1000), new Date(1493820172 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+5m54s-+5m57s)', new Date(1493820172 * 1000), new Date(1493820175 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+5m57s-+5m57s)', new Date(1493820175 * 1000), new Date(1493820176 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m01s-+6m01s)', new Date(1493820179 * 1000), new Date(1493820180 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+6m01s-+6m01s)', new Date(1493820179 * 1000), new Date(1493820180 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m01s-+6m02s)', new Date(1493820179 * 1000), new Date(1493820181 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m01s-+6m01s)', new Date(1493820179 * 1000), new Date(1493820180 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m02s-+6m05s)', new Date(1493820180 * 1000), new Date(1493820183 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+6m02s-+6m02s)', new Date(1493820180 * 1000), new Date(1493820181 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m02s-+6m02s)', new Date(1493820180 * 1000), new Date(1493820181 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m03s-+19m06s)', new Date(1493820961 * 1000), new Date(1493820964 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m03s-+19m03s)', new Date(1493820961 * 1000), new Date(1493820962 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+19m03s-+19m03s)', new Date(1493820961 * 1000), new Date(1493820962 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+6m05s-+6m05s)', new Date(1493820183 * 1000), new Date(1493820184 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a67:"Babel_ConcService"(+20m42s-+20m42s)', new Date(1493821060 * 1000), new Date(1493821061 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+20m42s-+20m42s)', new Date(1493821060 * 1000), new Date(1493821061 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10m45s-+10m47s)', new Date(1493820463 * 1000), new Date(1493820465 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+6m10s-+6m10s)', new Date(1493820188 * 1000), new Date(1493820189 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+14m44s-+14m44s)', new Date(1493820702 * 1000), new Date(1493820703 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m29s-+19m30s)', new Date(1493820987 * 1000), new Date(1493820989 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m29s-+19m29s)', new Date(1493820987 * 1000), new Date(1493820988 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m29s-+19m29s)', new Date(1493820987 * 1000), new Date(1493820988 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m17s-+6m18s)', new Date(1493820195 * 1000), new Date(1493820197 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m18s-+6m18s)', new Date(1493820196 * 1000), new Date(1493820197 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m18s-+6m21s)', new Date(1493820196 * 1000), new Date(1493820199 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m56s-+15m59s)', new Date(1493820774 * 1000), new Date(1493820777 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m56s-+15m56s)', new Date(1493820774 * 1000), new Date(1493820775 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+15m56s-+15m56s)', new Date(1493820774 * 1000), new Date(1493820775 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+15m03s-+15m04s)', new Date(1493820721 * 1000), new Date(1493820723 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+16m29s-+16m29s)', new Date(1493820807 * 1000), new Date(1493820808 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m20s-+19m20s)', new Date(1493820978 * 1000), new Date(1493820979 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+19m20s-+19m21s)', new Date(1493820978 * 1000), new Date(1493820980 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m29s-+6m31s)', new Date(1493820207 * 1000), new Date(1493820209 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m29s-+6m29s)', new Date(1493820207 * 1000), new Date(1493820208 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m29s-+6m29s)', new Date(1493820207 * 1000), new Date(1493820208 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m31s-+6m31s)', new Date(1493820209 * 1000), new Date(1493820210 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m31s-+6m34s)', new Date(1493820209 * 1000), new Date(1493820212 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m21s-+19m23s)', new Date(1493820979 * 1000), new Date(1493820981 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m40s-+6m40s)', new Date(1493820218 * 1000), new Date(1493820219 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m40s-+6m41s)', new Date(1493820218 * 1000), new Date(1493820220 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m40s-+6m40s)', new Date(1493820218 * 1000), new Date(1493820219 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m41s-+6m41s)', new Date(1493820219 * 1000), new Date(1493820220 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m41s-+6m42s)', new Date(1493820219 * 1000), new Date(1493820221 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m42s-+6m42s)', new Date(1493820220 * 1000), new Date(1493820221 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m42s-+6m44s)', new Date(1493820220 * 1000), new Date(1493820222 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+15m15s-+15m15s)', new Date(1493820733 * 1000), new Date(1493820734 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m44s-+6m46s)', new Date(1493820222 * 1000), new Date(1493820224 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m44s-+6m44s)', new Date(1493820222 * 1000), new Date(1493820223 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+20m34s-+20m34s)', new Date(1493821052 * 1000), new Date(1493821053 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a70:"StartupAfterPackageReplaced"(+20m34s-+20m34s)', new Date(1493821052 * 1000), new Date(1493821053 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a70:"wake:com.google.android.apps.plus/.service.PhotosAppTransitionService"(+20m34s-+20m34s)', new Date(1493821052 * 1000), new Date(1493821053 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+20m34s-+20m34s)', new Date(1493821052 * 1000), new Date(1493821053 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m46s-+6m49s)', new Date(1493820224 * 1000), new Date(1493820227 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m46s-+6m46s)', new Date(1493820224 * 1000), new Date(1493820225 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m20s-+15m20s)', new Date(1493820738 * 1000), new Date(1493820739 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m20s-+15m22s)', new Date(1493820738 * 1000), new Date(1493820740 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+15m20s-+15m20s)', new Date(1493820738 * 1000), new Date(1493820739 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+15m22s-+15m22s)', new Date(1493820740 * 1000), new Date(1493820741 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m22s-+15m24s)', new Date(1493820740 * 1000), new Date(1493820742 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+6m51s-+6m51s)', new Date(1493820229 * 1000), new Date(1493820230 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+15m24s-+15m24s)', new Date(1493820742 * 1000), new Date(1493820743 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m24s-+15m27s)', new Date(1493820742 * 1000), new Date(1493820745 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m54s-+6m55s)', new Date(1493820232 * 1000), new Date(1493820234 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m54s-+6m54s)', new Date(1493820232 * 1000), new Date(1493820233 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m54s-+6m54s)', new Date(1493820232 * 1000), new Date(1493820233 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m55s-+6m55s)', new Date(1493820233 * 1000), new Date(1493820234 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m55s-+6m57s)', new Date(1493820233 * 1000), new Date(1493820235 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+6m56s-+6m56s)', new Date(1493820234 * 1000), new Date(1493820235 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+6m57s-+6m58s)', new Date(1493820235 * 1000), new Date(1493820237 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+6m58s-+7m00s)', new Date(1493820236 * 1000), new Date(1493820238 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+7m01s-+7m01s)', new Date(1493820239 * 1000), new Date(1493820240 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m37s-+15m37s)', new Date(1493820755 * 1000), new Date(1493820756 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+15m37s-+15m38s)', new Date(1493820755 * 1000), new Date(1493820757 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m33s-+12m35s)', new Date(1493820571 * 1000), new Date(1493820573 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+12m33s-+12m33s)', new Date(1493820571 * 1000), new Date(1493820572 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+12m33s-+12m33s)', new Date(1493820571 * 1000), new Date(1493820572 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m09s-+7m09s)', new Date(1493820247 * 1000), new Date(1493820248 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m09s-+7m10s)', new Date(1493820247 * 1000), new Date(1493820249 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m10s-+7m13s)', new Date(1493820248 * 1000), new Date(1493820251 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m10s-+7m10s)', new Date(1493820248 * 1000), new Date(1493820249 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m10s-+7m10s)', new Date(1493820248 * 1000), new Date(1493820249 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"DHCP"(+12m21s-+12m22s)', new Date(1493820559 * 1000), new Date(1493820561 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"(+12m21s-+12m21s)', new Date(1493820559 * 1000), new Date(1493820560 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m12s-+15m15s)', new Date(1493820730 * 1000), new Date(1493820733 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+15m12s-+15m12s)', new Date(1493820730 * 1000), new Date(1493820731 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+15m12s-+15m12s)', new Date(1493820730 * 1000), new Date(1493820731 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m16s-+7m17s)', new Date(1493820254 * 1000), new Date(1493820256 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m16s-+7m16s)', new Date(1493820254 * 1000), new Date(1493820255 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m16s-+7m16s)', new Date(1493820254 * 1000), new Date(1493820255 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m17s-+7m17s)', new Date(1493820255 * 1000), new Date(1493820256 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m17s-+7m20s)', new Date(1493820255 * 1000), new Date(1493820258 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+15m50s-+15m50s)', new Date(1493820768 * 1000), new Date(1493820769 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m21s-+7m22s)', new Date(1493820259 * 1000), new Date(1493820261 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m21s-+7m21s)', new Date(1493820259 * 1000), new Date(1493820260 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m22s-+7m24s)', new Date(1493820260 * 1000), new Date(1493820262 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+7m24s-+7m24s)', new Date(1493820262 * 1000), new Date(1493820263 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"fingerprint_scanner_local"(+20m31s-+20m31s)', new Date(1493821049 * 1000), new Date(1493821050 * 1000)],
+['wake_lock_in', 'LOCATION(+20m31s-+20m31s)', new Date(1493821049 * 1000), new Date(1493821050 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService"(+20m31s-+20m31s)', new Date(1493821049 * 1000), new Date(1493821050 * 1000)],
+['wake_lock_in', 'GCM(+15m14s-+15m14s)', new Date(1493820732 * 1000), new Date(1493820733 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.HEARTBEAT_ALARM"(+15m14s-+15m14s)', new Date(1493820732 * 1000), new Date(1493820733 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+7m29s-+7m29s)', new Date(1493820267 * 1000), new Date(1493820268 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+7m30s-+7m31s)', new Date(1493820268 * 1000), new Date(1493820270 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m40s-+16m40s)', new Date(1493820818 * 1000), new Date(1493820819 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+16m40s-+16m41s)', new Date(1493820818 * 1000), new Date(1493820820 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m04s-+16m04s)', new Date(1493820782 * 1000), new Date(1493820783 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m04s-+16m07s)', new Date(1493820782 * 1000), new Date(1493820785 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+16m04s-+16m04s)', new Date(1493820782 * 1000), new Date(1493820783 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW"(+7m33s-+7m33s)', new Date(1493820271 * 1000), new Date(1493820272 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"DHCP"(+7m33s-+7m33s)', new Date(1493820271 * 1000), new Date(1493820272 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+16m06s-+16m06s)', new Date(1493820784 * 1000), new Date(1493820785 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+7m36s-+7m36s)', new Date(1493820274 * 1000), new Date(1493820275 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m37s-+7m38s)', new Date(1493820275 * 1000), new Date(1493820277 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m37s-+7m37s)', new Date(1493820275 * 1000), new Date(1493820276 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m38s-+7m40s)', new Date(1493820276 * 1000), new Date(1493820278 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m00s-+11m00s)', new Date(1493820478 * 1000), new Date(1493820479 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+11m00s-+11m01s)', new Date(1493820478 * 1000), new Date(1493820480 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m40s-+7m40s)', new Date(1493820278 * 1000), new Date(1493820279 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m40s-+7m43s)', new Date(1493820278 * 1000), new Date(1493820281 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m01s-+11m03s)', new Date(1493820479 * 1000), new Date(1493820481 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+11m01s-+11m01s)', new Date(1493820479 * 1000), new Date(1493820480 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m08s-+18m11s)', new Date(1493820906 * 1000), new Date(1493820909 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m08s-+18m08s)', new Date(1493820906 * 1000), new Date(1493820907 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+16m21s-+16m21s)', new Date(1493820799 * 1000), new Date(1493820800 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+16m21s-+16m21s)', new Date(1493820799 * 1000), new Date(1493820800 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m21s-+16m22s)', new Date(1493820799 * 1000), new Date(1493820801 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m21s-+16m21s)', new Date(1493820799 * 1000), new Date(1493820800 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m50s-+7m53s)', new Date(1493820288 * 1000), new Date(1493820291 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m50s-+7m50s)', new Date(1493820288 * 1000), new Date(1493820289 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m50s-+7m50s)', new Date(1493820288 * 1000), new Date(1493820289 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m23s-+16m26s)', new Date(1493820801 * 1000), new Date(1493820804 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+16m23s-+16m23s)', new Date(1493820801 * 1000), new Date(1493820802 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m56s-+7m56s)', new Date(1493820294 * 1000), new Date(1493820295 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m56s-+7m57s)', new Date(1493820294 * 1000), new Date(1493820295 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m56s-+7m56s)', new Date(1493820294 * 1000), new Date(1493820295 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+7m57s-+7m57s)', new Date(1493820295 * 1000), new Date(1493820296 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+7m57s-+8m00s)', new Date(1493820295 * 1000), new Date(1493820298 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+19m41s-+19m43s)', new Date(1493820999 * 1000), new Date(1493821001 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+8m01s-+8m01s)', new Date(1493820299 * 1000), new Date(1493820300 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+16m34s-+16m34s)', new Date(1493820812 * 1000), new Date(1493820813 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m03s-+8m03s)', new Date(1493820301 * 1000), new Date(1493820302 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m03s-+8m04s)', new Date(1493820301 * 1000), new Date(1493820303 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m04s-+8m06s)', new Date(1493820302 * 1000), new Date(1493820304 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m08s-+8m09s)', new Date(1493820306 * 1000), new Date(1493820308 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m08s-+8m08s)', new Date(1493820306 * 1000), new Date(1493820307 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m09s-+8m11s)', new Date(1493820307 * 1000), new Date(1493820309 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m11s-+8m12s)', new Date(1493820309 * 1000), new Date(1493820311 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m12s-+8m14s)', new Date(1493820310 * 1000), new Date(1493820312 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m15s-+8m15s)', new Date(1493820313 * 1000), new Date(1493820314 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m15s-+8m15s)', new Date(1493820313 * 1000), new Date(1493820314 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m15s-+8m16s)', new Date(1493820313 * 1000), new Date(1493820314 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m16s-+8m17s)', new Date(1493820314 * 1000), new Date(1493820316 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m17s-+8m19s)', new Date(1493820315 * 1000), new Date(1493820317 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m51s-+16m53s)', new Date(1493820829 * 1000), new Date(1493820831 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m51s-+16m51s)', new Date(1493820829 * 1000), new Date(1493820830 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+16m51s-+16m51s)', new Date(1493820829 * 1000), new Date(1493820830 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+16m53s-+16m54s)', new Date(1493820831 * 1000), new Date(1493820833 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+16m53s-+16m53s)', new Date(1493820831 * 1000), new Date(1493820832 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+16m54s-+16m55s)', new Date(1493820832 * 1000), new Date(1493820834 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+8m23s-+8m23s)', new Date(1493820321 * 1000), new Date(1493820322 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m23s-+8m23s)', new Date(1493820321 * 1000), new Date(1493820322 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m23s-+8m24s)', new Date(1493820321 * 1000), new Date(1493820323 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m24s-+8m25s)', new Date(1493820322 * 1000), new Date(1493820323 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m25s-+8m28s)', new Date(1493820323 * 1000), new Date(1493820326 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m25s-+8m25s)', new Date(1493820323 * 1000), new Date(1493820324 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+17m01s-+17m01s)', new Date(1493820839 * 1000), new Date(1493820840 * 1000)],
+['wake_lock_in', 'LOCATION(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['wake_lock_in', '+wake_lock_in=-1:"screen"(0s-+21m01s)', new Date(1493819818 * 1000), new Date(1493821079 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a75:"*net_scheduler*"(0s-+1s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(0s-+2s)', new Date(1493819818 * 1000), new Date(1493819820 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE"(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+1s-+1s)', new Date(1493819819 * 1000), new Date(1493819820 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+1s-+1s)', new Date(1493819819 * 1000), new Date(1493819820 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+1s-+2s)', new Date(1493819819 * 1000), new Date(1493819821 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a75:"*net_scheduler*"(+1s-+1s)', new Date(1493819819 * 1000), new Date(1493819820 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2s-+5s)', new Date(1493819820 * 1000), new Date(1493819823 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+2s-+2s)', new Date(1493819820 * 1000), new Date(1493819821 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+2s-+2s)', new Date(1493819820 * 1000), new Date(1493819821 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+14m00s-+14m00s)', new Date(1493820658 * 1000), new Date(1493820659 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+14m00s-+14m03s)', new Date(1493820658 * 1000), new Date(1493820661 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m38s-+8m41s)', new Date(1493820336 * 1000), new Date(1493820339 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m38s-+8m38s)', new Date(1493820336 * 1000), new Date(1493820337 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m38s-+8m38s)', new Date(1493820336 * 1000), new Date(1493820337 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+7s-+8s)', new Date(1493819825 * 1000), new Date(1493819827 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10s-+13s)', new Date(1493819828 * 1000), new Date(1493819831 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+10s-+10s)', new Date(1493819828 * 1000), new Date(1493819829 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+10s-+10s)', new Date(1493819828 * 1000), new Date(1493819829 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m43s-+8m45s)', new Date(1493820341 * 1000), new Date(1493820343 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+8m43s-+8m43s)', new Date(1493820341 * 1000), new Date(1493820342 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+8m43s-+8m43s)', new Date(1493820341 * 1000), new Date(1493820342 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a17:"*vibrator*"(+12s-+13s)', new Date(1493819830 * 1000), new Date(1493819832 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+13s-+13s)', new Date(1493819831 * 1000), new Date(1493819832 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+13s-+14s)', new Date(1493819831 * 1000), new Date(1493819833 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+14s-+17s)', new Date(1493819832 * 1000), new Date(1493819835 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"ActivityManager-Launch"(+14s-+24s)', new Date(1493819832 * 1000), new Date(1493819842 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+14s-+14s)', new Date(1493819832 * 1000), new Date(1493819833 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+11m12s-+11m14s)', new Date(1493820490 * 1000), new Date(1493820492 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m24s-+17m24s)', new Date(1493820862 * 1000), new Date(1493820863 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m24s-+17m25s)', new Date(1493820862 * 1000), new Date(1493820864 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m25s-+17m27s)', new Date(1493820863 * 1000), new Date(1493820865 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m27s-+17m28s)', new Date(1493820865 * 1000), new Date(1493820867 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+16m43s-+16m43s)', new Date(1493820821 * 1000), new Date(1493820822 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m29s-+17m29s)', new Date(1493820867 * 1000), new Date(1493820868 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m30s-+17m32s)', new Date(1493820868 * 1000), new Date(1493820870 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+27s-+28s)', new Date(1493819845 * 1000), new Date(1493819847 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+27s-+27s)', new Date(1493819845 * 1000), new Date(1493819846 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+28s-+30s)', new Date(1493819846 * 1000), new Date(1493819848 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+9m01s-+9m01s)', new Date(1493820359 * 1000), new Date(1493820360 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+30s-+33s)', new Date(1493819848 * 1000), new Date(1493819851 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+30s-+30s)', new Date(1493819848 * 1000), new Date(1493819849 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+9m03s-+9m03s)', new Date(1493820361 * 1000), new Date(1493820362 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+9m03s-+9m03s)', new Date(1493820361 * 1000), new Date(1493820362 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+9m03s-+9m06s)', new Date(1493820361 * 1000), new Date(1493820364 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m36s-+17m36s)', new Date(1493820874 * 1000), new Date(1493820875 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m36s-+17m37s)', new Date(1493820874 * 1000), new Date(1493820876 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m37s-+17m37s)', new Date(1493820875 * 1000), new Date(1493820876 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m37s-+17m40s)', new Date(1493820875 * 1000), new Date(1493820878 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m40s-+17m41s)', new Date(1493820878 * 1000), new Date(1493820880 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m40s-+17m40s)', new Date(1493820878 * 1000), new Date(1493820879 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m40s-+17m40s)', new Date(1493820878 * 1000), new Date(1493820879 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m41s-+17m44s)', new Date(1493820879 * 1000), new Date(1493820882 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m41s-+17m41s)', new Date(1493820879 * 1000), new Date(1493820880 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+40s-+40s)', new Date(1493819858 * 1000), new Date(1493819859 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+40s-+43s)', new Date(1493819858 * 1000), new Date(1493819861 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+40s-+40s)', new Date(1493819858 * 1000), new Date(1493819859 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m53s-+17m56s)', new Date(1493820891 * 1000), new Date(1493820894 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+17m53s-+17m53s)', new Date(1493820891 * 1000), new Date(1493820892 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+17m53s-+17m53s)', new Date(1493820891 * 1000), new Date(1493820892 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+53s-+53s)', new Date(1493819871 * 1000), new Date(1493819872 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+53s-+54s)', new Date(1493819871 * 1000), new Date(1493819873 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+54s-+56s)', new Date(1493819872 * 1000), new Date(1493819874 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+18m01s-+18m01s)', new Date(1493820899 * 1000), new Date(1493820900 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a36:"*alarm*:com.android.deskclock.ON_QUARTER_HOUR":"com.android.deskclock"(+18m02s-+18m02s)', new Date(1493820900 * 1000), new Date(1493820901 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+18m03s-+18m03s)', new Date(1493820901 * 1000), new Date(1493820902 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings"(+1m01s-+1m01s)', new Date(1493819879 * 1000), new Date(1493819880 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m06s-+18m06s)', new Date(1493820904 * 1000), new Date(1493820905 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m06s-+18m08s)', new Date(1493820904 * 1000), new Date(1493820906 * 1000)],
+['wake_lock_in', '+wake_lock_in=1001:"RILJ"(+18m06s-+18m06s)', new Date(1493820904 * 1000), new Date(1493820905 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+1m03s-+1m04s)', new Date(1493819881 * 1000), new Date(1493819883 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m03s-+1m03s)', new Date(1493819881 * 1000), new Date(1493819882 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m04s-+1m06s)', new Date(1493819882 * 1000), new Date(1493819884 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+1m06s-+1m06s)', new Date(1493819884 * 1000), new Date(1493819885 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m06s-+1m09s)', new Date(1493819884 * 1000), new Date(1493819887 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a67:"*net_scheduler*"(+20m25s-+20m27s)', new Date(1493821043 * 1000), new Date(1493821045 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"NetworkStats"(+20m25s-+20m25s)', new Date(1493821043 * 1000), new Date(1493821044 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*":"com.android.settings"(+20m25s-+20m25s)', new Date(1493821043 * 1000), new Date(1493821044 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*alarm*:com.android.server.action.NETWORK_STATS_POLL":"com.android.settings"(+20m25s-+20m25s)', new Date(1493821043 * 1000), new Date(1493821044 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*alarm*":"com.google.android.gms.ui"(+20m25s-+20m25s)', new Date(1493821043 * 1000), new Date(1493821044 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a20:"*net_scheduler*"(+20m25s-+20m25s)', new Date(1493821043 * 1000), new Date(1493821044 * 1000)],
+['wake_lock_in', '+wake_lock_in=u0a85:"*alarm*":".esfm"(+20m25s-+20m25s)', new Date(1493821043 * 1000), new Date(1493821044 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m16s-+18m19s)', new Date(1493820914 * 1000), new Date(1493820917 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m16s-+18m16s)', new Date(1493820914 * 1000), new Date(1493820915 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m16s-+18m16s)', new Date(1493820914 * 1000), new Date(1493820915 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+1m16s-+1m16s)', new Date(1493819894 * 1000), new Date(1493819895 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m16s-+1m19s)', new Date(1493819894 * 1000), new Date(1493819897 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+1m16s-+1m16s)', new Date(1493819894 * 1000), new Date(1493819895 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+9m51s-+9m51s)', new Date(1493820409 * 1000), new Date(1493820410 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+9m52s-+9m52s)', new Date(1493820410 * 1000), new Date(1493820411 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"*vibrator*"(+9m53s-+9m54s)', new Date(1493820411 * 1000), new Date(1493820413 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m27s-+18m27s)', new Date(1493820925 * 1000), new Date(1493820926 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m27s-+18m28s)', new Date(1493820925 * 1000), new Date(1493820927 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m27s-+18m27s)', new Date(1493820925 * 1000), new Date(1493820926 * 1000)],
+['wake_lock_in', '+wake_lock_in=1000:"AudioMix"(+18m28s-+18m28s)', new Date(1493820926 * 1000), new Date(1493820927 * 1000)],
+['wake_lock_in', '+wake_lock_in=1013:"AudioMix"(+18m28s-+18m30s)', new Date(1493820926 * 1000), new Date(1493820928 * 1000)],
+['wifi', '+wifi(0s-+21m01s)', new Date(1493819818 * 1000), new Date(1493821079 * 1000)],
+['wifi_multicast', '+wifi_multicast(0s-+21m01s)', new Date(1493819818 * 1000), new Date(1493821079 * 1000)],
+['wifi_running', '+wifi_running(0s-+21m01s)', new Date(1493819818 * 1000), new Date(1493821079 * 1000)],
+['wifi_suppl', 'wifi_suppl=completed(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+10m01s-+10m01s)', new Date(1493820419 * 1000), new Date(1493820420 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+10m04s-+10m04s)', new Date(1493820422 * 1000), new Date(1493820423 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+7m57s-+7m57s)', new Date(1493820295 * 1000), new Date(1493820296 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+8m00s-+8m00s)', new Date(1493820298 * 1000), new Date(1493820299 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+8m03s-+8m03s)', new Date(1493820301 * 1000), new Date(1493820302 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+8m09s-+8m09s)', new Date(1493820307 * 1000), new Date(1493820308 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+3m56s-+3m56s)', new Date(1493820054 * 1000), new Date(1493820055 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+13m14s-+13m14s)', new Date(1493820612 * 1000), new Date(1493820613 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+4m01s-+4m01s)', new Date(1493820059 * 1000), new Date(1493820060 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+12m35s-+12m35s)', new Date(1493820573 * 1000), new Date(1493820574 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+14m44s-+14m44s)', new Date(1493820702 * 1000), new Date(1493820703 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+12m38s-+12m38s)', new Date(1493820576 * 1000), new Date(1493820577 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+14m47s-+14m47s)', new Date(1493820705 * 1000), new Date(1493820706 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+8m30s-+8m30s)', new Date(1493820328 * 1000), new Date(1493820329 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+11m49s-+11m49s)', new Date(1493820527 * 1000), new Date(1493820528 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+12m50s-+12m50s)', new Date(1493820588 * 1000), new Date(1493820589 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+12m53s-+12m53s)', new Date(1493820591 * 1000), new Date(1493820592 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+12m59s-+12m59s)', new Date(1493820597 * 1000), new Date(1493820598 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+8m45s-+8m45s)', new Date(1493820343 * 1000), new Date(1493820344 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+11m01s-+11m01s)', new Date(1493820479 * 1000), new Date(1493820480 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+13m11s-+13m11s)', new Date(1493820609 * 1000), new Date(1493820610 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+11m04s-+11m04s)', new Date(1493820482 * 1000), new Date(1493820483 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+8m58s-+8m58s)', new Date(1493820356 * 1000), new Date(1493820357 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+9m01s-+9m01s)', new Date(1493820359 * 1000), new Date(1493820360 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+9m03s-+9m03s)', new Date(1493820361 * 1000), new Date(1493820362 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+9m06s-+9m06s)', new Date(1493820364 * 1000), new Date(1493820365 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+11m22s-+11m22s)', new Date(1493820500 * 1000), new Date(1493820501 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+11m25s-+11m25s)', new Date(1493820503 * 1000), new Date(1493820504 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+11m34s-+11m34s)', new Date(1493820512 * 1000), new Date(1493820513 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+11m39s-+11m39s)', new Date(1493820517 * 1000), new Date(1493820518 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+7m24s-+7m24s)', new Date(1493820262 * 1000), new Date(1493820263 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+9m37s-+9m37s)', new Date(1493820395 * 1000), new Date(1493820396 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+7m30s-+7m30s)', new Date(1493820268 * 1000), new Date(1493820269 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+9m40s-+9m40s)', new Date(1493820398 * 1000), new Date(1493820399 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+7m33s-+7m33s)', new Date(1493820271 * 1000), new Date(1493820272 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+12m46s-+12m46s)', new Date(1493820584 * 1000), new Date(1493820585 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+7m36s-+7m36s)', new Date(1493820274 * 1000), new Date(1493820275 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+11m53s-+11m53s)', new Date(1493820531 * 1000), new Date(1493820532 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+9m46s-+9m46s)', new Date(1493820404 * 1000), new Date(1493820405 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+7m39s-+7m39s)', new Date(1493820277 * 1000), new Date(1493820278 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+9m48s-+9m48s)', new Date(1493820406 * 1000), new Date(1493820407 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+14m05s-+14m05s)', new Date(1493820663 * 1000), new Date(1493820664 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=4(+7m45s-+7m45s)', new Date(1493820283 * 1000), new Date(1493820284 * 1000)],
+['wifi_signal_strength', 'wifi_signal_strength=3(+7m48s-+7m48s)', new Date(1493820286 * 1000), new Date(1493820287 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+16m12s-+16m12s)', new Date(1493820790 * 1000), new Date(1493820791 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=none(+16m29s-+16m29s)', new Date(1493820807 * 1000), new Date(1493820808 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+20m45s-+20m45s)', new Date(1493821063 * 1000), new Date(1493821064 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=great(+2m01s-+2m01s)', new Date(1493819939 * 1000), new Date(1493819940 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=great(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=great(+10m41s-+10m41s)', new Date(1493820459 * 1000), new Date(1493820460 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+19m15s-+19m15s)', new Date(1493820973 * 1000), new Date(1493820974 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+6m31s-+6m31s)', new Date(1493820209 * 1000), new Date(1493820210 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+12m59s-+12m59s)', new Date(1493820597 * 1000), new Date(1493820598 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+15m08s-+15m08s)', new Date(1493820726 * 1000), new Date(1493820727 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=none(+17m35s-+17m35s)', new Date(1493820873 * 1000), new Date(1493820874 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=great(+6m17s-+6m17s)', new Date(1493820195 * 1000), new Date(1493820196 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=none(+19m30s-+19m30s)', new Date(1493820988 * 1000), new Date(1493820989 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+4m37s-+4m37s)', new Date(1493820095 * 1000), new Date(1493820096 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=none(+15m18s-+15m18s)', new Date(1493820736 * 1000), new Date(1493820737 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+19m38s-+19m38s)', new Date(1493820996 * 1000), new Date(1493820997 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+2m35s-+2m35s)', new Date(1493819973 * 1000), new Date(1493819974 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=none(+14m49s-+14m49s)', new Date(1493820707 * 1000), new Date(1493820708 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=moderate(+19m46s-+19m46s)', new Date(1493821004 * 1000), new Date(1493821005 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+15m34s-+15m34s)', new Date(1493820752 * 1000), new Date(1493820753 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+11m21s-+11m21s)', new Date(1493820499 * 1000), new Date(1493820500 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+20m00s-+20m00s)', new Date(1493821018 * 1000), new Date(1493821019 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=none(+20m03s-+20m03s)', new Date(1493821021 * 1000), new Date(1493821022 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=none(+15m49s-+15m49s)', new Date(1493820767 * 1000), new Date(1493820768 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=moderate(+13m45s-+13m45s)', new Date(1493820643 * 1000), new Date(1493820644 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+1m08s-+1m08s)', new Date(1493819886 * 1000), new Date(1493819887 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+14m00s-+14m00s)', new Date(1493820658 * 1000), new Date(1493820659 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=moderate(+1m16s-+1m16s)', new Date(1493819894 * 1000), new Date(1493819895 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+5m38s-+5m38s)', new Date(1493820156 * 1000), new Date(1493820157 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=poor(+17m04s-+17m04s)', new Date(1493820842 * 1000), new Date(1493820843 * 1000)],
+['phone_signal_strength', 'phone_signal_strength=good(+1m25s-+1m25s)', new Date(1493819903 * 1000), new Date(1493819904 * 1000)],
+['phone_scanning', '+phone_scanning(+15m18s-+15m34s)', new Date(1493820736 * 1000), new Date(1493820752 * 1000)],
+['phone_scanning', '+phone_scanning(+14m49s-+15m08s)', new Date(1493820707 * 1000), new Date(1493820726 * 1000)],
+['phone_scanning', '+phone_scanning(+16m29s-+17m04s)', new Date(1493820807 * 1000), new Date(1493820842 * 1000)],
+['phone_scanning', '+phone_scanning(+17m35s-+19m15s)', new Date(1493820873 * 1000), new Date(1493820973 * 1000)],
+['phone_scanning', '+phone_scanning(+19m30s-+19m38s)', new Date(1493820988 * 1000), new Date(1493820996 * 1000)],
+['phone_scanning', '+phone_scanning(+20m03s-+20m45s)', new Date(1493821021 * 1000), new Date(1493821063 * 1000)],
+['phone_scanning', '+phone_scanning(+15m49s-+16m12s)', new Date(1493820767 * 1000), new Date(1493820790 * 1000)],
+['phone_state', 'phone_state=out(+15m18s-+15m18s)', new Date(1493820736 * 1000), new Date(1493820737 * 1000)],
+['phone_state', 'phone_state=out(+14m49s-+14m49s)', new Date(1493820707 * 1000), new Date(1493820708 * 1000)],
+['phone_state', 'phone_state=in(+19m38s-+19m38s)', new Date(1493820996 * 1000), new Date(1493820997 * 1000)],
+['phone_state', 'phone_state=in(+15m08s-+15m08s)', new Date(1493820726 * 1000), new Date(1493820727 * 1000)],
+['phone_state', 'phone_state=out(+16m29s-+16m29s)', new Date(1493820807 * 1000), new Date(1493820808 * 1000)],
+['phone_state', 'phone_state=out(+17m35s-+17m35s)', new Date(1493820873 * 1000), new Date(1493820874 * 1000)],
+['phone_state', 'phone_state=in(+17m04s-+17m04s)', new Date(1493820842 * 1000), new Date(1493820843 * 1000)],
+['phone_state', 'phone_state=in(+20m45s-+20m45s)', new Date(1493821063 * 1000), new Date(1493821064 * 1000)],
+['phone_state', 'phone_state=in(+19m15s-+19m15s)', new Date(1493820973 * 1000), new Date(1493820974 * 1000)],
+['phone_state', 'phone_state=in(+15m34s-+15m34s)', new Date(1493820752 * 1000), new Date(1493820753 * 1000)],
+['phone_state', 'phone_state=in(+16m12s-+16m12s)', new Date(1493820790 * 1000), new Date(1493820791 * 1000)],
+['phone_state', 'phone_state=out(+19m30s-+19m30s)', new Date(1493820988 * 1000), new Date(1493820989 * 1000)],
+['phone_state', 'phone_state=out(+20m03s-+20m03s)', new Date(1493821021 * 1000), new Date(1493821022 * 1000)],
+['phone_state', 'phone_state=out(+15m49s-+15m49s)', new Date(1493820767 * 1000), new Date(1493820768 * 1000)],
+['status', 'status=charging(+20m31s-+20m31s)', new Date(1493821049 * 1000), new Date(1493821050 * 1000)],
+['status', 'status=discharging(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['health', 'health=good(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+['plug', 'plug=usb(+20m31s-+20m31s)', new Date(1493821049 * 1000), new Date(1493821050 * 1000)],
+['plug', 'plug=none(0s-0s)', new Date(1493819818 * 1000), new Date(1493819819 * 1000)],
+]);
+	options = {
+	timeline: { colorByRowLabel: true},
+	'width': 3000,
+	'height': 3000, 
+	colors: ['#4070cf', '#2e8b57', '#cbb69d', '#dc3912', 
+	
+	
+	'#cbb69d', '#990099', '#ff33cc', '#119fc8', 
+	
+	
+	'#888888', '#109618', '#119fc8', '#9900aa', 
+	'#dc3912', '#dda0dd', '#dc3912', '#9ac658', 
+	'#888888', '#888888', '#4070cf', '#4070cf', ]
+	};
+
+
+  //make sure allocate enough vertical space
+  options['height'] = dataTable.getNumberOfRows() * 40;
+  chart.draw(dataTable, options);
+
+  //get vertical coordinate of scale bar
+  var svg = document.getElementById('chart').getElementsByTagName('svg')[0];
+  var label = svg.children[2].children[0];
+  var y = label.getAttribute('y');
+  //plus height of scale bar
+  var chart_div_height = parseInt(y) + 50;
+  var chart_height = chart_div_height;
+
+  //set chart height to exact height
+  options['height'] = chart_height;
+  $('#chart').css('height', chart_div_height);
+  svg.setAttribute('height', chart_height);
+  var content = $('#chart').children()[0];
+  $(content).css('height', chart_height);
+  var inner = $(content).children()[0];
+  $(inner).css('height', chart_height);
+}
+
+
+function redrawChart() {
+    var scale = document.getElementById("scale").value;
+    scale = scale.replace('%', '') / 100
+    options['width'] = scale * default_width;
+    chart.draw(dataTable, options);
+}
+
+</script>
+<style>
+#redrawButton{
+width:100px;
+}
+</style>
+
+</head>
+<body>
+
+<div id="chart">
+<b>WARNING: Visualizer disabled. If you see this message, download the HTML then open it.</b>
+</div>
+<p><b>WARNING:</b>
+<br>*: wake_lock field only shows the first/last wakelock held 
+when the system is awake. For more detail, use wake_lock_in.<br>To enable full wakelock reporting (post-KitKat only) : 
+<br>adb shell dumpsys batterystats --enable full-wake-history</p>
+<pre>(Local time 15:56:58 - 16:17:59, 21m elapsed)</pre>
+<p>
+Zoom: <input id="scale" type="text" value="100%"></input><button type="button" id="redrawButton"onclick="redrawChart()">redraw</button></p>
+</p>
+
+<b>Event summary:
+</b><br><pre>
+  1 events, 1261.799s total 1261.799s avg 1261.799s median: +wake_lock_in=-1:"screen" (first at 15:56:58)
+260 events, 373.553s total  1.437s avg  1.388s median: +wake_lock_in=1013:"AudioMix" (first at 15:56:58)
+165 events, 38.867s total  0.236s avg  0.228s median: +wake_lock_in=1000:"AudioMix" (first at 15:57:00)
+ 11 events, 23.907s total  2.173s avg  0.389s median: +wake_lock_in=1000:"ActivityManager-Launch" (first at 15:57:05)
+  1 events,  5.272s total  5.272s avg  5.272s median: +wake_lock_in=u0a76:"wake:com.google.android.calendar/.alerts.AlertService" (first at 16:00:06)
+  1 events,  5.163s total  5.163s avg  5.163s median: +wake_lock_in=u0a32:"StartingAlertService" (first at 16:00:05)
+  4 events,  3.176s total  0.794s avg  0.711s median: +wake_lock_in=1000:"DHCP" (first at 15:59:41)
+ 22 events,  3.091s total  0.141s avg  0.097s median: +wake_lock_in=1000:"*alarm*:android.intent.action.TIME_TICK":"com.android.settings" (first at 15:56:59)
+ 41 events,  2.137s total  0.052s avg  0.020s median: +wake_lock_in=1001:"RILJ" (first at 16:02:55)
+  1 events,  2.114s total  2.114s avg  2.114s median: +wake_lock_in=u0a67:"*net_scheduler*" (first at 16:17:23)
+  3 events,  1.856s total  0.619s avg  0.153s median: +wake_lock_in=u0a75:"*net_scheduler*" (first at 15:56:58)
+ 18 events,  0.854s total  0.047s avg  0.041s median: +wake_lock_in=u0a20:"*net_scheduler*" (first at 15:56:58)
+ 10 events,  0.630s total  0.063s avg  0.066s median: +wake_lock_in=1000:"*vibrator*" (first at 16:05:21)
+  1 events,  0.536s total  0.536s avg  0.536s median: +wake_lock_in=u0a70:"StartupAfterPackageReplaced" (first at 16:17:32)
+  2 events,  0.362s total  0.181s avg  0.327s median: +wake_lock_in=u0a36:"*alarm*:com.android.deskclock.ON_QUARTER_HOUR":"com.android.deskclock" (first at 16:00:00)
+  1 events,  0.284s total  0.284s avg  0.284s median: +wake_lock_in=u0a32:"*alarm*:com.android.calendar.APPWIDGET_SCHEDULED_UPDATE":"com.android.calendar" (first at 16:00:03)
+  3 events,  0.238s total  0.079s avg  0.077s median: GCM (first at 16:12:12)
+  2 events,  0.203s total  0.102s avg  0.202s median: LOCATION (first at 15:56:58)
+  3 events,  0.188s total  0.063s avg  0.063s median: +wake_lock_in=u0a17:"*vibrator*" (first at 15:57:10)
+  1 events,  0.162s total  0.162s avg  0.162s median: +wake_lock_in=u0a48:"WeatherUpdateService" (first at 16:05:40)
+  1 events,  0.150s total  0.150s avg  0.150s median: +wake_lock_in=u0a20:"fingerprint_scanner_local" (first at 16:17:29)
+  3 events,  0.084s total  0.028s avg  0.007s median: +wake_lock_in=u0a67:"Babel_ConcService" (first at 16:17:25)
+  2 events,  0.083s total  0.042s avg  0.078s median: +wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.ACTION_CHECK_QUEUE" (first at 15:56:58)
+  2 events,  0.076s total  0.038s avg  0.052s median: +wake_lock_in=u0a85:"*alarm*":".esfm" (first at 16:05:40)
+  1 events,  0.071s total  0.071s avg  0.071s median: +wake_lock_in=u0a70:"wake:com.google.android.apps.plus/.service.PhotosAppTransitionService" (first at 16:17:32)
+  1 events,  0.070s total  0.070s avg  0.070s median: +wake_lock_in=u0a20:"wake:com.google.android.gms/com.google.android.libraries.social.autobackup.FingerprintScannerIntentService" (first at 16:17:29)
+  1 events,  0.055s total  0.055s avg  0.055s median: +wake_lock_in=1000:"*alarm*:com.android.server.action.NETWORK_STATS_POLL":"com.android.settings" (first at 16:17:23)
+  5 events,  0.051s total  0.010s avg  0.005s median: +wake_lock_in=1000:"*alarm*":"com.android.settings" (first at 16:00:03)
+  1 events,  0.042s total  0.042s avg  0.042s median: +wake_lock_in=1000:"NetworkStats" (first at 16:17:23)
+  4 events,  0.015s total  0.004s avg  0.004s median: +wake_lock_in=1000:"*walarm*:android.net.wifi.DHCP_RENEW" (first at 15:59:41)
+  1 events,  0.014s total  0.014s avg  0.014s median: +wake_lock_in=u0a20:"*walarm*:com.google.android.gms.gcm.HEARTBEAT_ALARM" (first at 16:12:12)
+  1 events,  0.008s total  0.008s avg  0.008s median: +wake_lock_in=u0a48:"*walarm*:com.cyanogenmod.lockclock/.weather.WeatherUpdateService" (first at 16:05:40)
+  1 events,  0.003s total  0.003s avg  0.003s median: +wake_lock_in=u0a20:"*alarm*":"com.google.android.gms.ui" (first at 16:17:23)
+  1 events,  0.001s total  0.001s avg  0.001s median: +wake_lock_in=u0a48:"*walarm*:com.cyanogenmod.lockclock.action.CANCEL_LOCATION_UPDATE" (first at 16:10:41)
+total: 0.000 mAh, 576 events
+</pre>
+
+<br /><b>Proc/stat summary</b><ul>
+<li>Total User Time: 0ms</li>
+<li>Total System Time: 0ms</li>
+<li>Total IO Time: 0ms</li>
+<li>Total Irq Time: 0ms</li>
+<li>Total Soft Irq Time: 0ms</li>
+<li>Total Idle Time: 0ms</li>
+</ul>
+<pre>Process table:
+1000: "com.android.settings"
+1001: "com.android.phone"
+1027: "com.android.nfc"
+u0a0: "org.cyanogenmod.audiofx"
+u0a114: "agostinisalome.it.mobilenode"
+u0a14: "com.android.systemui"
+u0a16: "org.cyanogenmod.theme.chooser"
+u0a17: "com.cyanogenmod.trebuchet"
+u0a20: "com.google.android.gms.ui"
+u0a23: "com.google.android.partnersetup"
+u0a24: "com.android.vending"
+u0a26: "com.google.android.googlequicksearchbox:search"
+u0a28: "com.android.browser"
+u0a3: "com.android.providers.calendar"
+u0a32: "com.android.calendar"
+u0a36: "com.android.deskclock"
+u0a4: "com.android.cellbroadcastreceiver"
+u0a42: "com.android.gallery3d"
+u0a45: "com.android.inputmethod.latin"
+u0a48: "com.cyanogenmod.lockclock"
+u0a5: "android.process.acore"
+u0a55: "com.svox.pico"
+u0a6: "com.android.defcontainer"
+u0a61: "com.android.smspush"
+u0a67: "com.google.android.talk"
+u0a68: "com.google.android.music:main"
+u0a7: "com.android.incallui"
+u0a70: "com.google.android.apps.plus"
+u0a75: "com.google.android.apps.books"
+u0a76: "com.google.android.calendar"
+u0a78: "com.android.chrome:sandboxed_process1"
+u0a8: "android.process.media"
+u0a84: "com.google.android.inputmethod.latin"
+u0a85: ".esfm"
+
+</pre>
+
+</body>
+</html>
