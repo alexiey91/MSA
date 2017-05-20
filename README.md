@@ -111,6 +111,4 @@ Tale adeguatezza dovrà essere argomentata nella relazione di accompagnamento, t
 
 - misurazioni/simulazioni.
 
-L'argomentazione dovrà essere basata anche su appropriate considerazioni riguardanti: quantità dei dati memorizzati/scambiati,
-
-carico computazionale per gestire le operazioni, ecc.
+L'argomentazione dovrà essere basata anche su appropriate considerazioni riguardanti: quantità dei dati memorizzati/scambiati, carico computazionale per gestire le operazioni, ecc.
