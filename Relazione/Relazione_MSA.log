@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  28 JUL 2017 16:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  29 JUL 2017 17:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -534,8 +534,7 @@ Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibsep=\skip72
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count278
-)
-No file Relazione_MSA.aux.
+) (./Relazione_MSA.aux)
 \openout1 = `Relazione_MSA.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
@@ -555,6 +554,7 @@ LaTeX Font Info:    ... okay on input line 46.
 . 
 . Activating mapping `default' on line 46.
 .................................................
+
 (c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count279
@@ -634,57 +634,47 @@ File: siunitx-abbreviations.cfg 2017/07/23 v2.7i siunitx: Abbreviated units
 \c__siunitx_mathsf_int=\count285
 \c__siunitx_mathtt_int=\count286
 
-
-LaTeX Warning: Reference `definitions' on page 1 undefined on input line 70.
-
 [1
 
 {c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<placeholder.jpg, id=15, 351.3125pt x 193.72375pt>
+<placeholder.jpg, id=14, 351.3125pt x 193.72375pt>
 File: placeholder.jpg Graphic file (type jpg)
 <use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg  used on input line 132. on input line
- 132.
+Package pdftex.def Info: placeholder.jpg  used on input line 129. on input line
+ 129.
 Package pdftex.def Info: Requested size: 224.2479pt x 123.66057pt on input line
- 132.
+ 129.
 
 
 Package natbib Warning: Citation `Smith:2012qr' on page 2 undefined on input li
-ne 143.
+ne 140.
 
 [2 <./placeholder.jpg>]
 No file Relazione_MSA.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[3] (./Relazione_MSA.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+[3] (./Relazione_MSA.aux) ) 
 Here is how much of TeX's memory you used:
- 13648 strings out of 492990
- 284688 string characters out of 6136334
- 325352 words of memory out of 5000000
- 17129 multiletter control sequences out of 15000+600000
+ 13652 strings out of 492990
+ 284748 string characters out of 6136334
+ 325511 words of memory out of 5000000
+ 17131 multiletter control sequences out of 15000+600000
  539123 words of font info for 55 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,46p,10443b,817s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2017/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Relazione_MSA.pdf (3 pages, 152373 bytes).
+<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+bx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb
+><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texl
+ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Relazione_MSA.pdf (3 pages, 152874 bytes).
 PDF statistics:
  63 PDF objects out of 1000 (max. 8388607)
  44 compressed objects within 1 object stream
