@@ -67,7 +67,7 @@
 
 \section{Introduzione}
 
-Il paradigma di interazione (connettore) \textit{Publish-Subscribe} presenta caratteristiche interessanti per sistemi caratterizzati da una elevata dinamicit\'a, grazie all'elevato livello di disaccoppiamento che \'e in grado di garantire tra componenti. I componenti coinvolti nell'interazione, per mezzo del connettore, sono i \textit{produttori} e i \textit{consumatori} di determinati eventi generabili. Un evento \'e caratterizzato dal cosidetto \textit{topic} che rappresenta il suo argomento d'appartenenza al quale un \textit{consumatore} pu\'o sottoscriversi se interessato a tale classe di informazioni; il \textit{produttore} a sua volta pu\'o pubblicare eventi associati ad un determinato \textit{topic}. Nello specifico \'e possibile caratterizzare un determinato evento (dopo averlo associato ad un \textit{topic}) in base al suo contenuto utilizzando la politica del tipo \textit{content-based}. Tale modalit\'a di sottoscrizione viene realizzata specificando un filtro e di conseguenza favorisce la riduzione del carico di eventi recapitati ai \textit{consumatori}. Il connettore realizzato si presta all'utilizzo in ambiente mobile in quanto garantisce un alto grado di disaccoppiamento, garantendo uno scambio affidabile di messaggi tra le entit\'a coinvolte. Tuttavia ci siamo posti come obiettivo quello di aggiungere a tale sistema politiche adattative che tengano conto delle limitate risorse energetiche e computazionali a disposizione dei nodi mobili, continuando a garantire uno scambio affidabile di messaggi tra le entit\'a attraverso il connettore.
+Il connettore \textit{Publish-Subscribe} presenta caratteristiche interessanti per sistemi caratterizzati da una elevata dinamicit\'a, grazie all'elevato livello di disaccoppiamento che \'e in grado di garantire tra componenti. I componenti coinvolti nell'interazione, per mezzo del connettore, sono i \textit{produttori} e i \textit{consumatori} di determinati eventi generabili. Un evento \'e caratterizzato dal cosidetto \textit{topic} che rappresenta il suo argomento d'appartenenza al quale un \textit{consumatore} pu\'o sottoscriversi se interessato a tale classe di informazioni; il \textit{produttore} a sua volta pu\'o pubblicare eventi associati ad un determinato \textit{topic}. Nello specifico \'e possibile caratterizzare un determinato evento (dopo averlo associato ad un \textit{topic}) in base al suo contenuto utilizzando la politica del tipo \textit{content-based}. Tale modalit\'a di sottoscrizione viene realizzata specificando un filtro e di conseguenza favorisce la riduzione del carico di eventi recapitati ai \textit{consumatori}. Il connettore realizzato si presta all'utilizzo in ambiente mobile in quanto garantisce un alto grado di disaccoppiamento, garantendo uno scambio affidabile di messaggi tra le entit\'a coinvolte. Tuttavia ci siamo posti come obiettivo quello di aggiungere a tale sistema politiche adattative che tengano conto delle limitate risorse energetiche e computazionali a disposizione dei nodi mobili, continuando a garantire uno scambio affidabile di messaggi tra le entit\'a attraverso il connettore.
 Intuendo un legame funzionale tra consumo energetico e traffico generato dal nodo mobile, abbiamo compiuto uno studio statistico per avallare la nostra ipotesi che si \'e rivelato soddisfacente: pertanto abbiamo potuto realizzare un modello matematico finale. 
 La nostra politica adattativa ci permette di controllare il tasso di consumo energetico controllando direttamente la frequenza di interazione del nodo mobile con la rete, gestendo, tramite un monitoraggio continuo dello stato della batteria, le risorse limitate del dispositivo. % scrivere in una frase che il nostro sistema implementa mape?
 
@@ -89,7 +89,36 @@ Si vuole inoltre adattare tale sistema ad ambiente mobile mediante una politica 
 
 \section{Architettura generale}
 
+Il sistema si basa fondamentalmente su un'architettura centralizzata. Infatti il connettore \textit{Publish-Subscribe} si compone di un server che svolge sia la funzione di \textit{Event-Service} che la funzione di \textit{Filter-Service}. I client non interagiscono direttamente con il connettore ma scambiano messaggi mediante delle code che implementano il paradigma di interazione \textit{message queueing}. Tale paradigma offre dei vantaggi in termini di disaccoppiamento spaziale e temporale, garantendo la possibilit\'a al client di potersi disattivare o spegnere immantinentemente una volta inoltrato un messaggio.
+\\
+Il server gestisce, tramite una \textit{database non relazionale} distribuito, la persistenza delle informazioni indispensabili per il corretto funzionamento del sistema dal punto di vista dei client, ovvero
+
+\begin{itemize}
+\item{\textit{Topic}}
+\item{\textit{Sottoscrizioni e Filtri}}
+\end{itemize}
+
+I nodi mobili, cos\'i come il server, gestiscono la persistenza in locale di alcune informazioni attraverso un \textit{database relazionale}. Tali informazioni sono i \textit{topic} al momento disponibili nel sistema, le \textit{notifiche} in ingresso, le \textit{sottoscrizioni} effettuate con i relativi \textit{topic e filtri}. Il client attraverso procedure interne effettua, periodicamente,  un'operazione di \textit{pull} sulla coda per poter aggiornare i dati relativi alle notifiche ad esso destinate. Analogamente richiede al server la lista dei \textit{topic} disponibili per aggiornare le sue informazioni locali. Tutto ci\'o viene attuato per promuovere un utilizzo offline dell'applicazione in caso di disconnessione, scenario possibile nell'ambito dei sistemi mobili.\\
+Di seguito illustriamo l'architettura attraverso uno schema in \figurename{~\ref{fig:Architettura}}.
+
+\begin{figure}[h]
+\begin{center}
+\centering
+\includegraphics[width=1.25\textwidth]{architettura.jpg} % Include the image placeholder.png
+\caption{Architettura}
+\label{fig:Architettura}
+\end{center}
+\end{figure}
+
 \subsection{Servizi Cloud}
+
+Come \textit{Cloud Provider} \'e stato scelto \textit{Amazon AWS}. I servizi utilizzati per l'implementazione del connettore sono:
+
+\begin{itemize}
+\item{\textbf{Amazon EC2}: servizio \textit{IaaS} sfruttato per la realizzazione del nodo master che identifica il server dell'architettura. Svolge il ruolo di \textit{Event-Service e Filter-Service} nonch\'e di gestore del \textit{database NoSQL}. Per la comunicazione con i nodi client interagisce con le code del servizio \textit{Amazon SQS}}
+\item{\textbf{Amazon SQS}: è un servizio di accodamento di messaggi distribuito che disaccoppia completamente i componenti dell'architettura. In tal modo semplifica e riduce i costi del coordinamento dei componenti stessi. Offre un \textit{throughput} elevato e \textit{tunable}, un ordinamento semplificato e distribuzione di tipo \textit{at-least-once}. In generale \'e possibile impostare un algoritmo di \textit{scheduling} dei messaggi: nel nostro caso \'e stato utilizzato l'algoritmo \textit{FIFO}}
+\item{\textbf{Amazon DynamoDB}}
+\end{itemize}
 
 \subsection{Piattaforma Client}
 
