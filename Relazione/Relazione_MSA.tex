@@ -37,9 +37,9 @@
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Connettore Publish-Subscribe Content-Based adeguato ad ambiente Mobile per mezzo di politiche adattive } % Title
+\title{Connettore Publish-Subscribe Content-Based adeguato ad ambiente Mobile per mezzo di politiche adattative } % Title
 
-\author{Stefano \textsc{Agostini} Matricola: 0234240 \\ Paolo \textsc{Salom\'e} Matricola: 1234567 \\ Alessandro \textsc{Valenti} Matricola: 1234567} % Author name
+\author{Stefano \textsc{Agostini} Matricola: 0234240 \\ Paolo \textsc{Salom\'e} Matricola: 1234567 \\ Alessandro \textsc{Valenti} Matricola: 0228709} % Author name
 
 \date{\today} % Date for the report
 
@@ -67,23 +67,33 @@
 
 \section{Introduzione}
 
-To determine the atomic weight of magnesium via its reaction with oxygen and to study the stoichiometry of the reaction (as defined in \ref{definitions}):
+Il paradigma di interazione (connettore) \textit{Publish-Subscribe} presenta caratteristiche interessanti per sistemi caratterizzati da una elevata dinamicit\'a, grazie all'elevato livello di disaccoppiamento che \'e in grado di garantire tra componenti. I componenti coinvolti nell'interazione, per mezzo del connettore, sono i \textit{produttori} e i \textit{consumatori} di determinati eventi generabili. Un evento \'e caratterizzato dal cosidetto \textit{topic} che rappresenta il suo argomento d'appartenenza al quale un \textit{consumatore} pu\'o sottoscriversi se interessato a tale classe di informazioni; il \textit{produttore} a sua volta pu\'o pubblicare eventi associati ad un determinato \textit{topic}. Nello specifico \'e possibile caratterizzare un determinato evento (dopo averlo associato ad un \textit{topic}) in base al suo contenuto utilizzando la politica del tipo \textit{content-based}. Tale modalit\'a di sottoscrizione viene realizzata specificando un filtro e di conseguenza favorisce la riduzione del carico di eventi recapitati ai \textit{consumatori}. Il connettore realizzato si presta all'utilizzo in ambiente mobile in quanto garantisce un alto grado di disaccoppiamento, garantendo uno scambio affidabile di messaggi tra le entit\'a coinvolte. Tuttavia ci siamo posti come obiettivo quello di aggiungere a tale sistema politiche adattative che tengano conto delle limitate risorse energetiche e computazionali a disposizione dei nodi mobili, continuando a garantire uno scambio affidabile di messaggi tra le entit\'a attraverso il connettore.
+Intuendo un legame funzionale tra consumo energetico e traffico generato dal nodo mobile, abbiamo compiuto uno studio statistico per avallare la nostra ipotesi che si \'e rivelato soddisfacente: pertanto abbiamo potuto realizzare un modello matematico finale. 
+La nostra politica adattativa ci permette di controllare il tasso di consumo energetico controllando direttamente la frequenza di interazione del nodo mobile con la rete, gestendo, tramite un monitoraggio continuo dello stato della batteria, le risorse limitate del dispositivo. % scrivere in una frase che il nostro sistema implementa mape?
 
-\begin{center}\ce{2 Mg + O2 -> 2 MgO}\end{center}
+\section{Obiettivi}
 
-% If you have more than one objective, uncomment the below:
-%\begin{description}
-%\item[First Objective] \hfill \\
-%Objective 1 text
-%\item[Second Objective] \hfill \\
-%Objective 2 text
-%\end{description}
+L'obiettivo \'e quello di realizzare un connettore \textit{Publish-Subscribe} in modalit\'a \textit{content-based} ed adattarlo ad ambiente mobile. Nel dettaglio il nostro sistema deve essere costituito da nodi mobili che possono assumere il ruolo di \textit{consumatore o produttore} e dal connettore che deve comporsi delle seguenti entit\'a:
 
-\subsection{Ambito del progetto e suoi obiettivi}
+\begin{itemize}
+\item{\textit{Event-Service}, il quale si preoccupa di gestire gli eventi generati e di recapitare notifiche}
+\item{\textit{Filter-Service}, il quale realizza la modalit\'a di sottoscrizione \textit{content-based}}
+\end{itemize}
 
-\subsection{Servizi Cloud utilizzati e loro interazione}
+Si vuole inoltre adattare tale sistema ad ambiente mobile mediante una politica che abbia come scopo quello di monitorare e controllare:
 
-\subsection{Architettura generale}
+\begin{itemize}
+\item{\textit{Il consumo energetico}}
+\item{\textit{Il traffico generato} nell'interazione tra nodo mobile e connettore}
+\end{itemize}
+
+\section{Architettura generale}
+
+\subsection{Servizi Cloud}
+
+\subsection{Piattaforma Client}
+
+\subsection{Interazione dei componenti}
  
 %----------------------------------------------------------------------------------------
 %	SECTION 2
