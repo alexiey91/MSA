@@ -39,7 +39,7 @@
 
 \title{Connettore Publish-Subscribe Content-Based adeguato ad ambiente Mobile per mezzo di politiche adattative } % Title
 
-\author{Stefano \textsc{Agostini} Matricola: 0234240 \\ Paolo \textsc{Salom\'e} Matricola: 1234567 \\ Alessandro \textsc{Valenti} Matricola: 0228709} % Author name
+\author{Stefano \textsc{Agostini} Matricola: 0234240 \\ Paolo \textsc{Salom\'e} Matricola: 0233502 \\ Alessandro \textsc{Valenti} Matricola: 0228709} % Author name
 
 \date{\today} % Date for the report
 
@@ -116,13 +116,28 @@ Come \textit{Cloud Provider} \'e stato scelto \textit{Amazon AWS}. I servizi uti
 
 \begin{itemize}
 \item{\textbf{Amazon EC2}: servizio \textit{IaaS} sfruttato per la realizzazione del nodo master che identifica il server dell'architettura. Svolge il ruolo di \textit{Event-Service e Filter-Service} nonch\'e di gestore del \textit{database NoSQL}. Per la comunicazione con i nodi client interagisce con le code del servizio \textit{Amazon SQS}}
-\item{\textbf{Amazon SQS}: è un servizio di accodamento di messaggi distribuito che disaccoppia completamente i componenti dell'architettura. In tal modo semplifica e riduce i costi del coordinamento dei componenti stessi. Offre un \textit{throughput} elevato e \textit{tunable}, un ordinamento semplificato e distribuzione di tipo \textit{at-least-once}. In generale \'e possibile impostare un algoritmo di \textit{scheduling} dei messaggi: nel nostro caso \'e stato utilizzato l'algoritmo \textit{FIFO}}
-\item{\textbf{Amazon DynamoDB}}
+\item{\textbf{Amazon SQS}: \'e un servizio di accodamento di messaggi distribuito che disaccoppia completamente i componenti dell'architettura. In tal modo semplifica e riduce i costi del coordinamento dei componenti stessi. Offre un \textit{throughput} elevato e \textit{tunable}, un ordinamento semplificato e distribuzione di tipo \textit{at-least-once}. In generale \'e possibile impostare un algoritmo di \textit{scheduling} dei messaggi: nel nostro caso \'e stato utilizzato l'algoritmo \textit{FIFO}}
+\item{\textbf{Amazon DynamoDB}: \'e un servizio di \textit{datastorage} distribuito basato su un \textit{database NoSQL} di tipo \textit{key-value}. \textit{DynamoDB} implementa un sistema di tipo \textit{AP}, disponibilit\'a e tolleranza alle partizioni dei dati, secondo il \textit{CAP Theorem}. L'alto grado di disponibilit\'a ed un accesso di tipo \textit{anywhere} alle informazioni sono due caratteristiche adatte ad un utilizzo in ambiente mobile. Essendo inoltre un database \textit{read-mostly}, ovvero pensato prevalentemente per operazioni di lettura, si adatta perfettamente al nostro sistema, il quale richiede pi\'u letture che scritture.}
 \end{itemize}
 
-\subsection{Piattaforma Client}
+\subsection{Ambiente Client}
+Il nostro sistema \'e pensato per un utilizzo da parte di \textit{client leggeri} con sistema operativo \textit{Android}. \textit{Android} \'e un sistema operativo per dispositivi mobili sviluppato da \textit{Google Inc.} e basato sul kernel \textit{Linux}. Le applicazioni che vengono eseguite sulle piattaforme \textit{Android} sono scritte prevalentemente in linguaggio \textit{Java}, come nel nostro caso. L'applicazione \textit{client} interagisce con un \textit{database relazionale} interno di tipo \textit{SQLite}.
+
+\subsection{Ambiente Server}
+Sfruttando il servizio \textit{IaaS di Amazon EC2}, \'e stato possibile scegliere il sistema operativo del server e le caratteristiche della macchina \textit{host}. In particolare abbiamo scelto un'istanza \textit{t2.micro} dotata di una \textit{virtual cpu}, \textit{1 GB di ram} e \textit{8 GB di storage}. \'E stato scelto come sistema operativo \textit{Linux Ubuntu Server v.16.04 LTS}. La scelta di tale sistema operativo \'e da ricondurre alla semplicit\'a di installazione di componenti aggiuntivi e alla sua versatilit\'a.
 
 \subsection{Interazione dei componenti}
+Per promuovere la comunicazione tra i client ed il server, disaccoppiandoli, \'e stato scelto di utilizzare diverse code \textit{SQS}, partizionandone i compiti. In particolare vengono generate tre code fisse per richiedere l'esecuzione delle operazioni fondamentali di un sistema \textit{Publish-Subscribe} al  server:
+
+\begin{itemize}
+\item{\textbf{Creation Queue}: i client scrivono su questa coda per richiedere al server la creazione di un determinato \textit{topic}}
+\item{\textbf{Notification Queue}: i client scrivono su questa coda per pubblicare una notifica su un determinato \textit{topic}}
+\item{\textbf{Subscription Queue}: i client scrivono su questa coda per sottoscriversi in modalit\'a \textit{content-based} ad un determinato \textit{topic}}
+\end{itemize}
+
+Ogni messaggio proveniente dai nodi mobili raggiunge il server per mezzo delle tre code fisse sopra descritte (come si nota in \figurename{~\ref{fig:Architettura}}). Il server elabora i messaggi in ingresso ed aggiorna le informazioni riguardanti i \textit{topic} e le sottoscrizioni nell'istanza di \textit{DynamoDB}.
+\\
+Per la ricezione di messaggi, ogni client ha a disposizione una coda personale, la quale viene creata al momento dell'ingresso del nodo nel sistema. Inoltre i risultati delle richieste e le notifiche in arrivo vengono lette da ciascun nodo mobile direttamente dalla sua coda dedicata.
  
 %----------------------------------------------------------------------------------------
 %	SECTION 2
