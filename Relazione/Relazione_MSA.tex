@@ -73,7 +73,7 @@ La nostra politica adattativa ci permette di controllare il tasso di consumo ene
 
 \section{Obiettivi}
 
-L'obiettivo \'e quello di realizzare un connettore \textit{Publish-Subscribe} in modalit\'a \textit{content-based} ed adattarlo ad ambiente mobile. Nel dettaglio il nostro sistema deve essere costituito da nodi mobili che possono assumere il ruolo di \textit{consumatore o produttore} e dal connettore che deve comporsi delle seguenti entit\'a:
+L'obiettivo \'e quello di realizzare un connettore \textit{Publish-Subscribe} in modalit\'a \textit{content-based} (basato su \textit{string pattern matching}) ed adattarlo ad ambiente mobile. Nel dettaglio il nostro sistema deve essere costituito da nodi mobili che possono assumere il ruolo di \textit{consumatore o produttore} e dal connettore che deve comporsi delle seguenti entit\'a:
 
 \begin{itemize}
 \item{\textit{Event-Service}, il quale si preoccupa di gestire gli eventi generati e di recapitare notifiche}
@@ -132,12 +132,86 @@ Per promuovere la comunicazione tra i client ed il server, disaccoppiandoli, \'e
 \begin{itemize}
 \item{\textbf{Creation Queue}: i client scrivono su questa coda per richiedere al server la creazione di un determinato \textit{topic}}
 \item{\textbf{Notification Queue}: i client scrivono su questa coda per pubblicare una notifica su un determinato \textit{topic}}
-\item{\textbf{Subscription Queue}: i client scrivono su questa coda per sottoscriversi in modalit\'a \textit{content-based} ad un determinato \textit{topic}}
+\item{\textbf{Subscription Queue}: i client scrivono su questa coda per sottoscriversi in modalit\'a \textit{content-based} ad un determinato \textit{topic} oppure annullare una sottoscrizione precedentemente effettuata}
 \end{itemize}
 
 Ogni messaggio proveniente dai nodi mobili raggiunge il server per mezzo delle tre code fisse sopra descritte (come si nota in \figurename{~\ref{fig:Architettura}}). Il server elabora i messaggi in ingresso ed aggiorna le informazioni riguardanti i \textit{topic} e le sottoscrizioni nell'istanza di \textit{DynamoDB}.
 \\
-Per la ricezione di messaggi, ogni client ha a disposizione una coda personale, la quale viene creata al momento dell'ingresso del nodo nel sistema. Inoltre i risultati delle richieste e le notifiche in arrivo vengono lette da ciascun nodo mobile direttamente dalla sua coda dedicata.
+Per la ricezione di messaggi ogni client ha a disposizione una coda dedicata, la quale viene creata al momento dell'ingresso del nodo nel sistema ed \'e utilizzata per la ricezione dei messaggi di notifica.
+\\
+Infine il database \textit{SQLite}, presente in ogni client, \'e utilizzato per tenere traccia dei \textit{topic} presenti al momento nell'istanza di \textit{DynamoDB} e per memorizzare le notifiche ricevute.
+
+\section{Implementazione}
+
+\subsection{Server}
+Abbiamo scelto di utilizzare lato server la piattaforma \textit{event-driven Node.js} per motivi di immediatezza, versatilit\'a  ed efficienza. Tale piattaforma supporta il linguaggio di programmazione \textit{Javascript}, linguaggio di scripting orientato agli oggetti e agli eventi. L'efficienza di \textit{Node.js} \'e legata al suo modello di \textit{networking}, ossia \textit{I/O event-driven}. La piattaforma richiede al sistema operativo di ricevere notifiche al verificarsi di determinati eventi e rimane in modalit\'a \textit{sleep} fino alla ricezione della notifica stessa, in corrispondenza della quale avvia l'esecuzione di una funzione di \textit{callback} di risposta. Tale modello di \textit{networking} si rivela efficiente nella gestione di un elevato traffico di rete, come potrebbe accadere nel caso del nostro sistema.
+\\
+Di seguito ci apprestiamo a descrivere puntualmente l'implementazione dei componenti server.
+
+\subsubsection{Formato \textit{JSON} dei messaggi scambiati}
+
+I messaggi diretti da client a server possono essere di tre tipi (un tipo per coda):
+
+\begin{itemize}
+
+\item{\textbf{Crezione-rimozione di un topic}:}
+
+\begin{tabular}{ll}
+\{\\
+	   \hspace{10mm} "type": string, // "CREATE" or "DELETE"\\
+              \hspace{10mm} "userID": string, // macaddress\\
+              \hspace{10mm} "topicName": string
+\\
+\}
+\end{tabular}
+
+\item{\textbf{Sottoscrizione-Cancellazione}:}
+
+\begin{tabular}{ll}
+\{\\	   
+            \hspace{10mm} "type": string, // "SUB" or "UNSUB" or "UNSUBALL"\\
+            \hspace{10mm} "userID": string, // macaddress\\
+            \hspace{10mm} "topicName": string,\\
+            \hspace{10mm} "filter": string 
+\\
+\}
+\end{tabular}
+
+\item{\textbf{Pubblicazione di notifiche}:}
+
+\begin{tabular}{ll}
+\{\\	   
+           \hspace{10mm} "userID": string, // macaddress\\
+           \hspace{10mm} "topicName": string,\\
+           \hspace{10mm} "messageBody": string
+\\
+\}
+\end{tabular}
+
+\end{itemize}
+
+I messaggi di notifica elaborati dal server e destinati alle code dedicate dei client hanno il seguente formato:
+
+\begin{tabular}{ll}
+\{\\	   
+           \hspace{10mm} "topicName": string, // macaddress\\
+           \hspace{10mm} "messageBody": string\\
+\\
+\}
+\end{tabular}
+
+\subsubsection{AWS SDK}
+\textit{Amazon AWS} mette a disposizione delle librerie ai programmatori per consentirgli di interagire e accedere ai servizi \textit{Cloud} da codice. In particolare \textit{AWS} supporta anche \textit{Javascript} con le proprie \textit{SDK} (\textit{Software Development Kit}). Sono state utilizzate le \textit{API AWS SDK} relative ai servizi \textit{SQS e DynamoDB} ed estese per mezzo di due librerie: \textit{sqs\_api.js e dynamo\_api.js}.\\
+
+\textbf{sqs\_api.js}
+\begin{itemize}
+\item{\textit{create\_queue}: crea una coda identificata dall'attributo \textit{QueueNamePrefix} (parametro alla funzione) se non esiste. Questa funzione viene utilizzata sia per la creazione delle tre code fisse che di quelle dedicate ai singoli nodi client.}
+\item{\textit{write\_queue}: scrive un messaggio nella coda specificata (entrambi parametri della funzione). Per risalire alla coda, ricava il suo \textit{URL} mediante l'\textit{API SDK getQueueUrl} utilizzando il suo nome. Se il recupero va a buon fine, viene inviato il messaggio sulla coda invocando \textit{l'API SDK sendMessage}.}
+\item{\textit{read\_queue}}
+\item{\textit{delete\_messages}}
+\end{itemize}
+
+\subsection{Client}
  
 %----------------------------------------------------------------------------------------
 %	SECTION 2
@@ -160,12 +234,12 @@ Magnesium from sample bottle & \#1
 \section{Sample Calculation}
 
 \begin{tabular}{ll}
-Mass of magnesium metal & = \SI{8.59}{\gram} - \SI{7.28}{\gram}\\
-& = \SI{1.31}{\gram}\\
-Mass of magnesium oxide & = \SI{9.46}{\gram} - \SI{7.28}{\gram}\\
-& = \SI{2.18}{\gram}\\
-Mass of oxygen & = \SI{2.18}{\gram} - \SI{1.31}{\gram}\\
-& = \SI{0.87}{\gram}
+%Mass of magnesium metal & = \SI{8.59}{\gram} - \SI{7.28}{\gram}\\
+%& = \SI{1.31}{\gram}\\
+%Mass of magnesium oxide & = \SI{9.46}{\gram} - \SI{7.28}{\gram}\\
+%& = \SI{2.18}{\gram}\\
+%Mass of oxygen & = \SI{2.18}{\gram} - \SI{1.31}{\gram}\\
+%& = \SI{0.87}{\gram}
 \end{tabular}
 
 Because of this reaction, the required ratio is the atomic weight of magnesium: \SI{16.00}{\gram} of oxygen as experimental mass of Mg: experimental mass of oxygen or $\frac{x}{1.31}=\frac{16}{0.87}$ from which, $M_{\ce{Mg}} = 16.00 \times \frac{1.31}{0.87} = 24.1 = \SI{24}{\gram\per\mole}$ (to two significant figures).
