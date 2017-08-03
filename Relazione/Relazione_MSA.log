@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  2 AUG 2017 18:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  3 AUG 2017 18:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -671,55 +671,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 204--205
 
  []
 
-
-Overfull \hbox (3.92598pt too wide) in paragraph at lines 209--210
-[]\OT1/cmr/m/it/10 write[]queue\OT1/cmr/m/n/10 : scrive un mes-sag-gio nella co
-da spec-i-fi-cata (en-trambi parametri
+[6]
+Overfull \hbox (3.10823pt too wide) in paragraph at lines 220--221
+\OT1/cmr/m/n/10 la can-cel-lazione dalla tabella \OT1/cmr/m/it/10 Sub-scrip-tio
+n \OT1/cmr/m/n/10 dell'\OT1/cmr/m/it/10 item \OT1/cmr/m/n/10 con chi-ave \OT1/c
+mr/m/it/10 (topic[]name,
  []
 
-[6]
-<placeholder.jpg, id=32, 351.3125pt x 193.72375pt>
+
+Overfull \hbox (11.57562pt too wide) in paragraph at lines 222--223
+[]\OT1/cmr/m/it/10 send[]notification\OT1/cmr/m/n/10 : prende come parametri \O
+T1/cmr/m/it/10 topic[]name \OT1/cmr/m/n/10 e \OT1/cmr/m/it/10 mes-sage[]body \O
+T1/cmr/m/n/10 (rispet-
+ []
+
+[7]
+<placeholder.jpg, id=35, 351.3125pt x 193.72375pt>
 File: placeholder.jpg Graphic file (type jpg)
 <use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg  used on input line 257. on input line
- 257.
+Package pdftex.def Info: placeholder.jpg  used on input line 279. on input line
+ 279.
 Package pdftex.def Info: Requested size: 224.2479pt x 123.66057pt on input line
- 257.
+ 279.
 
 
-Package natbib Warning: Citation `Smith:2012qr' on page 7 undefined on input li
-ne 268.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7 <./placeholder.jpg>]
+
+Package natbib Warning: Citation `Smith:2012qr' on page 8 undefined on input li
+ne 290.
+
+[8]
 No file Relazione_MSA.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[8] (./Relazione_MSA.aux) ) 
+[9 <./placeholder.jpg>] (./Relazione_MSA.aux) ) 
 Here is how much of TeX's memory you used:
  13684 strings out of 492990
  285256 string characters out of 6136334
- 324511 words of memory out of 5000000
+ 325511 words of memory out of 5000000
  17158 multiletter control sequences out of 15000+600000
  539482 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,46p,10443b,817s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-bx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
-b><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
-pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Relazione_MSA.pdf (8 pages, 243184 bytes).
+ 41i,13n,46p,10443b,815s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2017/texmf-dist/font
+s/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmbxti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmcsc10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/201
+7/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
+.pfb>
+Output written on Relazione_MSA.pdf (9 pages, 254183 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 59 compressed objects within 1 object stream
+ 88 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

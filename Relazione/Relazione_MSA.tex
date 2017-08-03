@@ -194,8 +194,8 @@ I messaggi di notifica elaborati dal server e destinati alle code dedicate dei c
 
 \begin{tabular}{ll}
 \{\\	   
-           \hspace{10mm} "topicName": string, // macaddress\\
-           \hspace{10mm} "messageBody": string\\
+           \hspace{10mm} "topicName": string, \\
+           \hspace{10mm} "messageBody": string
 \\
 \}
 \end{tabular}
@@ -205,11 +205,33 @@ I messaggi di notifica elaborati dal server e destinati alle code dedicate dei c
 
 \textbf{sqs\_api.js}
 \begin{itemize}
-\item{\textit{create\_queue}: crea una coda identificata dall'attributo \textit{QueueNamePrefix} (parametro alla funzione) se non esiste. Questa funzione viene utilizzata sia per la creazione delle tre code fisse che di quelle dedicate ai singoli nodi client.}
-\item{\textit{write\_queue}: scrive un messaggio nella coda specificata (entrambi parametri della funzione). Per risalire alla coda, ricava il suo \textit{URL} mediante l'\textit{API SDK getQueueUrl} utilizzando il suo nome. Se il recupero va a buon fine, viene inviato il messaggio sulla coda invocando \textit{l'API SDK sendMessage}.}
-\item{\textit{read\_queue}}
-\item{\textit{delete\_messages}}
+\item{\textit{create\_queue}: crea una coda identificata dall'attributo \textit{QueueNamePrefix} (parametro della funzione) se non esiste. Questa funzione viene utilizzata sia per la creazione delle tre code fisse che di quelle dedicate ai singoli nodi client.}
+\item{\textit{write\_queue}: scrive un messaggio nella coda specificata (messaggio e nome della coda entrambi parametri della funzione). Per risalire alla coda, ricava il suo \textit{URL} mediante l'\textit{API SDK getQueueUrl} utilizzando il suo nome. Se il recupero va a buon fine, viene inviato il messaggio sulla coda invocando \textit{l'API SDK sendMessage}.}
+\item{\textit{read\_queue}: legge i messaggi presenti nella coda di cui \'e specificato il nome (parametro della funzione). Ricava lo \textit{URL} della coda mediante l'\textit{API SDK getQueueUrl} alla quale passa il nome come argomento. Se la \textit{getQueueUrl} va a buon fine, vengono recuperati i messaggi presenti nella coda selezionata grazie all'\textit{API SDK receiveMessage}. Nella \textit{callback} della \textit{receiveMessage} viene generato un nuovo processo che resta in attesa della comunicazione dei messaggi da parte del processo padre. Quest'ultimo invia i messaggi letti dalla coda al processo figlio sfruttando la funzione \textit{send} dell'\textit{IPC di Node.js}.  In ricezione, il processo figlio (definito come \textit{consumer}, i cui dettagli sono nella sezione 4.1.4) elabora i messaggi e termina. Tutti i messaggi letti dalla coda vengono eliminati dalla stessa attraverso la funzione \textit{delete\_messages} che ci apprestiamo a descrivere.}
+\item{\textit{delete\_messages}: prende come parametri lo \textit{URL} della coda e la lista delle \textit{entries} lette, oggetti che seguono un formato specificato dagli standard \textit{AWS SDK}. Per l'eliminazione viene invocata l'\textit{API SDK deleteMessageBatch}, la quale permette la cancellazione di \textit{batch} interi di messaggi.}
 \end{itemize}
+
+\textbf{dynamo\_api.js}
+\begin{itemize}
+\item{\textit{creation\_table}: prende come parametro il nome della tabella da creare (supporta la creazione delle tabelle \textit{Topic e Subscription}). Definisce il formato della tabella per la sua creazione per mezzo dell'\textit{API SDK createTable}. La tabella \textit{Topic} ha come chiave il \textit{topicName} (\textit{string}) che ricopre il ruolo di \textit{partition key}. Invece la tabella \textit{Subscription} ha come chiave la coppia \textit{(topicName, userID)} (entrambe stringhe) e la prima ha il ruolo di \textit{partition key} mentre la seconda quello di \textit{sort key}.}
+\item{\textit{create\_topic}: prende come parametri il \textit{topicName} e lo \textit{user\_id} (creatore del \textit{topic}). Utilizza l'\textit{API SDK get} e, se il \textit{topic} non \'e presente nella tabella \textit{Topic}, crea un nuovo \textit{item} e lo salva usando l'\textit{API SDK put}.}
+\item{\textit{delete\_topic}: prende come parametri il \textit{topic\_name} e lo \textit{user\_id} (identificativo del client che ha richiesto al server di rimuovere il \textit{topic}). Recupera, mediante l'\textit{API SDK get}, il \textit{topic} dalla tabella e controlla se l'\textit{id} del creatore coincide con l'\textit{id} del client richiedente. In caso affermativo rimuove l'\textit{item} dalla tabella usando l'\textit{API SDK delete}.}
+\item{\textit{create\_subscription}: prende come parametri \textit{topic\_name, user\_id} e \textit{filter}. Controlla l'esistenza del \textit{topic} nella tabella \textit{Topic}. Se \'e verificata scrive nella tabella \textit{Subscription} il nuovo \textit{item}, con chiave \textit{(topic\_name, user\_id)}.}
+\item{\textit{delete\_subscription}: prende come parametri \textit{topic\_name} e \textit{user\_id}. Effettua la cancellazione dalla tabella \textit{Subscription} dell'\textit{item} con chiave \textit{(topic\_name, user\_id)}, usando l'\textit{API SDK delete}.}
+\item{\textit{scan\_all\_topics}: utilizza l'\textit{API SDK scan} per estrarre la lista dei \textit{topic} al momento presenti nel sistema.}
+\item{\textit{send\_notification}: prende come parametri \textit{topic\_name} e \textit{message\_body} (rispettivamente il \textit{topic} e il messaggio inviato dal client che vuole effettuare una \textit{publish} su di esso). Effettua una \textit{query} sulla tabella \textit{Subscription}, tramite l'\textit{API SDK query}, specificando il \textit{topic\_name}. Il risultato delle \textit{query} \'e una lista di coppie \textit{(user\_id, filter)}, ognuna delle quali rappresenta un sottoscritto al \textit{topic} ed il relativo filtro. Per ogni \textit{item} della lista viene controllata l'occorrenza del suo filtro all'interno del \textit{message\_body}, ed in caso fosse verificata viene inoltrata la notifica alla coda dedicata del client mediante la funzione \textit{write\_queue} della libreria \textit{sqs\_api.js}.}
+\end{itemize}
+
+\subsubsection{\textit{Readers}}
+I tre processi \textit{Readers} si occupano di leggere periodicamente dalle tre code fisse \textit{Creation Queue}, \textit{Notification Queue} e \textit{Subscription Queue}. Tali processi sono continuamente in esecuzione e sfruttano la funzione \textit{polling} del modulo \textit{polling.js}, la quale legge periodicamente dalla coda specificata, passata come argomento, mediante la funzione \textit{read\_queue} della libreria \textit{sqs\_api}. Nel caso in esame \'e stato scelto come intervallo di lettura un tempo pari a \textit{5000 sec}.
+
+\subsubsection{\textit{Consumer e Updaters}}
+\textit{Consumer} \'e un processo che ha il compito di catalogare e gestire i messaggi in funzione della coda dalla quale sono stati letti: implementa nella pratica uno \textit{switch-case}. 
+
+
+\subsubsection{\textit{Server Http e Routes}}
+
+\subsubsection{\textit{Main}}
 
 \subsection{Client}
  
