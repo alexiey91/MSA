@@ -223,7 +223,7 @@ I messaggi di notifica elaborati dal server e destinati alle code dedicate dei c
 \end{itemize}
 
 \subsubsection{\textit{Readers}}
-I tre processi \textit{Readers} si occupano di leggere periodicamente dalle tre code fisse \textit{Creation Queue}, \textit{Notification Queue} e \textit{Subscription Queue}. Tali processi sono continuamente in esecuzione e sfruttano la funzione \textit{polling} del modulo \textit{polling.js}, la quale legge periodicamente dalla coda specificata, passata come argomento, mediante la funzione \textit{read\_queue} della libreria \textit{sqs\_api}. Nel caso in esame \'e stato scelto come intervallo di lettura un tempo pari a \textit{5000 sec}.
+I tre processi \textit{Readers} si occupano di leggere periodicamente dalle tre code fisse \textit{Creation Queue}, \textit{Notification Queue} e \textit{Subscription Queue}. Tali processi sono continuamente in esecuzione e sfruttano la funzione \textit{polling} del modulo \textit{polling.js}, la quale legge periodicamente dalla coda specificata, passata come argomento, mediante la funzione \textit{read\_queue} della libreria \textit{sqs\_api}. Nel caso in esame \'e stato scelto come intervallo di lettura un tempo pari a \textit{5000 millisec}.
 
 \subsubsection{\textit{Consumer e Updaters}}
 \textit{Consumer} \'e un processo che ha il compito di catalogare e gestire i messaggi in funzione della coda dalla quale sono stati letti: implementa nella pratica uno \textit{switch-case}. 
