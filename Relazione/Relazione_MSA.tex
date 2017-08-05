@@ -263,6 +263,19 @@ In \figurename{~\ref{fig:Processi}} troviamo lo schema dei processi attivi nel s
 \end{figure}
 
 \subsection{Client}
+L'applicazione lato client \'e stata realizzata in modo tale da potersi adattare secondo due modalit\'a in risposta al consumo attuale di batteria:
+\begin{itemize}
+\item{\textbf{modalit\'a dinamica}: il client \'e un sistema \textit{self-adaptive}, ovvero in base al livello attuale di batteria del dispositivo modula la frequenza di interazione con la sua coda dedicata, limitando l'utilizzo della scheda di rete. Implementa il \textit{feedback-control-loop} di \textit{MAPE-K}. }
+\item{\textbf{modalit\'a statica}: l'utente che utilizza l'applicazione pu\'o impostare una politica di risparmio energetico a priori, con la quale si limita la luminosit\'a dello schermo del dispositivo. }
+\end{itemize}
+\'E stata dimostrata l'efficacia di queste politiche e nel seguito della trattazione verranno mostrati i test ed il modello matematico finale corrispondente.
+
+\subsubsection{\textit{Util}}
+\subsubsection{\textit{DBHelper}}
+\subsubsection{\textit{AWSSimpleQueueServiceUtil}}
+\subsubsection{\textit{Fragment}}
+\subsubsection{\textit{MainActivity}}
+
  
 %----------------------------------------------------------------------------------------
 %	SECTION 2
