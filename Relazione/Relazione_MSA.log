@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  4 AUG 2017 10:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  5 AUG 2017 16:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -686,52 +686,90 @@ T1/cmr/m/n/10 (rispet-
  []
 
 [7]
-<placeholder.jpg, id=35, 351.3125pt x 193.72375pt>
-File: placeholder.jpg Graphic file (type jpg)
-<use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg  used on input line 279. on input line
- 279.
-Package pdftex.def Info: Requested size: 224.2479pt x 123.66057pt on input line
- 279.
+Underfull \hbox (badness 10000) in paragraph at lines 229--240
+
+ []
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 229--240
+
+ []
 
 
-Package natbib Warning: Citation `Smith:2012qr' on page 8 undefined on input li
-ne 290.
+Overfull \hbox (3.38228pt too wide) in paragraph at lines 229--240
+\OT1/cmr/m/n/10 del-e-gare al cor-rispon-dente \OT1/cmr/m/it/10 Up-dater \OT1/c
+mr/m/n/10 la ges-tione dei dati letti (\OT1/cmr/m/it/10 data[]read.Messages\OT1
+/cmr/m/n/10 ).
+ []
+
+
+Overfull \hbox (11.27455pt too wide) in paragraph at lines 242--243
+\OT1/cmr/m/n/10 Per ogni mes-sag-gio in \OT1/cmr/m/it/10 data[]read.Messages \O
+T1/cmr/m/n/10 in-voca la fun-zione \OT1/cmr/m/it/10 send[]notification
+ []
+
+
+Overfull \hbox (6.01639pt too wide) in paragraph at lines 243--244
+[]\OT1/cmr/m/it/10 subscription[]updater\OT1/cmr/m/n/10 : fun-zione es-e-guita 
+quando \OT1/cmr/m/it/10 queue = sub-scrip-tion-Queue\OT1/cmr/m/n/10 .
+ []
 
 [8]
+<stableprocess.jpg, id=38, 713.66624pt x 362.35374pt>
+File: stableprocess.jpg Graphic file (type jpg)
+<use stableprocess.jpg>
+Package pdftex.def Info: stableprocess.jpg  used on input line 259. on input li
+ne 259.
+Package pdftex.def Info: Requested size: 379.5021pt x 192.68794pt on input line
+ 259.
+
+Overfull \hbox (34.5021pt too wide) in paragraph at lines 259--260
+ [] 
+ []
+
+[9 <./stableprocess.jpg>]
+<placeholder.jpg, id=43, 351.3125pt x 193.72375pt>
+File: placeholder.jpg Graphic file (type jpg)
+<use placeholder.jpg>
+Package pdftex.def Info: placeholder.jpg  used on input line 308. on input line
+ 308.
+Package pdftex.def Info: Requested size: 224.2479pt x 123.66057pt on input line
+ 308.
+
+
+Package natbib Warning: Citation `Smith:2012qr' on page 10 undefined on input l
+ine 319.
+
+[10 <./placeholder.jpg>]
 No file Relazione_MSA.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[9 <./placeholder.jpg>] (./Relazione_MSA.aux) ) 
+[11] (./Relazione_MSA.aux) ) 
 Here is how much of TeX's memory you used:
- 13684 strings out of 492990
- 285256 string characters out of 6136334
- 325511 words of memory out of 5000000
- 17158 multiletter control sequences out of 15000+600000
+ 13690 strings out of 492990
+ 285374 string characters out of 6136334
+ 325519 words of memory out of 5000000
+ 17163 multiletter control sequences out of 15000+600000
  539482 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,46p,10443b,815s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2017/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbxti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmcsc10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10
-.pfb>
-Output written on Relazione_MSA.pdf (9 pages, 254182 bytes).
+<c:/texlive/2017/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
+fb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/20
+17/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/t
+exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Relazione_MSA.pdf (11 pages, 306535 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

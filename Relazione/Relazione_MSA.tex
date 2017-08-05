@@ -213,7 +213,7 @@ I messaggi di notifica elaborati dal server e destinati alle code dedicate dei c
 
 \textbf{dynamo\_api.js}
 \begin{itemize}
-\item{\textit{creation\_table}: prende come parametro il nome della tabella da creare (supporta la creazione delle tabelle \textit{Topic e Subscription}). Definisce il formato della tabella per la sua creazione per mezzo dell'\textit{API SDK createTable}. La tabella \textit{Topic} ha come chiave il \textit{topicName} (\textit{string}) che ricopre il ruolo di \textit{partition key}. Invece la tabella \textit{Subscription} ha come chiave la coppia \textit{(topicName, userID)} (entrambe stringhe) e la prima ha il ruolo di \textit{partition key} mentre la seconda quello di \textit{sort key}.}
+\item{\textit{creation\_table}: prende come parametro il nome della tabella da creare se non esiste (supporta la creazione delle tabelle \textit{Topic e Subscription}). Definisce il formato della tabella per la sua creazione per mezzo dell'\textit{API SDK createTable}. La tabella \textit{Topic} ha come chiave il \textit{topicName} (\textit{string}) che ricopre il ruolo di \textit{partition key}. Invece la tabella \textit{Subscription} ha come chiave la coppia \textit{(topicName, userID)} (entrambe stringhe) e la prima ha il ruolo di \textit{partition key} mentre la seconda quello di \textit{sort key}.}
 \item{\textit{create\_topic}: prende come parametri il \textit{topicName} e lo \textit{user\_id} (creatore del \textit{topic}). Utilizza l'\textit{API SDK get} e, se il \textit{topic} non \'e presente nella tabella \textit{Topic}, crea un nuovo \textit{item} e lo salva usando l'\textit{API SDK put}.}
 \item{\textit{delete\_topic}: prende come parametri il \textit{topic\_name} e lo \textit{user\_id} (identificativo del client che ha richiesto al server di rimuovere il \textit{topic}). Recupera, mediante l'\textit{API SDK get}, il \textit{topic} dalla tabella e controlla se l'\textit{id} del creatore coincide con l'\textit{id} del client richiedente. In caso affermativo rimuove l'\textit{item} dalla tabella usando l'\textit{API SDK delete}.}
 \item{\textit{create\_subscription}: prende come parametri \textit{topic\_name, user\_id} e \textit{filter}. Controlla l'esistenza del \textit{topic} nella tabella \textit{Topic}. Se \'e verificata scrive nella tabella \textit{Subscription} il nuovo \textit{item}, con chiave \textit{(topic\_name, user\_id)}.}
@@ -226,12 +226,41 @@ I messaggi di notifica elaborati dal server e destinati alle code dedicate dei c
 I tre processi \textit{Readers} si occupano di leggere periodicamente dalle tre code fisse \textit{Creation Queue}, \textit{Notification Queue} e \textit{Subscription Queue}. Tali processi sono continuamente in esecuzione e sfruttano la funzione \textit{polling} del modulo \textit{polling.js}, la quale legge periodicamente dalla coda specificata, passata come argomento, mediante la funzione \textit{read\_queue} della libreria \textit{sqs\_api}. Nel caso in esame \'e stato scelto come intervallo di lettura un tempo pari a \textit{5000 millisec}.
 
 \subsubsection{\textit{Consumer e Updaters}}
-\textit{Consumer} \'e un processo che ha il compito di catalogare e gestire i messaggi in funzione della coda dalla quale sono stati letti: implementa nella pratica uno \textit{switch-case}. 
+Ogni processo di tipo \textit{Reader}, alla lettura dei messaggi dalla sua coda (tramite la funzione di lettura \textit{read\_queue} del modulo \textit{sqs\_api}), crea un processo di tipo \textit{Consumer} invocando una \textit{fork} con argomento il modulo \textit{consumer.js} e successivamente gli invia i messaggi letti tramite la funzione \textit{send} dell'\textit{IPC} di \textit{Node.js}. Ogni \textit{Reader} invia al processo \textit{Consumer} un messaggio che segue il seguente formato:
+\\\\
+\begin{tabular}{ll}
+\{\\	   
+           \hspace{10mm} data: data\_read.Messages, // Lista dei messaggi letti dalla coda \\
+           \hspace{10mm} queue: queue\_name // Nome della coda di lettura
+\\
+\}
+\end{tabular}
+\\\\
+In tal modo il processo \textit{Consumer} pu\'o distinguerne la coda di appartenenza per delegare al corrispondente \textit{Updater} la gestione dei dati letti (\textit{data\_read.Messages}). Gli \textit{Updaters} sono tre funzioni, ognuna implementata nel suo modulo:
 
+\begin{itemize}
+\item{\textit{notification\_updater}: funzione eseguita quando \textit{queue = notificationQueue}. Per ogni messaggio in \textit{data\_read.Messages} invoca la funzione \textit{send\_notification} della libreria \textit{dynamo\_api}.}
+\item{\textit{subscription\_updater}: funzione eseguita quando \textit{queue = subscriptionQueue}. Per ogni messaggio, in base al tipo (\textit{SUB o UNSUB}), invoca la funzione \textit{create\_subscription} o \textit{delete\_subscription}, entrambe appartenenti alla libreria \textit{dynamo\_api}.}
+\item{\textit{topic\_updater}: funzione eseguita quando \textit{queue = creationQueue}. Per ogni messaggio, in base al tipo (\textit{CREATE o DELETE}), invoca la funzione \textit{create\_topic} o \textit{delete\_topic}, entrambe appartenenti alla libreria \textit{dynamo\_api}.}
+\end{itemize}
+
+Al termine della gestione dei messaggi letti il processo \textit{Consumer} termina.
 
 \subsubsection{\textit{Server Http e Routes}}
+Al fine di separare le \textit{routes} dal server \textit{http} \'e stato utilizzato il \textit{framework Express.js}. Nel modulo \textit{routes.js} \'e disponibille un \textit{endpoint} per rispondere a richieste \textit{http} di tipo \textit{get}, il quale invoca la funzione \textit{scan\_all\_topics di dinamo\_api.js} per restituire al client richiedente la lista di tutti i \textit{topic} presenti nel sistema. Il \textit{Server http} \'e un processo che utilizza le \textit{routes} e rimane in ascolto sulla porta \textit{8080}.
 
 \subsubsection{\textit{Main}}
+Il modulo \textit{main.js} crea le tre code fisse del sistema invocando la funzione \textit{create\_queue} di \textit{sqs\_api} e le tabelle \textit{Subscription e Topic} tramite la funzione \textit{creation\_table} di \textit{dinamo\_api}. Infine, per mezzo di \textit{fork}, avvia i quattro processi stabili del sistema: i tre \textit{Readers} e il \textit{Server http}. \\
+In \figurename{~\ref{fig:Processi}} troviamo lo schema dei processi attivi nel server: \'e possibile osservare che vi sono quattro processi sempre attivi e diversi processi temporanei che eventualmente si attivano con cadenza temporale di \textit{5 sec}.
+
+\begin{figure}[h]
+\begin{center}
+\centering
+\includegraphics[width=1.1\textwidth]{stableprocess.jpg} % Include the image placeholder.png
+\caption{Processi}
+\label{fig:Processi}
+\end{center}
+\end{figure}
 
 \subsection{Client}
  
