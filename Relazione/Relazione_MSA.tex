@@ -89,7 +89,7 @@ Si vuole inoltre adattare tale sistema ad ambiente mobile mediante una politica 
 
 \section{Architettura generale}
 
-Il sistema si basa fondamentalmente su un'architettura centralizzata. Infatti il connettore \textit{Publish-Subscribe} si compone di un server che svolge sia la funzione di \textit{Event-Service} che la funzione di \textit{Filter-Service}. I client non interagiscono direttamente con il connettore ma scambiano messaggi mediante delle code che implementano il paradigma di interazione \textit{message queueing}. Tale paradigma offre dei vantaggi in termini di disaccoppiamento spaziale e temporale, garantendo la possibilit\'a al client di potersi disattivare o spegnere immantinentemente una volta inoltrato un messaggio.
+Il sistema si basa fondamentalmente su un'architettura centralizzata. Infatti il connettore \textit{Publish-Subscribe} si compone di un server che svolge sia la funzione di \textit{Event-Service} che la funzione di \textit{Filter-Service}. I client non interagiscono direttamente con il connettore ma scambiano messaggi mediante delle code che implementano il paradigma di interazione \textit{message queueing}. Tale paradigma offre dei vantaggi in termini di disaccoppiamento spaziale e temporale, garantendo la possibilit\'a al client di potersi disattivare o spegnere immediatamente una volta inoltrato un messaggio.
 \\
 Il server gestisce, tramite una \textit{database non relazionale} distribuito, la persistenza delle informazioni indispensabili per il corretto funzionamento del sistema dal punto di vista dei client, ovvero
 
@@ -271,8 +271,44 @@ L'applicazione lato client \'e stata realizzata in modo tale da potersi adattare
 \'E stata dimostrata l'efficacia di queste politiche e nel seguito della trattazione verranno mostrati i test ed il modello matematico finale corrispondente.
 
 \subsubsection{\textit{Util}}
+Questa classe contiene diversi metodi che si possono raggruppare in categorie:
+\begin{itemize}
+\item{Metodo per accedere ai servizi di \textit{AWS SQS}(\textit{getProperty}).}
+\item{Metodo per rilevare il livello di batteria attuale del dispositivo (\textit{getBatteryLevel}). }
+\item{Metodi per convertire nel corretto formato i messaggi destinati al connettore (\textit{createDelete,subUnsub,publish}), attraverso le tre code fisse precedentemente descritte.}
+\item{Metodo per recuperare la lista dei \textit{Topic} presenti attualmente nel sistema (\textit{getTopicList}). Contatta l'endpoint del server (\textit{allTopics}) ed eventualmente compatta i messaggi di risposta.}
+\end{itemize}
 \subsubsection{\textit{DBHelper}}
+Questa classe estende \textit{SQLiteOpenHelper} e fornisce i metodi \textit{CRUD} sulle tabelle del \textit{DB} locale. Le tabelle sono le seguenti:
+\begin{itemize}
+\item \textbf{Filtered}: \'e la tabella contenente le notifiche destinate all'utente ed ha il seguente schema:
+	\begin{itemize}
+	\item	\textit{id}: id della notifica;
+	\item 	\textit{date}: data di ricezione dalla coda;
+	\item	\textit{topic}: \textit{Topic} di appartenenza;
+	\item	\textit{content}: contenuto della notifica.
+	\end{itemize}
+\item \textbf{Topic}: \'e la tabella contenente tutti i \textit{Topic} aggiornati all'ultima richiesta al server ed ha il seguente schema:
+	\begin{itemize}
+	\item	\textit{id}: id del \textit{Topic};
+	\item	\textit{name}: nome del \textit{Topic}.
+	\end{itemize}
+\item \textbf{TopicFiltered}: \'e la tabella contenente tutti i \textit{Topic} a cui l'utente si \'e sottoscritto con il filtro associato ed ha il seguente schema:
+	\begin{itemize}
+	\item	\textit{id}: id del \textit{Topic};
+	\item	\textit{name}: nome del \textit{Topic};
+	\item 	\textit{filter}: filtro di sottoscrizione sul topic.
+	\end{itemize}
+\end{itemize}
 \subsubsection{\textit{AWSSimpleQueueServiceUtil}}
+Questa classe implementa dei metodi per accedere ai servizi \textit{AWS SQS} mediante l'utilizzo delle \textit{API AWS SDK}. Tali metodi sono i seguenti:
+\begin{itemize}
+\item	{\textit{createQueue}: prende come argomento il nome della coda e la crea utilizzando l'\textit{API AWS SDK createQueue}. Restituisce infine l'\textit{URL} della coda.}
+\item	{\textit{getQueueUrl}: restituisce l'\textit{URL} della coda il cui nome \'e passato come argomento. Usa l'\textit{API AWS SDK getQueueUrl}.}
+\item	{\textit{sendMessageToQueue}: invia un messaggio sulla coda (una delle tre code fisse) identificata dal suo \textit{URL}, passati entrambi come argomento.  Usa l'\textit{API AWS SDK sendMessage}. }
+\item	{\textit{getMessagesFromQueue}: specificato l'\textit{URL} della coda dedicata del client, legge i messaggi presenti nella stessa usando l'\textit{API AWS SDK receiveMessage}. Infine restituisce una lista.}
+\item 	{\textit{deleteMessageFromQueue}: cancella un messaggio dalla coda dedicata identificata dal suo \textit{URL}, entrambi passati come argomento. Usa l'\textit{API AWS SDK deleteMessage}.}
+\end{itemize}
 \subsubsection{\textit{Fragment}}
 \subsubsection{\textit{MainActivity}}
 
