@@ -98,7 +98,7 @@ Il server gestisce, tramite una \textit{database non relazionale} distribuito, l
 \item{\textit{Sottoscrizioni e Filtri}}
 \end{itemize}
 
-I nodi mobili, cos\'i come il server, gestiscono la persistenza in locale di alcune informazioni attraverso un \textit{database relazionale}. Tali informazioni sono i \textit{topic} al momento disponibili nel sistema, le \textit{notifiche} in ingresso, le \textit{sottoscrizioni} effettuate con i relativi \textit{topic e filtri}. Il client attraverso procedure interne effettua, periodicamente,  un'operazione di \textit{pull} sulla coda per poter aggiornare i dati relativi alle notifiche ad esso destinate. Analogamente richiede al server la lista dei \textit{topic} disponibili per aggiornare le sue informazioni locali. Tutto ci\'o viene attuato per promuovere un utilizzo offline dell'applicazione in caso di disconnessione, scenario possibile nell'ambito dei sistemi mobili.\\
+I nodi mobili, cos\'i come il server, gestiscono la persistenza in locale di alcune informazioni attraverso un \textit{database relazionale}. Tali informazioni sono i \textit{topic} al momento disponibili nel sistema, le \textit{notifiche} in ingresso, le \textit{sottoscrizioni} effettuate con i relativi \textit{topic e filtri}. Il client attraverso procedure interne effettua, periodicamente,  un'operazione di \textit{pull} sulla coda per poter aggiornare i dati relativi alle notifiche ad esso destinate. Analogamente richiede al server la lista dei \textit{topic} disponibili per aggiornare le sue informazioni locali.\\
 Di seguito illustriamo l'architettura attraverso uno schema in \figurename{~\ref{fig:Architettura}}.
 
 \begin{figure}[h]
