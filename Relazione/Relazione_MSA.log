@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  5 AUG 2017 16:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  5 AUG 2017 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -728,17 +728,17 @@ Overfull \hbox (34.5021pt too wide) in paragraph at lines 259--260
  []
 
 [9 <./stableprocess.jpg>]
-<placeholder.jpg, id=43, 351.3125pt x 193.72375pt>
+<placeholder.jpg, id=42, 351.3125pt x 193.72375pt>
 File: placeholder.jpg Graphic file (type jpg)
 <use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg  used on input line 308. on input line
- 308.
+Package pdftex.def Info: placeholder.jpg  used on input line 321. on input line
+ 321.
 Package pdftex.def Info: Requested size: 224.2479pt x 123.66057pt on input line
- 308.
+ 321.
 
 
 Package natbib Warning: Citation `Smith:2012qr' on page 10 undefined on input l
-ine 319.
+ine 332.
 
 [10 <./placeholder.jpg>]
 No file Relazione_MSA.bbl.
@@ -753,7 +753,7 @@ Here is how much of TeX's memory you used:
  17163 multiletter control sequences out of 15000+600000
  539482 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,46p,10443b,815s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,46p,10443b,817s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2017/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
@@ -766,7 +766,7 @@ ic/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 .pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/t
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on Relazione_MSA.pdf (11 pages, 306535 bytes).
+Output written on Relazione_MSA.pdf (11 pages, 309696 bytes).
 PDF statistics:
  95 PDF objects out of 1000 (max. 8388607)
  65 compressed objects within 1 object stream
