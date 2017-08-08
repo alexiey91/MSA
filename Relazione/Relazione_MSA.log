@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.25)  6 AUG 2017 18:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2016.11.25)  8 AUG 2017 19:36
 entering extended mode
 **./Relazione_MSA.tex
 (Relazione_MSA.tex
@@ -723,49 +723,58 @@ Overfull \hbox (0.67323pt too wide) in paragraph at lines 310--311
 -gio dalla coda ded-i-cata iden-
  []
 
-<placeholder.jpg, id=44, 351.3125pt x 193.72375pt>
+
+Overfull \hbox (10.15054pt too wide) in paragraph at lines 319--322
+\OT1/cmr/m/n/10 con-te-nente tutti i \OT1/cmr/m/it/10 Topic \OT1/cmr/m/n/10 a c
+ui l'utente si e sot-to-scritto. All'interno dell'\OT1/cmr/m/it/10 Async-
+ []
+
+
+Overfull \hbox (6.12268pt too wide) in paragraph at lines 322--324
+\OT1/cmr/m/n/10 con-te-nente tutti i \OT1/cmr/m/it/10 Topic \OT1/cmr/m/n/10 at-
+tual-mente nel sis-tema. All'interno dell'\OT1/cmr/m/it/10 AsyncTask
+ []
+
+[11] [12] <placeholder.jpg, id=50, 351.3125pt x 193.72375pt>
 File: placeholder.jpg Graphic file (type jpg)
- <use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg used on input line 357.
+
+<use placeholder.jpg>
+Package pdftex.def Info: placeholder.jpg used on input line 388.
 (pdftex.def)             Requested size: 224.2479pt x 123.66057pt.
 
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package natbib Warning: Citation `Smith:2012qr' on page 13 undefined on input l
+ine 399.
 
-
-Package natbib Warning: Citation `Smith:2012qr' on page 11 undefined on input l
-ine 368.
-
-[11]
+[13 <./placeholder.jpg>]
 No file Relazione_MSA.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[12 <./placeholder.jpg>] (Relazione_MSA.aux) ) 
+[14] (Relazione_MSA.aux) ) 
 Here is how much of TeX's memory you used:
  13737 strings out of 493333
  285944 string characters out of 3139193
- 330431 words of memory out of 3000000
+ 331431 words of memory out of 3000000
  17184 multiletter control sequences out of 15000+200000
  539482 words of font info for 56 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,13n,46p,10443b,816s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/font
-s/type1/public/amsfonts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/a
-msfonts/cm/cmbxti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfont
-s/cm/cmcsc10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
-mi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/
-MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmti10.pfb>
-Output written on Relazione_MSA.pdf (12 pages, 325088 bytes).
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:
+/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public
+/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on Relazione_MSA.pdf (14 pages, 331231 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
+ 103 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
