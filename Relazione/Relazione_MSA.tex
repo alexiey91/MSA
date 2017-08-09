@@ -26,7 +26,7 @@
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
-
+\usepackage{pifont}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
@@ -335,14 +335,16 @@ All'interno dell'\textit{AsyncTask}, per recuperare le notifiche dal \textit{DB}
 \item si popola la \textit{gridView}.
 \end{itemize}
 L'utente pu\'o selezionare ciascun \textit{item} della griglia per cambiare il filtro corrispondente a quel \textit{Topic}, o per richiedere una nuova sottoscrizione. Se si conferma l'operazione, viene inviata una richiesta di sottoscrizione \textit{Topic} al server con l'utilizzo dell'\textit{API AWS SDK sendMessageToQueue} verso la coda \textit{subscriptonQueue}.
-
-
-
-\item \textbf{SettingsFragment}
+\item \textbf{SettingsFragment}: consente all'utente di impostare l'applicazione in modalit\'a risparmio energetico, la quale non far\'a altro che impostare la luminosit\'a dello schermo ad un valore fissato. L'utente pu\'o attivare o meno questa modalit\'a grazie ad uno \textit{Switch} presente nell'\textit{activity\_settings}.
 \end{itemize}
 
 \subsubsection{\textit{MainActivity}}
-
+La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}. Quest'operazione \'e effettuata periodicamente in base al livello della batteria del dispositivo:
+\begin{itemize}
+\item   75\% \textless Livello batteria \textless= 100\% \ding{226} 1 pull ogni secondo
+\item	50\% \textless Livello batteria \textless= 75\%  \ding{226} 1 pull ogni 5 secondi
+\item	0\% \textless Livello batteria \textless= 50\%  \ding{226} 1 pull ogni 30 secondi
+\end{itemize}
  
 %----------------------------------------------------------------------------------------
 %	SECTION 2
