@@ -27,6 +27,8 @@
 \usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
 \usepackage{pifont}
+\usepackage{amssymb}
+\usepackage{amsthm} 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
@@ -339,13 +341,33 @@ L'utente pu\'o selezionare ciascun \textit{item} della griglia per cambiare il f
 \end{itemize}
 
 \subsubsection{\textit{MainActivity}}
-La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}. Quest'operazione \'e effettuata periodicamente in base al livello della batteria del dispositivo:
+La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}. Quest'operazione \'e effettuata periodicamente con frequenza di \textit{pull} dipendente dal livello corrente della batteria del dispositivo:
 \begin{itemize}
 \item   75\% \textless  Livello batteria \textless= 100\% \ding{226} 1 pull ogni secondo
 \item	50\% \textless  Livello batteria \textless= 75\%  \ding{226} 1 pull ogni 5 secondi
 \item	0\% \textless  Livello batteria \textless= 50\%  \ding{226} 1 pull ogni 30 secondi
 \end{itemize}
  
+Questa scelta \'e motivata dai risultati ottenuti dallo studio sulla relazione funzionale che esiste tra frequenza di \textit{pull} (e quindi frequenza di utilizzo della scheda di rete) e consumo della batteria. Nel prossimo capitolo viene illustrato l'esito di tale indagine.
+
+\section{Politica adattativa}
+Dai primi esperimenti \'e stata notata una possibile relazione funzionale (di tipo lineare) tra due grandezze di interesse: \textbf{frequenza di pull} dei client dalle loro code dedicate e \textbf{velocit\'a di consumo della batteria}. Per avallare questa intuizione sono stati effettuati diversi test che sfruttano la teoria della \textit{regressione lineare}. 
+
+\begin{itemize}
+\item{(\textit{f}\textsubscript{p}(\textit{t}), \textit{t}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9}
+\item{\(\frac{df\textsubscript{p}(\textit{t})}{dt}\) \ding{226} derivata rispetto al tempo}
+\item{(\(\frac{df\textsubscript{p}(\textit{t})}{dt}\), \textit{p}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9} 
+\end{itemize}
+
+\subsection{Oggetto dell'analisi}
+L'oggetto dell'analisi \'e di dimostrare l'esistenza di una relazione funzionale tra la frequenza di \textit{pull} (e quindi frequenza di utilizzo della scheda di rete) e la velocit\'a di consumo della batteria, mediante un modello di \textit{regressione lineare}. Bisogna pertanto mostrare che la presunta relazione che sussiste tra le due grandezze sia di tipo lineare, andando ad analizzare l'indice di bont\'a del \textit{fitting} (ossia dell'adattamento della regressione lineare stimata ai dati osservati).
+\\
+Quando si parla di velocit\'a di consumo della batteria si intende la derivata rispetto al tempo del livello di batteria, ovvero: 
+
+\subsection{Test e risultati}
+
+% Da ricordare : appendice strumenti matematici e libreria per le misurazioni
+
 %----------------------------------------------------------------------------------------
 %	SECTION 2
 %----------------------------------------------------------------------------------------
