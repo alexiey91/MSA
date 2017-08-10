@@ -319,7 +319,7 @@ Nella nostra applicazione sono presenti quattro tipologie di \textit{Fragment}:
 \item \textbf{ReadFragment}: consente all'utente di leggere i messaggi presenti nel \textit{DB} del dispositivo mobile raggruppati per \textit{Topic}. All'avvio viene invocato un \textit{AsyncTask} per popolare una \textit{listView} (presente sul layout \textit{activity\_Read}) contenente tutti i \textit{Topic} a cui l'utente si \'e sottoscritto. All'interno dell'\textit{Async-Task}, per recuperare i dati dal \textit{DB} viene invocato il metodo \textit{getAllTopicFilter} della classe \textit{DBHelper}.
 Alla selezione di un \textit{item} della lista viene eseguito il secondo \textit{AsyncTask}, il quale popoler\'a nuovamente la \textit{listView} con le notifiche presenti nel \textit{DB} relative a quel \textit{Topic}.
 All'interno dell'\textit{AsyncTask}, per recuperare le notifiche dal \textit{DB}, relative al \textit{Topic} selezionato, viene invocato il metodo \textit{getFilteredMessageByTopicName} della classe \textit{DBHelper}.
-\item \textbf{WriteFragment}: consente all'utente di pubblicare notifiche sui \textit{Topic} attualmente esistenti o di crearne di nuovi. All'avvio viene invocato un \textit{AsyncTask} per popolare una \textit{listView} (presente sul layout \textit{activity\_write}) contenente tutti i \textit{Topic} attualmente nel sistema. All'interno dell'\textit{AsyncTask} viene invocato il metodo \textit{getTopicList}, fornito dalla classe \textit{Util}, per contattare il server con il fine di ottenere la lista dei \textit{Topic} presenti nel sistema. Ogni \textit{item} della \textit{listView} pu\'o essere selezionato per inviare una notifica su quel \textit{Topic}: questa fase richiede la collaborazione con l'utente, il quale dovr\'a scrivere il testo della notifica per poi confermarne l'invio. La notifica viene formattata utilizzando il metodo \textit{publish} della classe \textit{Util}, ed inviata con l'utilizzo dell' \textit{API AWS SDK sendMessageToQueue} specificando la coda \textit{notificationQueue} in quest'ultima. 
+\item \textbf{WriteFragment}: consente all'utente di pubblicare notifiche sui \textit{Topic} attualmente esistenti o di crearne di nuovi. All'avvio viene invocato un \textit{AsyncTask} per popolare una \textit{listView} (presente sul layout \textit{activity\_write}) contenente tutti i \textit{Topic} attualmente nel sistema. All'interno dell'\textit{AsyncTask} viene invocato il metodo \textit{getTopicList}, fornito dalla classe \textit{Util}, per contattare il server con il fine di ottenere la lista dei \textit{Topic} presenti nel sistema. Ogni \textit{item} della \textit{listView} pu\'o essere selezionato per inviare una notifica su quel \textit{Topic}: questa fase richiede l'interazione con l'utente, il quale dovr\'a scrivere il testo della notifica per poi confermarne l'invio. La notifica viene formattata utilizzando il metodo \textit{publish} della classe \textit{Util}, ed inviata con l'utilizzo dell' \textit{API AWS SDK sendMessageToQueue} specificando la coda \textit{notificationQueue} in quest'ultima. 
 \\La creazione di nuovi \textit{Topic} \'e possibile in pochi passi:
 \begin{itemize}
 \item	L'utente seleziona un tasto presente sull'\textit{activity\_write};
@@ -334,16 +334,16 @@ All'interno dell'\textit{AsyncTask}, per recuperare le notifiche dal \textit{DB}
 \item	si recupera la lista di tutti i \textit{Topic}, ciascuno con l'eventuale filtro associato.
 \item si popola la \textit{gridView}.
 \end{itemize}
-L'utente pu\'o selezionare ciascun \textit{item} della griglia per cambiare il filtro corrispondente a quel \textit{Topic}, o per richiedere una nuova sottoscrizione. Se si conferma l'operazione, viene inviata una richiesta di sottoscrizione \textit{Topic} al server con l'utilizzo dell'\textit{API AWS SDK sendMessageToQueue} verso la coda \textit{subscriptonQueue}.
+L'utente pu\'o selezionare ciascun \textit{item} della griglia per cambiare il filtro corrispondente a quel \textit{Topic} o per richiedere una nuova sottoscrizione. Se si conferma l'operazione, viene inviata una richiesta di sottoscrizione \textit{Topic} al server con l'utilizzo dell'\textit{API AWS SDK sendMessageToQueue} verso la coda \textit{subscriptonQueue}.
 \item \textbf{SettingsFragment}: consente all'utente di impostare l'applicazione in modalit\'a risparmio energetico, la quale non far\'a altro che impostare la luminosit\'a dello schermo ad un valore fissato. L'utente pu\'o attivare o meno questa modalit\'a grazie ad uno \textit{Switch} presente nell'\textit{activity\_settings}.
 \end{itemize}
 
 \subsubsection{\textit{MainActivity}}
 La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}. Quest'operazione \'e effettuata periodicamente in base al livello della batteria del dispositivo:
 \begin{itemize}
-\item   75\% \textless Livello batteria \textless= 100\% \ding{226} 1 pull ogni secondo
-\item	50\% \textless Livello batteria \textless= 75\%  \ding{226} 1 pull ogni 5 secondi
-\item	0\% \textless Livello batteria \textless= 50\%  \ding{226} 1 pull ogni 30 secondi
+\item   75\% \textless  Livello batteria \textless= 100\% \ding{226} 1 pull ogni secondo
+\item	50\% \textless  Livello batteria \textless= 75\%  \ding{226} 1 pull ogni 5 secondi
+\item	0\% \textless  Livello batteria \textless= 50\%  \ding{226} 1 pull ogni 30 secondi
 \end{itemize}
  
 %----------------------------------------------------------------------------------------
