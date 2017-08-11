@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  10 AUG 2017 17:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  11 AUG 2017 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -796,18 +796,23 @@ File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 346.
- [13]
+
+Underfull \hbox (badness 10000) in paragraph at lines 356--361
+
+ []
+
+[13]
 <placeholder.jpg, id=60, 351.3125pt x 193.72375pt>
 File: placeholder.jpg Graphic file (type jpg)
 <use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg  used on input line 412. on input line
- 412.
+Package pdftex.def Info: placeholder.jpg  used on input line 413. on input line
+ 413.
 Package pdftex.def Info: Requested size: 224.2479pt x 123.66057pt on input line
- 412.
+ 413.
 
 
 Package natbib Warning: Citation `Smith:2012qr' on page 14 undefined on input l
-ine 423.
+ine 424.
 
 [14 <./placeholder.jpg>]
 No file Relazione_MSA.bbl.
@@ -822,7 +827,7 @@ Here is how much of TeX's memory you used:
  17543 multiletter control sequences out of 15000+600000
  543350 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,13n,46p,10443b,815s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 41i,13n,46p,10443b,817s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2017/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
 mbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
@@ -837,7 +842,7 @@ s/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
 exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/20
 17/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2017/texmf-d
 ist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Relazione_MSA.pdf (15 pages, 333092 bytes).
+Output written on Relazione_MSA.pdf (15 pages, 333305 bytes).
 PDF statistics:
  116 PDF objects out of 1000 (max. 8388607)
  80 compressed objects within 1 object stream

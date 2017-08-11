@@ -351,18 +351,19 @@ La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all
 Questa scelta \'e motivata dai risultati ottenuti dallo studio sulla relazione funzionale che esiste tra frequenza di \textit{pull} (e quindi frequenza di utilizzo della scheda di rete) e consumo della batteria. Nel prossimo capitolo viene illustrato l'esito di tale indagine.
 
 \section{Politica adattativa}
-Dai primi esperimenti \'e stata notata una possibile relazione funzionale (di tipo lineare) tra due grandezze di interesse: \textbf{frequenza di pull} dei client dalle loro code dedicate e \textbf{velocit\'a di consumo della batteria}. Per avallare questa intuizione sono stati effettuati diversi test che sfruttano la teoria della \textit{regressione lineare}. 
+
+\subsection{Oggetto dell'analisi}
+La natura limitata inerente ai dispositivi mobili impone al progettista di sistemi informatici di condurre la ricerca di una politica adattativa che preservi le loro risorse computazionali e/o energetiche e/o di memoria, inevitabilmente finite e degradabili. Non possono pertanto essere trascurate, nell'atto della progettazione e realizzazione di un sistema informatico, le differenze sostanziali che intercorrono tra nodi fissi e nodi mobili in termini di \textit{abbondanza} di risorse fisiche ed energetiche: pena il rapido degrado e la mala gestione delle stesse. 
+\\
+L'idea \'e quella di identificare una risorsa misurabile del dispositivo mobile, finita e degradabile, e di tentare di risalire ad una sua relazione funzionale con una variabile (indipendente) direttamente controllabile. Una tale relazione tra le due grandezze permetterebbe di limitare e gestire il deterioramento della risorsa del dispositivo, modificando semplicemente il valore della variabile indipendente (e controllabile). In sintesi si cerca una relazione del tipo: 
+\\\\
+\{\textit{f}(\(\theta\)), \(\theta\) \(\in\) \textit{K}\}
 
 \begin{itemize}
 \item{(\textit{f}\textsubscript{p}(\textit{t}), \textit{t}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9}
 \item{\(\frac{df\textsubscript{p}(\textit{t})}{dt}\) \ding{226} derivata rispetto al tempo}
 \item{(\(\frac{df\textsubscript{p}(\textit{t})}{dt}\), \textit{p}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9} 
 \end{itemize}
-
-\subsection{Oggetto dell'analisi}
-L'oggetto dell'analisi \'e di dimostrare l'esistenza di una relazione funzionale tra la frequenza di \textit{pull} (e quindi frequenza di utilizzo della scheda di rete) e la velocit\'a di consumo della batteria, mediante un modello di \textit{regressione lineare}. Bisogna pertanto mostrare che la presunta relazione che sussiste tra le due grandezze sia di tipo lineare, andando ad analizzare l'indice di bont\'a del \textit{fitting} (ossia dell'adattamento della regressione lineare stimata ai dati osservati).
-\\
-Quando si parla di velocit\'a di consumo della batteria si intende la derivata rispetto al tempo del livello di batteria, ovvero: 
 
 \subsection{Test e risultati}
 
