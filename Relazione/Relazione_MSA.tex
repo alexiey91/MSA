@@ -29,9 +29,10 @@
 \usepackage{pifont}
 \usepackage{amssymb}
 \usepackage{amsthm} 
+\usepackage{enumitem}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+%\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 
 %\usepackage{times} % Uncomment to use the Times New Roman font
 
@@ -160,9 +161,9 @@ I messaggi diretti da client a server possono essere di tre tipi (un tipo per co
 
 \begin{tabular}{ll}
 \{\\
-	   \hspace{10mm} "type": string, // "CREATE" or "DELETE"\\
-              \hspace{10mm} "userID": string, // macaddress\\
-              \hspace{10mm} "topicName": string
+	   \hspace{10mm} \textbf{"type"}: string, // "CREATE" or "DELETE"\\
+              \hspace{10mm} \textbf{"userID"}: string, // macaddress\\
+              \hspace{10mm} \textbf{"topicName"}: string
 \\
 \}
 \end{tabular}
@@ -171,10 +172,10 @@ I messaggi diretti da client a server possono essere di tre tipi (un tipo per co
 
 \begin{tabular}{ll}
 \{\\	   
-            \hspace{10mm} "type": string, // "SUB" or "UNSUB" or "UNSUBALL"\\
-            \hspace{10mm} "userID": string, // macaddress\\
-            \hspace{10mm} "topicName": string,\\
-            \hspace{10mm} "filter": string 
+            \hspace{10mm} \textbf{"type"}: string, // "SUB" or "UNSUB" or "UNSUBALL"\\
+            \hspace{10mm} \textbf{"userID"}: string, // macaddress\\
+            \hspace{10mm} \textbf{"topicName"}: string,\\
+            \hspace{10mm} \textbf{"filter"}: string 
 \\
 \}
 \end{tabular}
@@ -183,9 +184,9 @@ I messaggi diretti da client a server possono essere di tre tipi (un tipo per co
 
 \begin{tabular}{ll}
 \{\\	   
-           \hspace{10mm} "userID": string, // macaddress\\
-           \hspace{10mm} "topicName": string,\\
-           \hspace{10mm} "messageBody": string
+           \hspace{10mm} \textbf{"userID"}: string, // macaddress\\
+           \hspace{10mm} \textbf{"topicName"}: string,\\
+           \hspace{10mm} \textbf{"messageBody"}: string
 \\
 \}
 \end{tabular}
@@ -193,11 +194,11 @@ I messaggi diretti da client a server possono essere di tre tipi (un tipo per co
 \end{itemize}
 
 I messaggi di notifica elaborati dal server e destinati alle code dedicate dei client hanno il seguente formato:
-
+\\\\
 \begin{tabular}{ll}
 \{\\	   
-           \hspace{10mm} "topicName": string, \\
-           \hspace{10mm} "messageBody": string
+           \hspace{10mm} \textbf{"topicName"}: string, \\
+           \hspace{10mm} \textbf{"messageBody"}: string
 \\
 \}
 \end{tabular}
@@ -341,7 +342,7 @@ L'utente pu\'o selezionare ciascun \textit{item} della griglia per cambiare il f
 \end{itemize}
 
 \subsubsection{\textit{MainActivity}}
-La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}. Quest'operazione \'e effettuata periodicamente con frequenza di \textit{pull} dipendente dal livello corrente della batteria del dispositivo:
+La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}; tale coda viene creata utilizzando un \textit{Android ID} ovvero un codice identificativo unico per ogni sistema operativo installato su dispositivo. L'operazione di \textit{pull} \'e effettuata periodicamente con frequenza di \textit{pull} dipendente dal livello corrente della batteria del dispositivo:
 \begin{itemize}
 \item   75\% \textless  Livello batteria \textless= 100\% \ding{226} 1 pull ogni secondo
 \item	50\% \textless  Livello batteria \textless= 75\%  \ding{226} 1 pull ogni 5 secondi
@@ -353,19 +354,55 @@ Questa scelta \'e motivata dai risultati ottenuti dallo studio sulla relazione f
 \section{Politica adattativa}
 
 \subsection{Oggetto dell'analisi}
-La natura limitata inerente ai dispositivi mobili impone al progettista di sistemi informatici di condurre la ricerca di una politica adattativa che preservi le loro risorse computazionali e/o energetiche e/o di memoria, inevitabilmente finite e degradabili. Non possono pertanto essere trascurate, nell'atto della progettazione e realizzazione di un sistema informatico, le differenze sostanziali che intercorrono tra nodi fissi e nodi mobili in termini di \textit{abbondanza} di risorse fisiche ed energetiche: pena il rapido degrado e la mala gestione delle stesse. 
+La natura limitata inerente ai dispositivi mobili impone al progettista di sistemi informatici di condurre la ricerca di una politica adattativa che preservi le loro risorse computazionali e/o energetiche e/o di memoria, inevitabilmente finite e degradabili. Non possono pertanto essere trascurate, nell'atto della progettazione e realizzazione di un sistema informatico, le differenze sostanziali che intercorrono tra nodi fissi e nodi mobili in termini di \textit{abbondanza} di risorse fisiche ed energetiche: conseguenza il rapido degrado e la mala gestione delle stesse. 
 \\
 L'idea \'e quella di identificare una risorsa misurabile del dispositivo mobile, finita e degradabile, e di tentare di risalire ad una sua relazione funzionale con una variabile (indipendente) direttamente controllabile. Una tale relazione tra le due grandezze permetterebbe di limitare e gestire il deterioramento della risorsa del dispositivo, modificando semplicemente il valore della variabile indipendente (e controllabile). In sintesi si cerca una relazione del tipo: 
 \\\\
 \{\textit{f}(\(\theta\)), \(\theta\) \(\in\) \textit{K}\}
+\\\\
+Laddove:
+\begin{itemize}
+\item{\textit{f}(\(\theta\)) \'e la misura della risorsa del dispositivo da gestire}
+\item{\(\theta\) \'e la variabile indipendente e controllabile}
+\item{\textit{K} \'e l'insieme di definizione della variabile indipendente e controllabile}
+\end{itemize}
+
+Nel caso in esame \'e stato deciso di gestire e limitare la velocit\'a di scarica della batteria del dispositivo: ovvero \textit{f}(\(\theta\)) \'e \textbf{la variazione del livello di carica della batteria nel tempo}. Analizzando il sistema \'e risultata evidente una relazione attiva tra tale misura e la \textbf{frequenza di pull alla coda dedicata} al client. Quest'ultima assume il ruolo di variabile indipendente e controllabile \(\theta\) del modello matematico sopra esposto. 
+\\
+Per definire il modello matematico occorre risalire all'entit\'a della relazione funzionale \textbf{\textit{f}} che lega le due grandezze. A tal proposito viene utilizzato lo strumento matematico della \textbf{\textit{regressione}}, che richiede di effettuare misure della grandezza in esame.
+\\
+Il modello matematico viene realizzato seguendo tre fasi:
+
+\begin{enumerate}
+\item{Identificazione della relazione funzionale esistente tra il \textit{livello della batteria \textit{f}\textsubscript{p}(\textit{t})} ed il \textit{tempo t}, fissata una certa \textit{frequenza di pull p}.}
+\item{Calcolo della derivata rispetto al tempo di \textit{f}\textsubscript{p}(\textit{t}) ovvero \(\frac{df\textsubscript{p}(\textit{t})}{dt}\), che rappresenta la \textit{velocit\'a media di scarica} della batteria del dispositivo fissata una certa \textit{frequenza di pull p}. La derivata rispetto al tempo del livello di batteria \'e la grandezza che si vuole limitare e gestire.}
+\item{Identificazione della relazione funzionale esistente tra la \textit{velocit\'a media di scarica \(\frac{df\textsubscript{p}(\textit{t})}{dt}\)} e la corrispondente \textit{frequenza di pull p}.}
+\end{enumerate} 
+
+\subsection{Test e risultati}
+
+Per effettuare le misurazioni della grandezza in esame, \'e stato utilizzato il \textit{tool Battery-Historian} che permette l'analisi e la visualizzazione del consumo energetico generato da tutte le applicazioni eseguite durante il test, definendo i consumi dettati dall'utilizzo del display e della rete da parte da tali applicazioni.
+
+\subsubsection{Fase 1 - \textit{Livello di batteria} nel tempo fissata la \textit{frequenza di pull}}
+
+\begin{figure}[h]
+\begin{center}
+\centering
+\includegraphics[width=0.85\textwidth]{1alsec.jpg} % Include the image placeholder.png
+\caption{1 pull ogni secondo}
+\label{fig:1 pull ogni secondo}
+\end{center}
+\end{figure}
+
+\subsubsection{Fase 2 - \textit{Velocit\'a media di scarica} fissata la \textit{frequenza di pull}}
+
+\subsubsection{Fase 3 - Relazione funzionale tra la \textit{velocit\'a media di scarica} e \textit{frequenza di pull}}
 
 \begin{itemize}
 \item{(\textit{f}\textsubscript{p}(\textit{t}), \textit{t}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9}
 \item{\(\frac{df\textsubscript{p}(\textit{t})}{dt}\) \ding{226} derivata rispetto al tempo}
 \item{(\(\frac{df\textsubscript{p}(\textit{t})}{dt}\), \textit{p}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9} 
 \end{itemize}
-
-\subsection{Test e risultati}
 
 % Da ricordare : appendice strumenti matematici e libreria per le misurazioni
 

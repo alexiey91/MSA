@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  11 AUG 2017 17:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  12 AUG 2017 17:27
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -568,40 +568,49 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@postskip=\skip74
 \thm@headsep=\skip75
 \dth@everypar=\toks26
-) (./Relazione_MSA.aux)
+)
+(c:/texlive/2017/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip76
+\enit@outerparindent=\dimen165
+\enit@toks=\toks27
+\enit@inbox=\box51
+\enitdp@description=\count279
+)
+(./Relazione_MSA.aux)
 \openout1 = `Relazione_MSA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 .................................................
 . chemgreek info: "mapping-activated"
 . 
-. Activating mapping `default' on line 48.
+. Activating mapping `default' on line 49.
 .................................................
 
 (c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count279
-\scratchdimen=\dimen165
-\scratchbox=\box51
-\nofMPsegments=\count280
-\nofMParguments=\count281
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count282
-\MPscratchDim=\dimen166
-\MPnumerator=\count283
-\makeMPintoPDFobject=\count284
-\everyMPtoPDFconversion=\toks28
+\scratchcounter=\count280
+\scratchdimen=\dimen166
+\scratchbox=\box52
+\nofMPsegments=\count281
+\nofMParguments=\count282
+\everyMPshowfont=\toks28
+\MPscratchCnt=\count283
+\MPscratchDim=\dimen167
+\MPnumerator=\count284
+\makeMPintoPDFobject=\count285
+\everyMPtoPDFconversion=\toks29
 ) (c:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -665,37 +674,37 @@ Dictionary: translator-basic-dictionary, Language: English
 (c:/texlive/2017/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/07/23 v2.7i siunitx: Abbreviated units
 )
-\c__siunitx_mathsf_int=\count285
-LaTeX Font Info:    Try loading font information for U+msa on input line 48.
+\c__siunitx_mathsf_int=\count286
+LaTeX Font Info:    Try loading font information for U+msa on input line 49.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 48.
+LaTeX Font Info:    Try loading font information for U+msb on input line 49.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count286
+\c__siunitx_mathtt_int=\count287
  [1
 
 {c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 81.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 82.
 
 (c:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 81.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 82.
 <architettura.jpg, id=12, 782.925pt x 499.8675pt>
 File: architettura.jpg Graphic file (type jpg)
 <use architettura.jpg>
-Package pdftex.def Info: architettura.jpg  used on input line 109. on input lin
-e 109.
+Package pdftex.def Info: architettura.jpg  used on input line 110. on input lin
+e 110.
 Package pdftex.def Info: Requested size: 431.25pt x 275.33984pt on input line 1
-09.
+10.
 
-Overfull \hbox (86.25pt too wide) in paragraph at lines 109--110
+Overfull \hbox (86.25pt too wide) in paragraph at lines 110--111
  [] 
  []
 
@@ -703,56 +712,61 @@ Overfull \hbox (86.25pt too wide) in paragraph at lines 109--110
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (43.99153pt too wide) in paragraph at lines 117--118
+Overfull \hbox (43.99153pt too wide) in paragraph at lines 118--119
 \OT1/cmr/m/n/10 Come \OT1/cmr/m/it/10 Cloud Provider \OT1/cmr/m/n/10 ^^Se stato
  scelto \OT1/cmr/m/it/10 Ama-zon AWS\OT1/cmr/m/n/10 . I servizi uti-liz-zati pe
 r l'implementazione
  []
 
 [2] [3 <./architettura.jpg>] [4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 206--207
+Underfull \hbox (badness 10000) in paragraph at lines 196--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
 
  []
 
 [6]
-Overfull \hbox (3.10823pt too wide) in paragraph at lines 222--223
+Overfull \hbox (3.10823pt too wide) in paragraph at lines 223--224
 \OT1/cmr/m/n/10 la can-cel-lazione dalla tabella \OT1/cmr/m/it/10 Sub-scrip-tio
 n \OT1/cmr/m/n/10 dell'\OT1/cmr/m/it/10 item \OT1/cmr/m/n/10 con chi-ave \OT1/c
 mr/m/it/10 (topic[]name,
  []
 
 
-Overfull \hbox (11.57562pt too wide) in paragraph at lines 224--225
+Overfull \hbox (11.57562pt too wide) in paragraph at lines 225--226
 []\OT1/cmr/m/it/10 send[]notification\OT1/cmr/m/n/10 : prende come parametri \O
 T1/cmr/m/it/10 topic[]name \OT1/cmr/m/n/10 e \OT1/cmr/m/it/10 mes-sage[]body \O
 T1/cmr/m/n/10 (rispet-
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 231--242
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 231--242
+Underfull \hbox (badness 10000) in paragraph at lines 232--243
 
  []
 
 
-Overfull \hbox (3.38228pt too wide) in paragraph at lines 231--242
+Overfull \hbox (3.38228pt too wide) in paragraph at lines 232--243
 \OT1/cmr/m/n/10 del-e-gare al cor-rispon-dente \OT1/cmr/m/it/10 Up-dater \OT1/c
 mr/m/n/10 la ges-tione dei dati letti (\OT1/cmr/m/it/10 data[]read.Messages\OT1
 /cmr/m/n/10 ).
  []
 
 
-Overfull \hbox (11.27455pt too wide) in paragraph at lines 244--245
+Overfull \hbox (11.27455pt too wide) in paragraph at lines 245--246
 \OT1/cmr/m/n/10 Per ogni mes-sag-gio in \OT1/cmr/m/it/10 data[]read.Messages \O
 T1/cmr/m/n/10 in-voca la fun-zione \OT1/cmr/m/it/10 send[]notification
  []
 
 
-Overfull \hbox (6.01639pt too wide) in paragraph at lines 245--246
+Overfull \hbox (6.01639pt too wide) in paragraph at lines 246--247
 []\OT1/cmr/m/it/10 subscription[]updater\OT1/cmr/m/n/10 : fun-zione es-e-guita 
 quando \OT1/cmr/m/it/10 queue = sub-scrip-tion-Queue\OT1/cmr/m/n/10 .
  []
@@ -761,91 +775,115 @@ quando \OT1/cmr/m/it/10 queue = sub-scrip-tion-Queue\OT1/cmr/m/n/10 .
 <stableprocess.jpg, id=38, 713.66624pt x 362.35374pt>
 File: stableprocess.jpg Graphic file (type jpg)
 <use stableprocess.jpg>
-Package pdftex.def Info: stableprocess.jpg  used on input line 261. on input li
-ne 261.
+Package pdftex.def Info: stableprocess.jpg  used on input line 262. on input li
+ne 262.
 Package pdftex.def Info: Requested size: 379.5021pt x 192.68794pt on input line
- 261.
+ 262.
 
-Overfull \hbox (34.5021pt too wide) in paragraph at lines 261--262
+Overfull \hbox (34.5021pt too wide) in paragraph at lines 262--263
  [] 
  []
 
 [9 <./stableprocess.jpg>] [10]
-Overfull \hbox (0.67323pt too wide) in paragraph at lines 312--313
+Overfull \hbox (0.67323pt too wide) in paragraph at lines 313--314
 []\OT1/cmr/m/it/10 deleteMessageFromQueue\OT1/cmr/m/n/10 : can-cella un mes-sag
 -gio dalla coda ded-i-cata iden-
  []
 
 
-Overfull \hbox (10.15054pt too wide) in paragraph at lines 321--324
+Overfull \hbox (10.15054pt too wide) in paragraph at lines 322--325
 \OT1/cmr/m/n/10 con-te-nente tutti i \OT1/cmr/m/it/10 Topic \OT1/cmr/m/n/10 a c
 ui l'utente si ^^Se sot-to-scritto. All'interno dell'\OT1/cmr/m/it/10 Async-
  []
 
 
-Overfull \hbox (6.12268pt too wide) in paragraph at lines 324--326
+Overfull \hbox (6.12268pt too wide) in paragraph at lines 325--328
 \OT1/cmr/m/n/10 con-te-nente tutti i \OT1/cmr/m/it/10 Topic \OT1/cmr/m/n/10 at-
 tual-mente nel sis-tema. All'interno dell'\OT1/cmr/m/it/10 AsyncTask
  []
 
 [11] [12]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 346.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 347.
 
  (c:/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 346.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 347.
 
-Underfull \hbox (badness 10000) in paragraph at lines 356--361
+Underfull \hbox (badness 10000) in paragraph at lines 357--365
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 357--365
 
  []
 
 [13]
-<placeholder.jpg, id=60, 351.3125pt x 193.72375pt>
+<1alsec.jpg, id=57, 359.84438pt x 215.30438pt>
+File: 1alsec.jpg Graphic file (type jpg)
+<use 1alsec.jpg>
+Package pdftex.def Info: 1alsec.jpg  used on input line 391. on input line 391.
+
+Package pdftex.def Info: Requested size: 293.2521pt x 175.47316pt on input line
+ 391.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[14]
+<placeholder.jpg, id=65, 351.3125pt x 193.72375pt>
 File: placeholder.jpg Graphic file (type jpg)
 <use placeholder.jpg>
-Package pdftex.def Info: placeholder.jpg  used on input line 413. on input line
- 413.
+Package pdftex.def Info: placeholder.jpg  used on input line 450. on input line
+ 450.
 Package pdftex.def Info: Requested size: 224.2479pt x 123.66057pt on input line
- 413.
+ 450.
 
 
-Package natbib Warning: Citation `Smith:2012qr' on page 14 undefined on input l
-ine 424.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
-[14 <./placeholder.jpg>]
+
+Package natbib Warning: Citation `Smith:2012qr' on page 15 undefined on input l
+ine 461.
+
+[15 <./1alsec.jpg>]
 No file Relazione_MSA.bbl.
 
 Package natbib Warning: There were undefined citations.
 
-[15] (./Relazione_MSA.aux) ) 
+[16 <./placeholder.jpg>] (./Relazione_MSA.aux)
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+ ) 
 Here is how much of TeX's memory you used:
- 14109 strings out of 492990
- 290334 string characters out of 6136334
- 328916 words of memory out of 5000000
- 17543 multiletter control sequences out of 15000+600000
+ 14398 strings out of 492990
+ 295171 string characters out of 6136334
+ 335041 words of memory out of 5000000
+ 17827 multiletter control sequences out of 15000+600000
  543350 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  41i,13n,46p,10443b,817s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2017/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.p
-fb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
-.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/20
-17/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2017/texmf-d
-ist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Relazione_MSA.pdf (15 pages, 333305 bytes).
+<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2017/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2017/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmti7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/zapfdi
+ng/uzdr.pfb>
+Output written on Relazione_MSA.pdf (16 pages, 347074 bytes).
 PDF statistics:
- 116 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 122 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
