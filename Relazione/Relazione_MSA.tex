@@ -24,7 +24,7 @@
 \usepackage[version=3]{mhchem} % Package for chemical equation typesetting
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
-\usepackage{natbib} % Required to change bibliography style to APA
+%\usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
 \usepackage{pifont}
 \usepackage{amssymb}
@@ -32,6 +32,11 @@
 \usepackage{enumitem}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 \usepackage{subcaption}
+\usepackage[toc,page]{appendix}
+\usepackage[italian]{babel}
+
+\renewcommand{\appendixtocname}{Appendici}
+\renewcommand{\appendixpagename}{Appendici}
 
 %\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 
@@ -47,9 +52,19 @@
 
 \date{\today} % Date for the report
 
+%\renewcommand{\appendixname}{Appendice}
+%\renewcommand{\contentsname}{Indice}
+
 \begin{document}
+\selectlanguage{italian}
 
 \maketitle % Insert the title, author and date
+
+\newpage
+
+\tableofcontents
+
+\newpage
 
 %\begin{center}
 %\begin{tabular}{l r}
@@ -257,7 +272,7 @@ Al fine di separare le \textit{routes} dal server \textit{http} \'e stato utiliz
 Il modulo \textit{main.js} crea le tre code fisse del sistema invocando la funzione \textit{create\_queue} di \textit{sqs\_api} e le tabelle \textit{Subscription e Topic} tramite la funzione \textit{creation\_table} di \textit{dinamo\_api}. Infine, per mezzo di \textit{fork}, avvia i quattro processi stabili del sistema: i tre \textit{Readers} e il \textit{Server http}. \\
 In \figurename{~\ref{fig:Processi}} troviamo lo schema dei processi attivi nel server: \'e possibile osservare che vi sono quattro processi sempre attivi e diversi processi temporanei che eventualmente si attivano con cadenza temporale di \textit{5 sec}.
 
-\begin{figure}[h]
+\begin{figure}[h!]
 \begin{center}
 \centering
 \includegraphics[width=1.1\textwidth]{stableprocess.jpg} % Include the image placeholder.png
@@ -383,13 +398,18 @@ Il modello matematico viene realizzato seguendo tre fasi:
 \subsection{Test e risultati}
 
 Per effettuare le misurazioni della grandezza in esame, \'e stato utilizzato il \textit{tool Battery-Historian} che permette l'analisi e la visualizzazione del consumo energetico generato da tutte le applicazioni eseguite durante il test, definendo i consumi dettati dall'utilizzo del display e della rete da parte da tali applicazioni.
+\\\\
+I test sono stati condotti su un tablet \textit{Samsung Galaxy Tab S2} con amperaggio della batteria di \textit{5870 Mah}. \'E da sottolineare che tale dispositivo \'e relativamente nuovo e pertanto la salute della batteria non \'e compromessa. Tutto ci\'o garantisce dei test significativi.
 
 \subsubsection{Fase 1 - \textit{Livello di batteria} nel tempo fissata la \textit{frequenza di pull}}
-Dall'osservazione dei dati raccolti (e visualizzati nelle figure ) si riscontra il seguente risultato:
+Osservando i dati raccolti (e visualizzati nelle figure) e applicando il modello di regressione si riscontra una relazione funzionale di tipo lineare tra il tempo \textit{t} e il livello energetico della batteria \textit{f}\textsubscript{p}(\textit{t}) fissata una certa \textit{frequenza di pull}, ovvero:
 
 \begin{center}
 (\textit{f}\textsubscript{p}(\textit{t}), \textit{t}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9
 \end{center}
+
+Dove \textit{R\textsuperscript{2}} rappresenta il \textit{coefficiente di determinazione}, che \'e una misura della bont\'a dell'adattamento (\textit{fitting}) della regressione lineare stimata ai dati osservati. Nel caso specifico, poich\'e esso \'e circa 1, il modello lineare si adatta bene ai dati misurati.
+
 \begin{center}
 \includegraphics[width=0.75\textwidth]{1alsec.jpg} % Include the image placeholder.png
 \label{fig:1 pull ogni secondo}
@@ -419,50 +439,63 @@ Dall'osservazione dei dati raccolti (e visualizzati nelle figure ) si riscontra 
 %\end{center}
 %\end{figure}
 
-\begin{figure}[h]
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth,height=4cm]{1alsec.jpg} % Include the image placeholder.png
-%\label{fig:1 pull ogni secondo}
-\caption{1 pull ogni secondo}
-\end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth,height=4cm]{5alsec.jpg} % Include the image placeholder.png
-\caption{1 pull ogni 5 secondi}
-\end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth,height=4cm]{10alsec.jpg} % Include the image placeholder.png
-\caption{1 pull ogni 10 secondi}
-\end{subfigure}
-\begin{subfigure}{0.5\textwidth}
-\includegraphics[width=0.9\linewidth,height=4cm]{20alsec.jpg} % Include the image placeholder.png
-\caption{1 pull ogni 20 secondi}
-\end{subfigure}
-\end{figure}
-
 \subsubsection{Fase 2 - \textit{Velocit\'a media di scarica} fissata la \textit{frequenza di pull}}
 
+La stima della \textit{velocit\'a media di scarica} deriva direttamente dai modelli regressione mostrati nella precedente sezione. Avendo riscontrato una relazione di tipo lineare \'e stato possibile individuare la grandezza in questione direttamente dal coefficiente angolare dell'equazione. La seguente tabella mette in relazione la \textit{frequenza di pull} con la rispettiva \textit{velocit\'a media di scarica} della batteria:
+
+\begin{center} \begin{table}[h] \centering \begin{tabular}{cc} \textit{p} & \(\frac{df\textsubscript{p}(\textit{t})}{dt}\) \\ \hline \multicolumn{1}{|c|}{1} & \multicolumn{1}{c|}{-0,002432} \\ \hline \multicolumn{1}{|c|}{0,2} & \multicolumn{1}{c|}{-0,002025} \\ \hline \multicolumn{1}{|c|}{0,1} & \multicolumn{1}{c|}{-0,001962} \\ \hline \multicolumn{1}{|c|}{0,05} & \multicolumn{1}{c|}{-0,001933} \\ \hline \end{tabular} \caption{\textit{Velocit\'a media di scarica}} \label{my-label} \end{table} \end{center}
+
 \subsubsection{Fase 3 - Relazione funzionale tra la \textit{velocit\'a media di scarica} e \textit{frequenza di pull}}
+Dalla regressione \'e risultata una relazione di tipo lineare tra \textit{velocit\'a media di scarica} e \textit{frequenza di pull}. Infatti risulta: 
+
+\begin{center}
+\item{(\(\frac{df\textsubscript{p}(\textit{t})}{dt}\), \textit{p}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9} 
+\end{center}
+
+Nel seguente grafico si evince tale relazione funzionale:
 
 \begin{center}
 \includegraphics[width=0.75\textwidth]{veloc.jpg} % Include the image placeholder.png
 \label{fig:Relazione funzionale}
 \end{center}
 
-\begin{itemize}
-\item{(\textit{f}\textsubscript{p}(\textit{t}), \textit{t}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9}
-\item{\(\frac{df\textsubscript{p}(\textit{t})}{dt}\) \ding{226} derivata rispetto al tempo}
-\item{(\(\frac{df\textsubscript{p}(\textit{t})}{dt}\), \textit{p}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9} 
-\end{itemize}
+Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza di pull} \'e un fattore che influisce fortemente in termini di consumo energetico della batteria del dispositivo.
 
-% Da ricordare : appendice strumenti matematici e libreria per le misurazioni
+\section{Conclusioni e sviluppi futuri}
+
+% Da ricordare : appendice strumenti matematici
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
 
-\bibliographystyle{apalike}
+%\bibliographystyle{apalike}
 
-\bibliography{sample}
+%\bibliography{sample}
+
+\begin{thebibliography}{1}
+
+\bibitem{Paolo fa i pompini} Paolo \'e bello
+
+\end{thebibliography}
+
+
+\begin{appendices}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
+\makeatletter
+\addtocontents{toc}{%
+  \begingroup
+  \let\protect\l@chapter\protect\l@section
+  \let\protect\l@section\protect\l@subsection
+}
+\makeatother
+	
+  	\section{Regressione lineare}
+	
+	\section{Coefficiente di determinazione}
+	
+\addtocontents{toc}{\endgroup}
+\end{appendices}
 
 %----------------------------------------------------------------------------------------
 
