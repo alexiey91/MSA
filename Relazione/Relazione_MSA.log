@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  13 AUG 2017 18:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  14 AUG 2017 17:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -570,6 +570,120 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \enit@inbox=\box51
 \enitdp@description=\count278
 )
+(c:/texlive/2017/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2017/03/14 v6.85a Hypertext links for LaTeX
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(c:/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen166
+\Hy@linkcounter=\count279
+\Hy@pagecounter=\count280
+
+(c:/texlive/2017/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2017/03/14 v6.85a Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count281
+
+(c:/texlive/2017/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4498.
+Package hyperref Info: Link nesting OFF on input line 4503.
+Package hyperref Info: Hyper index ON on input line 4506.
+Package hyperref Info: Plain pages OFF on input line 4513.
+Package hyperref Info: Backreferencing OFF on input line 4518.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4751.
+\c@Hy@tempcnt=\count282
+
+(c:/texlive/2017/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5104.
+\XeTeXLinkMargin=\dimen167
+\Fld@menulength=\count283
+\Field@Width=\dimen168
+\Fld@charsize=\dimen169
+Package hyperref Info: Hyper figures OFF on input line 6358.
+Package hyperref Info: Link nesting OFF on input line 6363.
+Package hyperref Info: Hyper index ON on input line 6366.
+Package hyperref Info: backreferencing OFF on input line 6373.
+Package hyperref Info: Link coloring OFF on input line 6378.
+Package hyperref Info: Link coloring with OCG OFF on input line 6383.
+Package hyperref Info: PDF/A mode OFF on input line 6388.
+LaTeX Info: Redefining \ref on input line 6428.
+LaTeX Info: Redefining \pageref on input line 6432.
+\Hy@abspage=\count284
+\c@Item=\count285
+\c@Hfootnote=\count286
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(c:/texlive/2017/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2017/03/14 v6.85a Hyperref driver for pdfTeX
+\Fld@listcount=\count287
+\c@bookmark@seq@number=\count288
+
+(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip75
+)
 (c:/texlive/2017/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
 
@@ -579,24 +693,25 @@ Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 (c:/texlive/2017/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
-\captionmargin=\dimen166
-\captionmargin@=\dimen167
-\captionwidth=\dimen168
-\caption@tempdima=\dimen169
-\caption@indent=\dimen170
-\caption@parindent=\dimen171
-\caption@hangindent=\dimen172
+\captionmargin=\dimen170
+\captionmargin@=\dimen171
+\captionwidth=\dimen172
+\caption@tempdima=\dimen173
+\caption@indent=\dimen174
+\caption@parindent=\dimen175
+\caption@hangindent=\dimen176
 )
-\c@ContinuedFloat=\count279
+\c@ContinuedFloat=\count289
+Package caption Info: hyperref package is loaded.
 )
-\c@subfigure=\count280
-\c@subtable=\count281
+\c@subfigure=\count290
+\c@subtable=\count291
 )
 (c:/texlive/2017/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count282
-\c@@ppsavesec=\count283
-\c@@ppsaveapp=\count284
+\c@@pps=\count292
+\c@@ppsavesec=\count293
+\c@@ppsaveapp=\count294
 )
 (c:/texlive/2017/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2017/06/29 3.12 The Babel package
@@ -613,95 +728,58 @@ File: babel.def 2017/06/29 3.12 Babel common definitions
 (c:/texlive/2017/texmf-dist/tex/generic/babel/switch.def
 File: switch.def 2017/06/29 3.12 Babel switching mechanism
 )
-\babel@savecnt=\count285
-\U@D=\dimen173
+\babel@savecnt=\count295
+\U@D=\dimen177
 )
-\it@lettering=\count286
-\it@doublequoteactive=\count287
-\it@ISOcompliance=\count288
+\it@lettering=\count296
+\it@doublequoteactive=\count297
+\it@ISOcompliance=\count298
 ))
 (c:/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count289
+\etb@tempcnta=\count299
 )
 (./Relazione_MSA.aux)
 \openout1 = `Relazione_MSA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 59.
+LaTeX Font Info:    ... okay on input line 59.
 .................................................
 . chemgreek info: "mapping-activated"
 . 
-. Activating mapping `default' on line 58.
+. Activating mapping `default' on line 59.
 .................................................
 
 (c:/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count290
-\scratchdimen=\dimen174
+\scratchcounter=\count300
+\scratchdimen=\dimen178
 \scratchbox=\box52
-\nofMPsegments=\count291
-\nofMParguments=\count292
+\nofMPsegments=\count301
+\nofMParguments=\count302
 \everyMPshowfont=\toks28
-\MPscratchCnt=\count293
-\MPscratchDim=\dimen175
-\MPnumerator=\count294
-\makeMPintoPDFobject=\count295
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen179
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
 \everyMPtoPDFconversion=\toks29
 ) (c:/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
-)
 (c:/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
-)))
-(c:/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
-
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
-
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
-
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-)))
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
-)
-
-(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
-)
-Package pdftexcmds Info: LuaTeX not detected.
-Package pdftexcmds Info: \pdf@primitive is available.
-Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode found.
 )
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
@@ -721,10 +799,29 @@ Dictionary: translator-basic-dictionary, Language: English
 (c:/texlive/2017/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/07/23 v2.7i siunitx: Abbreviated units
 )
+\AtBeginShipoutBox=\box53
+Package hyperref Info: Link coloring OFF on input line 59.
+
+(c:/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(c:/texlive/2017/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count306
+)
+LaTeX Info: Redefining \ref on input line 59.
+LaTeX Info: Redefining \pageref on input line 59.
+LaTeX Info: Redefining \nameref on input line 59.
+
+(./Relazione_MSA.out) (./Relazione_MSA.out)
+\@outlinefile=\write3
+\openout3 = `Relazione_MSA.out'.
+
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \it@ocap on input line 58.
-LaTeX Info: Redefining \it@ccap on input line 58.
+LaTeX Info: Redefining \it@ocap on input line 59.
+LaTeX Info: Redefining \it@ccap on input line 59.
 
 
 File italian.ldf warning: 
@@ -732,44 +829,44 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 58.
+italian.ldf    on input line 59.
 
-\c__siunitx_mathsf_int=\count296
-LaTeX Font Info:    Try loading font information for U+msa on input line 58.
+\c__siunitx_mathsf_int=\count307
+LaTeX Font Info:    Try loading font information for U+msa on input line 59.
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 58.
+LaTeX Font Info:    Try loading font information for U+msb on input line 59.
 
 (c:/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count297
+\c__siunitx_mathtt_int=\count308
  [1
 
 {c:/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Relazione_MS
 A.toc)
-\tf@toc=\write3
-\openout3 = `Relazione_MSA.toc'.
+\tf@toc=\write4
+\openout4 = `Relazione_MSA.toc'.
 
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 98.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 99.
 
 (c:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 98.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
  [3]
-<architettura.jpg, id=20, 782.925pt x 499.8675pt>
+<architettura.jpg, id=191, 782.925pt x 499.8675pt>
 File: architettura.jpg Graphic file (type jpg)
 <use architettura.jpg>
-Package pdftex.def Info: architettura.jpg  used on input line 126. on input lin
-e 126.
+Package pdftex.def Info: architettura.jpg  used on input line 127. on input lin
+e 127.
 Package pdftex.def Info: Requested size: 431.25pt x 275.33984pt on input line 1
-26.
+27.
 
-Overfull \hbox (86.25pt too wide) in paragraph at lines 126--127
+Overfull \hbox (86.25pt too wide) in paragraph at lines 127--128
  [] 
  []
 
@@ -777,53 +874,53 @@ Overfull \hbox (86.25pt too wide) in paragraph at lines 126--127
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4] [5 <./architettura.jpg>] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 212--221
+Underfull \hbox (badness 10000) in paragraph at lines 213--222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 223--224
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
 
  []
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 248--259
+Underfull \hbox (badness 10000) in paragraph at lines 249--260
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--259
+Underfull \hbox (badness 10000) in paragraph at lines 249--260
 
  []
 
 
-Overfull \hbox (3.38228pt too wide) in paragraph at lines 248--259
+Overfull \hbox (3.38228pt too wide) in paragraph at lines 249--260
 \OT1/cmr/m/n/10 de-le-ga-re al cor-ri-spon-den-te \OT1/cmr/m/it/10 Up-da-ter \O
 T1/cmr/m/n/10 la ge-stio-ne dei da-ti let-ti (\OT1/cmr/m/it/10 da-ta[]read.Mess
 ages\OT1/cmr/m/n/10 ).
  []
 
 
-Overfull \hbox (11.27455pt too wide) in paragraph at lines 261--262
+Overfull \hbox (11.27455pt too wide) in paragraph at lines 262--263
 \OT1/cmr/m/n/10 Per ogni mes-sag-gio in \OT1/cmr/m/it/10 da-ta[]read.Messages \
 OT1/cmr/m/n/10 in-vo-ca la fun-zio-ne \OT1/cmr/m/it/10 send[]notification
  []
 
 [9]
-Overfull \hbox (6.01639pt too wide) in paragraph at lines 262--263
+Overfull \hbox (6.01639pt too wide) in paragraph at lines 263--264
 []\OT1/cmr/m/it/10 subscription[]updater\OT1/cmr/m/n/10 : fun-zio-ne ese-gui-ta
  quan-do \OT1/cmr/m/it/10 queue = sub-scrip-tion-Queue\OT1/cmr/m/n/10 .
  []
 
-<stableprocess.jpg, id=41, 713.66624pt x 362.35374pt>
+<stableprocess.jpg, id=221, 713.66624pt x 362.35374pt>
 File: stableprocess.jpg Graphic file (type jpg)
 <use stableprocess.jpg>
-Package pdftex.def Info: stableprocess.jpg  used on input line 278. on input li
-ne 278.
+Package pdftex.def Info: stableprocess.jpg  used on input line 279. on input li
+ne 279.
 Package pdftex.def Info: Requested size: 379.5021pt x 192.68794pt on input line
- 278.
+ 279.
 
-Overfull \hbox (34.5021pt too wide) in paragraph at lines 278--279
+Overfull \hbox (34.5021pt too wide) in paragraph at lines 279--280
  [] 
  []
 
@@ -831,103 +928,131 @@ Overfull \hbox (34.5021pt too wide) in paragraph at lines 278--279
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [10] [11 <./stableprocess.jpg>]
-Overfull \hbox (0.67323pt too wide) in paragraph at lines 329--330
+Overfull \hbox (0.67323pt too wide) in paragraph at lines 330--331
 []\OT1/cmr/m/it/10 deleteMessageFromQueue\OT1/cmr/m/n/10 : can-cel-la un mes-sa
 g-gio dal-la co-da de-di-ca-ta iden-
  []
 
 [12]
-Overfull \hbox (6.12268pt too wide) in paragraph at lines 341--344
+Overfull \hbox (6.12268pt too wide) in paragraph at lines 342--345
 \OT1/cmr/m/n/10 con-te-nen-te tut-ti i \OT1/cmr/m/it/10 To-pic \OT1/cmr/m/n/10 
 at-tual-men-te nel si-ste-ma. Al-l'in-ter-no dell'\OT1/cmr/m/it/10 AsyncTask
  []
 
 [13]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 363.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 364.
 
  (c:/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 363.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 364.
  [14]
-Underfull \hbox (badness 10000) in paragraph at lines 373--381
+Underfull \hbox (badness 10000) in paragraph at lines 374--382
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 373--381
+Underfull \hbox (badness 10000) in paragraph at lines 374--382
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 400--403
+Underfull \hbox (badness 10000) in paragraph at lines 401--406
 
  []
 
-<1alsec.jpg, id=64, 359.84438pt x 215.30438pt>
+<1alsec.jpg, id=252, 359.84438pt x 215.30438pt>
 File: 1alsec.jpg Graphic file (type jpg)
 <use 1alsec.jpg>
-Package pdftex.def Info: 1alsec.jpg  used on input line 414. on input line 414.
+Package pdftex.def Info: 1alsec.jpg  used on input line 417. on input line 417.
 
 Package pdftex.def Info: Requested size: 258.75pt x 154.82848pt on input line 4
-14.
-<5alsec.jpg, id=66, 357.58594pt x 213.04594pt>
+17.
+[16]
+<5alsec.jpg, id=264, 357.58594pt x 213.04594pt>
 File: 5alsec.jpg Graphic file (type jpg)
 <use 5alsec.jpg>
-Package pdftex.def Info: 5alsec.jpg  used on input line 419. on input line 419.
+Package pdftex.def Info: 5alsec.jpg  used on input line 422. on input line 422.
 
 Package pdftex.def Info: Requested size: 258.75pt x 154.16989pt on input line 4
-19.
-[16 <./1alsec.jpg>]
-<10alsec.jpg, id=73, 356.0803pt x 213.04594pt>
+22.
+<10alsec.jpg, id=265, 356.0803pt x 213.04594pt>
 File: 10alsec.jpg Graphic file (type jpg)
 <use 10alsec.jpg>
-Package pdftex.def Info: 10alsec.jpg  used on input line 424. on input line 424
+Package pdftex.def Info: 10alsec.jpg  used on input line 427. on input line 427
 .
 Package pdftex.def Info: Requested size: 258.75pt x 154.8168pt on input line 42
-4.
-<20alsec.jpg, id=74, 361.35pt x 213.04594pt>
+7.
+<20alsec.jpg, id=266, 361.35pt x 213.04594pt>
 File: 20alsec.jpg Graphic file (type jpg)
 <use 20alsec.jpg>
-Package pdftex.def Info: 20alsec.jpg  used on input line 429. on input line 429
+Package pdftex.def Info: 20alsec.jpg  used on input line 432. on input line 432
 .
 Package pdftex.def Info: Requested size: 258.75pt x 152.55424pt on input line 4
-29.
- [17 <./5alsec.jpg> <./10alsec.jpg> <./20alsec.jpg>]
-<veloc.jpg, id=80, 402.00188pt x 229.60782pt>
+32.
+ [17 <./1alsec.jpg> <./5alsec.jpg> <./10alsec.jpg>]
+<veloc.jpg, id=274, 402.00188pt x 229.60782pt>
 File: veloc.jpg Graphic file (type jpg)
 <use veloc.jpg>
-Package pdftex.def Info: veloc.jpg  used on input line 458. on input line 458.
+Package pdftex.def Info: veloc.jpg  used on input line 461. on input line 461.
 Package pdftex.def Info: Requested size: 258.75pt x 147.78584pt on input line 4
-58.
+61.
+ [18 <./20alsec.jpg>]
+[19 <./veloc.jpg>] [20]
+Overfull \hbox (92.99847pt too wide) in paragraph at lines 551--552
+[]\OT1/cmr/bx/n/10 Coefficiente di De-ter-mi-na-zio-ne\OT1/cmr/m/n/10 : https:/
+/it.wikipedia.org/wiki/Coefficiente[]di[]determinazione 
+ []
 
-[18 <./veloc.jpg>] [19] (./Relazione_MSA.aux) ) 
+
+Overfull \hbox (4.43205pt too wide) in paragraph at lines 555--556
+[]\OT1/cmr/bx/n/10 Battery-Historian\OT1/cmr/m/n/10 : https://developer.android
+.com/studio/profile/battery-
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 563.
+[21]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 563.
+ (./Relazione_MSA.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 563.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 563.
+
+
+Package rerunfilecheck Warning: File `Relazione_MSA.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `Relazione_MSA.out':
+(rerunfilecheck)             Before: 5C8BBB0CDD3B8FCEDA319754BF838C00;2252
+(rerunfilecheck)             After:  4F490FBB9558FE6CA84044A541383589;1045.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 563.
+ ) 
 Here is how much of TeX's memory you used:
- 16113 strings out of 492990
- 323058 string characters out of 6136334
- 373003 words of memory out of 5000000
- 19511 multiletter control sequences out of 15000+600000
+ 19644 strings out of 492990
+ 376872 string characters out of 6136334
+ 456276 words of memory out of 5000000
+ 22952 multiletter control sequences out of 15000+600000
  543956 words of font info for 74 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,13n,40p,10443b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
-<c:/texlive/2017/texmf-dist/font
-s/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmbx12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbxti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmcsc10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10
-.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/201
-7/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2017/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive/2017/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7
-.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Relazione_MSA.pdf (19 pages, 385012 bytes).
+ 42i,13n,40p,10443b,916s stack positions out of 5000i,500n,10000p,200000b,80000s
+<c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
+live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2017
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2017/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb><c:/texlive/2017/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/
+urw/zapfding/uzdr.pfb>
+Output written on Relazione_MSA.pdf (21 pages, 400980 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 87 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 368 PDF objects out of 1000 (max. 8388607)
+ 317 compressed objects within 4 object streams
+ 72 named destinations out of 1000 (max. 500000)
+ 292 words of extra memory for PDF output out of 10000 (max. 10000000)
 

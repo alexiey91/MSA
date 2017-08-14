@@ -1,0 +1,18 @@
+\BOOKMARK [1][-]{section.1}{Introduzione}{}% 1
+\BOOKMARK [1][-]{section.2}{Obiettivi}{}% 2
+\BOOKMARK [1][-]{section.3}{Architettura generale}{}% 3
+\BOOKMARK [2][-]{subsection.3.1}{Servizi Cloud}{section.3}% 4
+\BOOKMARK [2][-]{subsection.3.2}{Ambiente Client}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.3}{Ambiente Server}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.4}{Interazione dei componenti}{section.3}% 7
+\BOOKMARK [1][-]{section.4}{Implementazione}{}% 8
+\BOOKMARK [2][-]{subsection.4.1}{Server}{section.4}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Client}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Politica adattativa}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Oggetto dell'analisi}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{Test e risultati}{section.5}% 13
+\BOOKMARK [1][-]{section.6}{Conclusioni}{}% 14
+\BOOKMARK [1][-]{section.7}{Sviluppi futuri}{}% 15
+\BOOKMARK [1][-]{section*.5}{Appendici}{}% 16
+\BOOKMARK [1][-]{Appendice.1.Alph1}{Regressione lineare}{}% 17
+\BOOKMARK [1][-]{Appendice.1.Alph2}{Coefficiente di determinazione}{}% 18

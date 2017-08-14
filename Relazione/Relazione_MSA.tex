@@ -30,6 +30,7 @@
 \usepackage{amssymb}
 \usepackage{amsthm} 
 \usepackage{enumitem}
+\usepackage{hyperref}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 \usepackage{subcaption}
 \usepackage[toc,page]{appendix}
@@ -358,14 +359,14 @@ L'utente pu\'o selezionare ciascun \textit{item} della griglia per cambiare il f
 \end{itemize}
 
 \subsubsection{\textit{MainActivity}}
-La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}; tale coda viene creata utilizzando un \textit{Android ID} ovvero un codice identificativo unico per ogni sistema operativo installato su dispositivo. L'operazione di \textit{pull} \'e effettuata periodicamente con frequenza di \textit{pull} dipendente dal livello corrente della batteria del dispositivo:
+La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}; tale coda viene creata utilizzando un \textit{Android ID} ovvero un codice identificativo unico per ogni sistema operativo installato su dispositivo. L'\textit{AsyncTask} effettua periodicamente l'operazione di \textit{pull} con frequenza dipendente dal livello corrente della batteria del dispositivo. Implementa il \textit{pattern MAPE-K} in quanto si occupa di \textit{monitorare} lo stato attuale di carica della batteria, di \textit{analizzarlo} associandolo alla corrispondente fascia di appartenenza, di \textit{pianificare} l'eventuale modifica della \textit{frequenza di pull} per il prossimo ciclo e di \textit{eseguire} tali cambiamenti. Le fasce energetiche utilizzate sono le seguenti: 
 \begin{itemize}
 \item   75\% \textless  Livello batteria \textless= 100\% \ding{226} 1 pull ogni secondo
 \item	50\% \textless  Livello batteria \textless= 75\%  \ding{226} 1 pull ogni 5 secondi
-\item	0\% \textless  Livello batteria \textless= 50\%  \ding{226} 1 pull ogni 30 secondi
+\item	0\% \textless  Livello batteria \textless= 50\%  \ding{226} 1 pull ogni 20 secondi
 \end{itemize}
  
-Questa scelta \'e motivata dai risultati ottenuti dallo studio sulla relazione funzionale che esiste tra frequenza di \textit{pull} (e quindi frequenza di utilizzo della scheda di rete) e consumo della batteria. Nel prossimo capitolo viene illustrato l'esito di tale indagine.
+Questa scelta \'e motivata dai risultati ottenuti dallo studio (il cui esito \'e illustrato nel prossimo capitolo) sulla relazione funzionale che esiste tra frequenza di \textit{pull} (e quindi frequenza di utilizzo della scheda di rete) e consumo della batteria.
 
 \section{Politica adattativa}
 
@@ -385,7 +386,7 @@ Laddove:
 
 Nel caso in esame \'e stato deciso di gestire e limitare la velocit\'a di scarica della batteria del dispositivo: ovvero \textit{f}(\(\theta\)) \'e \textbf{la variazione del livello di carica della batteria nel tempo}. Analizzando il sistema \'e risultata evidente una relazione attiva tra tale misura e la \textbf{frequenza di pull alla coda dedicata} al client. Quest'ultima assume il ruolo di variabile indipendente e controllabile \(\theta\) del modello matematico sopra esposto. 
 \\
-Per definire il modello matematico occorre risalire all'entit\'a della relazione funzionale \textbf{\textit{f}} che lega le due grandezze. A tal proposito viene utilizzato lo strumento matematico della \textbf{\textit{regressione}}, che richiede di effettuare misure della grandezza in esame.
+Per definire il modello matematico occorre risalire all'entit\'a della relazione funzionale \textbf{\textit{f}} che lega le due grandezze. A tal proposito viene utilizzato lo strumento matematico della \textbf{\textit{regressione}}(riferimento ad Appendice \ref{Regressione}), che richiede di effettuare misure della grandezza in esame.
 \\
 Il modello matematico viene realizzato seguendo tre fasi:
 
@@ -400,6 +401,8 @@ Il modello matematico viene realizzato seguendo tre fasi:
 Per effettuare le misurazioni della grandezza in esame, \'e stato utilizzato il \textit{tool Battery-Historian} che permette l'analisi e la visualizzazione del consumo energetico generato da tutte le applicazioni eseguite durante il test, definendo i consumi dettati dall'utilizzo del display e della rete da parte da tali applicazioni.
 \\\\
 I test sono stati condotti su un tablet \textit{Samsung Galaxy Tab S2} con amperaggio della batteria di \textit{5870 Mah}. \'E da sottolineare che tale dispositivo \'e relativamente nuovo e pertanto la salute della batteria non \'e compromessa. Tutto ci\'o garantisce dei test significativi.
+\\
+Tutti quanti i test sono stati effettuati con la stessa configurazione in termini di luminosit\'a (25\%), di livello di batteria iniziale (100\%) e di interazione da parte dell'utente. Quest'ultimo ha utilizzato in maniera intensiva tutte le funzionalit\'a offerte dall'applicazione.
 
 \subsubsection{Fase 1 - \textit{Livello di batteria} nel tempo fissata la \textit{frequenza di pull}}
 Osservando i dati raccolti (e visualizzati nelle figure) e applicando il modello di regressione si riscontra una relazione funzionale di tipo lineare tra il tempo \textit{t} e il livello energetico della batteria \textit{f}\textsubscript{p}(\textit{t}) fissata una certa \textit{frequenza di pull}, ovvero:
@@ -408,7 +411,7 @@ Osservando i dati raccolti (e visualizzati nelle figure) e applicando il modello
 (\textit{f}\textsubscript{p}(\textit{t}), \textit{t}) \ding{226} \textit{lineare} poich\'e \textit{R\textsuperscript{2}}\(\approx\)0.9
 \end{center}
 
-Dove \textit{R\textsuperscript{2}} rappresenta il \textit{coefficiente di determinazione}, che \'e una misura della bont\'a dell'adattamento (\textit{fitting}) della regressione lineare stimata ai dati osservati. Nel caso specifico, poich\'e esso \'e circa 1, il modello lineare si adatta bene ai dati misurati.
+Dove \textit{R\textsuperscript{2}} rappresenta il \textit{coefficiente di determinazione} (riferimento ad Appendice \ref{Coefficiente}), che \'e una misura della bont\'a dell'adattamento (\textit{fitting}) della regressione lineare stimata ai dati osservati. Nel caso specifico, poich\'e esso \'e circa 1, il modello lineare si adatta bene ai dati misurati.
 
 \begin{center}
 \includegraphics[width=0.75\textwidth]{1alsec.jpg} % Include the image placeholder.png
@@ -459,9 +462,20 @@ Nel seguente grafico si evince tale relazione funzionale:
 \label{fig:Relazione funzionale}
 \end{center}
 
-Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza di pull} \'e un fattore che influisce fortemente in termini di consumo energetico della batteria del dispositivo.
+Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza di pull} \'e un fattore che influisce fortemente in termini di consumo energetico della batteria del dispositivo. Tale esito giustifica la suddivisione logica in fasce energetiche del livello di carica della batteria e l'adozione di \textit{frequenze di pull} differenti per ognuna di esse: in tal modo si ottiene un compromesso tra la velocit\'a di aggiornamento delle informazioni (che inevitabilmente diminuisce al calare del livello energetico) e la velocit\'a di scarica della batteria. Questo meccanismo \'e l'implementazione del \textit{pattern} \textit{MAPE-K} che rende il sistema \textit{client} \textit{self-adaptive}.
 
-\section{Conclusioni e sviluppi futuri}
+\section{Conclusioni}
+
+\section{Sviluppi futuri}
+
+\begin{itemize}
+\item{Verificare influenza della luminosit\'a sui consumi della batteria}
+\item{Politica adattativa per limitare il consumo di rete}
+\item{Politica adattativa per limitare l'uso della memoria}
+\item{Se non si effettuasse il salvataggio in locale quanto si risparmierebbe in termini di energia?}
+\item{Fasce energetiche che cambiano dinamicamente - Velocit\'a di scarica della batteria osservata con conseguente adozione della frequenza di pull corrispondente}
+\item{Analisi dei consumi differenziato dipendemente dall'operazione effuettuata (Scritture, letture)}
+\end{itemize}
 
 % Da ricordare : appendice strumenti matematici
 
@@ -472,13 +486,7 @@ Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza
 %\bibliographystyle{apalike}
 
 %\bibliography{sample}
-
-\begin{thebibliography}{1}
-
-\bibitem{Paolo fa i pompini} Paolo \'e bello
-
-\end{thebibliography}
-
+\newpage
 
 \begin{appendices}
 \addtocontents{toc}{\protect\setcounter{tocdepth}{2}}
@@ -490,12 +498,64 @@ Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza
 }
 \makeatother
 	
-  	\section{Regressione lineare}
+  	\section{Regressione lineare}\label{Regressione}
+	La \textit{regressione} formalizza e risolve il problema di una relazione funzionale tra variabili misurate sulla base di dati campionari estratti da un'ipotetica popolazione infinita. Pi\'u formalmente, in statistica la regressione lineare rappresenta un metodo di 		stima del valore atteso condizionato di una variabile dipendente, o endogena, \textit{Y}, dati i valori di altre variabili indipendenti, o esogene, \textit{X}\textsubscript{1},...,\textit{X}\textsubscript{k}: E[\textit{Y}\(\mid\)\textit{X}\textsubscript{1},...,\textit{X}\textsubscript{k}]. Il modello di regressione lineare \'e:
+
+	\begin{center}
+	\(\textit{Y}\textsubscript{i} = \beta\textsubscript{0} + \beta\textsubscript{1}\textit{X}\textsubscript{i} + \textit{u}\textsubscript{i}
+	\)
+	\end{center}
+
+	dove:
+
+	\begin{itemize}
+	\item{\textit{i} varia tra le osservazioni, \textit{i = 1...n};}
+	\item{\textit{Y}\textsubscript{i} \'e la variabile dipendente;}
+	\item{\textit{X}\textsubscript{i} \'e la variabile indipendente o regressore;}
+	\item{\(\beta\textsubscript{0} + \beta\textsubscript{1}\textit{X}\) \'e la retta di regressione o funzione di regressione della popolazione;}
+	\item{\(\beta\textsubscript{0}\) \'e l'intercetta della retta di regressione della popolazione;}
+	\item{\(\beta\textsubscript{1}\) \'e il coefficiente angolare della retta di regressione della popolazione;}
+	\item{\textit{u}\textsubscript{i} \'e l'errore statistico.}
+	\end{itemize}
+
+	\section{Coefficiente di determinazione}\label{Coefficiente}
 	
-	\section{Coefficiente di determinazione}
-	
+	L'\textit{R}\textsuperscript{2}, o coefficiente di determinazione, \'e una misura della bont\'a dell'adattamento (in inglese \textit{fitting}) della regressione lineare stimata ai dati osservati. \\
+	Nelle regressioni lineari semplici esso \'e semplicemente il quadrato del coefficiente di correlazione:
+
+	\begin{center}
+	\(\textit{R}\textsuperscript{2} =  \frac{\textit{ESS}}{\textit{TSS}} = 1 - \frac{\textit{RSS}}{\textit{TSS}}\)
+	\end{center}
+
+	dove:
+
+	\begin{itemize}
+	\item{\textit{ESS} \'e la devianza spiegata dal modello;}
+	\item{\textit{TSS} \'e la devianza totale;}
+	\item{\textit{RSS} \'e la devianza residua.}
+	\end{itemize}
+
+	L'\textit{R}\textsuperscript{2} varia tra 0 ed 1: quando \'e 0 il modello utilizzato non spiega per nulla i dati; quando \'e 1 il modello spiega perfettamente i dati.
+
 \addtocontents{toc}{\endgroup}
 \end{appendices}
+
+\newpage
+
+\begin{thebibliography}{1}
+
+\bibitem{AWSEC2} \textbf{AWS EC2}: https://aws.amazon.com/it/ec2/?hp=tile\&so-exp=below
+\bibitem{AWSDYNAMODB} \textbf{AWS dynamoDB}: https://aws.amazon.com/it/dynamodb/?hp=tile\&so-exp=below
+\bibitem{AWSSQS} \textbf{AWS SQS}: https://aws.amazon.com/it/sqs/?hp=tile\&so-exp=below
+\bibitem{Coefficiente} \textbf{Regressione Lineare}: https://it.wikipedia.org/wiki/Regressione\_lineare
+\bibitem{Regressione} \textbf{Coefficiente di Determinazione}: https://it.wikipedia.org/wiki/Coefficiente\_di\_determinazione
+\bibitem{NodeJS} \textbf{Node.js}: https://nodejs.org/it/
+\bibitem{ExpressoJS} \textbf{Express.js}: http://expressjs.com/it/
+\bibitem{Android} \textbf{Android e Sviluppo}: https://developer.android.com/guide/index.html 
+\bibitem{Androidbattery} \textbf{Battery-Historian}: https://developer.android.com/studio/profile/battery-historian.html
+\bibitem{sqlite} \textbf{SQLite}: https://www.sqlite.org/index.html
+\end{thebibliography}
+
 
 %----------------------------------------------------------------------------------------
 
