@@ -33,6 +33,7 @@
 \usepackage{hyperref}
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 \usepackage{subcaption}
+\usepackage[multiple]{footmisc}
 \usepackage[toc,page]{appendix}
 \usepackage[italian]{babel}
 
@@ -135,13 +136,13 @@ Di seguito illustriamo l'architettura attraverso uno schema in \figurename{~\ref
 Come \textit{Cloud Provider} \'e stato scelto \textit{Amazon AWS}. I servizi utilizzati per l'implementazione del connettore sono:
 
 \begin{itemize}
-\item{\textbf{Amazon EC2}: servizio \textit{IaaS} sfruttato per la realizzazione del nodo master che identifica il server dell'architettura. Svolge il ruolo di \textit{Event-Service e Filter-Service} nonch\'e di gestore del \textit{database NoSQL}. Per la comunicazione con i nodi client interagisce con le code del servizio \textit{Amazon SQS}}
-\item{\textbf{Amazon SQS}: \'e un servizio di accodamento di messaggi distribuito che disaccoppia completamente i componenti dell'architettura. In tal modo semplifica e riduce i costi del coordinamento dei componenti stessi. Offre un \textit{throughput} elevato e \textit{tunable}, un ordinamento semplificato e distribuzione di tipo \textit{at-least-once}. In generale \'e possibile impostare un algoritmo di \textit{scheduling} dei messaggi: nel nostro caso \'e stato utilizzato l'algoritmo \textit{FIFO}}
-\item{\textbf{Amazon DynamoDB}: \'e un servizio di \textit{datastorage} distribuito basato su un \textit{database NoSQL} di tipo \textit{key-value}. \textit{DynamoDB} implementa un sistema di tipo \textit{AP}, disponibilit\'a e tolleranza alle partizioni dei dati, secondo il \textit{CAP Theorem}. L'alto grado di disponibilit\'a ed un accesso di tipo \textit{anywhere} alle informazioni sono due caratteristiche adatte ad un utilizzo in ambiente mobile. Essendo inoltre un database \textit{read-mostly}, ovvero pensato prevalentemente per operazioni di lettura, si adatta perfettamente al nostro sistema, il quale richiede pi\'u letture che scritture.}
+\item{\textbf{Amazon EC2}\footnote{Per maggiori dettagli vedere \textit{AWS EC2} nella bibliografia}: servizio \textit{IaaS} sfruttato per la realizzazione del nodo master che identifica il server dell'architettura. Svolge il ruolo di \textit{Event-Service e Filter-Service} nonch\'e di gestore del \textit{database NoSQL}. Per la comunicazione con i nodi client interagisce con le code del servizio \textit{Amazon SQS}}
+\item{\textbf{Amazon SQS}\footnote{Per maggiori dettagli vedere \textit{AWS SQS} nella bibliografia}: \'e un servizio di accodamento di messaggi distribuito che disaccoppia completamente i componenti dell'architettura. In tal modo semplifica e riduce i costi del coordinamento dei componenti stessi. Offre un \textit{throughput} elevato e \textit{tunable}, un ordinamento semplificato e distribuzione di tipo \textit{at-least-once}. In generale \'e possibile impostare un algoritmo di \textit{scheduling} dei messaggi: nel nostro caso \'e stato utilizzato l'algoritmo \textit{FIFO}}
+\item{\textbf{Amazon DynamoDB}\footnote{Per maggiori dettagli vedere \textit{AWS dynamoDB} nella bibliografia}: \'e un servizio di \textit{datastorage} distribuito basato su un \textit{database NoSQL} di tipo \textit{key-value}. \textit{DynamoDB} implementa un sistema di tipo \textit{AP}, disponibilit\'a e tolleranza alle partizioni dei dati, secondo il \textit{CAP Theorem}. L'alto grado di disponibilit\'a ed un accesso di tipo \textit{anywhere} alle informazioni sono due caratteristiche adatte ad un utilizzo in ambiente mobile. Essendo inoltre un database \textit{read-mostly}, ovvero pensato prevalentemente per operazioni di lettura, si adatta perfettamente al nostro sistema, il quale richiede pi\'u letture che scritture.}
 \end{itemize}
 
 \subsection{Ambiente Client}
-Il nostro sistema \'e pensato per un utilizzo da parte di \textit{client leggeri} con sistema operativo \textit{Android}. \textit{Android} \'e un sistema operativo per dispositivi mobili sviluppato da \textit{Google Inc.} e basato sul kernel \textit{Linux}. Le applicazioni che vengono eseguite sulle piattaforme \textit{Android} sono scritte prevalentemente in linguaggio \textit{Java}, come nel nostro caso. L'applicazione \textit{client} interagisce con un \textit{database relazionale} interno di tipo \textit{SQLite}.
+Il nostro sistema \'e pensato per un utilizzo da parte di \textit{client leggeri} con sistema operativo \textit{Android}. \textit{Android} \'e un sistema operativo per dispositivi mobili sviluppato da \textit{Google Inc.} e basato sul kernel \textit{Linux}. Le applicazioni che vengono eseguite sulle piattaforme \textit{Android} sono scritte prevalentemente in linguaggio \textit{Java}, come nel nostro caso. L'applicazione \textit{client} interagisce con un \textit{database relazionale} interno di tipo \textit{SQLite}\footnote{Per maggiori dettagli vedere \textit{SQLite} nella bibliografia}.
 
 \subsection{Ambiente Server}
 Sfruttando il servizio \textit{IaaS di Amazon EC2}, \'e stato possibile scegliere il sistema operativo del server e le caratteristiche della macchina \textit{host}. In particolare abbiamo scelto un'istanza \textit{t2.micro} dotata di una \textit{virtual cpu}, \textit{1 GB di ram} e \textit{8 GB di storage}. \'E stato scelto come sistema operativo \textit{Linux Ubuntu Server v.16.04 LTS}. La scelta di tale sistema operativo \'e da ricondurre alla semplicit\'a di installazione di componenti aggiuntivi e alla sua versatilit\'a.
@@ -161,10 +162,11 @@ Per la ricezione di messaggi ogni client ha a disposizione una coda dedicata, la
 \\
 Infine il database \textit{SQLite}, presente in ogni client, \'e utilizzato per tenere traccia dei \textit{topic} presenti al momento nell'istanza di \textit{DynamoDB} e per memorizzare le notifiche ricevute.
 
+\newpage
 \section{Implementazione}
 
 \subsection{Server}
-Abbiamo scelto di utilizzare lato server la piattaforma \textit{event-driven Node.js} per motivi di immediatezza, versatilit\'a  ed efficienza. Tale piattaforma supporta il linguaggio di programmazione \textit{Javascript}, linguaggio di scripting orientato agli oggetti e agli eventi. L'efficienza di \textit{Node.js} \'e legata al suo modello di \textit{networking}, ossia \textit{I/O event-driven}. La piattaforma richiede al sistema operativo di ricevere notifiche al verificarsi di determinati eventi e rimane in modalit\'a \textit{sleep} fino alla ricezione della notifica stessa, in corrispondenza della quale avvia l'esecuzione di una funzione di \textit{callback} di risposta. Tale modello di \textit{networking} si rivela efficiente nella gestione di un elevato traffico di rete, come potrebbe accadere nel caso del nostro sistema.
+Abbiamo scelto di utilizzare lato server la piattaforma \textit{event-driven Node.js}\footnote{Per maggiori dettagli vedere \textit{Node.js} nella bibliografia} per motivi di immediatezza, versatilit\'a  ed efficienza. Tale piattaforma supporta il linguaggio di programmazione \textit{Javascript}, linguaggio di scripting orientato agli oggetti e agli eventi. L'efficienza di \textit{Node.js} \'e legata al suo modello di \textit{networking}, ossia \textit{I/O event-driven}. La piattaforma richiede al sistema operativo di ricevere notifiche al verificarsi di determinati eventi e rimane in modalit\'a \textit{sleep} fino alla ricezione della notifica stessa, in corrispondenza della quale avvia l'esecuzione di una funzione di \textit{callback} di risposta. Tale modello di \textit{networking} si rivela efficiente nella gestione di un elevato traffico di rete, come potrebbe accadere nel caso del nostro sistema.
 \\
 Di seguito ci apprestiamo a descrivere puntualmente l'implementazione dei componenti server.
 
@@ -267,7 +269,7 @@ In tal modo il processo \textit{Consumer} pu\'o distinguerne la coda di apparten
 Al termine della gestione dei messaggi letti il processo \textit{Consumer} termina.
 
 \subsubsection{\textit{Server Http e Routes}}
-Al fine di separare le \textit{routes} dal server \textit{http} \'e stato utilizzato il \textit{framework Express.js}. Nel modulo \textit{routes.js} \'e disponibille un \textit{endpoint} per rispondere a richieste \textit{http} di tipo \textit{get}, il quale invoca la funzione \textit{scan\_all\_topics di dinamo\_api.js} per restituire al client richiedente la lista di tutti i \textit{topic} presenti nel sistema. Il \textit{Server http} \'e un processo che utilizza le \textit{routes} e rimane in ascolto sulla porta \textit{8080}.
+Al fine di separare le \textit{routes} dal server \textit{http} \'e stato utilizzato il \textit{framework Express.js}\footnote{Per maggiori dettagli vedere \textit{Express.js} nella bibliografia}. Nel modulo \textit{routes.js} \'e disponibille un \textit{endpoint} per rispondere a richieste \textit{http} di tipo \textit{get}, il quale invoca la funzione \textit{scan\_all\_topics di dinamo\_api.js} per restituire al client richiedente la lista di tutti i \textit{topic} presenti nel sistema. Il \textit{Server http} \'e un processo che utilizza le \textit{routes} e rimane in ascolto sulla porta \textit{8080}.
 
 \subsubsection{\textit{Main}}
 Il modulo \textit{main.js} crea le tre code fisse del sistema invocando la funzione \textit{create\_queue} di \textit{sqs\_api} e le tabelle \textit{Subscription e Topic} tramite la funzione \textit{creation\_table} di \textit{dinamo\_api}. Infine, per mezzo di \textit{fork}, avvia i quattro processi stabili del sistema: i tre \textit{Readers} e il \textit{Server http}. \\
@@ -330,7 +332,7 @@ Questa classe implementa dei metodi per accedere ai servizi \textit{AWS SQS} med
 \item 	{\textit{deleteMessageFromQueue}: cancella un messaggio dalla coda dedicata identificata dal suo \textit{URL}, entrambi passati come argomento. Usa l'\textit{API AWS SDK deleteMessage}.}
 \end{itemize}
 \subsubsection{\textit{Fragment}}
-Un \textit{Fragment} rappresenta un ambiente oppure una porzione dell'interfaccia in una Activity. Si pu\'o pensare a un \textit{Fragment} come sezione modulare di un'attivit\'a che ha un proprio ciclo di vita, riceve i propri eventi di input e che \'e possibile aggiungere o rimuovere mentre l'attivit\'a \'e in esecuzione. 
+Un \textit{Fragment}\footnote{Per maggiori dettagli vedere \textit{Android e Sviluppo} nella bibliografia \label{fn:Sviluppo}} rappresenta un ambiente oppure una porzione dell'interfaccia in una Activity. Si pu\'o pensare a un \textit{Fragment} come sezione modulare di un'attivit\'a che ha un proprio ciclo di vita, riceve i propri eventi di input e che \'e possibile aggiungere o rimuovere mentre l'attivit\'a \'e in esecuzione. 
 \'E possibile combinarne diversi in una singola \textit{activity} per costruire una \textit{multi-pane UI}, e questo \'e quello che ci ha spinti all'utilizzo degli stessi.
 \\Nella fase di inizializzazione dei \textit{Fragment} vengono eseguiti gli \textit{AsyncTask}. \\L'\textit{AsyncTask} consente l'uso corretto e semplice del \textit{thread UI}. Tale classe permette di eseguire operazioni in background e pubblicare risultati sul thread dell'interfaccia utente senza dover manipolare i \textit{threads} e/o \textit{handlers}. Un \textit{AsyncTask} ha il compito di eseguire una porzione di codice su un \textit{thread} in background, il cui risultato viene pubblicato sul \textit{thread UI}.
 
@@ -359,7 +361,7 @@ L'utente pu\'o selezionare ciascun \textit{item} della griglia per cambiare il f
 \end{itemize}
 
 \subsubsection{\textit{MainActivity}}
-La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}; tale coda viene creata utilizzando un \textit{Android ID} ovvero un codice identificativo unico per ogni sistema operativo installato su dispositivo. L'\textit{AsyncTask} effettua periodicamente l'operazione di \textit{pull} con frequenza dipendente dal livello corrente della batteria del dispositivo. Implementa il \textit{pattern MAPE-K} in quanto si occupa di \textit{monitorare} lo stato attuale di carica della batteria, di \textit{analizzarlo} associandolo alla corrispondente fascia di appartenenza, di \textit{pianificare} l'eventuale modifica della \textit{frequenza di pull} per il prossimo ciclo e di \textit{eseguire} tali cambiamenti. Le fasce energetiche utilizzate sono le seguenti: 
+La \textit{MainActivity}\footref{fn:Sviluppo} contiene tutti i controlli utili per la navigazione all'interno delle sezioni dell'applicazione (ossia quelle di pubblicazione notifiche, sottoscrizione \textit{Topic}, lettura notifiche) e passa quindi il controllo al \textit{Fragment} corrispondente alla sezione prescelta. Inoltre \'e presente un \textit{AsyncTask} con il compito di prelevare le notifiche in arrivo, leggendole dalla coda dedicata con l'utilizzo dell'\textit{API AWS SDK getMessageFromQueue}; tale coda viene creata utilizzando un \textit{Android ID} ovvero un codice identificativo unico per ogni sistema operativo installato su dispositivo. L'\textit{AsyncTask} effettua periodicamente l'operazione di \textit{pull} con frequenza dipendente dal livello corrente della batteria del dispositivo. Implementa il \textit{pattern MAPE-K} in quanto si occupa di \textit{monitorare} lo stato attuale di carica della batteria, di \textit{analizzarlo} associandolo alla corrispondente fascia di appartenenza, di \textit{pianificare} l'eventuale modifica della \textit{frequenza di pull} per il prossimo ciclo e di \textit{eseguire} tali cambiamenti. Le fasce energetiche utilizzate sono le seguenti: 
 \begin{itemize}
 \item   75\% \textless  Livello batteria \textless= 100\% \ding{226} 1 pull ogni secondo
 \item	50\% \textless  Livello batteria \textless= 75\%  \ding{226} 1 pull ogni 5 secondi
@@ -368,6 +370,7 @@ La \textit{MainActivity} contiene tutti i controlli utili per la navigazione all
  
 Questa scelta \'e motivata dai risultati ottenuti dallo studio (il cui esito \'e illustrato nel prossimo capitolo) sulla relazione funzionale che esiste tra frequenza di \textit{pull} (e quindi frequenza di utilizzo della scheda di rete) e consumo della batteria.
 
+\newpage
 \section{Politica adattativa}
 
 \subsection{Oggetto dell'analisi}
@@ -398,7 +401,7 @@ Il modello matematico viene realizzato seguendo tre fasi:
 
 \subsection{Test e risultati}
 
-Per effettuare le misurazioni della grandezza in esame, \'e stato utilizzato il \textit{tool Battery-Historian} che permette l'analisi e la visualizzazione del consumo energetico generato da tutte le applicazioni eseguite durante il test, definendo i consumi dettati dall'utilizzo del display e della rete da parte da tali applicazioni.
+Per effettuare le misurazioni della grandezza in esame, \'e stato utilizzato il \textit{tool Battery-Historian}\footnote{Per maggiori dettagli vedere \textit{Battery-Historian} nella bibliografia} che permette l'analisi e la visualizzazione del consumo energetico generato da tutte le applicazioni eseguite durante il test, definendo i consumi dettati dall'utilizzo del display e della rete da parte da tali applicazioni.
 \\\\
 I test sono stati condotti su un tablet \textit{Samsung Galaxy Tab S2} con amperaggio della batteria di \textit{5870 Mah}. \'E da sottolineare che tale dispositivo \'e relativamente nuovo e pertanto la salute della batteria non \'e compromessa. Tutto ci\'o garantisce dei test significativi.
 \\
@@ -462,19 +465,28 @@ Nel seguente grafico si evince tale relazione funzionale:
 \label{fig:Relazione funzionale}
 \end{center}
 
-Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza di pull} \'e un fattore che influisce fortemente in termini di consumo energetico della batteria del dispositivo. Tale esito giustifica la suddivisione logica in fasce energetiche del livello di carica della batteria e l'adozione di \textit{frequenze di pull} differenti per ognuna di esse: in tal modo si ottiene un compromesso tra la velocit\'a di aggiornamento delle informazioni (che inevitabilmente diminuisce al calare del livello energetico) e la velocit\'a di scarica della batteria. Questo meccanismo \'e l'implementazione del \textit{pattern} \textit{MAPE-K} che rende il sistema \textit{client} \textit{self-adaptive}.
+Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza di pull} \'e un fattore che influisce fortemente in termini di consumo energetico della batteria del dispositivo. Tale esito giustifica la suddivisione logica in fasce energetiche del livello di carica della batteria e l'adozione di \textit{frequenze di pull} differenti per ognuna di esse: in tal modo si ottiene un compromesso tra la velocit\'a di aggiornamento delle informazioni (che inevitabilmente diminuisce al calare del livello energetico) e la velocit\'a di scarica della batteria. Questo meccanismo \'e un'implementazione del \textit{pattern} \textit{MAPE-K} che rende il sistema \textit{client} \textit{self-adaptive}.
 
+\newpage
 \section{Conclusioni}
+
+Alla luce di quanto dimostrato attraverso i test condotti su un ambiente controllato ed utilizzando strumenti matematici appropriati, \'e possibile affermare che la politica adattativa implementata \'e adeguata ad un contesto \textit{mobile} poich\'e garantisce l'accesso affidabile alle risorse e allo stesso tempo limita al meglio la velocit\'a di scarica della batteria. 
+\\
+Inoltre il sistema proposto garantisce tutti i tipi di disaccoppiamento (\textit{spaziale, temporale e di sincronia}) che sono propri di un connettore \textit{Publish-Subscribe}, permettendo all'utente di poter ricevere aggiornamenti continui sui \textit{Topic} di interesse senza inficiare eccessivamente le risorse (limitate) a disposizione del dispositivo. Tale risultato \'e stato possibile soprattutto per merito del sistema a code di messaggi \textit{AWS SQS}, che permette di disaccoppiare completamente i componenti dell'architettura. 
 
 \section{Sviluppi futuri}
 
+L'analisi della politica adattativa implementata potrebbe essere condotta nuovamente, analizzando i consumi energetici tenendo traccia del tipo di operazione effettuata sulla coda. Differenziando il traffico generato (generando solo letture o solo scritture) sarebbe possibile individuare operazioni critiche (\textit{scritture o letture}).
+\\
+Oltre alla politica adattativa gi\'a adottata ne sono state individuate altre, di cui si \'e solo ipotizzata l'efficacia. Bisogna, ad esempio, dimostrare l'esistenza di una relazione funzionale tra il consumo energetico ed il livello di luminosit\'a del display: ci\'o giustificherebbe l'utilizzo della modalit\'a statica proposta nei capitoli precedenti.
+\\
+Si potrebbe inoltre analizzare l'impatto derivante dall'utilizzo del database \textit{SQLite} sui consumi energetici del dispositivo, mantenendo attiva la politica di risparmio energetico presentata in precedenza. Questa valutazione \'e utile a considerare possibili vantaggi conseguenti all'utilizzo di database siti nel \textit{Cloud} oppure al salvataggio dei dati in locale attraverso un \textit{filesystem}.
+\\
+Un'ulteriore politica adattativa potrebbe riguardare il controllo del traffico di rete generato dall'applicazione. Nel dettaglio, occorrerebbe limitare il numero medio di messaggi scambiati tra il client e le relative code, cercando di diminuire il numero di disconnessioni da parte del dispositivo e favorire un utilizzo pi\'u intelligente delle operazioni di \textit{pull} e di \textit{push}:
+
 \begin{itemize}
-\item{Verificare influenza della luminosit\'a sui consumi della batteria}
-\item{Politica adattativa per limitare il consumo di rete}
-\item{Politica adattativa per limitare l'uso della memoria}
-\item{Se non si effettuasse il salvataggio in locale quanto si risparmierebbe in termini di energia?}
-\item{Fasce energetiche che cambiano dinamicamente - Velocit\'a di scarica della batteria osservata con conseguente adozione della frequenza di pull corrispondente}
-\item{Analisi dei consumi differenziato dipendemente dall'operazione effuettuata (Scritture, letture)}
+\item{Evitare di effettuare l'operazione di \textit{pull} se la coda contiene una quantit\'a esigua di messaggi, limitando il traffico in ingresso;}
+\item{Raggruppare i messaggi in uscita in un unico blocco prima di effettuare un operazione di \textit{push}, limitando il traffico in uscita.} 
 \end{itemize}
 
 % Da ricordare : appendice strumenti matematici
@@ -499,7 +511,7 @@ Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza
 \makeatother
 	
   	\section{Regressione lineare}\label{Regressione}
-	La \textit{regressione} formalizza e risolve il problema di una relazione funzionale tra variabili misurate sulla base di dati campionari estratti da un'ipotetica popolazione infinita. Pi\'u formalmente, in statistica la regressione lineare rappresenta un metodo di 		stima del valore atteso condizionato di una variabile dipendente, o endogena, \textit{Y}, dati i valori di altre variabili indipendenti, o esogene, \textit{X}\textsubscript{1},...,\textit{X}\textsubscript{k}: E[\textit{Y}\(\mid\)\textit{X}\textsubscript{1},...,\textit{X}\textsubscript{k}]. Il modello di regressione lineare \'e:
+	La \textit{regressione}\footnote{Per maggiori dettagli vedere \textit{Regressione Lineare} nella bibliografia} formalizza e risolve il problema di una relazione funzionale tra variabili misurate sulla base di dati campionari estratti da un'ipotetica popolazione infinita. Pi\'u formalmente, in statistica la regressione lineare rappresenta un metodo di 		stima del valore atteso condizionato di una variabile dipendente, o endogena, \textit{Y}, dati i valori di altre variabili indipendenti, o esogene, \textit{X}\textsubscript{1},...,\textit{X}\textsubscript{k}: E[\textit{Y}\(\mid\)\textit{X}\textsubscript{1},...,\textit{X}\textsubscript{k}]. Il modello di regressione lineare \'e:
 
 	\begin{center}
 	\(\textit{Y}\textsubscript{i} = \beta\textsubscript{0} + \beta\textsubscript{1}\textit{X}\textsubscript{i} + \textit{u}\textsubscript{i}
@@ -520,7 +532,7 @@ Questo risultato \'e molto importante poich\'e dimostra che la \textit{frequenza
 
 	\section{Coefficiente di determinazione}\label{Coefficiente}
 	
-	L'\textit{R}\textsuperscript{2}, o coefficiente di determinazione, \'e una misura della bont\'a dell'adattamento (in inglese \textit{fitting}) della regressione lineare stimata ai dati osservati. \\
+	L'\textit{R}\textsuperscript{2}, o coefficiente di determinazione\footnote{Per maggiori dettagli vedere \textit{Coefficiente di Determinazione} nella bibliografia}, \'e una misura della bont\'a dell'adattamento (in inglese \textit{fitting}) della regressione lineare stimata ai dati osservati. \\
 	Nelle regressioni lineari semplici esso \'e semplicemente il quadrato del coefficiente di correlazione:
 
 	\begin{center}
