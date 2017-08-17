@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  16 AUG 2017 17:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/W32TeX) (preloaded format=pdflatex 2017.7.27)  17 AUG 2017 16:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -868,24 +868,23 @@ A.toc)
 \openout4 = `Relazione_MSA.toc'.
 
  [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 100.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 99.
 
 (c:/texlive/2017/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 100.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
  [3]
 <architettura.jpg, id=148, 782.925pt x 499.8675pt>
 File: architettura.jpg Graphic file (type jpg)
 <use architettura.jpg>
-Package pdftex.def Info: architettura.jpg  used on input line 128. on input lin
-e 128.
+Package pdftex.def Info: architettura.jpg  used on input line 127. on input lin
+e 127.
 Package pdftex.def Info: Requested size: 431.25pt x 275.33984pt on input line 1
-28.
+27.
 
-Overfull \hbox (86.25pt too wide) in paragraph at lines 128--129
+Overfull \hbox (86.25pt too wide) in paragraph at lines 127--128
  [] 
  []
 
@@ -893,40 +892,40 @@ Overfull \hbox (86.25pt too wide) in paragraph at lines 128--129
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [4] [5 <./architettura.jpg>] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 215--224
+Underfull \hbox (badness 10000) in paragraph at lines 214--223
 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 226--227
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
 
  []
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 251--262
+Underfull \hbox (badness 10000) in paragraph at lines 250--261
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--262
+Underfull \hbox (badness 10000) in paragraph at lines 250--261
 
  []
 
 
-Overfull \hbox (3.38228pt too wide) in paragraph at lines 251--262
+Overfull \hbox (3.38228pt too wide) in paragraph at lines 250--261
 \OT1/cmr/m/n/10 de-le-ga-re al cor-ri-spon-den-te \OT1/cmr/m/it/10 Up-da-ter \O
 T1/cmr/m/n/10 la ge-stio-ne dei da-ti let-ti (\OT1/cmr/m/it/10 da-ta[]read.Mess
 ages\OT1/cmr/m/n/10 ).
  []
 
 [9]
-Overfull \hbox (11.27455pt too wide) in paragraph at lines 264--265
+Overfull \hbox (11.27455pt too wide) in paragraph at lines 263--264
 \OT1/cmr/m/n/10 Per ogni mes-sag-gio in \OT1/cmr/m/it/10 da-ta[]read.Messages \
 OT1/cmr/m/n/10 in-vo-ca la fun-zio-ne \OT1/cmr/m/it/10 send[]notification
  []
 
 
-Overfull \hbox (6.01639pt too wide) in paragraph at lines 265--266
+Overfull \hbox (6.01639pt too wide) in paragraph at lines 264--265
 []\OT1/cmr/m/it/10 subscription[]updater\OT1/cmr/m/n/10 : fun-zio-ne ese-gui-ta
  quan-do \OT1/cmr/m/it/10 queue = sub-scrip-tion-Queue\OT1/cmr/m/n/10 .
  []
@@ -935,51 +934,47 @@ Overfull \hbox (6.01639pt too wide) in paragraph at lines 265--266
 <stableprocess.jpg, id=187, 713.66624pt x 362.35374pt>
 File: stableprocess.jpg Graphic file (type jpg)
 <use stableprocess.jpg>
-Package pdftex.def Info: stableprocess.jpg  used on input line 281. on input li
-ne 281.
+Package pdftex.def Info: stableprocess.jpg  used on input line 280. on input li
+ne 280.
 Package pdftex.def Info: Requested size: 379.5021pt x 192.68794pt on input line
- 281.
+ 280.
 
-Overfull \hbox (34.5021pt too wide) in paragraph at lines 281--282
+Overfull \hbox (34.5021pt too wide) in paragraph at lines 280--281
  [] 
  []
 
 [11 <./stableprocess.jpg>] [12]
-Overfull \hbox (0.67323pt too wide) in paragraph at lines 332--333
+Overfull \hbox (0.67323pt too wide) in paragraph at lines 331--332
 []\OT1/cmr/m/it/10 deleteMessageFromQueue\OT1/cmr/m/n/10 : can-cel-la un mes-sa
 g-gio dal-la co-da de-di-ca-ta iden-
  []
 
 
-Overfull \hbox (6.12268pt too wide) in paragraph at lines 344--347
+Overfull \hbox (6.12268pt too wide) in paragraph at lines 343--346
 \OT1/cmr/m/n/10 con-te-nen-te tut-ti i \OT1/cmr/m/it/10 To-pic \OT1/cmr/m/n/10 
 at-tual-men-te nel si-ste-ma. Al-l'in-ter-no dell'\OT1/cmr/m/it/10 AsyncTask
  []
 
-[13]
-
-LaTeX Warning: Reference `fn:Sviluppo' on page 14 undefined on input line 364.
-
-[14]
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 366.
+[13] [14]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 365.
 
  (c:/texlive/2017/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 366.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 365.
  [15]
-Underfull \hbox (badness 10000) in paragraph at lines 377--385
+Underfull \hbox (badness 10000) in paragraph at lines 376--384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--385
+Underfull \hbox (badness 10000) in paragraph at lines 376--384
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 404--409
+Underfull \hbox (badness 10000) in paragraph at lines 403--408
 
  []
 
@@ -987,97 +982,89 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--409
 <1alsec.jpg, id=224, 359.84438pt x 215.30438pt>
 File: 1alsec.jpg Graphic file (type jpg)
 <use 1alsec.jpg>
-Package pdftex.def Info: 1alsec.jpg  used on input line 420. on input line 420.
+Package pdftex.def Info: 1alsec.jpg  used on input line 419. on input line 419.
 
 Package pdftex.def Info: Requested size: 258.75pt x 154.82848pt on input line 4
-20.
+19.
 <5alsec.jpg, id=226, 357.58594pt x 213.04594pt>
 File: 5alsec.jpg Graphic file (type jpg)
 <use 5alsec.jpg>
-Package pdftex.def Info: 5alsec.jpg  used on input line 425. on input line 425.
+Package pdftex.def Info: 5alsec.jpg  used on input line 424. on input line 424.
 
 Package pdftex.def Info: Requested size: 258.75pt x 154.16989pt on input line 4
-25.
+24.
  [17 <./1alsec.jpg>]
 <10alsec.jpg, id=232, 356.0803pt x 213.04594pt>
 File: 10alsec.jpg Graphic file (type jpg)
 <use 10alsec.jpg>
-Package pdftex.def Info: 10alsec.jpg  used on input line 430. on input line 430
+Package pdftex.def Info: 10alsec.jpg  used on input line 429. on input line 429
 .
-Package pdftex.def Info: Requested size: 258.75pt x 154.8168pt on input line 43
-0.
+Package pdftex.def Info: Requested size: 258.75pt x 154.8168pt on input line 42
+9.
 <20alsec.jpg, id=233, 361.35pt x 213.04594pt>
 File: 20alsec.jpg Graphic file (type jpg)
 <use 20alsec.jpg>
-Package pdftex.def Info: 20alsec.jpg  used on input line 435. on input line 435
+Package pdftex.def Info: 20alsec.jpg  used on input line 434. on input line 434
 .
 Package pdftex.def Info: Requested size: 258.75pt x 152.55424pt on input line 4
-35.
+34.
  [18 <./5alsec.jpg> <./10alsec.jpg> <./20alsec.jpg>]
 <veloc.jpg, id=240, 402.00188pt x 229.60782pt>
 File: veloc.jpg Graphic file (type jpg)
 <use veloc.jpg>
-Package pdftex.def Info: veloc.jpg  used on input line 464. on input line 464.
+Package pdftex.def Info: veloc.jpg  used on input line 463. on input line 463.
 Package pdftex.def Info: Requested size: 258.75pt x 147.78584pt on input line 4
-64.
+63.
 
 [19 <./veloc.jpg>] [20] [21]
-Overfull \hbox (92.99847pt too wide) in paragraph at lines 563--564
+Overfull \hbox (92.99847pt too wide) in paragraph at lines 562--563
 []\OT1/cmr/bx/n/10 Coefficiente di De-ter-mi-na-zio-ne\OT1/cmr/m/n/10 : https:/
 /it.wikipedia.org/wiki/Coefficiente[]di[]determinazione 
  []
 
 
-Overfull \hbox (4.43205pt too wide) in paragraph at lines 567--568
+Overfull \hbox (4.43205pt too wide) in paragraph at lines 566--567
 []\OT1/cmr/bx/n/10 Battery-Historian\OT1/cmr/m/n/10 : https://developer.android
 .com/studio/profile/battery-
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 575.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 574.
 [22]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 575.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 574.
  (./Relazione_MSA.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 575.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 575.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 574.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 574.
 Package rerunfilecheck Info: File `Relazione_MSA.out' has not changed.
 (rerunfilecheck)             Checksum: 4F490FBB9558FE6CA84044A541383589;1045.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 575.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 574.
  ) 
 Here is how much of TeX's memory you used:
- 19741 strings out of 492990
- 378302 string characters out of 6136334
- 458978 words of memory out of 5000000
- 23042 multiletter control sequences out of 15000+600000
- 544618 words of font info for 76 fonts, out of 8000000 for 9000
+ 19739 strings out of 492990
+ 378283 string characters out of 6136334
+ 459023 words of memory out of 5000000
+ 23041 multiletter control sequences out of 15000+600000
+ 544308 words of font info for 75 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,13n,40p,10443b,888s stack positions out of 5000i,500n,10000p,200000b,80000s
 <c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/tex
 live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2017
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb><c:/texlive/2017/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2017/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><c:/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2017/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
-i7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb><c:
-/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on Relazione_MSA.pdf (22 pages, 446381 bytes).
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><c:/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><c:/texlive/2017/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb><
+c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/
+2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2017/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2017/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmti10.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmti7.pfb><c:/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+i8.pfb><c:/texlive/2017/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on Relazione_MSA.pdf (22 pages, 438693 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 292 compressed objects within 3 object streams
+ 344 PDF objects out of 1000 (max. 8388607)
+ 290 compressed objects within 3 object streams
  73 named destinations out of 1000 (max. 500000)
  180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
